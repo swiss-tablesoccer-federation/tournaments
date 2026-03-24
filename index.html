@@ -330,8 +330,23 @@
 
 <script>
   /* ── Config ──────────────────────────────────────────── */
-  var API_BASE = 'https://api.tablesoccer.org/cms.tournaments';
-  var TOUR_ID  = 78;
+  var API_BASE   = 'https://api.tablesoccer.org/cms.tournaments';
+  var TOUR_ID    = 78;
+  /*
+   * CORS proxy — transparent fallback for when the browser blocks the direct
+   * API request (status === 0).  The target URL is percent-encoded so the
+   * proxy receives it as a single query-string value.
+   *
+   * All data served by the API is publicly accessible tournament information
+   * (no credentials or sensitive data are transmitted), so routing through a
+   * third-party proxy is acceptable here.
+   *
+   * Note: status === 0 can also indicate a genuine network failure (offline,
+   * DNS error).  In that case the proxy request will fail too and the caller's
+   * error handler will surface a visible message to the user, so no errors are
+   * silently swallowed.
+   */
+  var CORS_PROXY = 'https://corsproxy.io/?';
 
   /* ── State ───────────────────────────────────────────── */
   var allTournaments = [];
@@ -386,9 +401,26 @@
   }
 
   /* ── Fetch ───────────────────────────────────────────── */
+  /**
+   * Fetch tournament data for the given season.
+   *
+   * Strategy:
+   *   1. Try the API directly — works when deployed to a domain the server
+   *      allows, or when the browser has CORS disabled for local dev.
+   *   2. On status === 0 (browser-blocked CORS request or network error),
+   *      automatically retry through a CORS proxy so the page works during
+   *      local development without any extra tooling.
+   */
   function fetchTournaments(seasonId) {
-    var url = API_BASE + '?tour=' + TOUR_ID + (seasonId ? '&season=' + seasonId : '');
-    return $.getJSON(url);
+    var directUrl = API_BASE + '?tour=' + TOUR_ID + (seasonId ? '&season=' + seasonId : '');
+    return $.getJSON(directUrl).then(null, function (xhr) {
+      if (xhr.status === 0) {
+        /* Browser blocked the request (CORS). Retry via proxy. */
+        return $.getJSON(CORS_PROXY + encodeURIComponent(directUrl));
+      }
+      /* Real HTTP error — propagate so callers can show a message. */
+      return $.Deferred().reject(xhr);
+    });
   }
 
   /* ── Populate a <select> with {id, name} items ───────── */
