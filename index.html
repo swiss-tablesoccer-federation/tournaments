@@ -212,6 +212,9 @@
     }
 
     .cat-text {
+      display: inline-block;
+      min-width: 3rem;
+      text-align: center;
       font-size: 0.72rem;
       font-weight: 700;
       color: #fff;
@@ -316,7 +319,7 @@
     }
 
     .itsf-badge {
-      height: 28px;
+      height: 14px;
       width: auto;
     }
 
@@ -525,31 +528,31 @@
    * Prominence order: STS > STRT+ > STRT > STL > Cup > (other)
    */
   function getCategoryStyle(catName) {
-    if (!catName) return { bg: '#666666', fs: '0.72rem' };
+    if (!catName) return { bg: '#666666' };
     var n = catName.toUpperCase();
     /* Check STRT+ / Regio Tour Pro BEFORE plain STRT to avoid substring collision */
     if (n.indexOf('STRT+') !== -1 || n.indexOf('STRT +') !== -1 ||
         (n.indexOf('REGIO') !== -1 && n.indexOf('PRO') !== -1)) {
       /* Swiss Tablesoccer Regio Tour Pro – darker red, 60% opacity */
-      return { bg: 'rgba(168,0,15,0.6)', fs: '0.72rem' };
+      return { bg: 'rgba(168,0,15,0.6)' };
     }
     if (n.indexOf('STRT') !== -1 || n.indexOf('REGIO') !== -1) {
       /* Swiss Tablesoccer Regio Tour – grey */
-      return { bg: '#7a7a7a', fs: '0.70rem' };
+      return { bg: '#7a7a7a' };
     }
     if (n.indexOf('STS') !== -1 || n.indexOf('SERIES') !== -1) {
       /* Swiss Tablesoccer Series – darker red */
-      return { bg: '#a8000f', fs: '0.75rem' };
+      return { bg: '#a8000f' };
     }
     if (n.indexOf('STL') !== -1 || n.indexOf('LEAGUE') !== -1) {
       /* Swiss Tablesoccer League – red */
-      return { bg: '#E30613', fs: '0.72rem' };
+      return { bg: '#E30613' };
     }
     if (n.indexOf('CUP') !== -1) {
       /* Swiss Tablesoccer Cup – red */
-      return { bg: '#E30613', fs: '0.72rem' };
+      return { bg: '#E30613' };
     }
-    return { bg: '#666666', fs: '0.72rem' };
+    return { bg: '#666666' };
   }
 
   /* ── URL param helpers ───────────────────────────────── */
@@ -668,7 +671,7 @@
       var catStyle = getCategoryStyle(catName);
       var catCell = catLogo
         ? '<img src="' + escapeHtml(catLogo) + '" class="cat-logo" alt="' + escapeHtml(catName) + '">'
-        : '<span class="cat-text" style="background:' + catStyle.bg + ';font-size:' + catStyle.fs + '">' +
+        : '<span class="cat-text" style="background:' + catStyle.bg + '">' +
             escapeHtml(getCategoryAbbr(catName)) + '</span>';
 
       /* ── Country cell ── */
