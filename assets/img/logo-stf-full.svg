@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" width="420" height="80" role="img" aria-label="Swiss Tablesoccer Federation">
+  <title>Swiss Tablesoccer Federation</title>
+
+  <!-- ── S ─────────────────────────────────────────────────── -->
+  <!-- Bold blocky S in dark charcoal -->
+  <path d="M6,12 Q6,6 12,6 L40,6 Q46,6 46,12 L46,20 Q46,26 40,26
+           L14,26 Q14,26 14,32 L14,38 Q14,38 20,38
+           L44,38 Q50,38 50,44 L50,58 Q50,64 44,64
+           L10,64 Q4,64 4,58 L4,50 L14,50 L14,56 L40,56 L40,48
+           Q40,48 34,48 L10,48 Q4,48 4,42 L4,18 Q4,12 10,12 Z
+           M14,14 L14,20 L36,20 L36,14 Z"
+        fill="#2d2d2d"/>
+
+  <!-- ── T (with player figure as the stem) ───────────────── -->
+  <!-- T crossbar -->
+  <rect x="54" y="6" width="46" height="14" rx="2" fill="#2d2d2d"/>
+  <!-- T stem (player body) - slim rectangle -->
+  <rect x="70" y="20" width="14" height="44" rx="2" fill="#2d2d2d"/>
+  <!-- Player head above crossbar -->
+  <circle cx="77" cy="0" r="7" fill="#2d2d2d"/>
+  <!-- Player arms implied by crossbar width -->
+
+  <!-- Swiss cross circle (red badge between S and T, at bottom) -->
+  <circle cx="50" cy="60" r="11" fill="#E30613"/>
+  <rect x="44" y="57" width="12" height="6" rx="1" fill="#ffffff"/>
+  <rect x="47" y="52" width="6" height="16" rx="1" fill="#ffffff"/>
+
+  <!-- ── F ─────────────────────────────────────────────────── -->
+  <!-- F vertical bar -->
+  <rect x="108" y="6" width="14" height="58" rx="2" fill="#2d2d2d"/>
+  <!-- F top horizontal -->
+  <rect x="108" y="6" width="42" height="14" rx="2" fill="#2d2d2d"/>
+  <!-- F middle horizontal -->
+  <rect x="108" y="32" width="30" height="12" rx="2" fill="#2d2d2d"/>
+
+  <!-- ── Text: SWISS TABLESOCCER FEDERATION ───────────────── -->
+  <text x="162" y="26"
+        font-family="'Arial Black','Impact','Franklin Gothic Heavy',sans-serif"
+        font-size="19" font-weight="900"
+        fill="#E30613" letter-spacing="1">SWISS</text>
+  <text x="162" y="47"
+        font-family="'Arial Black','Impact','Franklin Gothic Heavy',sans-serif"
+        font-size="16" font-weight="900"
+        fill="#E30613" letter-spacing="0.5">TABLESOCCER</text>
+  <text x="162" y="65"
+        font-family="'Arial Black','Impact','Franklin Gothic Heavy',sans-serif"
+        font-size="16" font-weight="900"
+        fill="#E30613" letter-spacing="0.5">FEDERATION</text>
+</svg>
