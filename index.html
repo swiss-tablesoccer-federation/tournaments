@@ -12,17 +12,60 @@
 
   <style>
     /* ── Base ───────────────────────────────────────────────── */
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
     body {
       background-color: #eceef0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* ── Page title ─────────────────────────────────────────── */
-    .page-title {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 300;
-      color: #1b3a5c;
-      line-height: 1.1;
+    /* ── Site navbar ────────────────────────────────────────── */
+    .site-nav {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    }
+
+    .site-nav-inner {
+      display: flex;
+      align-items: center;
+      padding-top: 2vw;
+      padding-bottom: 2vw;
+      padding-left: 8vw;
+      padding-right: 8vw;
+      gap: 1.25rem;
+    }
+
+    .site-nav-logo {
+      display: block;
+      flex-shrink: 0;
+      line-height: 0;
+    }
+
+    .site-nav-logo img {
+      height: 46px;
+      width: auto;
+    }
+
+    .site-nav-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-left: auto;
+    }
+
+    @media (max-width: 480px) {
+      .site-nav-logo img { height: 36px; }
+      .site-nav-title { font-size: 0.95rem; }
     }
 
     /* ── Filter row ─────────────────────────────────────────── */
@@ -61,13 +104,31 @@
 
     .filter-control:focus {
       outline: none;
-      border-bottom-color: #1b3a5c;
+      border-bottom-color: #E30613;
     }
 
     /* ── Hide-past toggle ───────────────────────────────────── */
     .form-check-input:checked {
-      background-color: #1b3a5c;
-      border-color: #1b3a5c;
+      background-color: #E30613;
+      border-color: #E30613;
+    }
+
+    /* ── Share button ───────────────────────────────────────── */
+    .share-btn {
+      background: none;
+      border: none;
+      padding: 0.2rem 0.45rem;
+      color: #999;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: color .15s, background .15s;
+      line-height: 1;
+    }
+
+    .share-btn:hover {
+      color: #E30613;
+      background: rgba(227,6,19,.07);
     }
 
     /* ── Table card ─────────────────────────────────────────── */
@@ -76,11 +137,16 @@
       border-radius: 4px;
       box-shadow: 0 1px 6px rgba(0,0,0,.08);
       overflow: hidden;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
     }
 
     /* Make the tbody scrollable while keeping the header fixed */
     .table-scroll-wrapper {
-      max-height: 72vh;
+      flex: 1;
+      min-height: 0;
       overflow-y: auto;
     }
 
@@ -88,6 +154,15 @@
     .table-scroll-wrapper::-webkit-scrollbar-track { background: #f5f5f5; }
     .table-scroll-wrapper::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
     .table-scroll-wrapper::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    /* ── Page content wrapper (fills remaining viewport below nav) */
+    .page-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      overflow: hidden;
+    }
 
     /* ── Tournament table ───────────────────────────────────── */
     .t-table {
@@ -118,10 +193,10 @@
 
     .t-table tbody tr:last-child { border-bottom: none; }
 
-    .t-table tbody tr:hover { background-color: #f7f9fb; }
+    .t-table tbody tr:hover { background-color: #fdf5f5; }
 
     .t-table tbody tr.is-past { background-color: #fafafa; }
-    .t-table tbody tr.is-past:hover { background-color: #f2f4f6; }
+    .t-table tbody tr.is-past:hover { background-color: #f4f4f4; }
 
     .t-table tbody td {
       padding: 0.9rem 1rem;
@@ -137,20 +212,24 @@
     }
 
     .cat-text {
-      font-size: 0.75rem;
+      display: inline-block;
+      width: 3.8rem;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 0.72rem;
       font-weight: 700;
       color: #fff;
-      background: #1b3a5c;
       padding: 3px 8px;
       border-radius: 3px;
       white-space: nowrap;
+      /* background is set inline by getCategoryStyle() */
     }
 
     /* ── Name cell ──────────────────────────────────────────── */
     .t-name {
       font-weight: 700;
       font-size: 0.92rem;
-      color: #1b3a5c;
+      color: #1a1a1a;
     }
 
     /* ── Country cell ───────────────────────────────────────── */
@@ -175,6 +254,13 @@
       color: #333;
     }
 
+    /* ── STS row: dark-red bold name + date ─────────────────── */
+    tr[data-cat="STS"] .t-name,
+    tr[data-cat="STS"] .t-date {
+      color: #a8000f;
+      font-weight: 700;
+    }
+
     /* ── Playground cell ────────────────────────────────────── */
     .pg-logo {
       max-height: 26px;
@@ -194,9 +280,9 @@
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #29abe2;
+      color: #E30613;
       text-decoration: none;
-      border-bottom: 2px solid #29abe2;
+      border-bottom: 2px solid #E30613;
       padding-bottom: 1px;
       white-space: nowrap;
       transition: color .15s, border-color .15s;
@@ -205,8 +291,8 @@
     .action-link + .action-link { margin-left: 1rem; }
 
     .action-link:hover {
-      color: #1b3a5c;
-      border-bottom-color: #1b3a5c;
+      color: #a8000f;
+      border-bottom-color: #a8000f;
     }
 
     .action-link.is-disabled {
@@ -232,7 +318,18 @@
     }
 
     .page-footer a { color: #aaa; }
-    .page-footer a:hover { color: #1b3a5c; }
+    .page-footer a:hover { color: #E30613; }
+
+    /* ── ITSF badge cell ────────────────────────────────────── */
+    .col-itsf {
+      width: 48px;
+      text-align: center;
+    }
+
+    .itsf-badge {
+      height: 14px;
+      width: auto;
+    }
 
     /* ── Responsive hide ────────────────────────────────────── */
     @media (max-width: 767px) {
@@ -245,10 +342,18 @@
 </head>
 <body>
 
-<div class="container-fluid px-4 px-md-5 py-4">
+<!-- ── Site navbar (logo + page title in one bar) ────────── -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="https://swisstablesoccer.ch" class="site-nav-logo" aria-label="Swiss Tablesoccer Federation – Home">
+      <img src="https://github.com/user-attachments/assets/6df8525e-7665-4ab6-8c5a-407ddf00bc91"
+           alt="Swiss Tablesoccer Federation" />
+    </a>
+    <span class="site-nav-title" id="tourTitle">Tournament Calendar</span>
+  </div>
+</nav>
 
-  <!-- ── Title ───────────────────────────────────────────────── -->
-  <h1 class="page-title mb-4" id="tourTitle">Tournament Calendar</h1>
+<div class="container-fluid px-4 px-md-5 py-4 page-content">
 
   <!-- ── Filters ─────────────────────────────────────────────── -->
   <div class="row g-4 mb-3 align-items-end">
@@ -279,13 +384,19 @@
 
   </div>
 
-  <!-- ── Hide-past toggle + stats ────────────────────────────── -->
+  <!-- ── Hide-past toggle + stats + share ────────────────────── -->
   <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
     <div class="form-check form-switch mb-0">
       <input class="form-check-input" type="checkbox" role="switch" id="hidePast" checked />
       <label class="form-check-label small text-secondary" for="hidePast">Hide past tournaments</label>
     </div>
     <span class="small text-secondary" id="statsText"></span>
+    <button id="shareBtn" class="share-btn ms-auto"
+            data-bs-toggle="tooltip" data-bs-placement="left" data-bs-trigger="manual"
+            title="Link copied!"
+            aria-label="Copy link to clipboard">
+      <i class="fa-solid fa-share-from-square"></i>
+    </button>
   </div>
 
   <!-- ── Table card ───────────────────────────────────────────── -->
@@ -295,6 +406,7 @@
         <thead>
           <tr>
             <th class="col-cat">Category</th>
+            <th class="col-itsf"></th>
             <th>Name</th>
             <th class="col-country">Country</th>
             <th>Date</th>
@@ -304,7 +416,7 @@
         </thead>
         <tbody id="tournamentBody">
           <tr class="state-row">
-            <td colspan="6">
+            <td colspan="7">
               <span class="spinner-border spinner-border-sm text-secondary me-2" role="status"></span>
               Loading tournaments...
             </td>
@@ -335,6 +447,7 @@
 
   /* ── State ───────────────────────────────────────────── */
   var allTournaments = [];
+  var suppressUrlUpdate = false;
 
   /* ── Helpers ─────────────────────────────────────────── */
 
@@ -385,6 +498,107 @@
     return $('<div>').text(str == null ? '' : String(str)).html();
   }
 
+  /**
+   * Return the abbreviated display label for a category name.
+   */
+  function getCategoryAbbr(catName) {
+    if (!catName) return catName;
+    var n = catName.toUpperCase();
+    /* STRT+ must be checked before plain STRT to avoid substring collision */
+    if (n.indexOf('STRT+') !== -1 || n.indexOf('STRT +') !== -1 ||
+        (n.indexOf('REGIO') !== -1 && n.indexOf('PRO') !== -1)) {
+      return 'STRT+';
+    }
+    if (n.indexOf('STRT') !== -1 || n.indexOf('REGIO') !== -1) return 'STRT';
+    if (n.indexOf('STS') !== -1 || n.indexOf('SERIES') !== -1) return 'STS';
+    if (n.indexOf('STL') !== -1 || n.indexOf('LEAGUE') !== -1) return 'STL';
+    if (n.indexOf('CUP') !== -1) return 'Cup';
+    return catName;
+  }
+
+  /**
+   * Return an <img> for the ITSF tier badge when the tournament name
+   * contains "ITSF 250", "ITSF 500", or "ITSF 750", otherwise empty string.
+   */
+  function getItsfBadge(name) {
+    if (!name) return '';
+    var n = name.toUpperCase();
+    var tier = '';
+    if (n.indexOf('ITSF 750') !== -1) tier = '750';
+    else if (n.indexOf('ITSF 500') !== -1) tier = '500';
+    else if (n.indexOf('ITSF 250') !== -1) tier = '250';
+    if (!tier) return '';
+    return '<img src="assets/img/itsf_' + tier + '.svg" class="itsf-badge" alt="ITSF ' + tier + '">';
+  }
+
+  /**
+   * Return the background colour and font-size for a category badge.
+   * Prominence order: STS > STRT+ > STRT > STL > Cup > (other)
+   */
+  function getCategoryStyle(catName) {
+    if (!catName) return { bg: '#666666' };
+    var n = catName.toUpperCase();
+    /* Check STRT+ / Regio Tour Pro BEFORE plain STRT to avoid substring collision */
+    if (n.indexOf('STRT+') !== -1 || n.indexOf('STRT +') !== -1 ||
+        (n.indexOf('REGIO') !== -1 && n.indexOf('PRO') !== -1)) {
+      /* Swiss Tablesoccer Regio Tour Pro – darker red, 60% opacity */
+      return { bg: 'rgba(168,0,15,0.6)' };
+    }
+    if (n.indexOf('STRT') !== -1 || n.indexOf('REGIO') !== -1) {
+      /* Swiss Tablesoccer Regio Tour – grey */
+      return { bg: '#7a7a7a' };
+    }
+    if (n.indexOf('STS') !== -1 || n.indexOf('SERIES') !== -1) {
+      /* Swiss Tablesoccer Series – darker red */
+      return { bg: '#a8000f' };
+    }
+    if (n.indexOf('STL') !== -1 || n.indexOf('LEAGUE') !== -1) {
+      /* Swiss Tablesoccer League – red */
+      return { bg: '#E30613' };
+    }
+    if (n.indexOf('CUP') !== -1) {
+      /* Swiss Tablesoccer Cup – red */
+      return { bg: '#E30613' };
+    }
+    return { bg: '#666666' };
+  }
+
+  /* ── URL param helpers ───────────────────────────────── */
+
+  /**
+   * Read a URL query-string and return an object.
+   */
+  function parseQuery() {
+    var params = {};
+    var search = window.location.search.slice(1);
+    if (!search) return params;
+    search.split('&').forEach(function (pair) {
+      var kv = pair.split('=');
+      if (kv[0]) params[decodeURIComponent(kv[0])] = decodeURIComponent(kv[1] || '');
+    });
+    return params;
+  }
+
+  /**
+   * Push current filter state into the URL (no page reload).
+   */
+  function updateUrl() {
+    if (suppressUrlUpdate) return;
+    var p = new URLSearchParams();
+    var season = $('#seasonSelect').val();
+    var cat    = $('#categorySelect').val();
+    var table  = $('#playgroundSelect').val();
+    var q      = $('#searchInput').val().trim();
+    var hide   = $('#hidePast').is(':checked');
+    if (season) p.set('season', season);
+    if (cat)    p.set('cat', cat);
+    if (table)  p.set('table', table);
+    if (q)      p.set('search', q);
+    if (!hide)  p.set('show_past', '1');
+    var qs = p.toString();
+    history.replaceState(null, '', qs ? ('?' + qs) : window.location.pathname);
+  }
+
   /* ── Fetch ───────────────────────────────────────────── */
   /**
    * Fetch tournament data for the given season.
@@ -395,24 +609,24 @@
   }
 
   /* ── Populate a <select> with {id, name} items ───────── */
-  function populateSelect($sel, items, placeholder) {
-    var prev = $sel.val();
+  function populateSelect($sel, items, placeholder, preselect) {
     $sel.empty().append($('<option>').val('').text(placeholder));
     $.each(items, function (_, item) {
       $sel.append($('<option>').val(item.id).text(item.name));
     });
-    if (prev) $sel.val(prev);
+    if (preselect != null) $sel.val(preselect);
   }
 
   /* ── Load a season (re-fetches when season changes) ───── */
-  function loadSeason(seasonId) {
+  /* preselectCat / preselectTable are only supplied on the initial load */
+  function loadSeason(seasonId, preselectCat, preselectTable) {
     showLoading();
     fetchTournaments(seasonId)
       .done(function (data) {
         $('#tourTitle').text(data.tour_name || 'Tournament Calendar');
         allTournaments = data.tournaments || [];
-        populateSelect($('#categorySelect'),   data.categories  || [], 'All');
-        populateSelect($('#playgroundSelect'), data.playgrounds || [], 'All');
+        populateSelect($('#categorySelect'),   data.categories  || [], 'All', preselectCat);
+        populateSelect($('#playgroundSelect'), data.playgrounds || [], 'All', preselectTable);
         renderTable();
       })
       .fail(function (xhr) {
@@ -426,6 +640,8 @@
     var catFilter = $('#categorySelect').val();
     var pgFilter  = $('#playgroundSelect').val();
     var query     = $('#searchInput').val().trim().toLowerCase();
+
+    updateUrl();
 
     var rows = $.grep(allTournaments, function (t) {
       if (hidePast && isPast(t)) return false;
@@ -449,7 +665,7 @@
 
     if (rows.length === 0) {
       $('#tournamentBody').html(
-        '<tr class="state-row"><td colspan="6">No tournaments match your filters.</td></tr>'
+        '<tr class="state-row"><td colspan="7">No tournaments match your filters.</td></tr>'
       );
       return;
     }
@@ -459,9 +675,12 @@
 
       /* ── Category cell ── */
       var catLogo = t.category && t.category.logo;
+      var catName = (t.category || {}).name || '-';
+      var catStyle = getCategoryStyle(catName);
       var catCell = catLogo
-        ? '<img src="' + escapeHtml(catLogo) + '" class="cat-logo" alt="' + escapeHtml((t.category || {}).name) + '">'
-        : '<span class="cat-text">' + escapeHtml((t.category || {}).name || '-') + '</span>';
+        ? '<img src="' + escapeHtml(catLogo) + '" class="cat-logo" alt="' + escapeHtml(catName) + '">'
+        : '<span class="cat-text" style="background:' + catStyle.bg + '">' +
+            escapeHtml(getCategoryAbbr(catName)) + '</span>';
 
       /* ── Country cell ── */
       var code      = ((t.country || '').toUpperCase()).slice(0, 2);
@@ -486,8 +705,9 @@
         ? '<a class="action-link" href="' + escapeHtml(t.info) + '" target="_blank" rel="noopener">Info</a>'
         : '<span class="action-link is-disabled">Info</span>';
 
-      return '<tr class="' + (past ? 'is-past' : '') + '">' +
+      return '<tr class="' + (past ? 'is-past' : '') + '" data-cat="' + escapeHtml(getCategoryAbbr(catName)) + '">' +
         '<td class="col-cat">' + catCell + '</td>' +
+        '<td class="col-itsf">' + getItsfBadge(t.name) + '</td>' +
         '<td><span class="t-name">' + escapeHtml(t.name || '-') + '</span></td>' +
         '<td class="col-country">' + countryCell + '</td>' +
         '<td class="t-date">' + formatDateRange(t.start_on, t.end_on) + '</td>' +
@@ -502,7 +722,7 @@
   /* ── State helpers ───────────────────────────────────── */
   function showLoading() {
     $('#tournamentBody').html(
-      '<tr class="state-row"><td colspan="6">' +
+      '<tr class="state-row"><td colspan="7">' +
       '<span class="spinner-border spinner-border-sm text-secondary me-2" role="status"></span>' +
       'Loading…</td></tr>'
     );
@@ -511,10 +731,39 @@
 
   function showError(msg) {
     $('#tournamentBody').html(
-      '<tr class="state-row is-error"><td colspan="6">' +
+      '<tr class="state-row is-error"><td colspan="7">' +
       '<i class="fa-solid fa-triangle-exclamation me-2"></i>' + escapeHtml(msg) + '</td></tr>'
     );
   }
+
+  /* ── Share button ────────────────────────────────────── */
+  $(function () {
+    var $btn = $('#shareBtn');
+    var tooltip = new bootstrap.Tooltip($btn[0], { trigger: 'manual' });
+
+    $btn.on('click', function () {
+      navigator.clipboard.writeText(window.location.href).then(function () {
+        tooltip.show();
+        setTimeout(function () { tooltip.hide(); }, 2000);
+      }).catch(function () {
+        /* Fallback for browsers without Clipboard API */
+        try {
+          var ta = document.createElement('textarea');
+          ta.value = window.location.href;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy'); /* deprecated but widely supported as fallback */
+          document.body.removeChild(ta);
+          tooltip.show();
+          setTimeout(function () { tooltip.hide(); }, 2000);
+        } catch (err) {
+          /* Both methods failed – silently ignore */
+        }
+      });
+    });
+  });
 
   /* ── Event listeners ─────────────────────────────────── */
   $('#seasonSelect').on('change', function () { loadSeason($(this).val()); });
@@ -524,21 +773,36 @@
 
   /* ── Initialise ──────────────────────────────────────── */
   $(function () {
+    var params = parseQuery();
+
+    /* Apply URL params before first render */
+    suppressUrlUpdate = true;
+    if (params.show_past === '1') $('#hidePast').prop('checked', false);
+    if (params.search)            $('#searchInput').val(params.search);
+    suppressUrlUpdate = false;
+
     showLoading();
-    fetchTournaments(null)
+    fetchTournaments(params.season || null)
       .done(function (data) {
         $('#tourTitle').text(data.tour_name || 'Tournament Calendar');
         allTournaments = data.tournaments || [];
 
-        /* Season selector */
+        /* Season selector – honour URL param */
+        suppressUrlUpdate = true;
         $.each(data.seasons || [], function (_, s) {
           var $opt = $('<option>').val(s.id).text(s.name);
-          if (s.id === data.season) $opt.prop('selected', true);
+          var isSelected = params.season
+            ? String(s.id) === String(params.season)
+            : s.id === data.season;
+          if (isSelected) {
+            $opt.prop('selected', true);
+          }
           $('#seasonSelect').append($opt);
         });
+        suppressUrlUpdate = false;
 
-        populateSelect($('#categorySelect'),   data.categories  || [], 'All');
-        populateSelect($('#playgroundSelect'), data.playgrounds || [], 'All');
+        populateSelect($('#categorySelect'),   data.categories  || [], 'All', params.cat);
+        populateSelect($('#playgroundSelect'), data.playgrounds || [], 'All', params.table);
 
         renderTable();
       })

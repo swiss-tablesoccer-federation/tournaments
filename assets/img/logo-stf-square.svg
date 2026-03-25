@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- White background -->
+  <rect width="200" height="200" fill="#ffffff"/>
+
+  <!-- S -->
+  <text x="4" y="155" font-family="'Arial Black','Impact',sans-serif" font-size="135" font-weight="900" fill="#111111">S</text>
+
+  <!-- T vertical stem + crossbar -->
+  <rect x="91" y="35" width="56" height="18" rx="2" fill="#111111"/>
+  <rect x="110" y="53" width="18" height="110" rx="2" fill="#111111"/>
+
+  <!-- Player figure on T (head above crossbar) -->
+  <circle cx="119" cy="18" r="11" fill="#111111"/>
+
+  <!-- F vertical bar -->
+  <rect x="157" y="35" width="18" height="128" rx="2" fill="#111111"/>
+  <!-- F top horizontal -->
+  <rect x="157" y="35" width="38" height="16" rx="2" fill="#111111"/>
+  <!-- F middle horizontal -->
+  <rect x="157" y="87" width="28" height="14" rx="2" fill="#111111"/>
+
+  <!-- Player figure on F (head above top bar) -->
+  <circle cx="166" cy="18" r="11" fill="#111111"/>
+
+  <!-- Swiss cross circle badge -->
+  <circle cx="119" cy="175" r="20" fill="#E30613"/>
+  <rect x="108" y="171" width="22" height="8" rx="2" fill="#ffffff"/>
+  <rect x="113" y="163" width="12" height="24" rx="2" fill="#ffffff"/>
+</svg>
