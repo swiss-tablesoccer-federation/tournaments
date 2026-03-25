@@ -342,6 +342,30 @@
     /* ── Action links: icon vs text ─────────────────────────── */
     .action-icon-mobile { display: none; }
 
+    /* ── Filter toggle (mobile only) ────────────────────────── */
+    .filter-toggle-btn {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #555;
+      background: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: border-color .15s, color .15s;
+    }
+    .filter-toggle-btn:hover { border-color: #E30613; color: #E30613; }
+    .filter-toggle-btn .chevron {
+      font-size: 0.7rem;
+      transition: transform 0.2s ease;
+    }
+    .filter-toggle-btn[aria-expanded="true"] .chevron {
+      transform: rotate(180deg);
+    }
+
     @media (max-width: 480px) {
       /* Switch action links to icon-only */
       .action-icon-mobile {
@@ -361,6 +385,12 @@
       .t-table thead th { padding: 0.7rem 0.5rem; }
       .t-table tbody td { padding: 0.65rem 0.5rem; }
 
+      /* Smaller table font sizes */
+      .t-name  { font-size: 0.78rem; }
+      .t-date  { font-size: 0.73rem; }
+      .pg-text { font-size: 0.7rem; }
+      .t-table thead th { font-size: 0.6rem; }
+
       /* Reduce nav padding */
       .site-nav-inner {
         padding-top: 0.5rem;
@@ -368,6 +398,9 @@
         padding-left: 4vw;
         padding-right: 4vw;
       }
+
+      /* Prevent horizontal scroll */
+      .table-scroll-wrapper { overflow-x: hidden; }
     }
   </style>
 </head>
@@ -386,48 +419,69 @@
 
 <div class="container-fluid px-4 px-md-5 py-4 page-content">
 
-  <!-- ── Filters ─────────────────────────────────────────────── -->
-  <div class="row g-4 mb-3 align-items-end">
-
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="filter-label">Season:</div>
-      <select class="filter-control" id="seasonSelect"></select>
-    </div>
-
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="filter-label">Category:</div>
-      <select class="filter-control" id="categorySelect">
-        <option value="">All</option>
-      </select>
-    </div>
-
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="filter-label">Table:</div>
-      <select class="filter-control" id="playgroundSelect">
-        <option value="">All</option>
-      </select>
-    </div>
-
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="filter-label">Search:</div>
-      <input type="search" class="filter-control" id="searchInput" placeholder="Name or city..." autocomplete="off" />
-    </div>
-
-  </div>
-
-  <!-- ── Hide-past toggle + stats + share ────────────────────── -->
-  <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
-    <div class="form-check form-switch mb-0">
-      <input class="form-check-input" type="checkbox" role="switch" id="hidePast" checked />
-      <label class="form-check-label small text-secondary" for="hidePast">Hide past tournaments</label>
-    </div>
-    <span class="small text-secondary" id="statsText"></span>
-    <button id="shareBtn" class="share-btn ms-auto"
+  <!-- ── Mobile filter toggle (hidden on sm+) ───────────────── -->
+  <div class="d-flex align-items-center justify-content-between mb-2 d-sm-none">
+    <button class="filter-toggle-btn" type="button"
+            data-bs-toggle="collapse" data-bs-target="#filterCollapse"
+            aria-expanded="false" aria-controls="filterCollapse"
+            id="filterToggle">
+      <i class="fa-solid fa-sliders"></i> Filters
+      <i class="fa-solid fa-chevron-down chevron"></i>
+    </button>
+    <button id="shareBtnMobile" class="share-btn"
             data-bs-toggle="tooltip" data-bs-placement="left" data-bs-trigger="manual"
             title="Link copied!"
             aria-label="Copy link to clipboard">
       <i class="fa-solid fa-share-from-square"></i>
     </button>
+  </div>
+
+  <!-- ── Filters (collapsible on mobile, always visible on sm+) ── -->
+  <div class="collapse d-sm-block" id="filterCollapse">
+
+    <div class="row g-4 mb-3 align-items-end">
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="filter-label">Season:</div>
+        <select class="filter-control" id="seasonSelect"></select>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="filter-label">Category:</div>
+        <select class="filter-control" id="categorySelect">
+          <option value="">All</option>
+        </select>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="filter-label">Table:</div>
+        <select class="filter-control" id="playgroundSelect">
+          <option value="">All</option>
+        </select>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="filter-label">Search:</div>
+        <input type="search" class="filter-control" id="searchInput" placeholder="Name or city..." autocomplete="off" />
+      </div>
+
+    </div>
+
+    <!-- ── Hide-past toggle + stats + share ──────────────────── -->
+    <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+      <div class="form-check form-switch mb-0">
+        <input class="form-check-input" type="checkbox" role="switch" id="hidePast" checked />
+        <label class="form-check-label small text-secondary" for="hidePast">Hide past tournaments</label>
+      </div>
+      <span class="small text-secondary" id="statsText"></span>
+      <button id="shareBtn" class="share-btn ms-auto"
+              data-bs-toggle="tooltip" data-bs-placement="left" data-bs-trigger="manual"
+              title="Link copied!"
+              aria-label="Copy link to clipboard">
+        <i class="fa-solid fa-share-from-square"></i>
+      </button>
+    </div>
+
   </div>
 
   <!-- ── Table card ───────────────────────────────────────────── -->
@@ -777,32 +831,37 @@
   }
 
   /* ── Share button ────────────────────────────────────── */
+  function copyCurrentUrl($btn, tooltip) {
+    navigator.clipboard.writeText(window.location.href).then(function () {
+      tooltip.show();
+      setTimeout(function () { tooltip.hide(); }, 2000);
+    }).catch(function () {
+      /* Fallback for browsers without Clipboard API */
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = window.location.href;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy'); /* deprecated but widely supported as fallback */
+        document.body.removeChild(ta);
+        tooltip.show();
+        setTimeout(function () { tooltip.hide(); }, 2000);
+      } catch (err) {
+        /* Both methods failed – silently ignore */
+      }
+    });
+  }
+
   $(function () {
     var $btn = $('#shareBtn');
     var tooltip = new bootstrap.Tooltip($btn[0], { trigger: 'manual' });
+    $btn.on('click', function () { copyCurrentUrl($btn, tooltip); });
 
-    $btn.on('click', function () {
-      navigator.clipboard.writeText(window.location.href).then(function () {
-        tooltip.show();
-        setTimeout(function () { tooltip.hide(); }, 2000);
-      }).catch(function () {
-        /* Fallback for browsers without Clipboard API */
-        try {
-          var ta = document.createElement('textarea');
-          ta.value = window.location.href;
-          ta.style.position = 'fixed';
-          ta.style.opacity = '0';
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy'); /* deprecated but widely supported as fallback */
-          document.body.removeChild(ta);
-          tooltip.show();
-          setTimeout(function () { tooltip.hide(); }, 2000);
-        } catch (err) {
-          /* Both methods failed – silently ignore */
-        }
-      });
-    });
+    var $btnMobile = $('#shareBtnMobile');
+    var tooltipMobile = new bootstrap.Tooltip($btnMobile[0], { trigger: 'manual' });
+    $btnMobile.on('click', function () { copyCurrentUrl($btnMobile, tooltipMobile); });
   });
 
   /* ── Event listeners ─────────────────────────────────── */
