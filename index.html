@@ -309,6 +309,17 @@
     .page-footer a { color: #aaa; }
     .page-footer a:hover { color: #E30613; }
 
+    /* ── ITSF badge cell ────────────────────────────────────── */
+    .col-itsf {
+      width: 48px;
+      text-align: center;
+    }
+
+    .itsf-badge {
+      height: 28px;
+      width: auto;
+    }
+
     /* ── Responsive hide ────────────────────────────────────── */
     @media (max-width: 767px) {
       .col-pg, .col-country { display: none; }
@@ -384,6 +395,7 @@
         <thead>
           <tr>
             <th class="col-cat">Category</th>
+            <th class="col-itsf"></th>
             <th>Name</th>
             <th class="col-country">Country</th>
             <th>Date</th>
@@ -393,7 +405,7 @@
         </thead>
         <tbody id="tournamentBody">
           <tr class="state-row">
-            <td colspan="6">
+            <td colspan="7">
               <span class="spinner-border spinner-border-sm text-secondary me-2" role="status"></span>
               Loading tournaments...
             </td>
@@ -473,6 +485,39 @@
    */
   function escapeHtml(str) {
     return $('<div>').text(str == null ? '' : String(str)).html();
+  }
+
+  /**
+   * Return the abbreviated display label for a category name.
+   */
+  function getCategoryAbbr(catName) {
+    if (!catName) return catName;
+    var n = catName.toUpperCase();
+    /* STRT+ must be checked before plain STRT to avoid substring collision */
+    if (n.indexOf('STRT+') !== -1 || n.indexOf('STRT +') !== -1 ||
+        (n.indexOf('REGIO') !== -1 && n.indexOf('PRO') !== -1)) {
+      return 'STRT+';
+    }
+    if (n.indexOf('STRT') !== -1 || n.indexOf('REGIO') !== -1) return 'STRT';
+    if (n.indexOf('STS') !== -1 || n.indexOf('SERIES') !== -1) return 'STS';
+    if (n.indexOf('STL') !== -1 || n.indexOf('LEAGUE') !== -1) return 'STL';
+    if (n.indexOf('CUP') !== -1) return 'Cup';
+    return catName;
+  }
+
+  /**
+   * Return an <img> for the ITSF tier badge when the tournament name
+   * contains "ITSF 250", "ITSF 500", or "ITSF 750", otherwise empty string.
+   */
+  function getItsfBadge(name) {
+    if (!name) return '';
+    var n = name.toUpperCase();
+    var tier = '';
+    if (n.indexOf('ITSF 750') !== -1) tier = '750';
+    else if (n.indexOf('ITSF 500') !== -1) tier = '500';
+    else if (n.indexOf('ITSF 250') !== -1) tier = '250';
+    if (!tier) return '';
+    return '<img src="assets/img/itsf_' + tier + '.svg" class="itsf-badge" alt="ITSF ' + tier + '">';
   }
 
   /**
@@ -609,7 +654,7 @@
 
     if (rows.length === 0) {
       $('#tournamentBody').html(
-        '<tr class="state-row"><td colspan="6">No tournaments match your filters.</td></tr>'
+        '<tr class="state-row"><td colspan="7">No tournaments match your filters.</td></tr>'
       );
       return;
     }
@@ -624,7 +669,7 @@
       var catCell = catLogo
         ? '<img src="' + escapeHtml(catLogo) + '" class="cat-logo" alt="' + escapeHtml(catName) + '">'
         : '<span class="cat-text" style="background:' + catStyle.bg + ';font-size:' + catStyle.fs + '">' +
-            escapeHtml(catName) + '</span>';
+            escapeHtml(getCategoryAbbr(catName)) + '</span>';
 
       /* ── Country cell ── */
       var code      = ((t.country || '').toUpperCase()).slice(0, 2);
@@ -651,6 +696,7 @@
 
       return '<tr class="' + (past ? 'is-past' : '') + '">' +
         '<td class="col-cat">' + catCell + '</td>' +
+        '<td class="col-itsf">' + getItsfBadge(t.name) + '</td>' +
         '<td><span class="t-name">' + escapeHtml(t.name || '-') + '</span></td>' +
         '<td class="col-country">' + countryCell + '</td>' +
         '<td class="t-date">' + formatDateRange(t.start_on, t.end_on) + '</td>' +
@@ -665,7 +711,7 @@
   /* ── State helpers ───────────────────────────────────── */
   function showLoading() {
     $('#tournamentBody').html(
-      '<tr class="state-row"><td colspan="6">' +
+      '<tr class="state-row"><td colspan="7">' +
       '<span class="spinner-border spinner-border-sm text-secondary me-2" role="status"></span>' +
       'Loading…</td></tr>'
     );
@@ -674,7 +720,7 @@
 
   function showError(msg) {
     $('#tournamentBody').html(
-      '<tr class="state-row is-error"><td colspan="6">' +
+      '<tr class="state-row is-error"><td colspan="7">' +
       '<i class="fa-solid fa-triangle-exclamation me-2"></i>' + escapeHtml(msg) + '</td></tr>'
     );
   }
