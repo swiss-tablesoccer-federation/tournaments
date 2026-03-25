@@ -12,9 +12,16 @@
 
   <style>
     /* ── Base ───────────────────────────────────────────────── */
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
     body {
       background-color: #eceef0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
     }
 
     /* ── Site navbar ────────────────────────────────────────── */
@@ -130,11 +137,16 @@
       border-radius: 4px;
       box-shadow: 0 1px 6px rgba(0,0,0,.08);
       overflow: hidden;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
     }
 
     /* Make the tbody scrollable while keeping the header fixed */
     .table-scroll-wrapper {
-      max-height: 72vh;
+      flex: 1;
+      min-height: 0;
       overflow-y: auto;
     }
 
@@ -142,6 +154,15 @@
     .table-scroll-wrapper::-webkit-scrollbar-track { background: #f5f5f5; }
     .table-scroll-wrapper::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
     .table-scroll-wrapper::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    /* ── Page content wrapper (fills remaining viewport below nav) */
+    .page-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      overflow: hidden;
+    }
 
     /* ── Tournament table ───────────────────────────────────── */
     .t-table {
@@ -310,7 +331,7 @@
   </div>
 </nav>
 
-<div class="container-fluid px-4 px-md-5 py-4">
+<div class="container-fluid px-4 px-md-5 py-4 page-content">
 
   <!-- ── Filters ─────────────────────────────────────────────── -->
   <div class="row g-4 mb-3 align-items-end">
