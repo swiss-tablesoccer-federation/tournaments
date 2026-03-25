@@ -17,11 +17,54 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
+    /* ── Site navbar ────────────────────────────────────────── */
+    .site-nav {
+      background-color: #111111;
+      padding: 0;
+      border-bottom: 3px solid #E30613;
+    }
+
+    .site-nav-inner {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 1.5rem;
+    }
+
+    .site-nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      gap: 0.75rem;
+    }
+
+    .site-nav-logo img {
+      height: 52px;
+      width: auto;
+      display: block;
+    }
+
+    .site-nav-logo-text {
+      color: #ffffff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      line-height: 1.35;
+      border-left: 2px solid #E30613;
+      padding-left: 0.75rem;
+    }
+
+    .site-nav-logo-text strong {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+    }
+
     /* ── Page title ─────────────────────────────────────────── */
     .page-title {
       font-size: clamp(2rem, 5vw, 3.2rem);
       font-weight: 300;
-      color: #1b3a5c;
+      color: #1a1a1a;
       line-height: 1.1;
     }
 
@@ -61,13 +104,31 @@
 
     .filter-control:focus {
       outline: none;
-      border-bottom-color: #1b3a5c;
+      border-bottom-color: #E30613;
     }
 
     /* ── Hide-past toggle ───────────────────────────────────── */
     .form-check-input:checked {
-      background-color: #1b3a5c;
-      border-color: #1b3a5c;
+      background-color: #E30613;
+      border-color: #E30613;
+    }
+
+    /* ── Share button ───────────────────────────────────────── */
+    .share-btn {
+      background: none;
+      border: none;
+      padding: 0.2rem 0.45rem;
+      color: #999;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: color .15s, background .15s;
+      line-height: 1;
+    }
+
+    .share-btn:hover {
+      color: #E30613;
+      background: rgba(227,6,19,.07);
     }
 
     /* ── Table card ─────────────────────────────────────────── */
@@ -118,10 +179,10 @@
 
     .t-table tbody tr:last-child { border-bottom: none; }
 
-    .t-table tbody tr:hover { background-color: #f7f9fb; }
+    .t-table tbody tr:hover { background-color: #fdf5f5; }
 
     .t-table tbody tr.is-past { background-color: #fafafa; }
-    .t-table tbody tr.is-past:hover { background-color: #f2f4f6; }
+    .t-table tbody tr.is-past:hover { background-color: #f4f4f4; }
 
     .t-table tbody td {
       padding: 0.9rem 1rem;
@@ -137,20 +198,20 @@
     }
 
     .cat-text {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
       color: #fff;
-      background: #1b3a5c;
       padding: 3px 8px;
       border-radius: 3px;
       white-space: nowrap;
+      /* background is set inline by getCategoryStyle() */
     }
 
     /* ── Name cell ──────────────────────────────────────────── */
     .t-name {
       font-weight: 700;
       font-size: 0.92rem;
-      color: #1b3a5c;
+      color: #1a1a1a;
     }
 
     /* ── Country cell ───────────────────────────────────────── */
@@ -194,9 +255,9 @@
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #29abe2;
+      color: #E30613;
       text-decoration: none;
-      border-bottom: 2px solid #29abe2;
+      border-bottom: 2px solid #E30613;
       padding-bottom: 1px;
       white-space: nowrap;
       transition: color .15s, border-color .15s;
@@ -205,8 +266,8 @@
     .action-link + .action-link { margin-left: 1rem; }
 
     .action-link:hover {
-      color: #1b3a5c;
-      border-bottom-color: #1b3a5c;
+      color: #a8000f;
+      border-bottom-color: #a8000f;
     }
 
     .action-link.is-disabled {
@@ -232,7 +293,7 @@
     }
 
     .page-footer a { color: #aaa; }
-    .page-footer a:hover { color: #1b3a5c; }
+    .page-footer a:hover { color: #E30613; }
 
     /* ── Responsive hide ────────────────────────────────────── */
     @media (max-width: 767px) {
@@ -244,6 +305,21 @@
   </style>
 </head>
 <body>
+
+<!-- ── Site navbar ───────────────────────────────────────── -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="https://swisstablesoccer.ch" class="site-nav-logo" aria-label="Swiss Tablesoccer Federation">
+      <img src="assets/img/logo-stf-square.svg"
+           onerror="this.style.display='none'"
+           alt="STF Logo" />
+      <span class="site-nav-logo-text">
+        <strong>Swiss Tablesoccer</strong>
+        Federation
+      </span>
+    </a>
+  </div>
+</nav>
 
 <div class="container-fluid px-4 px-md-5 py-4">
 
@@ -279,13 +355,19 @@
 
   </div>
 
-  <!-- ── Hide-past toggle + stats ────────────────────────────── -->
+  <!-- ── Hide-past toggle + stats + share ────────────────────── -->
   <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
     <div class="form-check form-switch mb-0">
       <input class="form-check-input" type="checkbox" role="switch" id="hidePast" checked />
       <label class="form-check-label small text-secondary" for="hidePast">Hide past tournaments</label>
     </div>
     <span class="small text-secondary" id="statsText"></span>
+    <button id="shareBtn" class="share-btn ms-auto"
+            data-bs-toggle="tooltip" data-bs-placement="left" data-bs-trigger="manual"
+            title="Link copied!"
+            aria-label="Copy link to clipboard">
+      <i class="fa-solid fa-share-from-square"></i>
+    </button>
   </div>
 
   <!-- ── Table card ───────────────────────────────────────────── -->
@@ -335,6 +417,7 @@
 
   /* ── State ───────────────────────────────────────────── */
   var allTournaments = [];
+  var suppressUrlUpdate = false;
 
   /* ── Helpers ─────────────────────────────────────────── */
 
@@ -385,6 +468,73 @@
     return $('<div>').text(str == null ? '' : String(str)).html();
   }
 
+  /**
+   * Return the background colour and font-size for a category badge.
+   * Prominence order: STS > STRT+ > STRT > STL > Cup > (other)
+   */
+  function getCategoryStyle(catName) {
+    if (!catName) return { bg: '#666666', fs: '0.72rem' };
+    var n = catName.toUpperCase();
+    if (n.indexOf('STS') !== -1 || n.indexOf('SERIES') !== -1) {
+      /* Swiss Tablesoccer Series – most prominent */
+      return { bg: '#E30613', fs: '0.75rem' };
+    }
+    if (n.indexOf('STRT+') !== -1 || n.indexOf('STRT +') !== -1 ||
+        (n.indexOf('REGIO') !== -1 && n.indexOf('PRO') !== -1)) {
+      /* Swiss Tablesoccer Regio Tour Pro */
+      return { bg: '#a8000f', fs: '0.72rem' };
+    }
+    if (n.indexOf('STRT') !== -1 || n.indexOf('REGIO') !== -1) {
+      /* Swiss Tablesoccer Regio Tour */
+      return { bg: '#7a7a7a', fs: '0.70rem' };
+    }
+    if (n.indexOf('STL') !== -1 || n.indexOf('LEAGUE') !== -1) {
+      /* Swiss Tablesoccer League */
+      return { bg: '#2d2d2d', fs: '0.72rem' };
+    }
+    if (n.indexOf('CUP') !== -1) {
+      /* Swiss Tablesoccer Cup */
+      return { bg: '#555555', fs: '0.68rem' };
+    }
+    return { bg: '#666666', fs: '0.72rem' };
+  }
+
+  /* ── URL param helpers ───────────────────────────────── */
+
+  /**
+   * Read a URL query-string and return an object.
+   */
+  function parseQuery() {
+    var params = {};
+    var search = window.location.search.slice(1);
+    if (!search) return params;
+    search.split('&').forEach(function (pair) {
+      var kv = pair.split('=');
+      if (kv[0]) params[decodeURIComponent(kv[0])] = decodeURIComponent(kv[1] || '');
+    });
+    return params;
+  }
+
+  /**
+   * Push current filter state into the URL (no page reload).
+   */
+  function updateUrl() {
+    if (suppressUrlUpdate) return;
+    var p = new URLSearchParams();
+    var season = $('#seasonSelect').val();
+    var cat    = $('#categorySelect').val();
+    var table  = $('#playgroundSelect').val();
+    var q      = $('#searchInput').val().trim();
+    var hide   = $('#hidePast').is(':checked');
+    if (season) p.set('season', season);
+    if (cat)    p.set('cat', cat);
+    if (table)  p.set('table', table);
+    if (q)      p.set('search', q);
+    if (!hide)  p.set('show_past', '1');
+    var qs = p.toString();
+    history.replaceState(null, '', qs ? ('?' + qs) : window.location.pathname);
+  }
+
   /* ── Fetch ───────────────────────────────────────────── */
   /**
    * Fetch tournament data for the given season.
@@ -395,24 +545,24 @@
   }
 
   /* ── Populate a <select> with {id, name} items ───────── */
-  function populateSelect($sel, items, placeholder) {
-    var prev = $sel.val();
+  function populateSelect($sel, items, placeholder, preselect) {
     $sel.empty().append($('<option>').val('').text(placeholder));
     $.each(items, function (_, item) {
       $sel.append($('<option>').val(item.id).text(item.name));
     });
-    if (prev) $sel.val(prev);
+    if (preselect != null) $sel.val(preselect);
   }
 
   /* ── Load a season (re-fetches when season changes) ───── */
-  function loadSeason(seasonId) {
+  /* preselectCat / preselectTable are only supplied on the initial load */
+  function loadSeason(seasonId, preselectCat, preselectTable) {
     showLoading();
     fetchTournaments(seasonId)
       .done(function (data) {
         $('#tourTitle').text(data.tour_name || 'Tournament Calendar');
         allTournaments = data.tournaments || [];
-        populateSelect($('#categorySelect'),   data.categories  || [], 'All');
-        populateSelect($('#playgroundSelect'), data.playgrounds || [], 'All');
+        populateSelect($('#categorySelect'),   data.categories  || [], 'All', preselectCat);
+        populateSelect($('#playgroundSelect'), data.playgrounds || [], 'All', preselectTable);
         renderTable();
       })
       .fail(function (xhr) {
@@ -426,6 +576,8 @@
     var catFilter = $('#categorySelect').val();
     var pgFilter  = $('#playgroundSelect').val();
     var query     = $('#searchInput').val().trim().toLowerCase();
+
+    updateUrl();
 
     var rows = $.grep(allTournaments, function (t) {
       if (hidePast && isPast(t)) return false;
@@ -459,9 +611,12 @@
 
       /* ── Category cell ── */
       var catLogo = t.category && t.category.logo;
+      var catName = (t.category || {}).name || '-';
+      var catStyle = getCategoryStyle(catName);
       var catCell = catLogo
-        ? '<img src="' + escapeHtml(catLogo) + '" class="cat-logo" alt="' + escapeHtml((t.category || {}).name) + '">'
-        : '<span class="cat-text">' + escapeHtml((t.category || {}).name || '-') + '</span>';
+        ? '<img src="' + escapeHtml(catLogo) + '" class="cat-logo" alt="' + escapeHtml(catName) + '">'
+        : '<span class="cat-text" style="background:' + catStyle.bg + ';font-size:' + catStyle.fs + '">' +
+            escapeHtml(catName) + '</span>';
 
       /* ── Country cell ── */
       var code      = ((t.country || '').toUpperCase()).slice(0, 2);
@@ -516,6 +671,35 @@
     );
   }
 
+  /* ── Share button ────────────────────────────────────── */
+  $(function () {
+    var $btn = $('#shareBtn');
+    var tooltip = new bootstrap.Tooltip($btn[0], { trigger: 'manual' });
+
+    $btn.on('click', function () {
+      navigator.clipboard.writeText(window.location.href).then(function () {
+        tooltip.show();
+        setTimeout(function () { tooltip.hide(); }, 2000);
+      }).catch(function () {
+        /* Fallback for browsers without Clipboard API */
+        try {
+          var ta = document.createElement('textarea');
+          ta.value = window.location.href;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy'); /* deprecated but widely supported as fallback */
+          document.body.removeChild(ta);
+          tooltip.show();
+          setTimeout(function () { tooltip.hide(); }, 2000);
+        } catch (err) {
+          /* Both methods failed – silently ignore */
+        }
+      });
+    });
+  });
+
   /* ── Event listeners ─────────────────────────────────── */
   $('#seasonSelect').on('change', function () { loadSeason($(this).val()); });
   $('#categorySelect, #playgroundSelect').on('change', renderTable);
@@ -524,21 +708,36 @@
 
   /* ── Initialise ──────────────────────────────────────── */
   $(function () {
+    var params = parseQuery();
+
+    /* Apply URL params before first render */
+    suppressUrlUpdate = true;
+    if (params.show_past === '1') $('#hidePast').prop('checked', false);
+    if (params.search)            $('#searchInput').val(params.search);
+    suppressUrlUpdate = false;
+
     showLoading();
-    fetchTournaments(null)
+    fetchTournaments(params.season || null)
       .done(function (data) {
         $('#tourTitle').text(data.tour_name || 'Tournament Calendar');
         allTournaments = data.tournaments || [];
 
-        /* Season selector */
+        /* Season selector – honour URL param */
+        suppressUrlUpdate = true;
         $.each(data.seasons || [], function (_, s) {
           var $opt = $('<option>').val(s.id).text(s.name);
-          if (s.id === data.season) $opt.prop('selected', true);
+          var isSelected = params.season
+            ? String(s.id) === String(params.season)
+            : s.id === data.season;
+          if (isSelected) {
+            $opt.prop('selected', true);
+          }
           $('#seasonSelect').append($opt);
         });
+        suppressUrlUpdate = false;
 
-        populateSelect($('#categorySelect'),   data.categories  || [], 'All');
-        populateSelect($('#playgroundSelect'), data.playgrounds || [], 'All');
+        populateSelect($('#categorySelect'),   data.categories  || [], 'All', params.cat);
+        populateSelect($('#playgroundSelect'), data.playgrounds || [], 'All', params.table);
 
         renderTable();
       })
