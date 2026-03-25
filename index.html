@@ -213,7 +213,8 @@
 
     .cat-text {
       display: inline-block;
-      min-width: 3rem;
+      width: 3.8rem;
+      box-sizing: border-box;
       text-align: center;
       font-size: 0.72rem;
       font-weight: 700;
@@ -251,6 +252,13 @@
       white-space: nowrap;
       font-size: 0.875rem;
       color: #333;
+    }
+
+    /* ── STS row: dark-red bold name + date ─────────────────── */
+    tr[data-cat="STS"] .t-name,
+    tr[data-cat="STS"] .t-date {
+      color: #a8000f;
+      font-weight: 700;
     }
 
     /* ── Playground cell ────────────────────────────────────── */
@@ -697,7 +705,7 @@
         ? '<a class="action-link" href="' + escapeHtml(t.info) + '" target="_blank" rel="noopener">Info</a>'
         : '<span class="action-link is-disabled">Info</span>';
 
-      return '<tr class="' + (past ? 'is-past' : '') + '">' +
+      return '<tr class="' + (past ? 'is-past' : '') + '" data-cat="' + escapeHtml(getCategoryAbbr(catName)) + '">' +
         '<td class="col-cat">' + catCell + '</td>' +
         '<td class="col-itsf">' + getItsfBadge(t.name) + '</td>' +
         '<td><span class="t-name">' + escapeHtml(t.name || '-') + '</span></td>' +
