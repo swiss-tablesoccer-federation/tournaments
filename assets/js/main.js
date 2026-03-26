@@ -342,6 +342,17 @@ function generateIcs(tournaments) {
     'X-WR-CALNAME:STF Tournament Calendar'
   ];
 
+  /* DTSTAMP is required by RFC 5545 §3.6.1 for every VEVENT */
+  var now     = new Date();
+  var dtstamp = now.getUTCFullYear() +
+    String(now.getUTCMonth() + 1).padStart(2, '0') +
+    String(now.getUTCDate()).padStart(2, '0') +
+    'T' +
+    String(now.getUTCHours()).padStart(2, '0') +
+    String(now.getUTCMinutes()).padStart(2, '0') +
+    String(now.getUTCSeconds()).padStart(2, '0') +
+    'Z';
+
   $.each(tournaments, function (_, t) {
     var start = t.start_on || '';
     var end   = t.end_on   || start;
@@ -352,6 +363,7 @@ function generateIcs(tournaments) {
 
     lines.push('BEGIN:VEVENT');
     lines.push('UID:stf-tournament-' + t.id + '@swisstablesoccer.ch');
+    lines.push('DTSTAMP:' + dtstamp);
     lines.push('DTSTART;VALUE=DATE:' + toIcsDate(start));
     lines.push('DTEND;VALUE=DATE:'   + toIcsDateExclusive(end));
     lines.push('SUMMARY:'            + escapeIcs(t.name || ''));
