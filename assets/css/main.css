@@ -52,7 +52,7 @@ body {
 
 @media (max-width: 480px) {
   .site-nav-logo img { height: 36px; }
-  .site-nav-title { font-size: 0.95rem; }
+  .site-nav-title { display: none; }
 }
 
 /* ── Filter row ─────────────────────────────────────────── */
