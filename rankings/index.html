@@ -22,7 +22,13 @@
       <img src="https://github.com/user-attachments/assets/6df8525e-7665-4ab6-8c5a-407ddf00bc91"
            alt="Swiss Tablesoccer Federation" />
     </a>
-    <span class="site-nav-title">Rankings</span>
+    <span class="site-nav-title" data-i18n="pageTitle_rankings">Rankings</span>
+    <div class="lang-selector" id="langSelector" aria-label="Language">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="de">DE</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="it">IT</button>
+    </div>
   </div>
 </nav>
 
@@ -44,9 +50,9 @@
             <thead>
               <tr>
                 <th class="col-rank">#</th>
-                <th>Player</th>
-                <th class="col-country">Country</th>
-                <th class="col-points text-end">Points</th>
+                <th data-i18n="colPlayer">Player</th>
+                <th class="col-country" data-i18n="colCountry">Country</th>
+                <th class="col-points text-end" data-i18n="colPoints">Points</th>
               </tr>
             </thead>
             <tbody id="rankingBody">
@@ -75,7 +81,7 @@
 
   <!-- ── Footer ───────────────────────────────────────────────── -->
   <div class="text-center mt-3 page-footer">
-    Data provided by
+    <span data-i18n="dataProvidedBy">Data provided by</span>
     <a href="https://tablesoccer.org" target="_blank" rel="noopener">tablesoccer.org</a>
   </div>
 
@@ -87,6 +93,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <!-- Site scripts -->
+<script src="../assets/js/i18n.js"></script>
 <script src="../assets/js/rankings.js"></script>
 </body>
 </html>

@@ -50,9 +50,42 @@ body {
   margin-left: auto;
 }
 
+/* ── Language selector ──────────────────────────────────── */
+.lang-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #888;
+  cursor: pointer;
+  line-height: 1.4;
+  transition: color .15s, border-color .15s;
+}
+
+.lang-btn:hover {
+  color: #E30613;
+  border-color: rgba(227,6,19,.4);
+}
+
+.lang-btn.active {
+  color: #E30613;
+  border-color: #E30613;
+}
+
 @media (max-width: 480px) {
   .site-nav-logo img { height: 36px; }
   .site-nav-title { display: none; }
+  .lang-selector { margin-left: auto; }
 }
 
 /* ── Filter row ─────────────────────────────────────────── */

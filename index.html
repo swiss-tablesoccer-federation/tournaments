@@ -22,7 +22,13 @@
       <img src="https://github.com/user-attachments/assets/6df8525e-7665-4ab6-8c5a-407ddf00bc91"
            alt="Swiss Tablesoccer Federation" />
     </a>
-    <span class="site-nav-title" id="tourTitle">Tournament Calendar</span>
+    <span class="site-nav-title" id="tourTitle" data-i18n="pageTitle_tournaments">Tournament Calendar</span>
+    <div class="lang-selector" id="langSelector" aria-label="Language">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="de">DE</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="it">IT</button>
+    </div>
   </div>
 </nav>
 
@@ -34,22 +40,24 @@
     <div class="row g-4 mb-3 align-items-end">
 
       <div class="col-12 col-sm-6 col-lg-3">
-        <div class="filter-label">Category:</div>
+        <div class="filter-label" data-i18n="filterCategory">Category:</div>
         <select class="filter-control" id="categorySelect">
-          <option value="">All</option>
+          <option value="" data-i18n="all">All</option>
         </select>
       </div>
 
       <div class="col-12 col-sm-6 col-lg-3">
-        <div class="filter-label">Table:</div>
+        <div class="filter-label" data-i18n="filterTable">Table:</div>
         <select class="filter-control" id="playgroundSelect">
-          <option value="">All</option>
+          <option value="" data-i18n="all">All</option>
         </select>
       </div>
 
       <div class="col-12 col-sm-6 col-lg-3">
-        <div class="filter-label">Search:</div>
-        <input type="search" class="filter-control" id="searchInput" placeholder="Name or city..." autocomplete="off" />
+        <div class="filter-label" data-i18n="filterSearch">Search:</div>
+        <input type="search" class="filter-control" id="searchInput"
+               data-i18n-placeholder="searchPlaceholder"
+               placeholder="Name or city..." autocomplete="off" />
       </div>
 
     </div>
@@ -62,24 +70,28 @@
             data-bs-toggle="collapse" data-bs-target="#filterCollapse"
             aria-expanded="false" aria-controls="filterCollapse"
             id="filterToggle">
-      <i class="fa-solid fa-sliders"></i> Filters
+      <i class="fa-solid fa-sliders"></i> <span data-i18n="filterButton">Filters</span>
       <i class="fa-solid fa-chevron-up chevron"></i>
     </button>
     <div class="form-check form-switch mb-0">
       <input class="form-check-input" type="checkbox" role="switch" id="hidePast" checked />
-      <label class="form-check-label small text-secondary" for="hidePast">Hide past</label>
+      <label class="form-check-label small text-secondary" for="hidePast" data-i18n="hidePast">Hide past</label>
     </div>
     <span class="small text-secondary d-none d-sm-inline" id="statsText"></span>
     <div class="d-flex gap-2 ms-auto">
       <button id="calendarBtn" class="share-btn"
               data-bs-toggle="tooltip" data-bs-placement="left"
+              data-i18n-title="calendarTooltip"
               title="Add to calendar"
-              aria-label="Add filtered tournaments to calendar">
+              data-i18n-aria-label="calendarTooltip"
+              aria-label="Add to calendar">
         <i class="fa-solid fa-calendar-plus"></i>
       </button>
       <button id="shareBtn" class="share-btn"
               data-bs-toggle="tooltip" data-bs-placement="left" data-bs-trigger="manual"
+              data-i18n-title="linkCopied"
               title="Link copied!"
+              data-i18n-aria-label="copyLinkAria"
               aria-label="Copy link to clipboard">
         <i class="fa-solid fa-share-from-square"></i>
       </button>
@@ -92,12 +104,12 @@
       <table class="table t-table">
         <thead>
           <tr>
-            <th class="col-cat">Category</th>
+            <th class="col-cat" data-i18n="colCategory">Category</th>
             <th class="col-itsf"></th>
-            <th>Name</th>
-            <th class="col-country">Country</th>
-            <th>Date</th>
-            <th class="col-pg">Table</th>
+            <th data-i18n="colName">Name</th>
+            <th class="col-country" data-i18n="colCountry">Country</th>
+            <th data-i18n="colDate">Date</th>
+            <th class="col-pg" data-i18n="colTable">Table</th>
             <th class="text-end col-actions"><!-- actions --></th>
           </tr>
         </thead>
@@ -115,7 +127,7 @@
 
   <!-- ── Footer ───────────────────────────────────────────────── -->
   <div class="text-center mt-3 page-footer">
-    Data provided by
+    <span data-i18n="dataProvidedBy">Data provided by</span>
     <a href="https://tablesoccer.org" target="_blank" rel="noopener">tablesoccer.org</a>
   </div>
 
@@ -127,6 +139,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <!-- Site scripts -->
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
