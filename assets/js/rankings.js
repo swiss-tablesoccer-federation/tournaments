@@ -1,6 +1,9 @@
 /* ── Config ──────────────────────────────────────────── */
 var API_BASE = 'https://api.swisstablesoccer.ch/rankings';
 
+/* Pixels from the bottom of the scroll container that trigger loading the next page */
+var SCROLL_TRIGGER_THRESHOLD = 200;
+
 var CATEGORIES = [
   { id: 'OS', label: 'Open Singles' },
   { id: 'OD', label: 'Open Doubles' },
@@ -18,7 +21,7 @@ var CATEGORIES = [
 var activeCategory = 'OS';
 var currentRows    = [];
 var currentPage    = 1;
-var totalPages     = 1;
+var hasMore        = true;
 var isLoadingMore  = false;
 
 /* ── Helpers ─────────────────────────────────────────── */
@@ -118,12 +121,14 @@ function renderTable(data, append) {
   /* API returns { page, pages, standings: [ { rank, team: [{player, country, …}], points, … } ] } */
   var newRows = Array.isArray(data) ? data : (data.standings || []);
 
-  if (!Array.isArray(data) && data.pages != null) {
-    totalPages = data.pages;
+  /* Stop loading more pages if this response returned no entries */
+  if (newRows.length === 0) {
+    hasMore = false;
   }
 
   if (!append) {
     currentRows = newRows;
+    hasMore = newRows.length > 0;
     if (currentRows.length === 0) {
       $('#rankingBody').html(
         '<tr class="state-row"><td colspan="4">No rankings available.</td></tr>'
@@ -132,6 +137,7 @@ function renderTable(data, append) {
     }
     $('#rankingBody').html(renderRows(currentRows, 0));
   } else {
+    if (newRows.length === 0) return;
     var startIdx = currentRows.length;
     currentRows = currentRows.concat(newRows);
     $('#rankingBody').append(renderRows(newRows, startIdx));
@@ -259,7 +265,7 @@ function loadCategory(cat) {
   activeCategory = cat;
   currentRows    = [];
   currentPage    = 1;
-  totalPages     = 1;
+  hasMore        = true;
   isLoadingMore  = false;
   updateUrl();
   resetDetailPanel();
@@ -296,13 +302,13 @@ function buildTabs(initialCat) {
 
 /* ── Infinite scroll ─────────────────────────────────── */
 function setupScrollObserver() {
-  var sentinel = document.getElementById('rankingScrollSentinel');
-  if (!sentinel || !window.IntersectionObserver) return;
+  var wrapper = document.querySelector('.table-scroll-wrapper');
+  if (!wrapper) return;
 
-  var root = document.querySelector('.table-scroll-wrapper');
-  var observer = new IntersectionObserver(function (entries) {
-    if (!entries.length || !entries[0].isIntersecting) return;
-    if (isLoadingMore || currentPage >= totalPages) return;
+  wrapper.addEventListener('scroll', function () {
+    if (isLoadingMore || !hasMore) return;
+    var distanceFromBottom = wrapper.scrollHeight - wrapper.scrollTop - wrapper.clientHeight;
+    if (distanceFromBottom > SCROLL_TRIGGER_THRESHOLD) return;
 
     isLoadingMore = true;
     currentPage++;
@@ -319,9 +325,7 @@ function setupScrollObserver() {
       .always(function () {
         isLoadingMore = false;
       });
-  }, { root: root, threshold: 0 });
-
-  observer.observe(sentinel);
+  });
 }
 
 /* ── Initialise ──────────────────────────────────────── */
