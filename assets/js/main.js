@@ -6,6 +6,10 @@ var TOUR_ID    = 78;
 var allTournaments    = [];
 var visibleTournaments = [];
 var suppressUrlUpdate = false;
+var apiTourName       = null;   /* tour name returned by API; null = use fallback */
+var dataLoaded        = false;  /* true once first successful fetch completes */
+var shareTooltip      = null;
+var calTooltip        = null;
 
 /* ── Helpers ─────────────────────────────────────────── */
 
@@ -199,13 +203,12 @@ function renderTable() {
   var total    = allTournaments.length;
   var upcoming = $.grep(allTournaments, function (t) { return !isPast(t); }).length;
   $('#statsText').text(
-    'Showing ' + rows.length + ' of ' + total +
-    ' · ' + upcoming + ' upcoming · ' + (total - upcoming) + ' past'
+    tr('statsShowing', { shown: rows.length, total: total, upcoming: upcoming, past: total - upcoming })
   );
 
   if (rows.length === 0) {
     $('#tournamentBody').html(
-      '<tr class="state-row"><td colspan="7">No tournaments match your filters.</td></tr>'
+      '<tr class="state-row"><td colspan="7">' + tr('noTournamentsMatch') + '</td></tr>'
     );
     return;
   }
@@ -236,7 +239,7 @@ function renderTable() {
       : '<span class="pg-text">' + escapeHtml((t.playground || {}).name || '-') + '</span>';
 
     /* ── Action links ── */
-    var actionLabel = (t.status === 'finished') ? 'Results' : 'Register';
+    var actionLabel = (t.status === 'finished') ? tr('actionResults') : tr('actionRegister');
     var actionIcon  = (t.status === 'finished') ? 'fa-trophy' : 'fa-right-to-bracket';
     var siteLink = t.site
       ? '<a class="action-link" href="' + escapeHtml(t.site) + '" target="_blank" rel="noopener" aria-label="' + actionLabel + '">' +
@@ -247,12 +250,12 @@ function renderTable() {
         '<span class="action-text-desktop">' + actionLabel + '</span></span>';
 
     var infoLink = t.info
-      ? '<a class="action-link" href="' + escapeHtml(t.info) + '" target="_blank" rel="noopener" aria-label="Info">' +
+      ? '<a class="action-link" href="' + escapeHtml(t.info) + '" target="_blank" rel="noopener" aria-label="' + tr('actionInfo') + '">' +
         '<i class="fa-solid fa-circle-info action-icon-mobile" aria-hidden="true"></i>' +
-        '<span class="action-text-desktop">Info</span></a>'
-      : '<span class="action-link is-disabled" aria-label="Info (unavailable)">' +
+        '<span class="action-text-desktop">' + tr('actionInfo') + '</span></a>'
+      : '<span class="action-link is-disabled" aria-label="' + tr('actionInfo') + ' (unavailable)">' +
         '<i class="fa-solid fa-circle-info action-icon-mobile" aria-hidden="true"></i>' +
-        '<span class="action-text-desktop">Info</span></span>';
+        '<span class="action-text-desktop">' + tr('actionInfo') + '</span></span>';
 
     return '<tr class="' + (past ? 'is-past' : '') + '" data-cat="' + escapeHtml(getCategoryAbbr(catName)) + '">' +
       '<td class="col-cat">' + catCell + '</td>' +
@@ -278,7 +281,7 @@ function showLoading() {
   $('#tournamentBody').html(
     '<tr class="state-row"><td colspan="7">' +
     '<span class="spinner-border spinner-border-sm text-secondary me-2" role="status"></span>' +
-    'Loading…</td></tr>'
+    tr('loadingTournaments') + '</td></tr>'
   );
   $('#statsText').text('');
 }
@@ -418,11 +421,11 @@ function copyCurrentUrl($btn, tooltip) {
 
 $(function () {
   var $btn = $('#shareBtn');
-  var tooltip = new bootstrap.Tooltip($btn[0], { trigger: 'manual' });
-  $btn.on('click', function () { copyCurrentUrl($btn, tooltip); });
+  shareTooltip = new bootstrap.Tooltip($btn[0], { trigger: 'manual' });
+  $btn.on('click', function () { copyCurrentUrl($btn, shareTooltip); });
 
   var $calBtn = $('#calendarBtn');
-  new bootstrap.Tooltip($calBtn[0]);
+  calTooltip = new bootstrap.Tooltip($calBtn[0]);
   $calBtn.on('click', function () { downloadIcs(generateIcs(visibleTournaments)); });
 
   $('#tournamentBody').on('click keydown', '.date-link', function (e) {
@@ -460,16 +463,40 @@ $(function () {
   showLoading();
   fetchTournaments(null)
     .done(function (data) {
-      $('#tourTitle').text(data.tour_name || 'Tournament Calendar');
+      apiTourName = data.tour_name || null;
+      $('#tourTitle').text(apiTourName || tr('pageTitle_tournaments'));
       allTournaments = data.tournaments || [];
+      dataLoaded = true;
 
-      populateSelect($('#categorySelect'),   data.categories  || [], 'All', params.cat);
-      populateSelect($('#playgroundSelect'), data.playgrounds || [], 'All', params.table);
+      populateSelect($('#categorySelect'),   data.categories  || [], tr('all'), params.cat);
+      populateSelect($('#playgroundSelect'), data.playgrounds || [], tr('all'), params.table);
 
       renderTable();
     })
     .fail(function (xhr) {
-      $('#tourTitle').text('Tournament Calendar');
-      showError('Failed to load data (HTTP ' + (xhr.status || '?') + ').');
+      apiTourName = null;
+      $('#tourTitle').text(tr('pageTitle_tournaments'));
+      showError(tr('failedToLoadData', { status: xhr.status || '?' }));
     });
+});
+
+/* ── Language change handler ─────────────────────────── */
+document.addEventListener('langChanged', function () {
+  /* Update page title if the API didn't supply one */
+  if (!apiTourName) {
+    $('#tourTitle').text(tr('pageTitle_tournaments'));
+  }
+
+  /* Update filter placeholder options */
+  $('#categorySelect option[value=""]').text(tr('all'));
+  $('#playgroundSelect option[value=""]').text(tr('all'));
+
+  /* Update Bootstrap tooltip content */
+  if (calTooltip)   calTooltip.setContent({ '.tooltip-inner': tr('calendarTooltip') });
+  if (shareTooltip) shareTooltip.setContent({ '.tooltip-inner': tr('linkCopied') });
+
+  /* Re-render table rows so action labels and status messages update */
+  if (dataLoaded) {
+    renderTable();
+  }
 });

@@ -4,18 +4,8 @@ var API_BASE = 'https://api.swisstablesoccer.ch/rankings';
 /* Pixels from the bottom of the scroll container that trigger loading the next page */
 var SCROLL_TRIGGER_THRESHOLD = 200;
 
-var CATEGORIES = [
-  { id: 'OS', label: 'Open Singles' },
-  { id: 'OD', label: 'Open Doubles' },
-  { id: 'OC', label: 'Open Combined' },
-  { id: 'WS', label: 'Women Singles' },
-  { id: 'WD', label: 'Women Doubles' },
-  { id: 'MX', label: 'Open Mixed' },
-  { id: 'JS', label: 'Junior Singles' },
-  { id: 'JD', label: 'Junior Doubles' },
-  { id: 'SS', label: 'Senior O50 Singles' },
-  { id: 'SD', label: 'Senior O50 Doubles' }
-];
+/* Category IDs – labels are looked up via tr('cat_<id>') at render time */
+var CATEGORIES = ['OS', 'OD', 'OC', 'WS', 'WD', 'MX', 'JS', 'JD', 'SS', 'SD'];
 
 /* ── State ───────────────────────────────────────────── */
 var activeCategory = 'OS';
@@ -23,6 +13,7 @@ var currentRows    = [];
 var currentPage    = 1;
 var hasMore        = true;
 var isLoadingMore  = false;
+var rankingsState  = 'init'; /* 'init' | 'loading' | 'loaded' | 'empty' | 'error' */
 
 /* ── Helpers ─────────────────────────────────────────── */
 
@@ -130,11 +121,10 @@ function renderTable(data, append) {
     currentRows = newRows;
     hasMore = newRows.length > 0;
     if (currentRows.length === 0) {
-      $('#rankingBody').html(
-        '<tr class="state-row"><td colspan="4">No rankings available.</td></tr>'
-      );
+      showNoRankings();
       return;
     }
+    rankingsState = 'loaded';
     $('#rankingBody').html(renderRows(currentRows, 0));
   } else {
     if (newRows.length === 0) return;
@@ -150,7 +140,7 @@ var PLACEHOLDER_IMG = 'https://app.tablesoccer.org/icon/profile.svg';
 function resetDetailPanel() {
   $('#playerDetail').html(
     '<div class="pd-placeholder">' +
-    '<i class="fa-regular fa-hand-pointer me-2"></i>Select a player to view details' +
+    '<i class="fa-regular fa-hand-pointer me-2"></i>' + tr('selectPlayer') +
     '</div>'
   );
 }
@@ -167,15 +157,15 @@ function renderDetail(entry) {
     '<div class="pd-stats">' +
       '<div class="pd-stat">' +
         '<span class="pd-stat-val' + (isTop3 ? ' is-top3' : '') + '">#' + escapeHtml(rank) + '</span>' +
-        '<span class="pd-stat-lbl">Rank</span>' +
+        '<span class="pd-stat-lbl">' + tr('rankLabel') + '</span>' +
       '</div>' +
       '<div class="pd-stat">' +
         '<span class="pd-stat-val">' + escapeHtml(points) + '</span>' +
-        '<span class="pd-stat-lbl">Points</span>' +
+        '<span class="pd-stat-lbl">' + tr('pointsLabel') + '</span>' +
       '</div>' +
       '<div class="pd-stat">' +
         '<span class="pd-stat-val">' + escapeHtml(competitions) + '</span>' +
-        '<span class="pd-stat-lbl">Competitions</span>' +
+        '<span class="pd-stat-lbl">' + tr('competitionsLabel') + '</span>' +
       '</div>' +
     '</div>';
 
@@ -200,11 +190,11 @@ function renderDetail(entry) {
 
     var metaHtml = '';
     if (gender) {
-      metaHtml += '<div class="pd-meta"><span class="pd-meta-lbl">Gender</span>' +
+      metaHtml += '<div class="pd-meta"><span class="pd-meta-lbl">' + tr('genderLabel') + '</span>' +
         '<span class="pd-meta-val">' + escapeHtml(gender) + '</span></div>';
     }
     if (code) {
-      metaHtml += '<div class="pd-meta"><span class="pd-meta-lbl">Code</span>' +
+      metaHtml += '<div class="pd-meta"><span class="pd-meta-lbl">' + tr('codeLabel') + '</span>' +
         '<span class="pd-meta-val">' + escapeHtml(code) + '</span></div>';
     }
 
@@ -233,15 +223,24 @@ function renderDetail(entry) {
 }
 
 /* ── State helpers ───────────────────────────────────── */
+function showNoRankings() {
+  rankingsState = 'empty';
+  $('#rankingBody').html(
+    '<tr class="state-row"><td colspan="4">' + tr('noRankingsAvailable') + '</td></tr>'
+  );
+}
+
 function showLoading() {
+  rankingsState = 'loading';
   $('#rankingBody').html(
     '<tr class="state-row"><td colspan="4">' +
     '<span class="spinner-border spinner-border-sm text-secondary me-2" role="status"></span>' +
-    'Loading…</td></tr>'
+    tr('loading') + '</td></tr>'
   );
 }
 
 function showError(msg) {
+  rankingsState = 'error';
   $('#rankingBody').html(
     '<tr class="state-row is-error"><td colspan="4">' +
     '<i class="fa-solid fa-triangle-exclamation me-2"></i>' + escapeHtml(msg) + '</td></tr>'
@@ -252,7 +251,7 @@ function showLoadingMore() {
   $('#rankingBody').append(
     '<tr class="state-row" id="loadingMoreRow"><td colspan="4">' +
     '<span class="spinner-border spinner-border-sm text-secondary me-2" role="status"></span>' +
-    'Loading more…</td></tr>'
+    tr('loadingMore') + '</td></tr>'
   );
 }
 
@@ -280,7 +279,7 @@ function loadCategory(cat) {
   fetchRankings(cat, 1)
     .done(function (data) { renderTable(data); })
     .fail(function (xhr) {
-      showError('Failed to load rankings (HTTP ' + (xhr.status || '?') + ').');
+      showError(tr('failedToLoadRankings', { status: xhr.status || '?' }));
     });
 }
 
@@ -288,14 +287,14 @@ function loadCategory(cat) {
 function buildTabs(initialCat) {
   var $tabs = $('#rankingTabs');
   $tabs.empty();
-  $.each(CATEGORIES, function (_, cat) {
-    var isActive = cat.id === initialCat;
+  $.each(CATEGORIES, function (_, catId) {
+    var isActive = catId === initialCat;
     $('<button>')
       .addClass('ranking-tab' + (isActive ? ' active' : ''))
-      .attr({ 'data-cat': cat.id, 'role': 'tab', 'aria-selected': String(isActive) })
-      .append($('<span>').addClass('tab-label').text(cat.label))
-      .append($('<span>').addClass('tab-abbr').text(cat.id))
-      .on('click', function () { loadCategory(cat.id); })
+      .attr({ 'data-cat': catId, 'role': 'tab', 'aria-selected': String(isActive) })
+      .append($('<span>').addClass('tab-label').text(tr('cat_' + catId)))
+      .append($('<span>').addClass('tab-abbr').text(catId))
+      .on('click', function () { loadCategory(catId); })
       .appendTo($tabs);
   });
 }
@@ -331,7 +330,7 @@ function setupScrollObserver() {
 /* ── Initialise ──────────────────────────────────────── */
 $(function () {
   var params = parseQuery();
-  var initialCat = (params.cat && CATEGORIES.some(function (c) { return c.id === params.cat; })) ? params.cat : 'OS';
+  var initialCat = (params.cat && CATEGORIES.indexOf(params.cat) !== -1) ? params.cat : 'OS';
 
   buildTabs(initialCat);
   loadCategory(initialCat);
@@ -346,5 +345,29 @@ $(function () {
     $(this).addClass('is-selected');
     renderDetail(entry);
   });
+});
+
+/* ── Language change handler ─────────────────────────── */
+document.addEventListener('langChanged', function () {
+  /* Rebuild tabs with translated labels */
+  buildTabs(activeCategory);
+
+  /* Update the detail panel */
+  if ($('#playerDetail .pd-placeholder').length) {
+    resetDetailPanel();
+  } else {
+    var $sel = $('#rankingBody .ranking-row.is-selected');
+    if ($sel.length) {
+      var idx = parseInt($sel.data('idx'), 10);
+      if (!isNaN(idx) && currentRows[idx]) {
+        renderDetail(currentRows[idx]);
+      }
+    }
+  }
+
+  /* Re-render persistent state messages */
+  if (rankingsState === 'empty') {
+    showNoRankings();
+  }
 });
 
