@@ -424,14 +424,14 @@ tr[data-cat="STS"] .t-date {
 }
 
 .ranking-col-left {
-  flex: 1;          /* 50% of available space */
+  flex: 1;          /* equal half of available space */
   min-width: 0;
   display: flex;
   flex-direction: column;
 }
 
 .ranking-col-right {
-  flex: 1;          /* 50% of available space */
+  flex: 1;          /* equal half of available space */
   min-width: 0;
   flex-direction: column;
 }
@@ -626,6 +626,14 @@ tr[data-cat="STS"] .t-date {
 .ranking-tab.active {
   color: #E30613;
   border-bottom-color: #E30613;
+}
+
+/* ── Tab label / abbreviation (mobile swap) ───────────── */
+.tab-abbr { display: none; }
+
+@media (max-width: 575px) {
+  .tab-label { display: none; }
+  .tab-abbr  { display: inline; }
 }
 
 /* ── Rankings table ─────────────────────────────────────── */

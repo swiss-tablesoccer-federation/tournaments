@@ -256,7 +256,8 @@ function buildTabs(initialCat) {
     $('<button>')
       .addClass('ranking-tab' + (isActive ? ' active' : ''))
       .attr({ 'data-cat': cat.id, 'role': 'tab', 'aria-selected': String(isActive) })
-      .text(cat.label)
+      .append($('<span>').addClass('tab-label').text(cat.label))
+      .append($('<span>').addClass('tab-abbr').text(cat.id))
       .on('click', function () { loadCategory(cat.id); })
       .appendTo($tabs);
   });
