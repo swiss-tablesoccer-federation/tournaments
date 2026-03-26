@@ -180,10 +180,12 @@ input.filter-control {
 
 .t-table tbody tr:last-child { border-bottom: none; }
 
-.t-table tbody tr:hover { background-color: #fdf5f5; }
+/* Override --bs-table-bg so Bootstrap's td `background-color: var(--bs-table-bg)` picks up row colours */
+.t-table tbody tr { --bs-table-bg: #ffffff; }
+.t-table tbody tr:hover { --bs-table-bg: #fdf5f5; }
 
-.t-table tbody tr.is-past { background-color: #f5f5f5; }
-.t-table tbody tr.is-past:hover { background-color: #eeeeee; }
+.t-table tbody tr.is-past { --bs-table-bg: #f5f5f5; }
+.t-table tbody tr.is-past:hover { --bs-table-bg: #eeeeee; }
 .t-table tbody tr.is-past .t-name,
 .t-table tbody tr.is-past .t-date { color: #666; }
 
@@ -192,6 +194,9 @@ input.filter-control {
   vertical-align: middle;
   border: none;
 }
+
+/* ── Actions column: fixed right padding without !important override ── */
+.t-table .col-actions { padding-right: 1rem; }
 
 /* ── Category cell ──────────────────────────────────────── */
 .cat-logo {
@@ -244,7 +249,8 @@ input.filter-control {
 }
 
 /* ── STS row: light-red background + dark-red bold name + date ── */
-.t-table tbody tr[data-cat="STS"]:not(.is-past) { background-color: rgba(227, 6, 19, 0.2); }
+.t-table tbody tr[data-cat="STS"]:not(.is-past) { --bs-table-bg: rgba(227, 6, 19, 0.2); }
+.t-table tbody tr[data-cat="STS"]:not(.is-past):hover { --bs-table-bg: rgba(227, 6, 19, 0.3); }
 
 tr[data-cat="STS"] .t-name,
 tr[data-cat="STS"] .t-date {

@@ -278,7 +278,7 @@ function renderTable() {
       '<td class="col-country">' + countryCell + '</td>' +
       '<td class="t-date">' + formatDateRange(t.start_on, t.end_on) + '</td>' +
       '<td class="col-pg">' + pgCell + '</td>' +
-      '<td class="text-end pe-4">' + siteLink + infoLink + '</td>' +
+      '<td class="text-end col-actions">' + siteLink + infoLink + '</td>' +
       '</tr>';
   }).join('');
 
