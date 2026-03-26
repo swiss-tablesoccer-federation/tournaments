@@ -134,8 +134,7 @@ input.filter-control {
 .table-scroll-wrapper {
   flex: 1;
   min-height: 0;
-  overflow-y: auto;
-  scrollbar-gutter: stable;
+  overflow-y: scroll;
 }
 
 .table-scroll-wrapper::-webkit-scrollbar { width: 6px; }
@@ -183,8 +182,8 @@ input.filter-control {
 
 .t-table tbody tr:hover { background-color: #fdf5f5; }
 
-.t-table tbody tr.is-past { background-color: #f0f0f0; }
-.t-table tbody tr.is-past:hover { background-color: #e8e8e8; }
+.t-table tbody tr.is-past { background-color: #f5f5f5; }
+.t-table tbody tr.is-past:hover { background-color: #eeeeee; }
 .t-table tbody tr.is-past .t-name,
 .t-table tbody tr.is-past .t-date { color: #666; }
 
