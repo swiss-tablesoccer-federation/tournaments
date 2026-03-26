@@ -246,28 +246,19 @@ input.filter-control {
   white-space: nowrap;
   font-size: 0.875rem;
   color: #333;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
-.row-cal-btn {
-  background: none;
-  border: none;
-  padding: 0.1rem 0.2rem;
-  color: #bbb;
-  font-size: 0.8rem;
+.date-link {
   cursor: pointer;
-  border-radius: 3px;
-  line-height: 1;
-  flex-shrink: 0;
-  margin-left: auto;
-  transition: color .15s, background .15s;
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+  text-decoration-color: #ccc;
+  transition: color .15s, text-decoration-color .15s;
 }
 
-.row-cal-btn:hover {
+.date-link:hover {
+  text-decoration-color: #E30613;
   color: #E30613;
-  background: rgba(227,6,19,.07);
 }
 
 /* ── STS row: light-red background + dark-red bold name + date ── */

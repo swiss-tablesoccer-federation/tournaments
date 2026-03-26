@@ -260,11 +260,10 @@ function renderTable() {
       '<td><span class="t-name">' + escapeHtml(t.name || '-') + '</span></td>' +
       '<td class="col-country">' + countryCell + '</td>' +
       '<td class="t-date">' +
-        '<span class="date-text">' + formatDateRange(t.start_on, t.end_on) + '</span>' +
-        '<button class="row-cal-btn" data-id="' + escapeHtml(String(t.id)) + '" ' +
-                'aria-label="Add to calendar" title="Add to calendar">' +
-          '<i class="fa-solid fa-calendar-plus" aria-hidden="true"></i>' +
-        '</button>' +
+        '<span class="date-link" data-id="' + escapeHtml(String(t.id)) + '" ' +
+              'role="button" title="Add to calendar" tabindex="0">' +
+          formatDateRange(t.start_on, t.end_on) +
+        '</span>' +
       '</td>' +
       '<td class="col-pg">' + pgCell + '</td>' +
       '<td class="text-end col-actions">' + siteLink + infoLink + '</td>' +
@@ -414,7 +413,11 @@ $(function () {
   new bootstrap.Tooltip($calBtn[0]);
   $calBtn.on('click', function () { downloadIcs(generateIcs(visibleTournaments)); });
 
-  $('#tournamentBody').on('click', '.row-cal-btn', function () {
+  $('#tournamentBody').on('click keydown', '.date-link', function (e) {
+    if (e.type === 'keydown') {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault();
+    }
     var id = String($(this).data('id'));
     var t  = $.grep(allTournaments, function (x) { return String(x.id) === id; })[0];
     if (t) downloadIcs(generateIcs([t]));
