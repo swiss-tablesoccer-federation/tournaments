@@ -254,7 +254,7 @@ function renderTable() {
 
     /* ── Action links ── */
     var actionLabel = (t.status === 'finished') ? 'Results' : 'Register';
-    var actionIcon  = (t.status === 'finished') ? 'fa-flag-checkered' : 'fa-right-to-bracket';
+    var actionIcon  = (t.status === 'finished') ? 'fa-trophy' : 'fa-right-to-bracket';
     var siteLink = t.site
       ? '<a class="action-link" href="' + escapeHtml(t.site) + '" target="_blank" rel="noopener" aria-label="' + actionLabel + '">' +
         '<i class="fa-solid ' + actionIcon + ' action-icon-mobile" aria-hidden="true"></i>' +
