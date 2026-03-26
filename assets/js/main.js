@@ -3,7 +3,8 @@ var API_BASE   = 'https://api.swisstablesoccer.ch/tournaments';
 var TOUR_ID    = 78;
 
 /* ── State ───────────────────────────────────────────── */
-var allTournaments = [];
+var allTournaments    = [];
+var visibleTournaments = [];
 var suppressUrlUpdate = false;
 
 /* ── Helpers ─────────────────────────────────────────── */
@@ -192,6 +193,7 @@ function renderTable() {
     }
     return true;
   });
+  visibleTournaments = rows;
 
   /* Stats */
   var total    = allTournaments.length;
@@ -257,7 +259,12 @@ function renderTable() {
       '<td class="col-itsf">' + getItsfBadge(t.name) + '</td>' +
       '<td><span class="t-name">' + escapeHtml(t.name || '-') + '</span></td>' +
       '<td class="col-country">' + countryCell + '</td>' +
-      '<td class="t-date">' + formatDateRange(t.start_on, t.end_on) + '</td>' +
+      '<td class="t-date">' +
+        '<span class="date-link" data-id="' + escapeHtml(String(t.id)) + '" ' +
+              'role="button" title="Add to calendar" tabindex="0">' +
+          formatDateRange(t.start_on, t.end_on) +
+        '</span>' +
+      '</td>' +
       '<td class="col-pg">' + pgCell + '</td>' +
       '<td class="text-end col-actions">' + siteLink + infoLink + '</td>' +
       '</tr>';
@@ -281,6 +288,96 @@ function showError(msg) {
     '<tr class="state-row is-error"><td colspan="7">' +
     '<i class="fa-solid fa-triangle-exclamation me-2"></i>' + escapeHtml(msg) + '</td></tr>'
   );
+}
+
+/* ── Calendar / ICS export ───────────────────────────── */
+
+/**
+ * Pad a number to two digits.
+ */
+function padTwo(n) {
+  return n < 10 ? '0' + n : String(n);
+}
+
+/**
+ * Convert "YYYY-MM-DD" to "YYYYMMDD" for iCalendar DATE values.
+ */
+function toIcsDate(dateStr) {
+  return dateStr.replace(/-/g, '');
+}
+
+/**
+ * Return the day after dateStr as "YYYYMMDD".
+ * iCalendar DTEND for all-day events is exclusive (the day after the last day).
+ * Date components are parsed explicitly to avoid timezone-dependent behavior.
+ */
+function toIcsDateExclusive(dateStr) {
+  var parts = dateStr.split('-');
+  /* new Date(y, m, d) uses local time; passing d+1 lets Date handle roll-over */
+  var next = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10) + 1);
+  return String(next.getFullYear()) + padTwo(next.getMonth() + 1) + padTwo(next.getDate());
+}
+
+/**
+ * Escape special characters for iCalendar text fields (RFC 5545 §3.3.11).
+ */
+function escapeIcs(str) {
+  return String(str == null ? '' : str)
+    .replace(/\\/g, '\\\\')
+    .replace(/;/g, '\\;')
+    .replace(/,/g, '\\,')
+    .replace(/\n/g, '\\n');
+}
+
+/**
+ * Build an iCalendar (RFC 5545) string from an array of tournament objects.
+ */
+function generateIcs(tournaments) {
+  var lines = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Swiss Tablesoccer Federation//Tournament Calendar//EN',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    'X-WR-CALNAME:STF Tournament Calendar'
+  ];
+
+  $.each(tournaments, function (_, t) {
+    var start = t.start_on || '';
+    var end   = t.end_on   || start;
+    if (!start) return;
+
+    var eventLocation = [t.locality, t.country].filter(Boolean).join(', ');
+    var url           = t.site || t.info || '';
+
+    lines.push('BEGIN:VEVENT');
+    lines.push('UID:stf-tournament-' + t.id + '@swisstablesoccer.ch');
+    lines.push('DTSTART;VALUE=DATE:' + toIcsDate(start));
+    lines.push('DTEND;VALUE=DATE:'   + toIcsDateExclusive(end));
+    lines.push('SUMMARY:'            + escapeIcs(t.name || ''));
+    if (eventLocation) lines.push('LOCATION:' + escapeIcs(eventLocation));
+    if (url)           lines.push('URL:'       + escapeIcs(url));
+    lines.push('END:VEVENT');
+  });
+
+  lines.push('END:VCALENDAR');
+  /* RFC 5545 requires CRLF line endings */
+  return lines.join('\r\n');
+}
+
+/**
+ * Trigger a download of the given ICS text as "stf-tournaments.ics".
+ */
+function downloadIcs(content) {
+  var blob = new Blob([content], { type: 'text/calendar;charset=utf-8' });
+  var url  = URL.createObjectURL(blob);
+  var a    = document.createElement('a');
+  a.href     = url;
+  a.download = 'stf-tournaments.ics';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function () { URL.revokeObjectURL(url); }, 5000);
 }
 
 /* ── Share button ────────────────────────────────────── */
@@ -311,6 +408,20 @@ $(function () {
   var $btn = $('#shareBtn');
   var tooltip = new bootstrap.Tooltip($btn[0], { trigger: 'manual' });
   $btn.on('click', function () { copyCurrentUrl($btn, tooltip); });
+
+  var $calBtn = $('#calendarBtn');
+  new bootstrap.Tooltip($calBtn[0]);
+  $calBtn.on('click', function () { downloadIcs(generateIcs(visibleTournaments)); });
+
+  $('#tournamentBody').on('click keydown', '.date-link', function (e) {
+    if (e.type === 'keydown') {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault();
+    }
+    var id = String($(this).data('id'));
+    var t  = $.grep(allTournaments, function (x) { return String(x.id) === id; })[0];
+    if (t) downloadIcs(generateIcs([t]));
+  });
 
   /* Expand filters by default on non-mobile viewports */
   if (window.innerWidth >= 576) {

@@ -248,6 +248,19 @@ input.filter-control {
   color: #333;
 }
 
+.date-link {
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+  text-decoration-color: #ccc;
+  transition: color .15s, text-decoration-color .15s;
+}
+
+.date-link:hover {
+  text-decoration-color: #E30613;
+  color: #E30613;
+}
+
 /* ── STS row: light-red background + dark-red bold name + date ── */
 .t-table tbody tr[data-cat="STS"]:not(.is-past) { --bs-table-bg: rgba(227, 6, 19, 0.2); }
 .t-table tbody tr[data-cat="STS"]:not(.is-past):hover { --bs-table-bg: rgba(227, 6, 19, 0.3); }
