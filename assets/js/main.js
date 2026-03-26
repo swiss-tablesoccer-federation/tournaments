@@ -142,12 +142,10 @@ function parseQuery() {
 function updateUrl() {
   if (suppressUrlUpdate) return;
   var p = new URLSearchParams();
-  var season = $('#seasonSelect').val();
   var cat    = $('#categorySelect').val();
   var table  = $('#playgroundSelect').val();
   var q      = $('#searchInput').val().trim();
   var hide   = $('#hidePast').is(':checked');
-  if (season) p.set('season', season);
   if (cat)    p.set('cat', cat);
   if (table)  p.set('table', table);
   if (q)      p.set('search', q);
@@ -172,23 +170,6 @@ function populateSelect($sel, items, placeholder, preselect) {
     $sel.append($('<option>').val(item.id).text(item.name));
   });
   if (preselect != null) $sel.val(preselect);
-}
-
-/* ── Load a season (re-fetches when season changes) ───── */
-/* preselectCat / preselectTable are only supplied on the initial load */
-function loadSeason(seasonId, preselectCat, preselectTable) {
-  showLoading();
-  fetchTournaments(seasonId)
-    .done(function (data) {
-      $('#tourTitle').text(data.tour_name || 'Tournament Calendar');
-      allTournaments = data.tournaments || [];
-      populateSelect($('#categorySelect'),   data.categories  || [], 'All', preselectCat);
-      populateSelect($('#playgroundSelect'), data.playgrounds || [], 'All', preselectTable);
-      renderTable();
-    })
-    .fail(function (xhr) {
-      showError('Failed to load tournaments (HTTP ' + (xhr.status || '?') + ').');
-    });
 }
 
 /* ── Render the table based on current filter state ───── */
@@ -339,7 +320,6 @@ $(function () {
 });
 
 /* ── Event listeners ─────────────────────────────────── */
-$('#seasonSelect').on('change', function () { loadSeason($(this).val()); });
 $('#categorySelect, #playgroundSelect').on('change', renderTable);
 $('#hidePast').on('change', renderTable);
 $('#searchInput').on('input', renderTable);
@@ -355,24 +335,10 @@ $(function () {
   suppressUrlUpdate = false;
 
   showLoading();
-  fetchTournaments(params.season || null)
+  fetchTournaments(null)
     .done(function (data) {
       $('#tourTitle').text(data.tour_name || 'Tournament Calendar');
       allTournaments = data.tournaments || [];
-
-      /* Season selector – honour URL param */
-      suppressUrlUpdate = true;
-      $.each(data.seasons || [], function (_, s) {
-        var $opt = $('<option>').val(s.id).text(s.name);
-        var isSelected = params.season
-          ? String(s.id) === String(params.season)
-          : s.id === data.season;
-        if (isSelected) {
-          $opt.prop('selected', true);
-        }
-        $('#seasonSelect').append($opt);
-      });
-      suppressUrlUpdate = false;
 
       populateSelect($('#categorySelect'),   data.categories  || [], 'All', params.cat);
       populateSelect($('#playgroundSelect'), data.playgrounds || [], 'All', params.table);
