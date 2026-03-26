@@ -331,10 +331,6 @@ $(function () {
   var tooltip = new bootstrap.Tooltip($btn[0], { trigger: 'manual' });
   $btn.on('click', function () { copyCurrentUrl($btn, tooltip); });
 
-  var $btnMobile = $('#shareBtnMobile');
-  var tooltipMobile = new bootstrap.Tooltip($btnMobile[0], { trigger: 'manual' });
-  $btnMobile.on('click', function () { copyCurrentUrl($btnMobile, tooltipMobile); });
-
   /* Expand filters by default on non-mobile viewports */
   if (window.innerWidth >= 576) {
     $('#filterCollapse').addClass('show');
