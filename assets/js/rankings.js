@@ -16,6 +16,7 @@ var CATEGORIES = [
 
 /* ── State ───────────────────────────────────────────── */
 var activeCategory = 'OS';
+var currentRows    = [];
 
 /* ── Helpers ─────────────────────────────────────────── */
 
@@ -76,16 +77,16 @@ function fetchRankings(cat) {
 /* ── Render ──────────────────────────────────────────── */
 function renderTable(data) {
   /* API returns { page, pages, standings: [ { rank, team: [{player, country, …}], points, … } ] } */
-  var rows = Array.isArray(data) ? data : (data.standings || []);
+  currentRows = Array.isArray(data) ? data : (data.standings || []);
 
-  if (rows.length === 0) {
+  if (currentRows.length === 0) {
     $('#rankingBody').html(
       '<tr class="state-row"><td colspan="4">No rankings available.</td></tr>'
     );
     return;
   }
 
-  var html = $.map(rows, function (r) {
+  var html = $.map(currentRows, function (r, i) {
     var rank   = r.rank != null ? r.rank : '-';
     var isTop3 = typeof rank === 'number' && rank <= 3;
 
@@ -104,7 +105,7 @@ function renderTable(data) {
     /* ── Points cell ── */
     var points = r.points != null ? r.points : '-';
 
-    return '<tr>' +
+    return '<tr class="ranking-row" data-idx="' + i + '">' +
       '<td class="col-rank"><span class="r-rank' + (isTop3 ? ' is-top3' : '') + '">' + escapeHtml(rank) + '</span></td>' +
       '<td><span class="r-name">' + escapeHtml(playerName) + '</span></td>' +
       '<td class="col-country">' + countryCell + '</td>' +
@@ -113,6 +114,94 @@ function renderTable(data) {
   }).join('');
 
   $('#rankingBody').html(html);
+}
+
+/* ── Detail panel ────────────────────────────────────── */
+var PLACEHOLDER_IMG = 'https://app.tablesoccer.org/icon/profile.svg';
+
+function resetDetailPanel() {
+  $('#playerDetail').html(
+    '<div class="pd-placeholder">' +
+    '<i class="fa-regular fa-hand-pointer me-2"></i>Select a player to view details' +
+    '</div>'
+  );
+}
+
+function renderDetail(entry) {
+  var rank         = entry.rank         != null ? entry.rank         : '-';
+  var points       = entry.points       != null ? entry.points       : '-';
+  var competitions = entry.competitions != null ? entry.competitions : '-';
+  var members      = (entry.team && entry.team.length) ? entry.team : [];
+  var isTop3       = typeof rank === 'number' && rank <= 3;
+
+  /* ── Stats row ── */
+  var statsHtml =
+    '<div class="pd-stats">' +
+      '<div class="pd-stat">' +
+        '<span class="pd-stat-val' + (isTop3 ? ' is-top3' : '') + '">#' + escapeHtml(rank) + '</span>' +
+        '<span class="pd-stat-lbl">Rank</span>' +
+      '</div>' +
+      '<div class="pd-stat">' +
+        '<span class="pd-stat-val">' + escapeHtml(points) + '</span>' +
+        '<span class="pd-stat-lbl">Points</span>' +
+      '</div>' +
+      '<div class="pd-stat">' +
+        '<span class="pd-stat-val">' + escapeHtml(competitions) + '</span>' +
+        '<span class="pd-stat-lbl">Competitions</span>' +
+      '</div>' +
+    '</div>';
+
+  /* ── Member cards ── */
+  var membersHtml = $.map(members, function (m) {
+    /* Only allow http/https image URLs; fall back to the placeholder for anything else */
+    var rawImg  = m.image && /^https?:\/\//i.test(m.image) ? m.image : PLACEHOLDER_IMG;
+    var imgSrc  = escapeHtml(rawImg);
+    var name    = m.player   || '-';
+    var country = (m.country || '').toUpperCase().slice(0, 2);
+    var flag    = countryFlag(country);
+    var gender  = m.gender || '';
+    var code    = m.code   || '';
+    var mships  = m.memberships || [];
+
+    var countryHtml = country
+      ? '<div class="pd-country">' +
+          (flag ? '<span class="country-flag">' + flag + '</span> ' : '') +
+          '<span class="country-code">' + escapeHtml(country) + '</span>' +
+        '</div>'
+      : '';
+
+    var metaHtml = '';
+    if (gender) {
+      metaHtml += '<div class="pd-meta"><span class="pd-meta-lbl">Gender</span>' +
+        '<span class="pd-meta-val">' + escapeHtml(gender) + '</span></div>';
+    }
+    if (code) {
+      metaHtml += '<div class="pd-meta"><span class="pd-meta-lbl">Code</span>' +
+        '<span class="pd-meta-val">' + escapeHtml(code) + '</span></div>';
+    }
+
+    var badgesHtml = mships.length
+      ? '<div class="pd-badges">' +
+          $.map(mships, function (ms) {
+            return '<span class="pd-badge">' + escapeHtml(ms) + '</span>';
+          }).join('') +
+        '</div>'
+      : '';
+
+    return '<div class="pd-member">' +
+      '<img class="pd-avatar" src="' + imgSrc + '" alt="' + escapeHtml(name) + '">' +
+      '<div class="pd-name">' + escapeHtml(name) + '</div>' +
+      countryHtml +
+      (metaHtml ? '<div class="pd-metas">' + metaHtml + '</div>' : '') +
+      badgesHtml +
+    '</div>';
+  }).join('');
+
+  $('#playerDetail').html('<div class="pd-inner">' + statsHtml + membersHtml + '</div>');
+  /* Fallback for broken avatar images – attached after DOM insertion to avoid inline handlers */
+  $('#playerDetail .pd-avatar').on('error', function () {
+    $(this).off('error').attr('src', PLACEHOLDER_IMG);
+  });
 }
 
 /* ── State helpers ───────────────────────────────────── */
@@ -134,7 +223,9 @@ function showError(msg) {
 /* ── Load a category ─────────────────────────────────── */
 function loadCategory(cat) {
   activeCategory = cat;
+  currentRows    = [];
   updateUrl();
+  resetDetailPanel();
 
   /* Update active tab highlight */
   $('#rankingTabs .ranking-tab').each(function () {
@@ -172,5 +263,15 @@ $(function () {
 
   buildTabs(initialCat);
   loadCategory(initialCat);
+
+  /* Row click → show detail panel */
+  $('#rankingBody').on('click', '.ranking-row', function () {
+    var idx   = parseInt($(this).data('idx'), 10);
+    var entry = currentRows[idx];
+    if (!entry) return;
+    $('#rankingBody .ranking-row').removeClass('is-selected');
+    $(this).addClass('is-selected');
+    renderDetail(entry);
+  });
 });
 

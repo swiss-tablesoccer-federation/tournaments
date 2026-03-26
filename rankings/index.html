@@ -33,28 +33,44 @@
     <!-- Populated by rankings.js -->
   </div>
 
-  <!-- ── Table card ───────────────────────────────────────────── -->
-  <div class="table-card">
-    <div class="table-scroll-wrapper">
-      <table class="table t-table">
-        <thead>
-          <tr>
-            <th class="col-rank">#</th>
-            <th>Player</th>
-            <th class="col-country">Country</th>
-            <th class="col-points text-end">Points</th>
-          </tr>
-        </thead>
-        <tbody id="rankingBody">
-          <tr class="state-row">
-            <td colspan="4">
-              <span class="spinner-border spinner-border-sm text-secondary me-2" role="status"></span>
-              Loading…
-            </td>
-          </tr>
-        </tbody>
-      </table>
+  <!-- ── Two-column layout ────────────────────────────────────── -->
+  <div class="ranking-layout">
+
+    <!-- Left column (40%): table -->
+    <div class="ranking-col-left">
+      <div class="table-card">
+        <div class="table-scroll-wrapper">
+          <table class="table t-table">
+            <thead>
+              <tr>
+                <th class="col-rank">#</th>
+                <th>Player</th>
+                <th class="col-country">Country</th>
+                <th class="col-points text-end">Points</th>
+              </tr>
+            </thead>
+            <tbody id="rankingBody">
+              <tr class="state-row">
+                <td colspan="4">
+                  <span class="spinner-border spinner-border-sm text-secondary me-2" role="status"></span>
+                  Loading…
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
+
+    <!-- Right column (60%): player detail – hidden on mobile -->
+    <div class="ranking-col-right d-none d-md-flex">
+      <div class="player-detail-panel" id="playerDetail">
+        <div class="pd-placeholder">
+          <i class="fa-regular fa-hand-pointer me-2"></i>Select a player to view details
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- ── Footer ───────────────────────────────────────────────── -->
