@@ -634,6 +634,7 @@ tr[data-cat="STS"] .t-date {
 @media (max-width: 575px) {
   .tab-label { display: none; }
   .tab-abbr  { display: inline; }
+  .ranking-tab[data-cat="OC"] { display: none; }
 }
 
 /* ── Rankings table ─────────────────────────────────────── */

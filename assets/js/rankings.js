@@ -17,6 +17,9 @@ var CATEGORIES = [
 /* ── State ───────────────────────────────────────────── */
 var activeCategory = 'OS';
 var currentRows    = [];
+var currentPage    = 1;
+var totalPages     = 1;
+var isLoadingMore  = false;
 
 /* ── Helpers ─────────────────────────────────────────── */
 
@@ -67,26 +70,17 @@ function updateUrl() {
 
 /* ── Fetch ───────────────────────────────────────────── */
 /**
- * Fetch rankings for the given category abbreviation.
- * GET https://api.swisstablesoccer.ch/rankings/{cat}
+ * Fetch rankings for the given category abbreviation and page.
+ * GET https://api.swisstablesoccer.ch/rankings/{cat}?page={page}
  */
-function fetchRankings(cat) {
-  return $.getJSON(API_BASE + '/' + encodeURIComponent(cat));
+function fetchRankings(cat, page) {
+  return $.getJSON(API_BASE + '/' + encodeURIComponent(cat) + '?page=' + (page || 1));
 }
 
 /* ── Render ──────────────────────────────────────────── */
-function renderTable(data) {
-  /* API returns { page, pages, standings: [ { rank, team: [{player, country, …}], points, … } ] } */
-  currentRows = Array.isArray(data) ? data : (data.standings || []);
-
-  if (currentRows.length === 0) {
-    $('#rankingBody').html(
-      '<tr class="state-row"><td colspan="4">No rankings available.</td></tr>'
-    );
-    return;
-  }
-
-  var html = $.map(currentRows, function (r, i) {
+function renderRows(rows, startIdx) {
+  return $.map(rows, function (r, i) {
+    var idx    = startIdx + i;
     var rank   = r.rank != null ? r.rank : '-';
     var isTop3 = typeof rank === 'number' && rank <= 3;
 
@@ -111,15 +105,37 @@ function renderTable(data) {
     /* ── Points cell ── */
     var points = r.points != null ? r.points : '-';
 
-    return '<tr class="ranking-row" data-idx="' + i + '">' +
+    return '<tr class="ranking-row" data-idx="' + idx + '">' +
       '<td class="col-rank"><span class="r-rank' + (isTop3 ? ' is-top3' : '') + '">' + escapeHtml(rank) + '</span></td>' +
       '<td><span class="r-name">' + escapeHtml(playerName) + '</span></td>' +
       '<td class="col-country">' + countryCell + '</td>' +
       '<td class="col-points text-end"><span class="r-points">' + escapeHtml(points) + '</span></td>' +
       '</tr>';
   }).join('');
+}
 
-  $('#rankingBody').html(html);
+function renderTable(data, append) {
+  /* API returns { page, pages, standings: [ { rank, team: [{player, country, …}], points, … } ] } */
+  var newRows = Array.isArray(data) ? data : (data.standings || []);
+
+  if (!Array.isArray(data) && data.pages != null) {
+    totalPages = data.pages;
+  }
+
+  if (!append) {
+    currentRows = newRows;
+    if (currentRows.length === 0) {
+      $('#rankingBody').html(
+        '<tr class="state-row"><td colspan="4">No rankings available.</td></tr>'
+      );
+      return;
+    }
+    $('#rankingBody').html(renderRows(currentRows, 0));
+  } else {
+    var startIdx = currentRows.length;
+    currentRows = currentRows.concat(newRows);
+    $('#rankingBody').append(renderRows(newRows, startIdx));
+  }
 }
 
 /* ── Detail panel ────────────────────────────────────── */
@@ -226,10 +242,25 @@ function showError(msg) {
   );
 }
 
+function showLoadingMore() {
+  $('#rankingBody').append(
+    '<tr class="state-row" id="loadingMoreRow"><td colspan="4">' +
+    '<span class="spinner-border spinner-border-sm text-secondary me-2" role="status"></span>' +
+    'Loading more…</td></tr>'
+  );
+}
+
+function hideLoadingMore() {
+  $('#loadingMoreRow').remove();
+}
+
 /* ── Load a category ─────────────────────────────────── */
 function loadCategory(cat) {
   activeCategory = cat;
   currentRows    = [];
+  currentPage    = 1;
+  totalPages     = 1;
+  isLoadingMore  = false;
   updateUrl();
   resetDetailPanel();
 
@@ -240,7 +271,7 @@ function loadCategory(cat) {
   });
 
   showLoading();
-  fetchRankings(cat)
+  fetchRankings(cat, 1)
     .done(function (data) { renderTable(data); })
     .fail(function (xhr) {
       showError('Failed to load rankings (HTTP ' + (xhr.status || '?') + ').');
@@ -263,6 +294,36 @@ function buildTabs(initialCat) {
   });
 }
 
+/* ── Infinite scroll ─────────────────────────────────── */
+function setupScrollObserver() {
+  var sentinel = document.getElementById('rankingScrollSentinel');
+  if (!sentinel || !window.IntersectionObserver) return;
+
+  var root = document.querySelector('.table-scroll-wrapper');
+  var observer = new IntersectionObserver(function (entries) {
+    if (!entries.length || !entries[0].isIntersecting) return;
+    if (isLoadingMore || currentPage >= totalPages) return;
+
+    isLoadingMore = true;
+    currentPage++;
+    showLoadingMore();
+    fetchRankings(activeCategory, currentPage)
+      .done(function (data) {
+        hideLoadingMore();
+        renderTable(data, true);
+      })
+      .fail(function () {
+        currentPage--;
+        hideLoadingMore();
+      })
+      .always(function () {
+        isLoadingMore = false;
+      });
+  }, { root: root, threshold: 0 });
+
+  observer.observe(sentinel);
+}
+
 /* ── Initialise ──────────────────────────────────────── */
 $(function () {
   var params = parseQuery();
@@ -270,6 +331,7 @@ $(function () {
 
   buildTabs(initialCat);
   loadCategory(initialCat);
+  setupScrollObserver();
 
   /* Row click → show detail panel */
   $('#rankingBody').on('click', '.ranking-row', function () {
