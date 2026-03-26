@@ -259,7 +259,13 @@ function renderTable() {
       '<td class="col-itsf">' + getItsfBadge(t.name) + '</td>' +
       '<td><span class="t-name">' + escapeHtml(t.name || '-') + '</span></td>' +
       '<td class="col-country">' + countryCell + '</td>' +
-      '<td class="t-date">' + formatDateRange(t.start_on, t.end_on) + '</td>' +
+      '<td class="t-date">' +
+        '<span class="date-text">' + formatDateRange(t.start_on, t.end_on) + '</span>' +
+        '<button class="row-cal-btn" data-id="' + escapeHtml(String(t.id)) + '" ' +
+                'aria-label="Add to calendar" title="Add to calendar">' +
+          '<i class="fa-solid fa-calendar-plus" aria-hidden="true"></i>' +
+        '</button>' +
+      '</td>' +
       '<td class="col-pg">' + pgCell + '</td>' +
       '<td class="text-end col-actions">' + siteLink + infoLink + '</td>' +
       '</tr>';
@@ -407,6 +413,12 @@ $(function () {
   var $calBtn = $('#calendarBtn');
   new bootstrap.Tooltip($calBtn[0]);
   $calBtn.on('click', function () { downloadIcs(generateIcs(visibleTournaments)); });
+
+  $('#tournamentBody').on('click', '.row-cal-btn', function () {
+    var id = String($(this).data('id'));
+    var t  = $.grep(allTournaments, function (x) { return String(x.id) === id; })[0];
+    if (t) downloadIcs(generateIcs([t]));
+  });
 
   /* Expand filters by default on non-mobile viewports */
   if (window.innerWidth >= 576) {
