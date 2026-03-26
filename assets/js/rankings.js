@@ -75,8 +75,8 @@ function fetchRankings(cat) {
 
 /* ── Render ──────────────────────────────────────────── */
 function renderTable(data) {
-  /* Accept either a bare array or an object with a rankings/entries key */
-  var rows = Array.isArray(data) ? data : (data.rankings || data.entries || []);
+  /* API returns { page, pages, standings: [ { rank, team: [{player, country, …}], points, … } ] } */
+  var rows = Array.isArray(data) ? data : (data.standings || []);
 
   if (rows.length === 0) {
     $('#rankingBody').html(
@@ -89,11 +89,12 @@ function renderTable(data) {
     var rank   = r.rank != null ? r.rank : '-';
     var isTop3 = typeof rank === 'number' && rank <= 3;
 
-    /* ── Player cell ── */
-    var playerName = (r.player && r.player.name) || r.name || '-';
+    /* ── Player cell – first (or only) team member ── */
+    var member     = (r.team && r.team[0]) || {};
+    var playerName = member.player || '-';
 
     /* ── Country cell ── */
-    var rawCountry  = (r.player && r.player.country) || r.country || '';
+    var rawCountry  = member.country || '';
     var code        = rawCountry.toUpperCase().slice(0, 2);
     var flag        = countryFlag(code);
     var countryCell = flag
