@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Swiss Tablesoccer Federation - Tournament Calendar</title>
+  <title>Swiss Tablesoccer Federation - Rankings</title>
 
   <!-- Bootstrap 5 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   <!-- Site styles -->
-  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
 
 </head>
 <body>
 
-<!-- ── Site navbar (logo + page title in one bar) ────────── -->
+<!-- ── Site navbar (logo + nav links) ────────────────── -->
 <nav class="site-nav">
   <div class="site-nav-inner">
     <a href="https://swisstablesoccer.ch" class="site-nav-logo" aria-label="Swiss Tablesoccer Federation – Home">
@@ -23,8 +23,8 @@
            alt="Swiss Tablesoccer Federation" />
     </a>
     <nav class="site-nav-links" aria-label="Site pages">
-      <a href="/" class="site-nav-link active" aria-current="page">Calendar</a>
-      <a href="/rankings/" class="site-nav-link">Rankings</a>
+      <a href="/" class="site-nav-link">Calendar</a>
+      <a href="/rankings/" class="site-nav-link active" aria-current="page">Rankings</a>
     </nav>
   </div>
 </nav>
@@ -48,23 +48,11 @@
         </select>
       </div>
 
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="filter-label">Table:</div>
-        <select class="filter-control" id="playgroundSelect">
-          <option value="">All</option>
-        </select>
-      </div>
-
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="filter-label">Search:</div>
-        <input type="search" class="filter-control" id="searchInput" placeholder="Name or city..." autocomplete="off" />
-      </div>
-
     </div>
 
   </div>
 
-  <!-- ── Controls: filter toggle + hide-past + stats + share ── -->
+  <!-- ── Controls: filter toggle + stats + share ── -->
   <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
     <button class="filter-toggle-btn" type="button"
             data-bs-toggle="collapse" data-bs-target="#filterCollapse"
@@ -73,10 +61,6 @@
       <i class="fa-solid fa-sliders"></i> Filters
       <i class="fa-solid fa-chevron-up chevron"></i>
     </button>
-    <div class="form-check form-switch mb-0">
-      <input class="form-check-input" type="checkbox" role="switch" id="hidePast" checked />
-      <label class="form-check-label small text-secondary" for="hidePast">Hide past</label>
-    </div>
     <span class="small text-secondary d-none d-sm-inline" id="statsText"></span>
     <button id="shareBtn" class="share-btn ms-auto"
             data-bs-toggle="tooltip" data-bs-placement="left" data-bs-trigger="manual"
@@ -92,20 +76,17 @@
       <table class="table t-table">
         <thead>
           <tr>
-            <th class="col-cat">Category</th>
-            <th class="col-itsf"></th>
-            <th>Name</th>
+            <th class="col-rank">#</th>
+            <th>Player</th>
             <th class="col-country">Country</th>
-            <th>Date</th>
-            <th class="col-pg">Table</th>
-            <th class="text-end col-actions"><!-- actions --></th>
+            <th class="col-points text-end">Points</th>
           </tr>
         </thead>
-        <tbody id="tournamentBody">
+        <tbody id="rankingBody">
           <tr class="state-row">
-            <td colspan="7">
+            <td colspan="4">
               <span class="spinner-border spinner-border-sm text-secondary me-2" role="status"></span>
-              Loading tournaments...
+              Loading rankings...
             </td>
           </tr>
         </tbody>
@@ -127,6 +108,6 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <!-- Site scripts -->
-<script src="assets/js/main.js"></script>
+<script src="../assets/js/rankings.js"></script>
 </body>
 </html>
