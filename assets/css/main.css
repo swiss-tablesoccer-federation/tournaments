@@ -241,6 +241,21 @@ input.filter-control {
   margin-left: 0.3rem;
 }
 
+/* ── STF membership badge (ranking table country column) ─ */
+.stf-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #E30613;
+  border-radius: 3px;
+  padding: 2px 5px;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+}
+
 /* ── Date cell ──────────────────────────────────────────── */
 .t-date {
   white-space: nowrap;
@@ -409,14 +424,14 @@ tr[data-cat="STS"] .t-date {
 }
 
 .ranking-col-left {
-  flex: 2;          /* 2/5 = 40% */
+  flex: 1;          /* 50% of available space */
   min-width: 0;
   display: flex;
   flex-direction: column;
 }
 
 .ranking-col-right {
-  flex: 3;          /* 3/5 = 60% */
+  flex: 1;          /* 50% of available space */
   min-width: 0;
   flex-direction: column;
 }
@@ -499,8 +514,8 @@ tr[data-cat="STS"] .t-date {
 }
 
 .pd-avatar {
-  width: 88px;
-  height: 88px;
+  width: 132px;
+  height: 132px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #e4e4e4;

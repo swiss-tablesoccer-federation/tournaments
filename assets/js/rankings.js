@@ -102,6 +102,12 @@ function renderTable(data) {
       ? '<span class="country-flag">' + flag + '</span><span class="country-code">' + escapeHtml(code) + '</span>'
       : (code ? '<span class="country-code">' + escapeHtml(code) + '</span>' : '-');
 
+    /* ── STF membership badge ── */
+    var mships = member.memberships || [];
+    if (mships.includes('STF')) {
+      countryCell += '<span class="stf-badge">STF</span>';
+    }
+
     /* ── Points cell ── */
     var points = r.points != null ? r.points : '-';
 
