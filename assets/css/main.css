@@ -50,34 +50,6 @@ body {
   margin-left: auto;
 }
 
-/* ── Site nav links ─────────────────────────────────────── */
-.site-nav-links {
-  display: flex;
-  align-items: center;
-  gap: 0.15rem;
-  margin-left: auto;
-}
-
-.site-nav-link {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #555;
-  text-decoration: none;
-  padding: 0.35rem 0.7rem;
-  border-radius: 4px;
-  white-space: nowrap;
-  transition: color .15s, background .15s;
-}
-
-.site-nav-link:hover {
-  color: #E30613;
-  background: rgba(227,6,19,.07);
-}
-
-.site-nav-link.active {
-  color: #E30613;
-}
-
 @media (max-width: 480px) {
   .site-nav-logo img { height: 36px; }
   .site-nav-title { font-size: 0.95rem; }
@@ -426,9 +398,43 @@ tr[data-cat="STS"] .t-date {
 
   /* Prevent horizontal scroll */
   .table-scroll-wrapper { overflow-x: hidden; }
+}
 
-  /* Shrink site-nav links on small screens */
-  .site-nav-link { font-size: 0.78rem; padding: 0.3rem 0.45rem; }
+/* ── Rankings tab bar ───────────────────────────────────── */
+.ranking-tabs {
+  display: flex;
+  overflow-x: auto;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.08);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.ranking-tabs::-webkit-scrollbar { display: none; }
+
+.ranking-tab {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.75rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #777;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color .15s, border-color .15s;
+}
+
+.ranking-tab:hover { color: #E30613; }
+
+.ranking-tab.active {
+  color: #E30613;
+  border-bottom-color: #E30613;
 }
 
 /* ── Rankings table ─────────────────────────────────────── */
