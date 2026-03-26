@@ -241,6 +241,21 @@ input.filter-control {
   margin-left: 0.3rem;
 }
 
+/* ── STF membership badge (ranking table country column) ─ */
+.stf-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #E30613;
+  border-radius: 3px;
+  padding: 2px 5px;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+}
+
 /* ── Date cell ──────────────────────────────────────────── */
 .t-date {
   white-space: nowrap;
@@ -411,4 +426,260 @@ tr[data-cat="STS"] .t-date {
 
   /* Prevent horizontal scroll */
   .table-scroll-wrapper { overflow-x: hidden; }
+}
+
+/* ── Rankings two-column layout ─────────────────────────── */
+.ranking-layout {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+  min-height: 0;
+}
+
+.ranking-col-left {
+  flex: 1;          /* equal half of available space */
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ranking-col-right {
+  flex: 1;          /* equal half of available space */
+  min-width: 0;
+  flex-direction: column;
+}
+
+/* ── Player detail panel ────────────────────────────────── */
+.player-detail-panel {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.08);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.player-detail-panel::-webkit-scrollbar { width: 6px; }
+.player-detail-panel::-webkit-scrollbar-track { background: #f5f5f5; }
+.player-detail-panel::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+.player-detail-panel::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+.pd-placeholder {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.pd-inner {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── Stats row ── */
+.pd-stats {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 1.25rem;
+}
+
+.pd-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  min-width: 5rem;
+}
+
+.pd-stat-val {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1;
+}
+
+.pd-stat-val.is-top3 { color: #E30613; }
+
+.pd-stat-lbl {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+/* ── Member card ── */
+.pd-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.pd-avatar {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e4e4e4;
+  background: #f5f5f5;
+}
+
+.pd-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.pd-country {
+  font-size: 1.1rem;
+}
+
+.pd-metas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: center;
+}
+
+.pd-meta {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  align-items: baseline;
+}
+
+.pd-meta-lbl {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+.pd-meta-val {
+  font-weight: 600;
+  color: #333;
+}
+
+.pd-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: center;
+}
+
+.pd-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #888;
+  border-radius: 3px;
+  padding: 2px 7px;
+}
+
+/* ── Clickable ranking rows ─────────────────────────────── */
+.ranking-row {
+  cursor: pointer;
+}
+
+.ranking-row.is-selected {
+  --bs-table-bg: #fff0f1 !important;
+  outline: none;
+}
+
+.ranking-row.is-selected td:first-child {
+  border-left: 3px solid #E30613;
+}
+
+/* ── Rankings tab bar ───────────────────────────────────── */
+.ranking-tabs {
+  display: flex;
+  overflow-x: auto;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.08);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.ranking-tabs::-webkit-scrollbar { display: none; }
+
+.ranking-tab {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.75rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #777;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color .15s, border-color .15s;
+}
+
+.ranking-tab:hover { color: #E30613; }
+
+.ranking-tab.active {
+  color: #E30613;
+  border-bottom-color: #E30613;
+}
+
+/* ── Tab label / abbreviation (mobile swap) ───────────── */
+.tab-abbr { display: none; }
+
+@media (max-width: 575px) {
+  .tab-label { display: none; }
+  .tab-abbr  { display: inline; }
+  .ranking-tab[data-cat="OC"] { display: none; }
+}
+
+/* ── Rankings table ─────────────────────────────────────── */
+.col-rank {
+  width: 3rem;
+  text-align: center;
+  color: #999;
+  font-size: 0.82rem;
+}
+
+.col-points {
+  width: 6rem;
+}
+
+.r-rank {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #aaa;
+}
+
+.r-rank.is-top3 {
+  color: #E30613;
+}
+
+.r-name {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #1a1a1a;
+}
+
+.r-points {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #1a1a1a;
 }
