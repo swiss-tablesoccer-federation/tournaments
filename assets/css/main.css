@@ -771,13 +771,9 @@ html.page-about .page-content {
 
 /* Contact section */
 .about-contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem 2.5rem;
-}
-
-.contact-block {
-  min-width: 200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem 2rem;
 }
 
 .contact-label {
@@ -881,7 +877,7 @@ html.page-about .page-content {
 
 @media (max-width: 480px) {
   .about-section { padding: 1.25rem 1rem; }
-  .about-contact { flex-direction: column; gap: 1rem; }
+  .about-contact { grid-template-columns: 1fr; gap: 1rem; }
   .member-card { min-width: 100%; max-width: 100%; }
   .committee-subs { padding-left: 0.5rem; }
 }
