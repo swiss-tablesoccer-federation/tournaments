@@ -48,27 +48,38 @@ function renderMemberCard(member) {
     );
 }
 
-function renderCommittee(committee, level) {
-  var $block = $('<div>').addClass('committee-block').addClass('committee-level-' + level);
-
-  $block.append($('<div>').addClass('committee-name').text(committee.name));
+function renderOrgNodeCard(committee, isRoot) {
+  var $card = $('<div>').addClass(isRoot ? 'org-node-card org-root-card' : 'org-node-card');
+  $card.append($('<div>').addClass('org-node-title').text(committee.name));
 
   if (committee.members && committee.members.length) {
     var sorted = committee.members.slice().sort(function (a, b) { return a.rank - b.rank; });
     var $members = $('<div>').addClass('committee-members');
     sorted.forEach(function (m) { $members.append(renderMemberCard(m)); });
-    $block.append($members);
+    $card.append($members);
   }
+
+  return $card;
+}
+
+function renderCommittee(committee) {
+  var $tree = $('<div>').addClass('org-tree');
+
+  $tree.append(renderOrgNodeCard(committee, true));
 
   if (committee.committees && committee.committees.length) {
-    var $subs = $('<div>').addClass('committee-subs');
+    $tree.append($('<div>').addClass('org-trunk'));
+
+    var $children = $('<div>').addClass('org-children');
     committee.committees.forEach(function (sub) {
-      $subs.append(renderCommittee(sub, level + 1));
+      var $child = $('<div>').addClass('org-child');
+      $child.append(renderOrgNodeCard(sub, false));
+      $children.append($child);
     });
-    $block.append($subs);
+    $tree.append($children);
   }
 
-  return $block;
+  return $tree;
 }
 
 function loadCommittees() {
@@ -92,7 +103,7 @@ function loadCommittees() {
         return;
       }
       data.forEach(function (committee) {
-        $content.append(renderCommittee(committee, 0));
+        $content.append(renderCommittee(committee));
       });
     })
     .catch(function () {

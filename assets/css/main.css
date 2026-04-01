@@ -794,30 +794,101 @@ html.page-about .page-content {
 .contact-value a { color: #E30613; text-decoration: none; }
 .contact-value a:hover { color: #a8000f; text-decoration: underline; }
 
-/* Committee blocks */
-.committee-block {
+/* ── Org tree (section 3) ───────────────────────────────── */
+.org-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 1.5rem;
 }
 
-.committee-block.committee-level-0 > .committee-name {
+/* Root card (Executive / Vorstand) */
+.org-root-card {
+  border: 2px solid #E30613 !important;
+  max-width: 640px;
+  width: 100%;
+}
+
+.org-root-card .org-node-title {
   font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: #1a1a1a;
-  padding-bottom: 0.5rem;
   border-bottom: 2px solid #E30613;
+  padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
 
-.committee-block.committee-level-1 > .committee-name {
+/* Shared node card */
+.org-node-card {
+  background: #f8f8f8;
+  border: 1px solid #e4e4e4;
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+}
+
+.org-node-title {
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #555;
   margin-bottom: 0.75rem;
-  margin-top: 0.5rem;
+}
+
+/* Vertical trunk from root to children bar */
+.org-trunk {
+  width: 2px;
+  height: 2rem;
+  background: #ddd;
+  flex-shrink: 0;
+}
+
+/* Children row */
+.org-children {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Each child column: vertical connector + node card */
+.org-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+  position: relative;
+}
+
+/* Vertical line above each child card */
+.org-child::before {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 2rem;
+  background: #ddd;
+  flex-shrink: 0;
+}
+
+/* Horizontal bar connecting sibling verticals */
+.org-child::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ddd;
+}
+
+.org-child:first-child::after { left: 50%; }
+.org-child:last-child::after  { right: 50%; }
+.org-child:only-child::after  { display: none; }
+
+@media (max-width: 480px) {
+  .org-children { flex-direction: column; align-items: center; }
+  .org-child { padding: 0; width: 100%; }
+  .org-child::after { display: none; }
+  .org-node-card { width: 100%; }
 }
 
 .committee-members {
@@ -869,15 +940,9 @@ html.page-about .page-content {
   text-overflow: ellipsis;
 }
 
-.committee-subs {
-  padding-left: 1rem;
-  border-left: 2px solid #f0f0f0;
-  margin-top: 1rem;
-}
 
 @media (max-width: 480px) {
   .about-section { padding: 1.25rem 1rem; }
   .about-contact { grid-template-columns: 1fr; gap: 1rem; }
   .member-card { min-width: 100%; max-width: 100%; }
-  .committee-subs { padding-left: 0.5rem; }
 }
