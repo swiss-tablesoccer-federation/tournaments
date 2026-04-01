@@ -47,7 +47,14 @@ var TRANSLATIONS = {
     cat_JS:                'Junior Singles',
     cat_JD:                'Junior Doubles',
     cat_SS:                'Senior O50 Singles',
-    cat_SD:                'Senior O50 Doubles'
+    cat_SD:                'Senior O50 Doubles',
+    pageTitle_about:       'About',
+    aboutContact:          'Contact',
+    aboutAddress:          'Address',
+    aboutInvoice:          'Invoice',
+    aboutBank:             'Bank Details',
+    aboutCommittees:       'Organisation',
+    aboutFailedCommittees: 'Failed to load organisation.'
   },
   de: {
     pageTitle_tournaments: 'Turnierkalender',
@@ -96,7 +103,14 @@ var TRANSLATIONS = {
     cat_JS:                'Junioren Einzel',
     cat_JD:                'Junioren Doppel',
     cat_SS:                'Senioren \u00dc50 Einzel',
-    cat_SD:                'Senioren \u00dc50 Doppel'
+    cat_SD:                'Senioren \u00dc50 Doppel',
+    pageTitle_about:       '\u00dcber uns',
+    aboutContact:          'Kontakt',
+    aboutAddress:          'Adresse',
+    aboutInvoice:          'Rechnungsversand',
+    aboutBank:             'Bankverbindung',
+    aboutCommittees:       'Organisation',
+    aboutFailedCommittees: 'Fehler beim Laden der Organisation.'
   },
   fr: {
     pageTitle_tournaments: 'Calendrier des tournois',
@@ -145,7 +159,14 @@ var TRANSLATIONS = {
     cat_JS:                'Simples juniors',
     cat_JD:                'Doubles juniors',
     cat_SS:                'Simples s\u00e9niors O50',
-    cat_SD:                'Doubles s\u00e9niors O50'
+    cat_SD:                'Doubles s\u00e9niors O50',
+    pageTitle_about:       '\u00c0 propos',
+    aboutContact:          'Contact',
+    aboutAddress:          'Adresse',
+    aboutInvoice:          'Envoi de factures',
+    aboutBank:             'Coordonn\u00e9es bancaires',
+    aboutCommittees:       'Organisation',
+    aboutFailedCommittees: '\u00c9chec du chargement de l\u2019organisation.'
   },
   it: {
     pageTitle_tournaments: 'Calendario tornei',
@@ -194,7 +215,14 @@ var TRANSLATIONS = {
     cat_JS:                'Singolo juniores',
     cat_JD:                'Doppio juniores',
     cat_SS:                'Singolo senior O50',
-    cat_SD:                'Doppio senior O50'
+    cat_SD:                'Doppio senior O50',
+    pageTitle_about:       'Chi siamo',
+    aboutContact:          'Contatto',
+    aboutAddress:          'Indirizzo',
+    aboutInvoice:          'Invio fatture',
+    aboutBank:             'Coordinate bancarie',
+    aboutCommittees:       'Organizzazione',
+    aboutFailedCommittees: 'Caricamento organizzazione fallito.'
   }
 };
 

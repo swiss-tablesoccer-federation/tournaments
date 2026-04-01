@@ -716,3 +716,172 @@ tr[data-cat="STS"] .t-date {
   font-size: 0.92rem;
   color: #1a1a1a;
 }
+
+/* ── About page ─────────────────────────────────────────── */
+html.page-about,
+html.page-about body {
+  height: auto;
+  min-height: 100%;
+  overflow-y: auto;
+}
+
+html.page-about .page-content {
+  overflow: visible;
+  flex: none;
+}
+
+/* Section card */
+.about-section {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.08);
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.about-section-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 1.25rem;
+}
+
+/* Markdown content */
+.about-markdown h1,
+.about-markdown h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+}
+
+.about-markdown h1 { font-size: 1.5rem; }
+
+.about-markdown p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.about-markdown a { color: #E30613; }
+.about-markdown a:hover { color: #a8000f; }
+
+/* Contact section */
+.about-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2.5rem;
+}
+
+.contact-block {
+  min-width: 200px;
+}
+
+.contact-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 0.25rem;
+}
+
+.contact-value {
+  font-size: 0.92rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.contact-value a { color: #E30613; text-decoration: none; }
+.contact-value a:hover { color: #a8000f; text-decoration: underline; }
+
+/* Committee blocks */
+.committee-block {
+  margin-bottom: 1.5rem;
+}
+
+.committee-block.committee-level-0 > .committee-name {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #E30613;
+  margin-bottom: 1rem;
+}
+
+.committee-block.committee-level-1 > .committee-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.committee-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.member-card {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #f8f8f8;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  min-width: 180px;
+  max-width: 240px;
+}
+
+.member-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #e4e4e4;
+  flex-shrink: 0;
+  background: #eee;
+}
+
+.member-info {
+  min-width: 0;
+}
+
+.member-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.member-title {
+  font-size: 0.72rem;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.committee-subs {
+  padding-left: 1rem;
+  border-left: 2px solid #f0f0f0;
+  margin-top: 1rem;
+}
+
+@media (max-width: 480px) {
+  .about-section { padding: 1.25rem 1rem; }
+  .about-contact { flex-direction: column; gap: 1rem; }
+  .member-card { min-width: 100%; max-width: 100%; }
+  .committee-subs { padding-left: 0.5rem; }
+}
