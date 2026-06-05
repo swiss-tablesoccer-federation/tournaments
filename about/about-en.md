@@ -29,5 +29,5 @@ We promote and strengthen table football in Switzerland through collaboration, d
 **For players**
 
 - Our tournament organisation is fully financed through sponsorship funds
-- We seek admission as a member of Swiss Olympic to secure recognition of table football as an Olympic sport
+- We strengthen table football through our recognised membership in Swiss Olympic
 - We provide an appropriate platform for all classifications

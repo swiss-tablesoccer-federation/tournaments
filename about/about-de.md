@@ -9,7 +9,7 @@ Seit 2018 ist die Swiss Tablesoccer Federation Mitglied von [SwissOlympic](https
 
 Wir verbinden den Breitensport mit dem Spitzensport und stehen für eine Vereinigung von Spiel, Spass und Sport innerhalb der Tischfussballwelt Schweiz.
 
-# Usere Mission
+# Unsere Mission
 
 Wir fördern und stärken den Tischfussball in der Schweiz durch Zusammenarbeit, Entwicklung und Integration.
 
