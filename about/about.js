@@ -104,11 +104,9 @@ function loadCommittees() {
 
 $(function () {
   loadMarkdown('about', 'about-text');
-  loadMarkdown('values', 'values-text');
   loadCommittees();
 
   document.addEventListener('langChanged', function () {
     loadMarkdown('about', 'about-text');
-    loadMarkdown('values', 'values-text');
   });
 });

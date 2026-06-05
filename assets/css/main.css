@@ -740,12 +740,10 @@ html.page-about .page-content {
 }
 
 .about-section-heading {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #555;
-  margin-bottom: 1.25rem;
+  color: #E30613;
+  margin-bottom: 0.75rem;
 }
 
 /* Markdown content */
@@ -753,11 +751,12 @@ html.page-about .page-content {
 .about-markdown h2 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #E30613;
   margin-bottom: 0.75rem;
 }
 
-.about-markdown h1 { font-size: 1.5rem; }
+.about-markdown h1,
+.about-section-heading { font-size: 1.5rem; }
 
 .about-markdown p {
   font-size: 0.95rem;
