@@ -29,5 +29,5 @@ Wir fördern und stärken den Tischfussball in der Schweiz durch Zusammenarbeit,
 **Für die Spieler**
 
 - Unsere Turnierorganisation ist vollumfänglich aus Sponsorengeldern finanziert
-- Wir verfolgen eine Aufnahme als Mitglied bei Swiss Olympic zur Anerkennung des Tischfussballs als olympische Sportart
+- Wir stärken den Tischfussball durch unsere anerkannte Mitgliedschaft bei Swiss Olympic
 - Wir bieten allen Klassifizierungen eine angemessene Plattform

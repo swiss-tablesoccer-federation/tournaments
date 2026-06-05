@@ -1,3 +1,0 @@
-## Nos valeurs
-
-Text TODO
