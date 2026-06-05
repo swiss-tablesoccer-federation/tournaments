@@ -56,27 +56,38 @@ var DOCUMENT_CATEGORIES = [
 
 function renderDocuments() {
   var totalCount = 0;
+  var $list = $('#documentsList');
+  $list.empty();
 
-  var html = DOCUMENT_CATEGORIES.map(function (category) {
-    var docsHtml = category.docs.map(function (doc) {
+  DOCUMENT_CATEGORIES.forEach(function (category) {
+    var $section = $('<section>').addClass('document-category');
+    $('<h2>')
+      .addClass('document-category-title')
+      .text(tr(category.key))
+      .appendTo($section);
+
+    var $links = $('<div>').addClass('document-links');
+    category.docs.forEach(function (doc) {
       totalCount++;
-      return (
-        '<a class="document-link" href="' + encodeURI(doc.file) + '" target="_blank" rel="noopener">' +
-          '<i class="fa-regular fa-file-lines" aria-hidden="true"></i>' +
-          '<span>' + tr(doc.key) + '</span>' +
-        '</a>'
-      );
-    }).join('');
+      var $link = $('<a>')
+        .addClass('document-link')
+        .attr('href', doc.file)
+        .attr('target', '_blank')
+        .attr('rel', 'noopener');
 
-    return (
-      '<section class="document-category">' +
-        '<h2 class="document-category-title">' + tr(category.key) + '</h2>' +
-        '<div class="document-links">' + docsHtml + '</div>' +
-      '</section>'
-    );
-  }).join('');
+      $('<i>')
+        .addClass('fa-regular fa-file-lines')
+        .attr('aria-hidden', 'true')
+        .appendTo($link);
+      $('<span>').text(tr(doc.key)).appendTo($link);
 
-  $('#documentsList').html(html);
+      $links.append($link);
+    });
+
+    $section.append($links);
+    $list.append($section);
+  });
+
   $('#documentsCount').text(tr('documentsCount', { count: totalCount }));
 }
 
