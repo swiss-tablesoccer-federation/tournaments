@@ -444,4 +444,27 @@ $(function () {
 
   /* Apply translations on initial page load */
   applyTranslations();
+
+  /* ── Hamburger menu toggle ───────────────────────────── */
+  $(document).on('click', '#navHamburger', function (e) {
+    e.stopPropagation();
+    var $nav = $('.site-nav');
+    var opening = !$nav.hasClass('nav-open');
+    $nav.toggleClass('nav-open', opening);
+    $(this).attr('aria-expanded', opening ? 'true' : 'false');
+  });
+
+  /* Close menu when clicking outside the navbar */
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.site-nav').length) {
+      $('.site-nav').removeClass('nav-open');
+      $('#navHamburger').attr('aria-expanded', 'false');
+    }
+  });
+
+  /* Close menu when a nav link is clicked */
+  $(document).on('click', '.site-nav-links .nav-link-item', function () {
+    $('.site-nav').removeClass('nav-open');
+    $('#navHamburger').attr('aria-expanded', 'false');
+  });
 });
