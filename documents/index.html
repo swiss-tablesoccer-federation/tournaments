@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page-documents">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,9 +38,8 @@
   </div>
 </nav>
 
-<div class="container-fluid px-4 px-md-5 py-4 page-content">
+<div class="container-fluid py-4 page-content">
   <div class="documents-header mb-3">
-    <p class="documents-intro mb-1" data-i18n="documentsIntro">Public documents of the Swiss Tablesoccer Federation.</p>
     <span class="documents-count" id="documentsCount"></span>
   </div>
 
@@ -55,6 +54,11 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
         crossorigin="anonymous"></script>
+<!-- marked.js for markdown parsing -->
+<script src="https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js"
+        integrity="sha384-948ahk4ZmxYVYOc+rxN1H2gM1EJ2Duhp7uHtZ4WSLkV4Vtx5MUqnV+l7u9B+jFv+"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
 
 <!-- Site scripts -->
 <script src="../assets/js/i18n.js"></script>
