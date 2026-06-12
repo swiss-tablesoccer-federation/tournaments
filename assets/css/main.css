@@ -104,11 +104,61 @@ body {
   border-color: #E30613;
 }
 
+/* ── Hamburger button (mobile only) ─────────────────────── */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.2rem 0.4rem;
+  font-size: 1.3rem;
+  color: #333;
+  cursor: pointer;
+  line-height: 1;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.nav-hamburger:hover { color: #E30613; }
+
+@media (max-width: 768px) {
+  /* Show hamburger, hide nav links and lang selector */
+  .nav-hamburger { display: block; }
+  .site-nav-links { display: none; }
+  .lang-selector { display: none; }
+
+  /* Wrap so dropdown rows appear below logo+hamburger row */
+  .site-nav-inner {
+    flex-wrap: wrap;
+    margin-top: 18px;
+    margin-bottom: 18px;
+  }
+
+  /* Open state: show nav links as vertical list */
+  .site-nav.nav-open .site-nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+    border-top: 1px solid #e0e0e0;
+    padding: 0.4rem 0;
+  }
+  .site-nav.nav-open .site-nav-links .nav-link-item {
+    padding: 0.6rem 0.5rem;
+    font-size: 1rem;
+  }
+
+  /* Open state: show lang selector centered below links */
+  .site-nav.nav-open .lang-selector {
+    display: flex;
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+    border-top: 1px solid #e0e0e0;
+    padding: 0.5rem 0;
+  }
+}
+
 @media (max-width: 480px) {
   .site-nav-logo img { height: 44px; }
-  .lang-selector { margin-left: auto; }
-  .site-nav-links { overflow-x: auto; margin-left: 0.5rem; }
-  .nav-link-item { padding: 0.4rem 0.5rem; font-size: 0.82rem; }
 }
 
 /* ── Filter row ─────────────────────────────────────────── */
@@ -205,8 +255,8 @@ input.filter-control {
   flex-direction: column;
   min-height: 0;
   overflow: hidden;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 @media (min-width: 768px) {
