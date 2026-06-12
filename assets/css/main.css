@@ -726,6 +726,96 @@ tr[data-cat="STS"] .t-date {
   color: #1a1a1a;
 }
 
+/* ── Documents page ─────────────────────────────────────── */
+.documents-header {
+  flex-shrink: 0;
+}
+
+.documents-intro {
+  color: #666;
+  font-size: 0.92rem;
+}
+
+.documents-count {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.documents-card {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+#documentsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
+  gap: 1rem;
+}
+
+.document-category {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.08);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-self: start;
+}
+
+.document-category-title {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #E30613;
+  margin: 0;
+  min-height: 2.4rem;
+}
+
+.document-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.document-link {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #222;
+  text-decoration: none;
+  padding: 0.45rem 0.55rem;
+  border-radius: 4px;
+  background: #f8f8f8;
+  transition: color .15s, background .15s;
+}
+
+.document-link:hover {
+  color: #E30613;
+  background: #fdf5f5;
+}
+
+.document-link i {
+  color: #999;
+  width: 1rem;
+}
+
+@media (max-width: 575px) {
+  #documentsList {
+    grid-template-columns: 1fr;
+  }
+
+  .document-category-title {
+    min-height: 0;
+  }
+}
+
 /* ── About page ─────────────────────────────────────────── */
 html.page-about,
 html.page-about body {
@@ -886,7 +976,6 @@ html.page-about .page-content {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 
 @media (max-width: 480px) {
   .about-section { padding: 1.25rem 1rem; }
