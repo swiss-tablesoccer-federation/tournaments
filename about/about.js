@@ -1,0 +1,127 @@
+/* ── About page ──────────────────────────────────────────── */
+
+var COMMITTEES_API = 'https://api.swisstablesoccer.ch/committees';
+var DEFAULT_PROFILE_IMAGE = 'https://app.tablesoccer.org/icon/profile.svg';
+var FALLBACK_LOAD_ORGANIZATION_ERROR = 'Failed to load organization.';
+
+/**
+ * Fetch a markdown file for the given base name and current language,
+ * parse it with marked.js, and inject the result into the target element.
+ * Falls back to English if the language-specific file is unavailable.
+ */
+function loadMarkdown(baseName, targetId) {
+  var lang = (typeof currentLang !== 'undefined' ? currentLang : 'en');
+  var url = './' + baseName + '-' + lang + '.md';
+  var $target = $('#' + targetId);
+
+  fetch(url)
+    .then(function (res) {
+      if (!res.ok) return fetch('./' + baseName + '-en.md');
+      return res;
+    })
+    .then(function (res) { return res.text(); })
+    .then(function (text) {
+      $target.html(marked.parse(text));
+    })
+    .catch(function () {
+      $target.empty();
+    });
+}
+
+/* ── Committees rendering ─────────────────────────────────── */
+
+function getSafeImageUrl(url) {
+  if (typeof url !== 'string' || !url.trim()) return DEFAULT_PROFILE_IMAGE;
+
+  try {
+    var parsed = new URL(url, window.location.href);
+    return (parsed.protocol === 'http:' || parsed.protocol === 'https:') ? parsed.href : DEFAULT_PROFILE_IMAGE;
+  } catch (e) {
+    return DEFAULT_PROFILE_IMAGE;
+  }
+}
+
+function renderMemberCard(member) {
+  var p = member.person;
+  var fullName = p.first_name + ' ' + p.last_name;
+  var $img = $('<img>')
+    .addClass('member-avatar')
+    .attr('src', getSafeImageUrl(p.image))
+    .attr('alt', fullName)
+    .on('error', function () {
+      $(this).attr('src', DEFAULT_PROFILE_IMAGE);
+    });
+
+  return $('<div>').addClass('member-card')
+    .append($img)
+    .append(
+      $('<div>').addClass('member-info')
+        .append($('<div>').addClass('member-name').text(fullName))
+        .append($('<div>').addClass('member-title').text(member.title))
+    );
+}
+
+function renderCommittee(committee, level) {
+  var $block = $('<div>').addClass('committee-block').addClass('committee-level-' + level);
+
+  $block.append($('<div>').addClass('committee-name').text(committee.name));
+
+  if (committee.members && committee.members.length) {
+    var sorted = committee.members.slice().sort(function (a, b) { return a.rank - b.rank; });
+    var $members = $('<div>').addClass('committee-members');
+    sorted.forEach(function (m) { $members.append(renderMemberCard(m)); });
+    $block.append($members);
+  }
+
+  if (committee.committees && committee.committees.length) {
+    var $subs = $('<div>').addClass('committee-subs');
+    committee.committees.forEach(function (sub) {
+      $subs.append(renderCommittee(sub, level + 1));
+    });
+    $block.append($subs);
+  }
+
+  return $block;
+}
+
+function loadCommittees() {
+  var $content = $('#committees-content');
+  $content.html(
+    '<div class="text-center text-secondary py-3">' +
+    '<span class="spinner-border spinner-border-sm me-2" role="status"></span>' +
+    (typeof tr === 'function' ? tr('loading') : 'Loading\u2026') +
+    '</div>'
+  );
+
+  fetch(COMMITTEES_API)
+    .then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function (data) {
+      $content.empty();
+      if (!data || !data.length) {
+        $content.html('<p class="text-danger text-center py-3">' + (typeof tr === 'function' ? tr('aboutFailedCommittees') : FALLBACK_LOAD_ORGANIZATION_ERROR) + '</p>');
+        return;
+      }
+      data.forEach(function (committee) {
+        $content.append(renderCommittee(committee, 0));
+      });
+    })
+    .catch(function () {
+      $content.html('<p class="text-danger text-center py-3">' + (typeof tr === 'function' ? tr('aboutFailedCommittees') : FALLBACK_LOAD_ORGANIZATION_ERROR) + '</p>');
+    });
+}
+
+/* ── Initialisation ──────────────────────────────────────── */
+
+$(function () {
+  loadMarkdown('about', 'about-text');
+  loadCommittees();
+  loadMarkdown('about-values', 'about-values');
+
+  document.addEventListener('langChanged', function () {
+    loadMarkdown('about', 'about-text');
+    loadMarkdown('about-values', 'about-values');
+  });
+});
