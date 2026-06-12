@@ -53,7 +53,7 @@ var TRANSLATIONS = {
     aboutAddress:          'Address',
     aboutInvoice:          'Invoice',
     aboutBank:             'Bank Details',
-    aboutCommittees:       'Organization',
+    aboutCommittees:       'Organisation',
     aboutFailedCommittees: 'Failed to load organisation.'
   },
   de: {
@@ -109,7 +109,7 @@ var TRANSLATIONS = {
     aboutAddress:          'Adresse',
     aboutInvoice:          'Rechnungsversand',
     aboutBank:             'Bankverbindung',
-    aboutCommittees:       'Organization',
+    aboutCommittees:       'Organisation',
     aboutFailedCommittees: 'Fehler beim Laden der Organisation.'
   },
   fr: {
@@ -165,7 +165,7 @@ var TRANSLATIONS = {
     aboutAddress:          'Adresse',
     aboutInvoice:          'Envoi de factures',
     aboutBank:             'Coordonn\u00e9es bancaires',
-    aboutCommittees:       'Organization',
+    aboutCommittees:       'Organizzazione',
     aboutFailedCommittees: '\u00c9chec du chargement de l\u2019organisation.'
   },
   it: {
