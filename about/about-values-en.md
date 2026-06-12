@@ -2,12 +2,6 @@
 
 We connect grassroots and elite sport and stand for a union of game, fun and sport within Swiss table football.
 
-# Our Mission
-
-We promote and strengthen table football in Switzerland through collaboration, development and inclusion.
-
-# Our Guiding Principles
-
 **For our members**
 
 - We pursue constructive and respectful collaboration with our members to achieve our goals together
@@ -24,3 +18,9 @@ We promote and strengthen table football in Switzerland through collaboration, d
 - Our tournament organisation is fully financed through sponsorship funds
 - We strengthen table football through our recognised membership in Swiss Olympic
 - We provide an appropriate platform for all classifications
+
+# Our Mission
+
+We promote and strengthen table football in Switzerland through collaboration, development and inclusion.
+
+# Our Guiding Principles
