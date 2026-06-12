@@ -15,14 +15,20 @@
 </head>
 <body>
 
-<!-- ── Site navbar (logo + page title in one bar) ────────── -->
+<!-- ── Site navbar (logo + nav links + lang) ─────────────── -->
 <nav class="site-nav">
   <div class="site-nav-inner">
     <a href="https://swisstablesoccer.ch" class="site-nav-logo" aria-label="Swiss Tablesoccer Federation – Home">
       <img src="https://github.com/user-attachments/assets/6df8525e-7665-4ab6-8c5a-407ddf00bc91"
            alt="Swiss Tablesoccer Federation" />
     </a>
-    <span class="site-nav-title" data-i18n="pageTitle_documents">Documents</span>
+    <div class="site-nav-links">
+      <a href="https://www.swisstablesoccer.ch/home" class="nav-link-item" data-i18n="navNews">News</a>
+      <a href="https://tournaments.swisstablesoccer.ch" class="nav-link-item" data-i18n="navTournaments">Tournament Calendar</a>
+      <a href="https://tournaments.swisstablesoccer.ch/rankings" class="nav-link-item" data-i18n="navRankings">Rankings</a>
+      <a href="https://www.swisstablesoccer.ch/swiss-tablesoccer-league" class="nav-link-item" data-i18n="navCompetitions">Competitions</a>
+      <a href="https://www.swisstablesoccer.ch/dokumente" class="nav-link-item active" data-i18n="navFederation">Federation</a>
+    </div>
     <div class="lang-selector" id="langSelector" aria-label="Language">
       <button class="lang-btn active" data-lang="en">EN</button>
       <button class="lang-btn" data-lang="de">DE</button>
