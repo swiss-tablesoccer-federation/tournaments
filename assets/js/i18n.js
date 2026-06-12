@@ -165,7 +165,7 @@ var TRANSLATIONS = {
     aboutAddress:          'Adresse',
     aboutInvoice:          'Envoi de factures',
     aboutBank:             'Coordonn\u00e9es bancaires',
-    aboutCommittees:       'Organizzazione',
+    aboutCommittees:       'Organisation',
     aboutFailedCommittees: '\u00c9chec du chargement de l\u2019organisation.'
   },
   it: {
@@ -221,7 +221,7 @@ var TRANSLATIONS = {
     aboutAddress:          'Indirizzo',
     aboutInvoice:          'Invio fatture',
     aboutBank:             'Coordinate bancarie',
-    aboutCommittees:       'Organization',
+    aboutCommittees:       'Organizzazione',
     aboutFailedCommittees: 'Caricamento organizzazione fallito.'
   }
 };

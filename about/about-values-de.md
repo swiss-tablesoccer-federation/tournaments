@@ -35,7 +35,7 @@ Der STF ist verantwortlich für einen geregelten Spielbetrieb und erlässt die r
 
 Der STF setzt auf einen respektvollen Umgang untereinander und bekämpft jegliche Form von Diskriminierung und Gewalt am und neben dem Tisch und behält sich vor mit Sanktionen dagegen vorzugehen.
 
-Der STF anerkennt den Ethik-Charta von Swiss Olympic und verfolgt die darin enthaltenen Ethik-Grundsätze.
+Der STF anerkennt die Ethik-Charta von Swiss Olympic und verfolgt die darin enthaltenen Ethik-Grundsätze.
 
 Der STF beschafft seine Mittel aus Mitgliederbeiträgen, Lizenzeinnahmen und Sponsoringbeiträgen. Sie dienen einzig und alleine der Förderung des Tischfussballs im Spitzen- und Breitensport.
 
