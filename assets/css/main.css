@@ -256,7 +256,7 @@ input.filter-control {
   min-height: 0;
   overflow: hidden;
   padding-left: 0.8rem;
-  padding-right: 1rem;
+  padding-right: 0.8rem;
 }
 
 @media (min-width: 768px) {
@@ -804,11 +804,6 @@ tr[data-cat="STS"] .t-date {
   flex-shrink: 0;
 }
 
-.documents-intro {
-  color: #666;
-  font-size: 0.92rem;
-}
-
 .documents-count {
   display: inline-block;
   font-size: 0.72rem;
@@ -821,12 +816,25 @@ tr[data-cat="STS"] .t-date {
 .documents-card {
   flex: 1;
   min-height: 0;
+  overflow: hidden;
+}
+
+.documents-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
+  gap: 1rem;
+  height: 100%;
+  min-height: 0;
+}
+
+.documents-browser {
+  min-height: 0;
   overflow-y: auto;
 }
 
 #documentsList {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
@@ -874,18 +882,287 @@ tr[data-cat="STS"] .t-date {
   background: #fdf5f5;
 }
 
+.document-link.is-active {
+  color: #E30613;
+  background: #fdebed;
+  box-shadow: inset 0 0 0 1px rgba(227,6,19,.18);
+}
+
 .document-link i {
   color: #999;
   width: 1rem;
 }
 
+.document-viewer-card {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.08);
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.document-viewer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #ececec;
+}
+
+.document-viewer-heading {
+  min-width: 0;
+}
+
+.document-viewer-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 0.35rem;
+}
+
+.document-viewer-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.document-viewer-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 4px;
+  background: #f8f8f8;
+  color: #E30613;
+  cursor: pointer;
+  transition: color .15s, background .15s, opacity .15s;
+}
+
+.document-viewer-action:hover {
+  color: #a8000f;
+  background: #fdf5f5;
+}
+
+.document-viewer-action:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.document-viewer-action i {
+  font-size: 0.95rem;
+}
+
+.document-pdf-export {
+  box-sizing: border-box;
+  font-size: 11pt;
+  line-height: 1.55;
+}
+
+.document-pdf-export-root {
+  position: fixed;
+  left: -100000px;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.document-pdf-export a {
+  color: #E30613;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.document-pdf-export img {
+  max-width: 100%;
+  height: auto;
+}
+
+.document-pdf-export p,
+.document-pdf-export li,
+.document-pdf-export blockquote,
+.document-pdf-export td,
+.document-pdf-export th,
+.document-pdf-export h1,
+.document-pdf-export h2,
+.document-pdf-export h3,
+.document-pdf-export h4 {
+  overflow-wrap: break-word;
+  word-break: normal;
+  white-space: normal;
+  hyphens: auto;
+}
+
+.document-pdf-export pre,
+.document-pdf-export code {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.document-pdf-export pre {
+  white-space: pre-wrap;
+}
+
+.document-pdf-export table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.document-pdf-heading-group {
+  break-inside: avoid;
+  break-inside: avoid-page;
+  page-break-inside: avoid;
+}
+
+.document-pdf-heading-group-page {
+  break-before: page;
+  page-break-before: always;
+}
+
+.document-pdf-export h1,
+.document-pdf-export h2,
+.document-pdf-export h3,
+.document-pdf-export h4 {
+  break-inside: avoid;
+  break-after: avoid-page;
+  page-break-after: avoid;
+}
+
+.document-pdf-export table,
+.document-pdf-export pre,
+.document-pdf-export blockquote {
+  break-inside: avoid;
+}
+
+.document-pdf-export p {
+  break-inside: auto;
+}
+
+.document-pdf-export ul,
+.document-pdf-export ol {
+  break-inside: auto;
+  page-break-inside: auto;
+}
+
+.document-pdf-export li {
+  break-inside: avoid;
+  break-inside: avoid-page;
+  page-break-inside: avoid;
+}
+
+.document-pdf-export h1 + p,
+.document-pdf-export h2 + p,
+.document-pdf-export h3 + p,
+.document-pdf-export h4 + p,
+.document-pdf-export h1 + ul,
+.document-pdf-export h2 + ul,
+.document-pdf-export h3 + ul,
+.document-pdf-export h4 + ul,
+.document-pdf-export h1 + ol,
+.document-pdf-export h2 + ol,
+.document-pdf-export h3 + ol,
+.document-pdf-export h4 + ol,
+.document-pdf-export h1 + blockquote,
+.document-pdf-export h2 + blockquote,
+.document-pdf-export h3 + blockquote,
+.document-pdf-export h4 + blockquote,
+.document-pdf-export h1 + table,
+.document-pdf-export h2 + table,
+.document-pdf-export h3 + table,
+.document-pdf-export h4 + table,
+.document-pdf-export h1 + pre,
+.document-pdf-export h2 + pre,
+.document-pdf-export h3 + pre,
+.document-pdf-export h4 + pre {
+  break-before: avoid-page;
+  page-break-before: avoid;
+}
+
+.document-viewer-status {
+  padding: 0 1.25rem;
+  font-size: 0.95rem;
+}
+
+.document-viewer-status.is-loading,
+.document-viewer-status.is-error,
+.document-viewer-status.is-empty {
+  padding-top: 1rem;
+}
+
+.document-viewer-status.is-error {
+  color: #b42318;
+}
+
+.document-viewer-status.is-empty {
+  color: #666;
+}
+
+.document-viewer-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1.5rem 2rem;
+}
+
+.document-viewer-content:empty {
+  display: none;
+}
+
 @media (max-width: 575px) {
+  html.page-documents,
+  html.page-documents body {
+    height: auto;
+    min-height: 100%;
+    overflow-y: auto;
+  }
+
+  html.page-documents .page-content {
+    overflow: visible;
+    flex: none;
+  }
+
+  html.page-documents .documents-card {
+    overflow: visible;
+  }
+
+  .documents-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .documents-browser {
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .document-viewer-card {
+    min-height: 24rem;
+  }
+
+  .document-viewer-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   #documentsList {
     grid-template-columns: 1fr;
   }
 
   .document-category-title {
     min-height: 0;
+  }
+
+  .document-viewer-content {
+    padding: 1.25rem;
   }
 }
 
@@ -920,6 +1197,14 @@ html.page-about .page-content {
 }
 
 /* Markdown content */
+.document-markdown,
+.about-markdown {
+  color: #333;
+  line-height: 1.7;
+}
+
+.document-markdown h1,
+.document-markdown h2,
 .about-markdown h1,
 .about-markdown h2 {
   font-size: 1.25rem;
@@ -929,11 +1214,22 @@ html.page-about .page-content {
   margin-bottom: 0.9rem;
 }
 
+.document-markdown h1,
 .about-markdown h1 {
   font-size: 1.5rem;
   margin-top: 2rem;
 }
 
+.document-markdown h3,
+.document-markdown h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-top: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.document-markdown p,
 .about-markdown p {
   font-size: 0.95rem;
   color: #333;
@@ -941,7 +1237,69 @@ html.page-about .page-content {
   margin-bottom: 0.9rem;
 }
 
+.document-markdown ul,
+.document-markdown ol {
+  padding-left: 1.35rem;
+  margin-bottom: 1rem;
+}
+
+.document-markdown li + li {
+  margin-top: 0.25rem;
+}
+
+.document-markdown blockquote {
+  border-left: 3px solid #E30613;
+  margin: 1rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  color: #555;
+}
+
+.document-markdown hr {
+  border: 0;
+  border-top: 1px solid #ececec;
+  margin: 1.5rem 0;
+}
+
+.document-markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.document-markdown th,
+.document-markdown td {
+  border: 1px solid #ececec;
+  padding: 0.65rem 0.8rem;
+  vertical-align: top;
+}
+
+.document-markdown th {
+  background: #fafafa;
+  font-weight: 700;
+}
+
+.document-markdown code {
+  background: #f6f8fa;
+  border-radius: 4px;
+  padding: 0.12rem 0.35rem;
+  font-size: 0.92em;
+}
+
+.document-markdown pre {
+  background: #f6f8fa;
+  border-radius: 4px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.document-markdown pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.document-markdown a,
 .about-markdown a { color: #E30613; }
+.document-markdown a:hover,
 .about-markdown a:hover { color: #a8000f; }
 
 /* Contact section */

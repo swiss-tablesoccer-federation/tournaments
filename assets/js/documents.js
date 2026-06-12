@@ -54,6 +54,341 @@ var DOCUMENT_CATEGORIES = [
   }
 ];
 
+var DOCUMENTS_BY_FILE = {};
+var currentDocumentFile = null;
+var currentDocumentRequestId = 0;
+var isDownloadingPdf = false;
+
+DOCUMENT_CATEGORIES.forEach(function (category) {
+  category.docs.forEach(function (doc) {
+    DOCUMENTS_BY_FILE[doc.file] = doc;
+  });
+});
+
+function getDocumentHash(file) {
+  return '#doc=' + encodeURIComponent(file);
+}
+
+function getDocumentFileFromHash() {
+  var match = window.location.hash.match(/^#doc=(.+)$/);
+  if (!match) return null;
+
+  try {
+    var file = decodeURIComponent(match[1]);
+    return DOCUMENTS_BY_FILE[file] ? file : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function getFirstDocumentFile() {
+  for (var i = 0; i < DOCUMENT_CATEGORIES.length; i++) {
+    if (DOCUMENT_CATEGORIES[i].docs.length) return DOCUMENT_CATEGORIES[i].docs[0].file;
+  }
+  return null;
+}
+
+function isMobileDocumentsLayout() {
+  return window.matchMedia('(max-width: 575px)').matches;
+}
+
+function scrollToDocumentViewer() {
+  var viewerCard = document.querySelector('.document-viewer-card');
+  if (!viewerCard || !isMobileDocumentsLayout()) return;
+
+  viewerCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function getSafeUrl(url) {
+  if (typeof url !== 'string' || !url.trim()) return '';
+  if (url.charAt(0) === '#') return url;
+
+  try {
+    var parsed = new URL(url, window.location.href);
+    return /^(https?:|mailto:|tel:)$/.test(parsed.protocol) ? parsed.href : '';
+  } catch (e) {
+    return '';
+  }
+}
+
+function resolveDocumentFile(url) {
+  if (typeof url !== 'string' || !url.trim()) return null;
+
+  try {
+    var parsed = new URL(url, window.location.href);
+    var filename = parsed.pathname.split('/').pop();
+    return DOCUMENTS_BY_FILE[filename] ? filename : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function renderViewerChrome() {
+  var $viewer = $('#documentViewer');
+  if ($viewer.length) return;
+
+  $('.documents-card').empty().append(
+    $('<div>').addClass('documents-layout').append(
+      $('<div>').addClass('documents-browser').append(
+        $('<div>').attr('id', 'documentsList')
+      ),
+      $('<section>')
+        .addClass('document-viewer-card')
+        .append(
+          $('<div>').addClass('document-viewer-header').append(
+            $('<div>').addClass('document-viewer-heading').append(
+              $('<div>')
+                .addClass('document-viewer-label')
+                .attr('id', 'documentViewerLabel'),
+              $('<h2>')
+                .addClass('document-viewer-title')
+                .attr('id', 'documentViewerTitle')
+            ),
+            $('<button>')
+              .addClass('document-viewer-action')
+              .attr({
+                id: 'documentViewerDownload',
+                type: 'button'
+              })
+              .append(
+                $('<i>')
+                  .addClass('fa-solid fa-download')
+                  .attr('aria-hidden', 'true')
+              )
+              .on('click', function () {
+                downloadCurrentDocumentPdf();
+              })
+          )
+        )
+        .append(
+          $('<div>')
+            .addClass('document-viewer-status')
+            .attr('id', 'documentViewerStatus'),
+          $('<article>')
+            .addClass('document-viewer-content document-markdown')
+            .attr('id', 'documentViewer')
+        )
+    )
+  );
+}
+
+function updateViewerMeta(doc) {
+  $('#documentViewerLabel').text(tr('documentsViewerLabel'));
+  $('#documentViewerTitle').text(doc ? tr(doc.key) : '');
+  $('#documentViewerDownload')
+    .attr('title', tr('documentsDownloadPdf'))
+    .attr('aria-label', tr('documentsDownloadPdf'));
+}
+
+function setDownloadButtonState(disabled) {
+  $('#documentViewerDownload').prop('disabled', !!disabled);
+}
+
+function getDocumentPdfFilename(file) {
+  return String(file || 'document')
+    .replace(/\.md$/i, '.pdf')
+    .replace(/[^\w.\-]+/g, '-');
+}
+
+function groupPdfHeadingBlocks($container) {
+  $container.find('h1, h2, h3, h4').each(function () {
+    var $heading = $(this);
+    var $next = $heading.next();
+    var $group;
+
+    if (!$next.length || !$next.is('p, ul, ol, blockquote, table, pre')) return;
+
+    $group = $('<div>')
+      .addClass('document-pdf-heading-group')
+      .insertBefore($heading)
+      .append($heading, $next);
+
+    if ($heading.is('h1, h2') && $group.prev().length) {
+      $group.addClass('document-pdf-heading-group-page');
+    }
+  });
+}
+
+function createPdfExportNode(markdownText) {
+  var $root = $('<div>').addClass('document-pdf-export-root');
+  var $export = $('<div>')
+    .addClass('document-markdown document-pdf-export')
+    .css({
+      width: '172mm',
+      padding: '0',
+      background: '#ffffff',
+      color: '#333333'
+    });
+
+  $export.html(renderMarkdown(markdownText));
+  enhanceDocumentLinks($export);
+  groupPdfHeadingBlocks($export);
+  $root.append($export);
+
+  $('body').append($root);
+  return $root;
+}
+
+function downloadCurrentDocumentPdf() {
+  var doc = currentDocumentFile ? DOCUMENTS_BY_FILE[currentDocumentFile] : null;
+  var $exportRoot = null;
+
+  if (!doc || isDownloadingPdf || !window.html2pdf || !$('#documentViewer').children().length) return;
+
+  isDownloadingPdf = true;
+  setDownloadButtonState(true);
+
+  fetch(doc.file)
+    .then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.text();
+    })
+    .then(function (markdownText) {
+      $exportRoot = createPdfExportNode(markdownText);
+
+      return window.html2pdf().set({
+        margin: 19,
+        filename: getDocumentPdfFilename(doc.file),
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff' },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { mode: ['css', 'legacy'] }
+      }).from($exportRoot.find('.document-pdf-export').get(0)).save();
+    })
+    .catch(function () {
+      setViewerStatus('error', tr('documentsDownloadFailed'));
+    })
+    .then(function () {
+      if ($exportRoot) $exportRoot.remove();
+      isDownloadingPdf = false;
+      setDownloadButtonState(!currentDocumentFile || !$('#documentViewer').children().length);
+    });
+}
+
+function setViewerStatus(type, message) {
+  $('#documentViewerStatus')
+    .removeClass('is-loading is-error is-empty')
+    .addClass(type ? 'is-' + type : '')
+    .html(message || '');
+}
+
+function enhanceDocumentLinks($container) {
+  $container.find('a').each(function () {
+    var $link = $(this);
+    var originalHref = $link.attr('href');
+    var safeHref = getSafeUrl(originalHref);
+    var embeddedFile = resolveDocumentFile(originalHref);
+
+    if (!safeHref) {
+      $link.replaceWith($link.text());
+      return;
+    }
+
+    if (embeddedFile) {
+      $link
+        .attr('href', getDocumentHash(embeddedFile))
+        .attr('data-doc-file', embeddedFile)
+        .removeAttr('target')
+        .removeAttr('rel');
+      return;
+    }
+
+    $link
+      .attr('href', safeHref)
+      .attr('target', '_blank')
+      .attr('rel', 'noopener');
+  });
+
+  $container.find('img').each(function () {
+    var $img = $(this);
+    var safeSrc = getSafeUrl($img.attr('src'));
+
+    if (!safeSrc) {
+      $img.remove();
+      return;
+    }
+
+    $img.attr('src', safeSrc).attr('loading', 'lazy');
+  });
+}
+
+function renderMarkdown(text) {
+  if (window.marked && typeof window.marked.parse === 'function') {
+    return window.marked.parse(text);
+  }
+
+  return '<pre>' + escapeHtml(text) + '</pre>';
+}
+
+function updateActiveDocumentLink() {
+  $('.document-link').removeClass('is-active').attr('aria-current', null);
+
+  if (!currentDocumentFile) return;
+
+  $('.document-link[data-doc-file="' + currentDocumentFile + '"]')
+    .addClass('is-active')
+    .attr('aria-current', 'page');
+}
+
+function loadDocument(file, options) {
+  var doc = DOCUMENTS_BY_FILE[file];
+  var requestId;
+  var shouldScrollToViewer;
+
+  options = options || {};
+  if (!doc) return;
+
+  currentDocumentFile = file;
+  requestId = ++currentDocumentRequestId;
+  shouldScrollToViewer = !!options.scrollToViewer;
+
+  updateViewerMeta(doc);
+  updateActiveDocumentLink();
+  setViewerStatus(
+    'loading',
+    '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>' +
+      tr('loading')
+  );
+  $('#documentViewer').empty();
+  setDownloadButtonState(true);
+
+  if (options.updateHash !== false && window.location.hash !== getDocumentHash(file)) {
+    window.location.hash = getDocumentHash(file);
+  }
+
+  fetch(doc.file)
+    .then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.text();
+    })
+    .then(function (text) {
+      if (requestId !== currentDocumentRequestId) return;
+
+      var $viewer = $('#documentViewer');
+      $viewer.html(renderMarkdown(text));
+      enhanceDocumentLinks($viewer);
+      setViewerStatus('', '');
+      setDownloadButtonState(false);
+      if (shouldScrollToViewer) scrollToDocumentViewer();
+    })
+    .catch(function () {
+      if (requestId !== currentDocumentRequestId) return;
+
+      setViewerStatus('error', tr('documentsFailedToLoad'));
+      setDownloadButtonState(true);
+      if (shouldScrollToViewer) scrollToDocumentViewer();
+    });
+}
+
 function renderDocuments() {
   var totalCount = 0;
   var $list = $('#documentsList');
@@ -71,9 +406,12 @@ function renderDocuments() {
       totalCount++;
       var $link = $('<a>')
         .addClass('document-link')
-        .attr('href', doc.file)
-        .attr('target', '_blank')
-        .attr('rel', 'noopener');
+        .attr('href', getDocumentHash(doc.file))
+        .attr('data-doc-file', doc.file)
+        .on('click', function (event) {
+          event.preventDefault();
+          loadDocument(doc.file, { scrollToViewer: true });
+        });
 
       $('<i>')
         .addClass('fa-regular fa-file-lines')
@@ -89,12 +427,37 @@ function renderDocuments() {
   });
 
   $('#documentsCount').text(tr('documentsCount', { count: totalCount }));
+  updateActiveDocumentLink();
 }
 
 $(function () {
+  renderViewerChrome();
   renderDocuments();
+
+  var initialFile = getDocumentFileFromHash() || getFirstDocumentFile();
+  if (initialFile) {
+    loadDocument(initialFile, { updateHash: false });
+  } else {
+    updateViewerMeta(null);
+    setViewerStatus('empty', tr('documentsSelectPrompt'));
+    setDownloadButtonState(true);
+  }
+
+  window.addEventListener('hashchange', function () {
+    var file = getDocumentFileFromHash();
+    if (file && file !== currentDocumentFile) {
+      loadDocument(file, { updateHash: false });
+    }
+  });
 });
 
 document.addEventListener('langChanged', function () {
   renderDocuments();
+  updateViewerMeta(currentDocumentFile ? DOCUMENTS_BY_FILE[currentDocumentFile] : null);
+  if (!currentDocumentFile) {
+    setViewerStatus('empty', tr('documentsSelectPrompt'));
+    setDownloadButtonState(true);
+  } else if ($('#documentViewerStatus').hasClass('is-error')) {
+    setViewerStatus('error', tr('documentsFailedToLoad'));
+  }
 });
