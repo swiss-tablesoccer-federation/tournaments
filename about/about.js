@@ -1,6 +1,7 @@
 /* ── About page ──────────────────────────────────────────── */
 
 var COMMITTEES_API = 'https://api.swisstablesoccer.ch/committees';
+var DEFAULT_PROFILE_IMAGE = 'https://app.tablesoccer.org/icon/profile.svg';
 
 /**
  * Fetch a markdown file for the given base name and current language,
@@ -28,15 +29,26 @@ function loadMarkdown(baseName, targetId) {
 
 /* ── Committees rendering ─────────────────────────────────── */
 
+function getSafeImageUrl(url) {
+  if (typeof url !== 'string') return DEFAULT_PROFILE_IMAGE;
+
+  try {
+    var parsed = new URL(url, window.location.href);
+    return (parsed.protocol === 'http:' || parsed.protocol === 'https:') ? parsed.href : DEFAULT_PROFILE_IMAGE;
+  } catch (e) {
+    return DEFAULT_PROFILE_IMAGE;
+  }
+}
+
 function renderMemberCard(member) {
   var p = member.person;
   var fullName = p.first_name + ' ' + p.last_name;
   var $img = $('<img>')
     .addClass('member-avatar')
-    .attr('src', p.image)
+    .attr('src', getSafeImageUrl(p.image))
     .attr('alt', fullName)
     .on('error', function () {
-      $(this).attr('src', 'https://app.tablesoccer.org/icon/profile.svg');
+      $(this).attr('src', DEFAULT_PROFILE_IMAGE);
     });
 
   return $('<div>').addClass('member-card')
@@ -88,7 +100,7 @@ function loadCommittees() {
     .then(function (data) {
       $content.empty();
       if (!data || !data.length) {
-        $content.html('<p class="text-muted text-center py-3">' + (typeof tr === 'function' ? tr('aboutFailedCommittees') : 'No data available.') + '</p>');
+        $content.html('<p class="text-muted text-center py-3">' + (typeof tr === 'function' ? tr('aboutFailedCommittees') : 'Failed to load organisation.') + '</p>');
         return;
       }
       data.forEach(function (committee) {
