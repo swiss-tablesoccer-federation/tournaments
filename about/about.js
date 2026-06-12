@@ -30,7 +30,7 @@ function loadMarkdown(baseName, targetId) {
 /* ── Committees rendering ─────────────────────────────────── */
 
 function getSafeImageUrl(url) {
-  if (typeof url !== 'string') return DEFAULT_PROFILE_IMAGE;
+  if (typeof url !== 'string' || !url.trim()) return DEFAULT_PROFILE_IMAGE;
 
   try {
     var parsed = new URL(url, window.location.href);
@@ -100,7 +100,7 @@ function loadCommittees() {
     .then(function (data) {
       $content.empty();
       if (!data || !data.length) {
-        $content.html('<p class="text-muted text-center py-3">' + (typeof tr === 'function' ? tr('aboutFailedCommittees') : 'Failed to load organization.') + '</p>');
+        $content.html('<p class="text-danger text-center py-3">' + (typeof tr === 'function' ? tr('aboutFailedCommittees') : 'Failed to load organization.') + '</p>');
         return;
       }
       data.forEach(function (committee) {
