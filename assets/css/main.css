@@ -28,36 +28,34 @@ body {
   gap: 1.25rem;
 }
 
-/* ── Site nav links (second row) ────────────────────────── */
+/* ── Site nav links (inline, same row as logo) ──────────── */
 .site-nav-links {
   display: flex;
   align-items: center;
-  padding-left: 8vw;
-  padding-right: 8vw;
-  border-top: 1px solid #f0f0f0;
+  flex: 1;
+  margin-left: 1.5rem;
+  gap: 0;
 }
 
 .nav-link-item {
   display: inline-block;
-  padding: 0.45rem 1rem;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #555;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #333;
   text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: color .15s, border-color .15s;
   white-space: nowrap;
+  transition: color .15s;
 }
 
 .nav-link-item:hover {
   color: #E30613;
-  border-bottom-color: rgba(227,6,19,.4);
   text-decoration: none;
 }
 
 .nav-link-item.active {
   color: #E30613;
-  border-bottom-color: #E30613;
+  font-weight: 600;
 }
 
 .site-nav-logo {
@@ -71,23 +69,13 @@ body {
   width: auto;
 }
 
-.site-nav-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-left: auto;
-}
-
 /* ── Language selector ──────────────────────────────────── */
 .lang-selector {
   display: flex;
   align-items: center;
   gap: 0.15rem;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 .lang-btn {
@@ -116,10 +104,9 @@ body {
 
 @media (max-width: 480px) {
   .site-nav-logo img { height: 36px; }
-  .site-nav-title { display: none; }
   .lang-selector { margin-left: auto; }
-  .site-nav-links { padding-left: 0.5rem; padding-right: 0.5rem; overflow-x: auto; }
-  .nav-link-item { padding: 0.4rem 0.6rem; font-size: 0.75rem; }
+  .site-nav-links { overflow-x: auto; margin-left: 0.5rem; }
+  .nav-link-item { padding: 0.4rem 0.5rem; font-size: 0.75rem; }
 }
 
 /* ── Filter row ─────────────────────────────────────────── */
