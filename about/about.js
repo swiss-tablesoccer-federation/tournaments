@@ -100,7 +100,7 @@ function loadCommittees() {
     .then(function (data) {
       $content.empty();
       if (!data || !data.length) {
-        $content.html('<p class="text-muted text-center py-3">' + (typeof tr === 'function' ? tr('aboutFailedCommittees') : 'Failed to load organisation.') + '</p>');
+        $content.html('<p class="text-muted text-center py-3">' + (typeof tr === 'function' ? tr('aboutFailedCommittees') : 'Failed to load organization.') + '</p>');
         return;
       }
       data.forEach(function (committee) {
@@ -108,7 +108,7 @@ function loadCommittees() {
       });
     })
     .catch(function () {
-      $content.html('<p class="text-danger text-center py-3">' + (typeof tr === 'function' ? tr('aboutFailedCommittees') : 'Failed to load organisation.') + '</p>');
+      $content.html('<p class="text-danger text-center py-3">' + (typeof tr === 'function' ? tr('aboutFailedCommittees') : 'Failed to load organization.') + '</p>');
     });
 }
 
