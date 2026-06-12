@@ -2,6 +2,7 @@
 
 var COMMITTEES_API = 'https://api.swisstablesoccer.ch/committees';
 var DEFAULT_PROFILE_IMAGE = 'https://app.tablesoccer.org/icon/profile.svg';
+var FALLBACK_LOAD_ORGANIZATION_ERROR = 'Failed to load organization.';
 
 /**
  * Fetch a markdown file for the given base name and current language,
@@ -100,7 +101,7 @@ function loadCommittees() {
     .then(function (data) {
       $content.empty();
       if (!data || !data.length) {
-        $content.html('<p class="text-danger text-center py-3">' + (typeof tr === 'function' ? tr('aboutFailedCommittees') : 'Failed to load organization.') + '</p>');
+        $content.html('<p class="text-danger text-center py-3">' + (typeof tr === 'function' ? tr('aboutFailedCommittees') : FALLBACK_LOAD_ORGANIZATION_ERROR) + '</p>');
         return;
       }
       data.forEach(function (committee) {
@@ -108,7 +109,7 @@ function loadCommittees() {
       });
     })
     .catch(function () {
-      $content.html('<p class="text-danger text-center py-3">' + (typeof tr === 'function' ? tr('aboutFailedCommittees') : 'Failed to load organization.') + '</p>');
+      $content.html('<p class="text-danger text-center py-3">' + (typeof tr === 'function' ? tr('aboutFailedCommittees') : FALLBACK_LOAD_ORGANIZATION_ERROR) + '</p>');
     });
 }
 
