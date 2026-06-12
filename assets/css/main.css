@@ -182,6 +182,15 @@ input.filter-control {
   flex-direction: column;
   min-height: 0;
   overflow: hidden;
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+}
+
+@media (min-width: 768px) {
+  .page-content {
+    padding-left: 6rem !important;
+    padding-right: 6rem !important;
+  }
 }
 
 /* ── Tournament table ───────────────────────────────────── */
