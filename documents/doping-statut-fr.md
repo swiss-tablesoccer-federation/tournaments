@@ -1,0 +1,1 @@
+https://www.sportintegrity.ch/fr/antidopage/droit/statut-concernant-le-dopage

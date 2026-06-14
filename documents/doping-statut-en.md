@@ -1,0 +1,1 @@
+https://www.sportintegrity.ch/en/anti-doping/laws/doping-statute

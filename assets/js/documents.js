@@ -2,9 +2,23 @@ var DOCUMENT_CATEGORIES = [
   {
     key: 'documentsCategory_antiDoping',
     docs: [
-      { key: 'documentsDoc_dopingStatut', file: 'doping-statut-de.md' },
-      { key: 'documentsDoc_informationStf', file: 'information-stf-de.md' },
-      { key: 'documentsDoc_informationAntiDoping', file: 'information-anti-doping-de.md' }
+      {
+        key: 'documentsDoc_dopingStatut',
+        files: {
+          de: 'doping-statut-de.md',
+          en: 'doping-statut-en.md',
+          fr: 'doping-statut-fr.md',
+          it: 'doping-statut-it.md'
+        }
+      },
+      {
+        key: 'documentsDoc_swissSportIntegrity',
+        files: {
+          de: 'swiss-sport-integrity-de.md',
+          en: 'swiss-sport-integrity-en.md',
+          fr: 'swiss-sport-integrity-fr.md'
+        }
+      }
     ]
   },
   {
@@ -54,6 +68,31 @@ var DOCUMENT_CATEGORIES = [
   }
 ];
 
+<<<<<<< HEAD
+var LINK_ONLY_TARGETS = {};
+var currentDocumentFile = null;
+var currentDocumentRequestId = 0;
+
+function getActiveLang() {
+  return (typeof currentLang === 'string' && currentLang) ? currentLang : 'de';
+}
+
+function getDocFile(doc) {
+  var lang = getActiveLang();
+  var files = doc.files || {};
+  var fallbackOrder = [lang, 'de', 'en', 'fr', 'it'];
+  var i;
+
+  if (doc.file) return doc.file;
+
+  for (i = 0; i < fallbackOrder.length; i++) {
+    if (files[fallbackOrder[i]]) return files[fallbackOrder[i]];
+  }
+
+  return null;
+}
+
+=======
 var DOCUMENTS_BY_FILE = {};
 var currentDocumentFile = null;
 var currentDocumentRequestId = 0;
@@ -108,6 +147,7 @@ function escapeHtml(text) {
     .replace(/'/g, '&#39;');
 }
 
+>>>>>>> origin/main
 function getSafeUrl(url) {
   if (typeof url !== 'string' || !url.trim()) return '';
   if (url.charAt(0) === '#') return url;
@@ -120,6 +160,33 @@ function getSafeUrl(url) {
   }
 }
 
+<<<<<<< HEAD
+function extractSingleLinkTarget(markdownText) {
+  var trimmed = String(markdownText || '').trim();
+  var plainUrl = trimmed.match(/^(https?:\/\/\S+)$/i);
+  var bracketUrl = trimmed.match(/^<\s*(https?:\/\/[^>\s]+)\s*>$/i);
+  var markdownLink = trimmed.match(/^\[[^\]]+\]\(\s*(https?:\/\/[^)\s]+)(?:\s+["'][^"']*["'])?\s*\)$/i);
+
+  if (plainUrl) return getSafeUrl(plainUrl[1]);
+  if (bracketUrl) return getSafeUrl(bracketUrl[1]);
+  if (markdownLink) return getSafeUrl(markdownLink[1]);
+  return '';
+}
+
+function renderMarkdown(text) {
+  if (window.marked && typeof window.marked.parse === 'function') {
+    return window.marked.parse(text);
+  }
+
+  return '<pre>' + String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;') + '</pre>';
+}
+
+function renderViewerChrome() {
+  if ($('#documentViewer').length) return;
+=======
 function resolveDocumentFile(url) {
   if (typeof url !== 'string' || !url.trim()) return null;
 
@@ -135,6 +202,7 @@ function resolveDocumentFile(url) {
 function renderViewerChrome() {
   var $viewer = $('#documentViewer');
   if ($viewer.length) return;
+>>>>>>> origin/main
 
   $('.documents-card').empty().append(
     $('<div>').addClass('documents-layout').append(
@@ -146,6 +214,16 @@ function renderViewerChrome() {
         .append(
           $('<div>').addClass('document-viewer-header').append(
             $('<div>').addClass('document-viewer-heading').append(
+<<<<<<< HEAD
+              $('<div>').addClass('document-viewer-label').text('Document'),
+              $('<h2>').addClass('document-viewer-title').attr('id', 'documentViewerTitle')
+            )
+          )
+        )
+        .append(
+          $('<div>').addClass('document-viewer-status').attr('id', 'documentViewerStatus'),
+          $('<article>').addClass('document-viewer-content document-markdown').attr('id', 'documentViewer')
+=======
               $('<div>')
                 .addClass('document-viewer-label')
                 .attr('id', 'documentViewerLabel'),
@@ -176,11 +254,14 @@ function renderViewerChrome() {
           $('<article>')
             .addClass('document-viewer-content document-markdown')
             .attr('id', 'documentViewer')
+>>>>>>> origin/main
         )
     )
   );
 }
 
+<<<<<<< HEAD
+=======
 function updateViewerMeta(doc) {
   $('#documentViewerLabel').text(tr('documentsViewerLabel'));
   $('#documentViewerTitle').text(doc ? tr(doc.key) : '');
@@ -274,6 +355,7 @@ function downloadCurrentDocumentPdf() {
     });
 }
 
+>>>>>>> origin/main
 function setViewerStatus(type, message) {
   $('#documentViewerStatus')
     .removeClass('is-loading is-error is-empty')
@@ -281,6 +363,21 @@ function setViewerStatus(type, message) {
     .html(message || '');
 }
 
+<<<<<<< HEAD
+function updateActiveDocumentLink() {
+  $('.document-link').removeClass('is-active').attr('aria-current', null);
+
+  if (!currentDocumentFile) return;
+  $('.document-link[data-doc-file="' + currentDocumentFile + '"]')
+    .addClass('is-active')
+    .attr('aria-current', 'page');
+}
+
+function enhanceDocumentLinks($container) {
+  $container.find('a').each(function () {
+    var $link = $(this);
+    var safeHref = getSafeUrl($link.attr('href'));
+=======
 function enhanceDocumentLinks($container) {
   $container.find('a').each(function () {
     var $link = $(this);
@@ -288,11 +385,67 @@ function enhanceDocumentLinks($container) {
     var safeHref = getSafeUrl(originalHref);
     var embeddedFile = resolveDocumentFile(originalHref);
 
+>>>>>>> origin/main
     if (!safeHref) {
       $link.replaceWith($link.text());
       return;
     }
 
+<<<<<<< HEAD
+    $link.attr('href', safeHref).attr('target', '_blank').attr('rel', 'noopener');
+  });
+}
+
+function isMobileDocumentsLayout() {
+  return window.matchMedia('(max-width: 575px)').matches;
+}
+
+function scrollToDocumentViewer() {
+  var viewerCard = document.querySelector('.document-viewer-card');
+  if (!viewerCard || !isMobileDocumentsLayout()) return;
+  viewerCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function renderExternalLinkPlaceholder(linkTarget) {
+  var safeTarget = getSafeUrl(linkTarget);
+  var $viewer = $('#documentViewer');
+  var $card;
+
+  if (!safeTarget) {
+    $viewer.empty();
+    return;
+  }
+
+  $card = $('<a>')
+    .addClass('document-external-link-card')
+    .attr('href', safeTarget)
+    .attr('target', '_blank')
+    .attr('rel', 'noopener')
+    .append(
+      $('<i>')
+        .addClass('fa-solid fa-arrow-up-right-from-square')
+        .attr('aria-hidden', 'true'),
+      $('<span>').addClass('document-external-link-url').text(safeTarget)
+    );
+
+  $viewer.empty().append($card);
+}
+
+function loadDocument(file, title, shouldScroll) {
+  var requestId = ++currentDocumentRequestId;
+
+  currentDocumentFile = file;
+  $('#documentViewerTitle').text(title || '');
+  updateActiveDocumentLink();
+  setViewerStatus(
+    'loading',
+    '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>' + tr('loading')
+  );
+  $('#documentViewer').removeClass('is-external');
+  $('#documentViewer').empty();
+
+  fetch(file)
+=======
     if (embeddedFile) {
       $link
         .attr('href', getDocumentHash(embeddedFile))
@@ -366,11 +519,38 @@ function loadDocument(file, options) {
   }
 
   fetch(doc.file)
+>>>>>>> origin/main
     .then(function (res) {
       if (!res.ok) throw new Error('HTTP ' + res.status);
       return res.text();
     })
     .then(function (text) {
+<<<<<<< HEAD
+      var linkTarget;
+
+      if (requestId !== currentDocumentRequestId) return;
+      linkTarget = extractSingleLinkTarget(text);
+      LINK_ONLY_TARGETS[file] = linkTarget;
+
+      if (linkTarget) {
+        setViewerStatus('empty', '');
+        $('#documentViewer').addClass('is-external');
+        renderExternalLinkPlaceholder(linkTarget);
+        window.open(linkTarget, '_blank', 'noopener');
+        if (shouldScroll) scrollToDocumentViewer();
+        return;
+      }
+
+      $('#documentViewer').removeClass('is-external');
+      $('#documentViewer').html(renderMarkdown(text));
+      enhanceDocumentLinks($('#documentViewer'));
+      setViewerStatus('', '');
+      if (shouldScroll) scrollToDocumentViewer();
+    })
+    .catch(function () {
+      if (requestId !== currentDocumentRequestId) return;
+      setViewerStatus('error', tr('failedToLoadData', { status: '?' }));
+=======
       if (requestId !== currentDocumentRequestId) return;
 
       var $viewer = $('#documentViewer');
@@ -386,26 +566,44 @@ function loadDocument(file, options) {
       setViewerStatus('error', tr('documentsFailedToLoad'));
       setDownloadButtonState(true);
       if (shouldScrollToViewer) scrollToDocumentViewer();
+>>>>>>> origin/main
     });
 }
 
 function renderDocuments() {
   var totalCount = 0;
   var $list = $('#documentsList');
+  var firstDoc = null;
+  var defaultDoc = null;
+
   $list.empty();
 
   DOCUMENT_CATEGORIES.forEach(function (category) {
     var $section = $('<section>').addClass('document-category');
-    $('<h2>')
-      .addClass('document-category-title')
-      .text(tr(category.key))
-      .appendTo($section);
+    $('<h2>').addClass('document-category-title').text(tr(category.key)).appendTo($section);
 
     var $links = $('<div>').addClass('document-links');
     category.docs.forEach(function (doc) {
+      var file = getDocFile(doc);
+      var title;
+      var $link;
+
+      if (!file) return;
+      if (!firstDoc) firstDoc = { file: file, key: doc.key };
+      if (doc.key === 'documentsDoc_statuten') defaultDoc = { file: file, key: doc.key };
+
       totalCount++;
-      var $link = $('<a>')
+      title = tr(doc.key);
+      $link = $('<a>')
         .addClass('document-link')
+<<<<<<< HEAD
+        .attr('href', file)
+        .attr('data-doc-file', file)
+        .on('click', function (event) {
+          event.preventDefault();
+          loadDocument(file, title, true);
+        });
+=======
         .attr('href', getDocumentHash(doc.file))
         .attr('data-doc-file', doc.file)
         .on('click', function (event) {
@@ -418,7 +616,10 @@ function renderDocuments() {
         .attr('aria-hidden', 'true')
         .appendTo($link);
       $('<span>').text(tr(doc.key)).appendTo($link);
+>>>>>>> origin/main
 
+      $('<i>').addClass('fa-regular fa-file-lines').attr('aria-hidden', 'true').appendTo($link);
+      $('<span>').text(title).appendTo($link);
       $links.append($link);
     });
 
@@ -427,7 +628,19 @@ function renderDocuments() {
   });
 
   $('#documentsCount').text(tr('documentsCount', { count: totalCount }));
+<<<<<<< HEAD
+
+  if (defaultDoc || firstDoc) {
+    var initialDoc = defaultDoc || firstDoc;
+    loadDocument(initialDoc.file, tr(initialDoc.key), false);
+  } else {
+    $('#documentViewerTitle').text('');
+    setViewerStatus('empty', '');
+    $('#documentViewer').empty();
+  }
+=======
   updateActiveDocumentLink();
+>>>>>>> origin/main
 }
 
 $(function () {

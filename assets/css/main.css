@@ -912,10 +912,13 @@ tr[data-cat="STS"] .t-date {
   border-bottom: 1px solid #ececec;
 }
 
+<<<<<<< HEAD
+=======
 .document-viewer-heading {
   min-width: 0;
 }
 
+>>>>>>> origin/main
 .document-viewer-label {
   font-size: 0.68rem;
   font-weight: 700;
@@ -932,6 +935,8 @@ tr[data-cat="STS"] .t-date {
   margin: 0;
 }
 
+<<<<<<< HEAD
+=======
 .document-viewer-action {
   display: inline-flex;
   align-items: center;
@@ -1087,6 +1092,7 @@ tr[data-cat="STS"] .t-date {
   page-break-before: avoid;
 }
 
+>>>>>>> origin/main
 .document-viewer-status {
   padding: 0 1.25rem;
   font-size: 0.95rem;
@@ -1102,10 +1108,13 @@ tr[data-cat="STS"] .t-date {
   color: #b42318;
 }
 
+<<<<<<< HEAD
+=======
 .document-viewer-status.is-empty {
   color: #666;
 }
 
+>>>>>>> origin/main
 .document-viewer-content {
   flex: 1;
   min-height: 0;
@@ -1117,6 +1126,78 @@ tr[data-cat="STS"] .t-date {
   display: none;
 }
 
+<<<<<<< HEAD
+.document-viewer-content.is-external {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.document-external-link-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 12rem;
+  width: min(100%, 34rem);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px dashed #d6d6d6;
+  background: #fafafa;
+  color: #E30613;
+  text-decoration: none;
+  text-align: center;
+  transition: background .15s, border-color .15s, color .15s;
+}
+
+.document-external-link-card:hover {
+  background: #fdf5f5;
+  border-color: rgba(227,6,19,.35);
+  color: #a8000f;
+}
+
+.document-external-link-card i {
+  font-size: 2rem;
+}
+
+.document-external-link-url {
+  font-size: 0.85rem;
+  color: #666;
+  word-break: break-all;
+}
+
+.document-markdown {
+  color: #333;
+  line-height: 1.7;
+}
+
+.document-markdown h1,
+.document-markdown h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #E30613;
+  margin-top: 1.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.document-markdown h1 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+.document-markdown p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 0.9rem;
+}
+
+.document-markdown a { color: #E30613; }
+.document-markdown a:hover { color: #a8000f; }
+
+=======
+>>>>>>> origin/main
 @media (max-width: 575px) {
   html.page-documents,
   html.page-documents body {
