@@ -912,13 +912,10 @@ tr[data-cat="STS"] .t-date {
   border-bottom: 1px solid #ececec;
 }
 
-<<<<<<< HEAD
-=======
 .document-viewer-heading {
   min-width: 0;
 }
 
->>>>>>> origin/main
 .document-viewer-label {
   font-size: 0.68rem;
   font-weight: 700;
@@ -935,8 +932,6 @@ tr[data-cat="STS"] .t-date {
   margin: 0;
 }
 
-<<<<<<< HEAD
-=======
 .document-viewer-action {
   display: inline-flex;
   align-items: center;
@@ -1091,8 +1086,6 @@ tr[data-cat="STS"] .t-date {
   break-before: avoid-page;
   page-break-before: avoid;
 }
-
->>>>>>> origin/main
 .document-viewer-status {
   padding: 0 1.25rem;
   font-size: 0.95rem;
@@ -1108,13 +1101,10 @@ tr[data-cat="STS"] .t-date {
   color: #b42318;
 }
 
-<<<<<<< HEAD
-=======
 .document-viewer-status.is-empty {
   color: #666;
 }
 
->>>>>>> origin/main
 .document-viewer-content {
   flex: 1;
   min-height: 0;
@@ -1126,7 +1116,6 @@ tr[data-cat="STS"] .t-date {
   display: none;
 }
 
-<<<<<<< HEAD
 .document-viewer-content.is-external {
   display: flex;
   align-items: center;
@@ -1195,9 +1184,6 @@ tr[data-cat="STS"] .t-date {
 
 .document-markdown a { color: #E30613; }
 .document-markdown a:hover { color: #a8000f; }
-
-=======
->>>>>>> origin/main
 @media (max-width: 575px) {
   html.page-documents,
   html.page-documents body {
