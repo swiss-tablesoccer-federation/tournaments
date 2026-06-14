@@ -37,6 +37,11 @@ var TRANSLATIONS = {
     documentsDoc_meldeformularDisziplinarverfahren: 'Reporting Form Disciplinary Procedure',
     documentsDoc_ethikCharta: 'Ethics Charter',
     documentsDoc_ethikStatutSwissOlympic: 'Ethics Statute Swiss Olympic',
+    documentsViewerLabel:  'Document viewer',
+    documentsDownloadPdf:  'Download PDF',
+    documentsSelectPrompt: 'Select a document to view it here.',
+    documentsFailedToLoad: 'Failed to load document.',
+    documentsDownloadFailed: 'Failed to generate PDF.',
     filterCategory:        'Category:',
     filterTable:           'Table:',
     filterSearch:          'Search:',
@@ -127,6 +132,11 @@ var TRANSLATIONS = {
     documentsDoc_meldeformularDisziplinarverfahren: 'Meldeformular Disziplinarverfahren',
     documentsDoc_ethikCharta: 'Ethik-Charta',
     documentsDoc_ethikStatutSwissOlympic: 'Ethik-Statut Swiss Olympic',
+    documentsViewerLabel:  'Dokumentansicht',
+    documentsDownloadPdf:  'PDF herunterladen',
+    documentsSelectPrompt: 'Wähle ein Dokument aus, um es hier anzuzeigen.',
+    documentsFailedToLoad: 'Dokument konnte nicht geladen werden.',
+    documentsDownloadFailed: 'PDF konnte nicht erstellt werden.',
     filterCategory:        'Kategorie:',
     filterTable:           'Tisch:',
     filterSearch:          'Suche:',
@@ -217,6 +227,11 @@ var TRANSLATIONS = {
     documentsDoc_meldeformularDisziplinarverfahren: 'Formulaire procédure disciplinaire',
     documentsDoc_ethikCharta: 'Charte éthique',
     documentsDoc_ethikStatutSwissOlympic: 'Statut éthique Swiss Olympic',
+    documentsViewerLabel:  'Aperçu du document',
+    documentsDownloadPdf:  'Télécharger le PDF',
+    documentsSelectPrompt: 'Sélectionnez un document pour l’afficher ici.',
+    documentsFailedToLoad: 'Échec du chargement du document.',
+    documentsDownloadFailed: 'Échec de la génération du PDF.',
     filterCategory:        'Cat\u00e9gorie\u00a0:',
     filterTable:           'Table\u00a0:',
     filterSearch:          'Recherche\u00a0:',
@@ -307,6 +322,11 @@ var TRANSLATIONS = {
     documentsDoc_meldeformularDisziplinarverfahren: 'Modulo procedura disciplinare',
     documentsDoc_ethikCharta: 'Carta etica',
     documentsDoc_ethikStatutSwissOlympic: 'Statuto etico Swiss Olympic',
+    documentsViewerLabel:  'Visualizzatore documento',
+    documentsDownloadPdf:  'Scarica PDF',
+    documentsSelectPrompt: 'Seleziona un documento per visualizzarlo qui.',
+    documentsFailedToLoad: 'Impossibile caricare il documento.',
+    documentsDownloadFailed: 'Impossibile generare il PDF.',
     filterCategory:        'Categoria:',
     filterTable:           'Tavolo:',
     filterSearch:          'Ricerca:',
@@ -428,4 +448,27 @@ $(function () {
 
   /* Apply translations on initial page load */
   applyTranslations();
+
+  /* ── Hamburger menu toggle ───────────────────────────── */
+  $(document).on('click', '#navHamburger', function (e) {
+    e.stopPropagation();
+    var $nav = $('.site-nav');
+    var opening = !$nav.hasClass('nav-open');
+    $nav.toggleClass('nav-open', opening);
+    $(this).attr('aria-expanded', opening ? 'true' : 'false');
+  });
+
+  /* Close menu when clicking outside the navbar */
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.site-nav').length) {
+      $('.site-nav').removeClass('nav-open');
+      $('#navHamburger').attr('aria-expanded', 'false');
+    }
+  });
+
+  /* Close menu when a nav link is clicked */
+  $(document).on('click', '.site-nav-links .nav-link-item', function () {
+    $('.site-nav').removeClass('nav-open');
+    $('#navHamburger').attr('aria-expanded', 'false');
+  });
 });
