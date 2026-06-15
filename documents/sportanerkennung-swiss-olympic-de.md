@@ -1,0 +1,1 @@
+https://static1.squarespace.com/static/6797790a8025010384cf53f2/t/67e3bfb1d4c187798c7c4721/1742978994051/Bestätigung_SwissTablesoccerFederation_DE.pdf

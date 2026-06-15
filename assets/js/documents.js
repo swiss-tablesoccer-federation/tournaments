@@ -16,7 +16,8 @@ var DOCUMENT_CATEGORIES = [
         files: {
           de: 'swiss-sport-integrity-de.md',
           en: 'swiss-sport-integrity-en.md',
-          fr: 'swiss-sport-integrity-fr.md'
+          fr: 'swiss-sport-integrity-fr.md',
+          it: 'swiss-sport-integrity-it.md'
         }
       }
     ]
@@ -32,7 +33,15 @@ var DOCUMENT_CATEGORIES = [
     docs: [
       { key: 'documentsDoc_statuten', file: 'statuten-de.md' },
       { key: 'documentsDoc_reglementSportkommission', file: 'reglement-sportkommission-de.md' },
-      { key: 'documentsDoc_uebersichtVerbandsbeitrittStf', file: 'uebersicht-verbandsbeitritt-stf-de.md' }
+      { 
+        key: 'documentsDoc_uebersichtVerbandsbeitrittStf', 
+          files: {
+              de: 'verbandsbeitritt-stf-de.md',
+              en: 'verbandsbeitritt-stf-en.md',
+              fr: 'verbandsbeitritt-stf-fr.md',
+              it: 'verbandsbeitritt-stf-it.md'
+          }
+        }
     ]
   },
   {
@@ -46,9 +55,33 @@ var DOCUMENT_CATEGORIES = [
     key: 'documentsCategory_sport',
     docs: [
       { key: 'documentsDoc_reglementQualifikationItsfWorldCup', file: 'reglement-qualifikation-itsf-world-cup-de.md' },
-      { key: 'documentsDoc_regelwerkItsf', file: 'regelwerk-itsf-de.md' },
-      { key: 'documentsDoc_reglementSwissTablesoccerLeague', file: 'reglement-swiss-tablesoccer-league-de.md' },
-      { key: 'documentsDoc_reglementIndividualsport', file: 'reglement-individualsport-de.md' }
+      { 
+        key: 'documentsDoc_regelwerkItsf', 
+        files: {
+          de: 'regelwerk-itsf-de.md',
+          en: 'regelwerk-itsf-en.md',
+          fr: 'regelwerk-itsf-fr.md',
+          it: 'regelwerk-itsf-it.md'
+        }
+      },
+      { 
+        key: 'documentsDoc_reglementSwissTablesoccerLeague', 
+        files: {
+          de: 'reglement-swiss-tablesoccer-league-de.md',
+          en: 'reglement-swiss-tablesoccer-league-en.md',
+          fr: 'reglement-swiss-tablesoccer-league-fr.md',
+          it: 'reglement-swiss-tablesoccer-league-it.md'
+        }
+      },
+      { 
+        key: 'documentsDoc_reglementIndividualsport', 
+        files: {
+          de: 'reglement-individualsport-de.md',
+          en: 'reglement-individualsport-en.md',
+          fr: 'reglement-individualsport-fr.md',
+          it: 'reglement-individualsport-it.md'
+        }
+      }
     ]
   },
   {
@@ -60,10 +93,42 @@ var DOCUMENT_CATEGORIES = [
   {
     key: 'documentsCategory_rulingEthics',
     docs: [
-      { key: 'documentsDoc_reglementDisziplinarverfahren', file: 'reglement-disziplinarverfahren-de.md' },
-      { key: 'documentsDoc_meldeformularDisziplinarverfahren', file: 'meldeformular-disziplinarverfahren-de.md' },
-      { key: 'documentsDoc_ethikCharta', file: 'ethik-charta-de.md' },
-      { key: 'documentsDoc_ethikStatutSwissOlympic', file: 'ethik-statut-swiss-olympic-de.md' }
+      { 
+        key: 'documentsDoc_reglementDisziplinarverfahren', 
+        files: {
+          de: 'reglement-disziplinarverfahren-de.md',
+          en: 'reglement-disziplinarverfahren-en.md',
+          fr: 'reglement-disziplinarverfahren-fr.md',
+          it: 'reglement-disziplinarverfahren-it.md'
+        }
+      },
+      { 
+        key: 'documentsDoc_meldeformularDisziplinarverfahren', 
+        files: {
+          de: 'meldeformular-disziplinarverfahren-de.md',
+          en: 'meldeformular-disziplinarverfahren-en.md',
+          fr: 'meldeformular-disziplinarverfahren-fr.md',
+          it: 'meldeformular-disziplinarverfahren-it.md'
+        }
+      },
+      { 
+        key: 'documentsDoc_ethikCharta', 
+        files: {
+          de: 'ethik-charta-de.md',
+          en: 'ethik-charta-en.md',
+          fr: 'ethik-charta-fr.md',
+          it: 'ethik-charta-it.md'
+        }
+      },
+      { 
+        key: 'documentsDoc_ethikStatutSwissOlympic', 
+        files: {
+          de: 'ethik-statut-swiss-olympic-de.md',
+          en: 'ethik-statut-swiss-olympic-en.md',
+          fr: 'ethik-statut-swiss-olympic-fr.md',
+          it: 'ethik-statut-swiss-olympic-it.md'
+        }
+      }
     ]
   }
 ];

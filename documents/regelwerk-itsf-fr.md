@@ -1,0 +1,1 @@
+https://s3.tablesoccer.org/organization/ITSF/rules/Standard_Matchplay_Rules_2024_fr.pdf
