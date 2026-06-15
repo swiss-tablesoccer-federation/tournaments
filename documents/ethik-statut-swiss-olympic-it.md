@@ -1,0 +1,1 @@
+https://www.swissolympic.ch/dam/jcr:2b2d4a23-3349-434c-bbed-639c72bc097e/rev.%20Ethik-Statut_2025_final_IT.pdf

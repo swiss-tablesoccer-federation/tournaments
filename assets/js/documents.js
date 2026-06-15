@@ -25,7 +25,16 @@ var DOCUMENT_CATEGORIES = [
   {
     key: 'documentsCategory_finance',
     docs: [
-      { key: 'documentsDoc_finanzreglementTurnierLizenzwesen', file: 'finanzreglement-turnier-und-lizenzwesen-de.md' }
+      { key: 'documentsDoc_finanzreglementTurnierLizenzwesen', file: 'finanzreglement-turnier-und-lizenzwesen-de.md' },
+      { 
+        key: 'documentsDoc_lizenzierung', 
+        files: {
+          de: 'lizenzierung-in-coral-de.md',
+          en: 'lizenzierung-in-coral-en.md',
+          fr: 'lizenzierung-in-coral-fr.md',
+          it: 'lizenzierung-in-coral-it.md'
+        }
+      }
     ]
   },
   {
@@ -44,6 +53,7 @@ var DOCUMENT_CATEGORIES = [
         }
     ]
   },
+  /*
   {
     key: 'documentsCategory_sponsoringMarketing',
     docs: [
@@ -51,6 +61,7 @@ var DOCUMENT_CATEGORIES = [
       { key: 'documentsDoc_partnermappeFinals2024', file: 'partnermappe-finals-2024-de.md' }
     ]
   },
+  */
   {
     key: 'documentsCategory_sport',
     docs: [
@@ -135,6 +146,7 @@ var DOCUMENT_CATEGORIES = [
 
 var LINK_ONLY_TARGETS = {};
 var currentDocumentFile = null;
+var currentDocumentKey = null;
 var currentDocumentRequestId = 0;
 
 function getActiveLang() {
@@ -233,6 +245,26 @@ function updateActiveDocumentLink() {
     .attr('aria-current', 'page');
 }
 
+function setCurrentDocumentHash(file) {
+  var nextHash;
+
+  if (typeof file !== 'string' || !file) return;
+  nextHash = '#' + encodeURIComponent(file);
+  if (window.location.hash === nextHash) return;
+  window.location.hash = nextHash;
+}
+
+function getDocumentFileFromHash() {
+  var raw = window.location.hash ? window.location.hash.slice(1) : '';
+
+  if (!raw) return '';
+  try {
+    return decodeURIComponent(raw).trim();
+  } catch (e) {
+    return raw.trim();
+  }
+}
+
 function enhanceDocumentLinks($container) {
   $container.find('a').each(function () {
     var $link = $(this);
@@ -281,10 +313,12 @@ function renderExternalLinkPlaceholder(linkTarget) {
   $viewer.empty().append($card);
 }
 
-function loadDocument(file, title, shouldScroll) {
+function loadDocument(file, title, shouldScroll, docKey) {
   var requestId = ++currentDocumentRequestId;
 
   currentDocumentFile = file;
+  currentDocumentKey = docKey || null;
+  setCurrentDocumentHash(file);
   $('#documentViewerTitle').text(title || '');
   updateActiveDocumentLink();
   setViewerStatus(
@@ -327,11 +361,12 @@ function loadDocument(file, title, shouldScroll) {
     });
 }
 
-function renderDocuments() {
+function renderDocuments(skipInitialLoad) {
   var totalCount = 0;
   var $list = $('#documentsList');
   var firstDoc = null;
   var defaultDoc = null;
+  var hashDoc = null;
 
   $list.empty();
 
@@ -357,7 +392,7 @@ function renderDocuments() {
         .attr('data-doc-file', file)
         .on('click', function (event) {
           event.preventDefault();
-          loadDocument(file, title, true);
+          loadDocument(file, title, true, doc.key);
         });
 
       $('<i>').addClass('fa-regular fa-file-lines').attr('aria-hidden', 'true').appendTo($link);
@@ -370,11 +405,12 @@ function renderDocuments() {
   });
 
   $('#documentsCount').text(tr('documentsCount', { count: totalCount }));
+  hashDoc = findDocumentByFile(getDocumentFileFromHash(), true);
 
-  if (defaultDoc || firstDoc) {
-    var initialDoc = defaultDoc || firstDoc;
-    loadDocument(initialDoc.file, tr(initialDoc.key), false);
-  } else {
+  if (!skipInitialLoad && (hashDoc || defaultDoc || firstDoc)) {
+    var initialDoc = hashDoc ? { file: hashDoc.file, key: hashDoc.doc.key } : (defaultDoc || firstDoc);
+    loadDocument(initialDoc.file, tr(initialDoc.key), false, initialDoc.key);
+  } else if (!skipInitialLoad) {
     $('#documentViewerTitle').text('');
     setViewerStatus('empty', '');
     $('#documentViewer').empty();
@@ -387,5 +423,80 @@ $(function () {
 });
 
 document.addEventListener('langChanged', function () {
-  renderDocuments();
+  var previousDocumentKey = currentDocumentKey;
+  renderDocuments(!!previousDocumentKey);
+
+  if (previousDocumentKey) {
+    var doc = findDocumentByKey(previousDocumentKey);
+    if (doc) {
+      var file = getDocFile(doc);
+      var title = tr(doc.key);
+      loadDocument(file, title, false, doc.key);
+    }
+  }
 });
+
+window.addEventListener('hashchange', function () {
+  var hashDoc = findDocumentByFile(getDocumentFileFromHash(), true);
+
+  if (!hashDoc) return;
+  if (hashDoc.file === currentDocumentFile) return;
+
+  loadDocument(hashDoc.file, tr(hashDoc.doc.key), false, hashDoc.doc.key);
+});
+
+function findDocumentByKey(key) {
+  var found = null;
+  DOCUMENT_CATEGORIES.forEach(function (category) {
+    if (!found) {
+      category.docs.forEach(function (doc) {
+        if (doc.key === key) {
+          found = doc;
+        }
+      });
+    }
+  });
+  return found;
+}
+
+function findDocumentByFile(file, searchAllLanguageFiles) {
+  var found = null;
+
+  if (!file) return null;
+
+  DOCUMENT_CATEGORIES.forEach(function (category) {
+    if (found) return;
+
+    category.docs.forEach(function (doc) {
+      var docFiles;
+      var i;
+      var activeFile;
+
+      if (found) return;
+      if (doc.file === file) {
+        found = { doc: doc, file: doc.file };
+        return;
+      }
+
+      docFiles = doc.files ? Object.keys(doc.files) : [];
+      if (!docFiles.length) return;
+
+      if (searchAllLanguageFiles) {
+        for (i = 0; i < docFiles.length; i++) {
+          if (doc.files[docFiles[i]] === file) {
+            found = { doc: doc, file: doc.files[docFiles[i]] };
+            return;
+          }
+        }
+        return;
+      }
+
+      activeFile = getDocFile(doc);
+      if (activeFile === file) {
+        found = { doc: doc, file: activeFile };
+      }
+    });
+  });
+
+  return found;
+}

@@ -1,0 +1,1 @@
+https://www.swissolympic.ch/dam/jcr:ec2d01b1-9399-4029-aaa5-76a6f6a9a842/2015_Ethik_Charta_A4_fbg_IT.pdf

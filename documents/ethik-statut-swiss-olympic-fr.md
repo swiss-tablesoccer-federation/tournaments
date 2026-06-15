@@ -1,0 +1,1 @@
+https://www.swissolympic.ch/dam/jcr:0b8e090b-05c4-46c3-bc82-a5a75c86f4c2/Statuts%20en%20mati%C3%A8re%20d&%23039;%C3%A9thique%20pour%20le%20sport%20suisse%201er%20Janvier%202025.pdf
