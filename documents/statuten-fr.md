@@ -105,9 +105,9 @@ Révisée le 21 mars 2023
 1. Les membres des organes exercent leurs fonctions dans l'intérêt de la STF. Ils organisent leurs relations personnelles et professionnelles de sorte à éviter tout conflit d'intérêts avec la STF. Les personnes dont les intérêts sont en conflit permanent avec les intérêts de la STF ne peuvent pas appartenir à l'un des organes de la STF.
 2. Tous les membres des organes de la STF doivent révéler immédiatement tout conflit d'intérêts au président du bureau. En cas de conflit d'intérêts touchant le président du bureau, celui-ci en informera tous les membres du bureau.
 3. Il y a notamment conflit d'intérêts si un membre :
-   a. soit personnellement, soit en qualité d'organe d'une personne morale, a un intérêt dans l'issue de la décision des organes juridictionnels de la STF ;
-   b. pourrait être partial pour toute autre raison, à savoir s'il existe un lien d'amitié, d'hostilité ou de dépendance entre lui et l'une des parties concernées par une décision des organes juridictionnels de la STF ;
-   c. est marié, allié ou parent en ligne directe ou collatérale jusqu'au troisième degré à l'une des parties ou son représentant.
+  - soit personnellement, soit en qualité d'organe d'une personne morale, a un intérêt dans l'issue de la décision des organes juridictionnels de la STF ;
+  - pourrait être partial pour toute autre raison, à savoir s'il existe un lien d'amitié, d'hostilité ou de dépendance entre lui et l'une des parties concernées par une décision des organes juridictionnels de la STF ;
+  - est marié, allié ou parent en ligne directe ou collatérale jusqu'au troisième degré à l'une des parties ou son représentant.
 4. En cas de conflit d'intérêts, les membres des organes se récusent et sont exclus du droit de vote.
 5. Si les règlements de la STF ne prévoient pas les modalités de la récusation et le pouvoir décisionnel, il revient au bureau de la STF de décider de la recevabilité de la récusation. Il convient de tenir compte de l'intensité du conflit d'intérêts.
 
@@ -173,21 +173,21 @@ L'assemblée ordinaire des délégués de la STF se réunit une fois par an (art
 ### Article 17: Fonctions et pouvoirs
 
 1. L'assemblée des délégués est l'organe supérieur de la STF. Ses droits et obligations résultent de la loi et des statuts. L'assemblée des délégués disposent des pouvoirs intransmissibles suivants :
-   a. Détermination des conditions cadres :
-      - détermination et modification des statuts et de la philosophie ;
-      - décision relative à la dissolution, la transformation et toute autre décision stratégique et/ou structurelle exceptionnelle de la STF ;
-   b. Décisions personnelles:
-      - exclusion de membres
-      - choix et révocation des membres du bureau
-      - choix et révocation du président ou des coprésidents de la STF
-      - choix et révocation de l'organe de révision (si la loi l'exige)
-      - choix et révocation des membres d'honneur ;
-   c. Autres décisions :
-      - approbation du rapport annuel et des comptes annuels
-      - décision sur l'affectation des résultats
-      - décision sur la décharge du bureau
-      - prise de connaissance des objectifs stratégiques et du budget
-      - décision sur les sujets réservés à l'assemblée des délégués par la loi, les statuts ou les règlements de la STF ou que le bureau lui soumet.
+  - Détermination des conditions cadres :
+    - détermination et modification des statuts et de la philosophie ;
+    - décision relative à la dissolution, la transformation et toute autre décision stratégique et/ou structurelle exceptionnelle de la STF ;
+  - Décisions personnelles:
+    - exclusion de membres
+    - choix et révocation des membres du bureau
+    - choix et révocation du président ou des coprésidents de la STF
+    - choix et révocation de l'organe de révision (si la loi l'exige)
+    - choix et révocation des membres d'honneur ;
+  - Autres décisions :
+    - approbation du rapport annuel et des comptes annuels
+    - décision sur l'affectation des résultats
+    - décision sur la décharge du bureau
+    - prise de connaissance des objectifs stratégiques et du budget
+    - décision sur les sujets réservés à l'assemblée des délégués par la loi, les statuts ou les règlements de la STF ou que le bureau lui soumet.
 2. La fonction de l'assemblée des délégués consiste à définir et respecter la volonté collective des membres.
 
 ### Article 18: Droit de vote
@@ -207,15 +207,10 @@ L'assemblée ordinaire des délégués de la STF se réunit une fois par an (art
 
 1. Toute assemblée des délégués convoquée conformément aux statuts peut valablement délibérer, sans égard au nombre des membres présents.
 2. L'assemblée des délégués prend ses décisions et procède aux élections à la majorité simple des voix exprimées, sauf si la loi ou les statuts en disposent autrement. Les abstentions ne sont pas prises en compte dans le calcul de la majorité simple.
-3. En cas d'égalité des voix, la voix du président est prépondérante.
-
-   **Exemple majorité simple :** Une requête est réputée acceptée si elle recueille plus de voix favorables que défavorables ; les abstentions ne sont pas prises en compte.
-
-   La majorité des trois quarts des voix représentées, en présence de deux tiers au moins des voix de l'assemblée des délégués, est nécessaire pour :
-
-   a. toute modification des statuts
-   b. la révocation d'une personne nommée par l'assemblée des délégués avant le terme de son mandat
-   c. la dissolution de la STF
+3. En cas d'égalité des voix, la voix du président est prépondérante. **Exemple majorité simple :** Une requête est réputée acceptée si elle recueille plus de voix favorables que défavorables ; les abstentions ne sont pas prises en compte. La majorité des trois quarts des voix représentées, en présence de deux tiers au moins des voix de l'assemblée des délégués, est nécessaire pour :
+  - toute modification des statuts
+  - la révocation d'une personne nommée par l'assemblée des délégués avant le terme de son mandat
+  - la dissolution de la STF
 4. Chaque délégué dispose d'une voix.
 
 ### Article 21: Procès-verbal
@@ -247,24 +242,21 @@ Le bureau se réunit aussi souvent que les affaires l'exigent, en règle génér
 ### Article 25: Fonctions et pouvoirs
 
 1. Le bureau assure la haute direction et le contrôle de la STF. Il représente la STF à l'extérieur et peut prendre des décisions dans tous les domaines qui ne relèvent pas d'un autre organe en vertu de la loi, des statuts ou des règlements.
-2. Le bureau fixe la stratégie et les moyens généraux permettant d'atteindre les objectifs stratégiques.
-
-   Le bureau assure les fonctions intransmissibles suivantes :
-
-   a. exercice de la haute direction de la STF et transmission des instructions nécessaires ;
-   b. exécution des décisions de l'assemblée des délégués ;
-   c. admission des membres de la STF ;
-   d. détermination de l'organisation et établissement d'un règlement intérieur ou de tout autre règlement dont l'établissement n'est pas expressément réservé à un autre organe ;
-   e. établissement d'un règlement financier ;
-   f. fixation des principes de la comptabilité, du contrôle financier, de la planification financière et de la gestion des risques ;
-   g. choix du head coach des équipes nationales (femmes / hommes / juniors / séniors / PMR) ;
-   h. établissement d'un rapport de gestion (comptes annuels, rapport annuel et le cas échéant comptes consolidés), ainsi que préparation de l'assemblée des délégués ;
-   i. fourniture régulière d'informations sur des thèmes relatifs au football de table aux membres et aux autres parties prenantes ;
-   j. médiation entre les secteurs sport de haut niveau d'une part et relève sportive et sport amateur d'autre part ;
-   k. approbation préalable de toutes les affaires des membres du bureau concernant le football de table et ne ressortant pas des activités principales de ces personnes au sein de la STF. Ceci s'applique notamment aux activités concurrentes et à l'obtention d'avantages ou d'indemnités pour soi ou des proches ;
-   l. analyse des prestations du bureau et entretien annuel sur les prestations de ses membres ;
-   m. le bureau peut, à tout moment, procéder d'office à des modifications purement rédactionnelles des présents statuts et de tous les règlements.
-   n. Le pouvoir de dépenser du conseil d'administration est limité à un maximum de 10 000 CHF dans des cas individuels.
+2. Le bureau fixe la stratégie et les moyens généraux permettant d'atteindre les objectifs stratégiques.  Le bureau assure les fonctions intransmissibles suivantes :
+  - exercice de la haute direction de la STF et transmission des instructions nécessaires ;
+  - exécution des décisions de l'assemblée des délégués ;
+  - admission des membres de la STF ;
+  - détermination de l'organisation et établissement d'un règlement intérieur ou de tout autre règlement dont l'établissement n'est pas expressément réservé à un autre organe ;
+  - établissement d'un règlement financier ;
+  - fixation des principes de la comptabilité, du contrôle financier, de la planification financière et de la gestion des risques ;
+  - choix du head coach des équipes nationales (femmes / hommes / juniors / séniors / PMR) ;
+  - établissement d'un rapport de gestion (comptes annuels, rapport annuel et le cas échéant comptes consolidés), ainsi que préparation de l'assemblée des délégués ;
+  - fourniture régulière d'informations sur des thèmes relatifs au football de table aux membres et aux autres parties prenantes ;
+  - médiation entre les secteurs sport de haut niveau d'une part et relève sportive et sport amateur d'autre part ;
+  - approbation préalable de toutes les affaires des membres du bureau concernant le football de table et ne ressortant pas des activités principales de ces personnes au sein de la STF. Ceci s'applique notamment aux activités concurrentes et à l'obtention d'avantages ou d'indemnités pour soi ou des proches ;
+  - analyse des prestations du bureau et entretien annuel sur les prestations de ses membres ;
+  - le bureau peut, à tout moment, procéder d'office à des modifications purement rédactionnelles des présents statuts et de tous les règlements.
+  - Le pouvoir de dépenser du conseil d'administration est limité à un maximum de 10 000 CHF dans des cas individuels.
 
 ### Article 26: Droit de vote
 

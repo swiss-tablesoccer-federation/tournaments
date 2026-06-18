@@ -1481,3 +1481,17 @@ html.page-about .page-content {
   .member-card { min-width: 100%; max-width: 100%; }
   .committee-subs { padding-left: 1rem; }
 }
+
+.document-markdown ol {
+  list-style-type: decimal;
+}
+
+.document-markdown ol + ul {
+  list-style-type: lower-alpha;
+  padding-left: 2.5rem;
+  margin-top: -0.5rem;
+}
+
+.document-markdown ol + ul ul {
+  list-style-type: lower-roman;
+}

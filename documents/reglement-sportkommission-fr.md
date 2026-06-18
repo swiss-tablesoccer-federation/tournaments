@@ -1,0 +1,1 @@
+https://static1.squarespace.com/static/6797790a8025010384cf53f2/t/6921bef38c1eb03eee277d59/1763819251532/Reglement+Sportkommission+FR.pdf

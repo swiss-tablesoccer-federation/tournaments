@@ -98,9 +98,9 @@
 1. Die Mitglieder der Organe nehmen ihre Aufgaben im Interesse der STF wahr. Sie ordnen ihre persönlichen und geschäftlichen Verhältnisse so, dass Interessenskonflikte mit der STF möglichst vermieden werden. Personen, deren Interessen dauernd mit den Interessen der STF kollidieren, können nicht einem Organ der STF angehören.
 2. Alle Organmitglieder der STF haben allfällige Interessenskonflikte umgehend dem Vorstandspräsidenten offenzulegen. Bei Interessenskonflikten seitens des Vorstandspräsidenten erfüllt dieser die Offenlegungspflicht gegenüber allen Vorstandsmitgliedern.
 3. Ein Interessenskonflikt liegt insbesondere vor, wenn ein Mitglied:
-   a. entweder persönlich oder in seiner Eigenschaft als Organ einer juristischen Person am Ausgang eines Beschlusses der Rechtspflegeorgane der STF interessiert ist;
-   b. aus anderen Gründen befangen sein könnte, namentlich, wenn zwischen ihm und einer von einem Beschluss der Rechtspflegeorgane der STF betroffenen Partei ein Freundschafts-, Feindschafts- oder Abhängigkeitsverhältnis besteht;
-   c. mit einer Partei oder ihrer Vertreter verheiratet, verschwägert oder in grader Linie oder Seitenlinie bis zum dritten Grad verwandt ist.
+  - entweder persönlich oder in seiner Eigenschaft als Organ einer juristischen Person am Ausgang eines Beschlusses der Rechtspflegeorgane der STF interessiert ist;
+  - aus anderen Gründen befangen sein könnte, namentlich, wenn zwischen ihm und einer von einem Beschluss der Rechtspflegeorgane der STF betroffenen Partei ein Freundschafts-, Feindschafts- oder Abhängigkeitsverhältnis besteht;
+  - mit einer Partei oder ihrer Vertreter verheiratet, verschwägert oder in grader Linie oder Seitenlinie bis zum dritten Grad verwandt ist.
 4. Bei Vorliegen eines Interessenskonfliktes treten Organmitglieder in den Ausstand und sind vom Stimmrecht ausgeschlossen.
 5. Soweit nicht die Reglemente der STF die Modalitäten des Ausstandes und die Zuständigkeit zum Entscheiden darüber festlegen, hat der Vorstand der STF zu entscheiden, ob ein Ausstandsgrund gegeben ist. Die Intensität des Interessensgegensatzes wird berücksichtigt.
 
@@ -166,21 +166,21 @@ Die ordentliche Delegiertenversammlung der STF findet einmal jährlich statt (Ar
 #### Artikel 17: Aufgaben und Befugnisse
 
 1. Die Delegiertenversammlung ist das oberste Organ der STF. Ihre Rechte und Pflichten werden durch Gesetz und Statuten festgelegt. Die Delegiertenversammlung hat folgende unübertragbaren Befugnisse:
-   a. **Festsetzung von Rahmenbedingungen:**
-   - Festsetzung und Änderung der Statuten und des Leitbilds;
-   - Beschlussfassung über die Auflösung, Umwandlung und weitere aussergewöhnliche strategische und/oder strukturelle Transaktionen der STF;
-   b. **Personelle Entscheidungen:**
-   - Ausschluss von Mitgliedern
-   - Wahl und Abberufung der Mitglieder des Vorstandes
-   - Wahl und Abberufung des Präsidenten, resp. der Co-Präsidenten der STF
-   - Wahl und Abberufung der Rechnungsrevisoren (sofern gesetzlich verlangt)
-   - Wahl und Abberufung von Ehrenmitgliedern;
-   c. **Weitere Beschlüsse**
-   - Genehmigung des Jahresberichts und der Jahresrechnung
-   - Beschlussfassung über die Jahresergebnisverwendung
-   - Beschlussfassung über die Entlastung des Vorstandes
-   - Kenntnisnahme der strategischen Ziele und des Budgets
-   - Beschlussfassung über Gegenstände, die der Delegiertenversammlung durch das Gesetz, durch die Statuten oder durch Reglemente der STF vorbehalten sind oder ihr durch den Vorstand vorgelegt werden.
+  - Festsetzung von Rahmenbedingungen:
+    - Festsetzung und Änderung der Statuten und des Leitbilds;
+    - Beschlussfassung über die Auflösung, Umwandlung und weitere aussergewöhnliche strategische und/oder strukturelle Transaktionen der STF;
+  - Personelle Entscheidungen:
+    - Ausschluss von Mitgliedern
+    - Wahl und Abberufung der Mitglieder des Vorstandes
+    - Wahl und Abberufung des Präsidenten, resp. der Co-Präsidenten der STF
+    - Wahl und Abberufung der Rechnungsrevisoren (sofern gesetzlich verlangt)
+    - Wahl und Abberufung von Ehrenmitgliedern;
+  - Weitere Beschlüsse:
+    - Genehmigung des Jahresberichts und der Jahresrechnung
+    - Beschlussfassung über die Jahresergebnisverwendung
+    - Beschlussfassung über die Entlastung des Vorstandes
+    - Kenntnisnahme der strategischen Ziele und des Budgets
+    - Beschlussfassung über Gegenstände, die der Delegiertenversammlung durch das Gesetz, durch die Statuten oder durch Reglemente der STF vorbehalten sind oder ihr durch den Vorstand vorgelegt werden.
 2. Aufgabe der Delegiertenversammlung ist die unverfälschte Bildung und Durchsetzung des kollektiven Willens der Mitglieder.
 
 #### Artikel 18: Stimmrecht
@@ -200,11 +200,7 @@ Die ordentliche Delegiertenversammlung der STF findet einmal jährlich statt (Ar
 
 1. Jede ordnungsgemäss einberufene Delegiertenversammlung ist unabhängig von der Anzahl der anwesenden Mitglieder beschlussfähig.
 2. Die Delegiertenversammlung fasst ihre Beschlüsse und vollzieht ihre Wahlen mit der einfachen Mehrheit der abgegebenen Stimmen, sofern das Gesetz oder die Statuten es nicht anders vorschreiben. Stimmenthaltungen werden bei der Bestimmung des einfachen Mehrs nicht mitgezählt.
-3. Bei Stimmengleichheit fällt der Vorsitzende den Stichentscheid.
-
-Beispiel Einfaches Mehr: Ein Antrag gilt als angenommen, wenn er mehr Ja- als Neinstimmen auf sich vereinigt; Enthaltungen werden nicht mitgezählt.
-
-Die Zustimmung einer Mehrheit von drei Vierteln der vertretenen Stimmen bei der Anwesenheit von mindestens zwei Drittel der Stimmen der Delegiertenversammlung ist notwendig für:
+3. Bei Stimmengleichheit fällt der Vorsitzende den Stichentscheid. Beispiel Einfaches Mehr: Ein Antrag gilt als angenommen, wenn er mehr Ja- als Neinstimmen auf sich vereinigt; Enthaltungen werden nicht mitgezählt.  Die Zustimmung einer Mehrheit von drei Vierteln der vertretenen Stimmen bei der Anwesenheit von mindestens zwei Drittel der Stimmen der Delegiertenversammlung ist notwendig für:
 
 - Statutenänderungen
 - Die Abberufung einer von der Delegiertenversammlung gewählten Person vor Ablauf der Amtsdauer
@@ -241,37 +237,21 @@ Die Vorstandssitzungen finden so oft es die Geschäfte erfordern, in der Regel v
 #### Artikel 25: Aufgaben und Befugnisse
 
 1. Dem Vorstand obliegt die oberste Leitung und Überwachung der STF. Er vertritt die STF nach aussen und kann in allen Angelegenheiten Beschluss fassen, die nicht nach Gesetz, Statuten oder Reglementen einem anderen Organ der STF zugeteilt sind.
-2. Der Vorstand legt die Strategie und die generellen Mittel zur Erreichung der strategischen Ziele fest.
-
-Der Vorstand hat folgende unübertragbaren Aufgaben:
-
-a. Oberleitung der STF und die Erteilung der nötigen Weisungen;
-
-b. Ausführung der Beschlüsse der Delegiertenversammlung;
-
-c. Aufnahme von Mitgliedern der STF;
-
-d. Festlegung der Organisation und Erlass eines Organisationsreglements oder weiterer Reglemente, deren Erlass nicht ausdrücklich einem anderen bestimmten Organ vorbehalten ist;
-
-e. Erlass eines Finanzreglements;
-
-f. Ausgestaltung des Rechnungswesens, der Finanzkontrolle, der Finanzplanung und des Risikomanagements;
-
-g. Wahl der Head Coaches der Nationalmannschaften (Damen / Herren / Junioren / Senioren / Rollstuhlfahrer);
-
-h. Erstellung des Geschäftsberichtes (Jahresrechnung, Jahresbericht und ggf. Konzernrechnung) sowie die Vorbereitung der Delegiertenversammlung;
-
-i. Regelmässige Versorgung der Mitglieder und der anderen Stakeholder mit Informationen über relevante Themen im Tischfussballsport;
-
-j. Schlichtung zwischen den Bereichen Leistungssport und Nachwuchs- und Amateursport im Bedarfsfall;
-
-k. Vorgängige Genehmigung aller Geschäfte der Mitglieder des Vorstandes im Bereich Tischfussball, die nicht zu den Kernaufgaben dieser Personen bei der STF gehören. Dies gilt unter anderem für konkurrenzierende Tätigkeiten und die Entgegennahme von Vergünstigungen oder Entschädigungen für sich oder nahestehende Personen;
-
-l. Analyse der Leistungen des Vorstandes und jährliche Besprechung der Leistungen seiner Mitglieder;
-
-m. Der Vorstand ist jederzeit befugt, rein redaktionelle Änderungen an den vorliegenden Statuten und an sämtlichen Reglementen von sich aus vorzunehmen.
-
-n. Die Ausgabenkompetenz des Vorstandes beträgt im Einzelfall maximal CHF 10'000.
+2. Der Vorstand legt die Strategie und die generellen Mittel zur Erreichung der strategischen Ziele fest.  Der Vorstand hat folgende unübertragbaren Aufgaben:
+  - Oberleitung der STF und die Erteilung der nötigen Weisungen;
+  - Ausführung der Beschlüsse der Delegiertenversammlung;
+  - Aufnahme von Mitgliedern der STF;
+  - Festlegung der Organisation und Erlass eines Organisationsreglements oder weiterer Reglemente, deren Erlass nicht ausdrücklich einem anderen bestimmten Organ vorbehalten ist;
+  - Erlass eines Finanzreglements;
+  - Ausgestaltung des Rechnungswesens, der Finanzkontrolle, der Finanzplanung und des Risikomanagements;
+  - Wahl der Head Coaches der Nationalmannschaften (Damen / Herren / Junioren / Senioren / Rollstuhlfahrer);
+  - Erstellung des Geschäftsberichtes (Jahresrechnung, Jahresbericht und ggf. Konzernrechnung) sowie die Vorbereitung der Delegiertenversammlung;
+  - Regelmässige Versorgung der Mitglieder und der anderen Stakeholder mit Informationen über relevante Themen im Tischfussballsport;
+  - Schlichtung zwischen den Bereichen Leistungssport und Nachwuchs- und Amateursport im Bedarfsfall;
+  - Vorgängige Genehmigung aller Geschäfte der Mitglieder des Vorstandes im Bereich Tischfussball, die nicht zu den Kernaufgaben dieser Personen bei der STF gehören. Dies gilt unter anderem für konkurrenzierende Tätigkeiten und die Entgegennahme von Vergünstigungen oder Entschädigungen für sich oder nahestehende Personen;
+  - Analyse der Leistungen des Vorstandes und jährliche Besprechung der Leistungen seiner Mitglieder;
+  - Der Vorstand ist jederzeit befugt, rein redaktionelle Änderungen an den vorliegenden Statuten und an sämtlichen Reglementen von sich aus vorzunehmen.
+  - Die Ausgabenkompetenz des Vorstandes beträgt im Einzelfall maximal CHF 10'000.
 
 #### Artikel 26: Stimmrechte
 

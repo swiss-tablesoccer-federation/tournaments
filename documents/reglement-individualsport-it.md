@@ -1,0 +1,1 @@
+https://static1.squarespace.com/static/6797790a8025010384cf53f2/t/691c28482d7311591f0ebfe0/1763453000601/reglement-individualsport-2026-02_F.pdf
