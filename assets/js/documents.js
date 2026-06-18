@@ -89,7 +89,15 @@ var DOCUMENT_CATEGORIES = [
   {
     key: 'documentsCategory_sport',
     docs: [
-      { key: 'documentsDoc_reglementQualifikationItsfWorldCup', file: 'reglement-qualifikation-itsf-world-cup-de.md' },
+      { 
+        key: 'documentsDoc_reglementQualifikationItsfWorldCup', 
+        files: {
+          de: 'reglement-qualifikation-itsf-world-cup-de.md',
+          en: 'reglement-qualifikation-itsf-world-cup-en.md',
+          fr: 'reglement-qualifikation-itsf-world-cup-fr.md',
+          it: 'reglement-qualifikation-itsf-world-cup-it.md'
+        }
+      },
       { 
         key: 'documentsDoc_regelwerkItsf', 
         files: {

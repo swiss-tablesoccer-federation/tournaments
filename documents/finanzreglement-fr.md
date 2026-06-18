@@ -1,308 +1,327 @@
-## Règlement financier Tournois & Licences
+# Règlement financier des tournois et des licences
 
-<table>
-<tr><th> </th><th> </th></tr>
-<tr><td>Valable dès</td><td>Saison 2026</td></tr>
-<tr><td>Modifications</td><td>Selon le registre des modifications</td></tr>
-<tr><td>Créé le</td><td>19.08.2025</td></tr>
-<tr><td>Créé par</td><td>Fiona Haas</td></tr>
-</table>
+| | |
+|---|---|
+| Valable dès | Saison 2026 |
+| Modifications | Selon le registre des modifications |
+| Créé le | 19.08.2025 |
+| Créé par | Fiona Haas |
 
-### Registre des modifications
+---
 
-<table>
-<tr><th>Version</th><th>Date</th><th>Auteurs</th><th>Remarques</th></tr>
-<tr><td>2025.0</td><td>19.08.2025</td><td>F. Haas</td><td>Externalisation de la partie financière du règlement Sport individuel & création du règlement financier Tournois & Licences</td></tr>
-<tr><td>2025.1</td><td>21.10.2025</td><td>Ph. Gamper</td><td>Complément du système de licences, des frais d’inscription et de la taxe d’orientation</td></tr>
-<tr><td>2025.2</td><td>23.10.2025</td><td>Ph. Gamper</td><td>Finalisation et approbation par le comité de la STF</td></tr>
-<tr><td>2025.3</td><td>05.11.2025</td><td>Ph. Gamper</td><td>Ajout du domaine de l’arbitrage, corrections mineures et orthographiques</td></tr>
-</table>
+## Registre des modifications
 
-### Table des matières
-- [Introduction](#1-introduction)
-- [Champ d’application](#11-champ-dapplication)
-- [Compétence](#12-compétence)
-- [Dispositions générales](#2-dispositions-générales)
-- [Protection des données](#21-protection-des-données)
-- [Traitement des données](#211-traitement-des-données)
-- [Utilisation des données](#212-utilisation-des-données)
-- [Prescriptions générales](#22-prescriptions-générales)
-- [Responsabilité individuelle](#221-responsabilité-individuelle)
-- [Responsabilité](#222-responsabilité)
-- [Assurance](#223-assurance)
-- [For juridique](#224-for-juridique)
-- [Statut d’éthique de Swiss Olympic pour le sport suisse](#225-statut-déthique-de-swiss-olympic-pour-le-sport-suisse)
-- [Remboursements](#226-remboursements)
-- [Licences](#3-licences)
-- [Types de licences et frais](#31-types-de-licences-et-frais)
-- [Sport de performance - licence annuelle](#311-sport-de-performance---licence-annuelle)
-- [Sport populaire - frais de tournoi](#312-sport-populaire---frais-de-tournoi)
-- [Swiss Tablesoccer Regio Tour (STRT & STRT Pro)](#313-swiss-tablesoccer-regio-tour-strt--strt-pro)
-- [Frais administratifs pour joueurs étrangers](#314-frais-administratifs-pour-joueurs-étrangers)
-- [Taxe d’orientation pour l’arbitrage](#315-taxe-dorientation-pour-larbitrage)
-- [Demande, octroi & facturation](#32-demande-octroi--facturation)
-- [Tournois](#4-tournois)
-- [Swiss Tablesoccer Finals](#41-swiss-tablesoccer-finals)
-- [Frais d’inscription](#411-frais-dinscription)
-- [Prix](#412-prix)
-- [Financement des prix en espèces](#413-financement-des-prix-en-espèces)
-- [Clé de répartition](#414-clé-de-répartition)
-- [Swiss Tablesoccer Series (STS)](#42-swiss-tablesoccer-series-sts)
-- [Frais d’inscription](#421-frais-dinscription)
-- [Répartition des frais d’inscription](#422-répartition-des-frais-dinscription)
-- [Clé de répartition](#423-clé-de-répartition)
-- [Décompte de tournoi](#424-décompte-de-tournoi)
-- [Swiss Tablesoccer Regio Tour (STRT & STRT Pro)](#43-swiss-tablesoccer-regio-tour-strt--strt-pro)
-- [Frais d’inscription](#431-frais-dinscription)
-- [Répartition des frais d’inscription](#432-répartition-des-frais-dinscription)
-- [Swiss Tablesoccer League (STL)](#44-swiss-tablesoccer-league-stl)
-- [Frais d’inscription](#441-frais-dinscription)
-- [Répartition des frais d’inscription](#442-répartition-des-frais-dinscription)
-- [Clé de répartition](#443-clé-de-répartition)
-- [Packages ITSF World Cup](#45-packages-itsf-world-cup)
-- [Contact & coordonnées bancaires](#5-contact--coordonnées-bancaires)
+| Version | Date | Auteurs | Remarques |
+|---|---|---|---|
+| 2025.0 | 19.08.2025 | F. Haas | Externalisation de la partie financière du règlement du sport individuel et création du règlement financier des tournois et des licences |
+| 2025.1 | 21.10.2025 | Ph. Gamper | Complément sur les licences, les frais d'inscription et la taxe d'incitation |
+| 2025.2 | 23.10.2025 | Ph. Gamper | Finalisation et approbation par le comité de la STF |
+| 2025.3 | 05.11.2025 | Ph. Gamper | Ajout de l'arbitrage, petites corrections et corrections orthographiques |
 
-### 1. Introduction
+---
 
-Le présent document règle les questions financières du domaine sportif de la Swiss Tablesoccer Federation, ci-après STF.  
-Le document est rédigé en langue allemande. La version allemande fait foi comme original, à l’oral et à l’écrit. Les versions dans d’autres langues sont établies au moyen d’une traduction électronique. Sauf indication explicite contraire, tous les genres et toutes les catégories d’âge sont visés.
+## Table des matières
 
-#### 1.1. Champ d’application
+1. [Introduction](#1-introduction)
+   1. [Champ d'application](#11-champ-dapplication)
+   2. [Compétence](#12-compétence)
+2. [Dispositions générales](#2-dispositions-générales)
+   1. [Protection des données](#21-protection-des-données)
+      1. [Traitement des données](#211-traitement-des-données)
+      2. [Utilisation des données](#212-utilisation-des-données)
+   2. [Prescriptions générales](#22-prescriptions-générales)
+      1. [Responsabilité personnelle](#221-responsabilité-personnelle)
+      2. [Responsabilité civile](#222-responsabilité-civile)
+      3. [Assurance](#223-assurance)
+      4. [For juridique](#224-for-juridique)
+      5. [Statut éthique de Swiss Olympics du sport suisse](#225-statut-éthique-de-swiss-olympics-du-sport-suisse)
+      6. [Remboursements](#226-remboursements)
+3. [Licences](#3-licences)
+   1. [Types de licences et frais](#31-types-de-licences-et-frais)
+      1. [Sport de compétition - Licence annuelle](#311-sport-de-compétition---licence-annuelle)
+      2. [Sport populaire - Frais de tournoi](#312-sport-populaire---frais-de-tournoi)
+      3. [Swiss Tablesoccer Regio Tour (STRT & STRT Pro)](#313-swiss-tablesoccer-regio-tour-strt--strt-pro)
+      4. [Frais administratifs pour les joueurs étrangers](#314-frais-administratifs-pour-les-joueurs-étrangers)
+      5. [Taxe d'incitation pour l'arbitrage](#315-taxe-dincitation-pour-larbitrage)
+   2. [Demande, octroi et facturation](#32-demande-octroi-et-facturation)
+4. [Tournois](#4-tournois)
+   1. [Swiss Tablesoccer Finals](#41-swiss-tablesoccer-finals)
+      1. [Frais d'inscription](#411-frais-dinscription)
+      2. [Prix](#412-prix)
+      3. [Financement des prix](#413-financement-des-prix)
+      4. [Clé de répartition](#414-clé-de-répartition)
+   2. [Swiss Tablesoccer Series (STS)](#42-swiss-tablesoccer-series-sts)
+      1. [Frais d'inscription](#421-frais-dinscription)
+      2. [Répartition des frais d'inscription](#422-répartition-des-frais-dinscription)
+      3. [Clé de répartition](#423-clé-de-répartition)
+      4. [Décompte du tournoi](#424-décompte-du-tournoi)
+   3. [Swiss Tablesoccer Regio Tour (STRT & STRT Pro)](#43-swiss-tablesoccer-regio-tour-strt--strt-pro)
+      1. [Frais d'inscription](#431-frais-dinscription)
+      2. [Répartition des frais d'inscription](#432-répartition-des-frais-dinscription)
+   4. [Swiss Tablesoccer League (STL)](#44-swiss-tablesoccer-league-stl)
+      1. [Frais d'inscription](#441-frais-dinscription)
+      2. [Répartition des frais d'inscription](#442-répartition-des-frais-dinscription)
+      3. [Clé de répartition](#443-clé-de-répartition)
+   5. [Packages ITSF World Cup](#45-packages-itsf-world-cup)
+5. [Contact et coordonnées bancaires](#5-contact-et-coordonnées-bancaires)
 
-Le document Règlement financier Tournois & Licences fait partie intégrante des documents officiels de la fédération à partir du 1er janvier 2026 et remplace tous les points relatifs aux finances qui figuraient jusqu’ici dans le règlement _Sport individuel_, le règlement _Qualification ITSF World Cup_ et le règlement _Swiss Tablesoccer League_. Toutes les dispositions et directives relatives aux finances contenues dans les règlements précités deviennent caduques dès l’entrée en vigueur du présent document.
+---
 
-#### 1.2. Compétence
+## 1. Introduction
 
-Le règlement relève de la compétence du ressort Finances du comité de la STF.  
-Le comité de la STF dispose d’un droit de veto pour toute adaptation recommandée par le ressort Finances en vue de sa mise en œuvre. Ce droit de veto empêche le ressort Finances d’apporter au règlement des adaptations qui ne correspondent pas à l’orientation stratégique de la STF.
+Le présent document règle les aspects financiers du domaine sportif de la Swiss Tablesoccer Federation, ci-après STF.
 
-### 2. Dispositions générales
+Le document est rédigé en langue allemande. La version allemande fait foi à l'oral et à l'écrit. Les versions dans d'autres langues sont établies au moyen d'une traduction électronique. Sauf mention explicite, tous les genres et toutes les catégories d'âge sont concernés.
 
-#### 2.1. Protection des données
+### 1.1. Champ d'application
 
-##### 2.1.1. Traitement des données
+Le document Règlement financier des tournois et des licences fait partie intégrante des documents officiels de la fédération à partir du 1er janvier 2026 et remplace tous les points qui étaient jusqu'à présent traités dans le règlement *Sport individuel*, le règlement *Qualification ITSF World Cup* et le règlement *Swiss Tablesoccer League* sur le thème des finances. Toutes les réglementations et directives sur le thème des finances dans les règlements susmentionnés deviennent caduques avec l'entrée en vigueur de ce document.
 
-Les personnes qui œuvrent pour la STF dans l’organisation et la réalisation d’un tournoi, le traitement des inscriptions (en ligne, hors ligne), la gestion des données des participants, l’encaissement, la publicité et l’information aux participants traitent les données pour le compte de la STF et uniquement à cette fin. Conformément à la loi, elles sont tenues de contrôler le traitement des données par ces personnes et de les obliger à ne pas traiter les données à leurs propres fins ni les transmettre à des tiers.
+### 1.2. Compétence
 
-##### 2.1.2. Utilisation des données
+Le règlement relève de la compétence du département des finances du comité de la STF.
 
-L’utilisation des données personnelles est régie par la déclaration de protection des données en vigueur. Les athlètes s’engagent à ne mettre à disposition de l’organisateur les données personnelles de tiers que si ceux-ci, ou leurs représentants légaux, connaissent la déclaration de protection des données en vigueur et qu’ils y sont autorisés selon le droit applicable en matière de protection des données. L’organisateur peut à tout moment demander aux athlètes de prouver, dans un délai déterminé, que ces conditions sont remplies — notamment le consentement des tiers — et peut, à défaut, se retirer sans autre de tous les contrats.
+<finance@swisstablesoccer.ch>
 
-#### 2.2. Prescriptions générales
+Le comité de la STF dispose d'un droit de veto pour chaque modification recommandée à la mise en œuvre par le département des finances. Ce droit de veto empêche le département des finances d'apporter au règlement des modifications qui ne correspondent pas à l'orientation stratégique de la STF.
 
-##### 2.2.1. Responsabilité individuelle
+## 2. Dispositions générales
 
-La participation aux manifestations de la STF se fait aux risques et sous la responsabilité des participants. Le règlement de tournoi s’applique également lors de l’inscription d’autres personnes ou de personnes supplémentaires (tiers). L’organisateur part du principe que ces tiers ont donné à la personne procédant à l’inscription l’autorisation de les inscrire. En cas d’inscription d’athlètes mineurs par des tiers, l’organisateur part du principe que le consentement des représentants légaux existe.
+### 2.1. Protection des données
 
-##### 2.2.2. Responsabilité
+#### 2.1.1. Traitement des données
 
-L’organisateur n’assume aucune responsabilité de quelque nature que ce soit. Cela vaut également pour les accidents, le vol et la responsabilité envers des tiers.
+Les personnes qui interviennent pour la STF dans l'organisation et la réalisation d'un tournoi, le traitement des inscriptions (en ligne, hors ligne), la gestion des données des participants, l'encaissement, le recrutement et l'information des participants, traitent les données pour le compte de la STF et uniquement à cette fin. Conformément à la loi, ils sont tenus de contrôler le traitement des données par ces personnes et de les obliger à ne pas traiter les données à des fins propres ni à les transmettre à des tiers.
 
-##### 2.2.3. Assurance
+#### 2.1.2. Utilisation des données
 
-L’assurance incombe aux participants.
+L'utilisation des données personnelles est régie par la déclaration de protection des données en vigueur. Les athlètes s'engagent à ne mettre les données personnelles de tiers à la disposition de l'organisateur que si ceux-ci, respectivement leurs représentants légaux, connaissent la déclaration de protection des données en vigueur et sont habilités à le faire conformément au droit applicable en matière de protection des données. L'organisateur peut à tout moment exiger des athlètes qu'ils prouvent l'existence de ces conditions — notamment un consentement des tiers — dans un délai imparti, et peut autrement résilier sans autre tous les contrats.
 
-##### 2.2.4. For juridique
+### 2.2. Prescriptions générales
 
-Le for juridique est le lieu du siège de l’organisateur du tournoi.
+#### 2.2.1. Responsabilité personnelle
 
-##### 2.2.5. Statut d’éthique de Swiss Olympic pour le sport suisse
+La participation aux manifestations de la STF se fait aux risques et sous la responsabilité du participant. Le règlement du tournoi s'applique également lors de l'inscription d'autres personnes ou de personnes supplémentaires (tiers). L'organisateur part du principe que ces tiers ont donné à la personne qui les inscrit l'autorisation de le faire. En cas d'inscription d'athlètes mineurs par des tiers, l'organisateur part du principe que le consentement des représentants légaux est acquis.
 
-Un comportement approprié est attendu en tout temps de toutes les personnes concernées. Le Statut d’éthique de Swiss Olympic pour le sport suisse s’applique. Par la participation aux manifestations de la STF, le Statut d’éthique est accepté tacitement.
+#### 2.2.2. Responsabilité civile
 
-##### 2.2.6. Remboursements
+L'organisateur décline toute responsabilité de quelque nature que ce soit. Ceci s'applique également aux accidents, aux vols et à la responsabilité envers des tiers.
 
-Toute personne qui ne se présente pas au tournoi n’a droit à aucun remboursement des frais d’inscription, des coûts de licence ou d’autres dépenses.  
-Si un tournoi ne peut pas être organisé ou ne peut l’être que partiellement pour cause de force majeure, il n’existe aucun droit au remboursement des frais d’inscription.
+#### 2.2.3. Assurance
 
-### 3. Licences
+L'assurance est l'affaire des participants.
 
-Pour la participation aux manifestations suivantes de la STF, une licence est requise pour tous les athlètes :
+#### 2.2.4. For juridique
+
+Le for juridique est le lieu du siège de l'organisateur du tournoi.
+
+#### 2.2.5. Statut éthique de Swiss Olympics du sport suisse
+
+Un comportement approprié est attendu en tout temps de la part de toutes les personnes concernées. Le statut éthique de Swiss Olympics du sport suisse s'applique. La participation aux manifestations de la STF implique l'acceptation tacite du statut éthique.
+
+#### 2.2.6. Remboursements
+
+Quiconque ne se présente pas au tournoi n'a aucun droit au remboursement des frais d'inscription, des coûts de licence ou d'autres dépenses.
+
+Si un tournoi n'a pas lieu ou n'est que partiellement réalisé en raison d'un cas de force majeure, il n'existe aucun droit au remboursement des frais d'inscription.
+
+## 3. Licences
+
+Une licence est requise pour tous les athlètes pour participer aux manifestations suivantes de la STF :
+
 - Swiss Tablesoccer Series (STS)
 - Swiss Tablesoccer League (STL)
-- Swiss Tablesoccer Finals (championnat suisse, épreuves officielles)  
-Les types de licences possibles sont décrits dans les points suivants.
+- Swiss Tablesoccer Finals (Championnat suisse, compétitions officielles)
 
-#### 3.1. Types de licences et frais
+Les types de licences possibles sont décrits aux points suivants.
 
-<table>
-<tr><th></th><th>**Sport de performance (licencié)**</th><th>**Sport populaire (non lic.)**</th><th>**Juniors (licenciés)**</th></tr>
-<tr><td>Coûts annuels</td><td>⚠ Licence annuelle, CHF 50⚠ Taxe d’orientation, CHF 30</td><td>✅ Aucun</td><td>⚠ Licence annuelle, CHF 20✅ **Aucune** taxe d’orientation</td></tr>
-<tr><td>**Participation championnat suisse**</td><td>✅ Oui</td><td>⛔ Non</td><td>✅ Oui</td></tr>
-<tr><td>Participation STL</td><td>✅ Oui</td><td>⚠ Frais de tournoi, CHF 15</td><td>✅ Oui</td></tr>
-<tr><td>Participation STS _sans statut ITSF_</td><td>✅ Oui</td><td>⚠ Frais de tournoi, CHF 15</td><td>✅ Oui</td></tr>
-<tr><td>Participation STS _avec statut ITSF_</td><td>✅ Oui</td><td>⚠ Frais de tournoi, CHF 15</td><td>✅ Oui</td></tr>
-<tr><td>Participation STRT Pro</td><td>✅ Oui</td><td>✅ Oui</td><td>✅ Oui</td></tr>
-<tr><td>Participation STRT</td><td>✅ Oui</td><td>✅ Oui</td><td>✅ Oui</td></tr>
-<tr><td>**Participation ITSF à l’étranger**</td><td>✅ Oui</td><td>⛔ Non</td><td>✅ Oui</td></tr>
-<tr><td>Classement STF</td><td>✅ Oui</td><td>⛔ Non</td><td>✅ Oui</td></tr>
-</table>
+### 3.1. Types de licences et frais
 
-_Tableau 1 : Aperçu des types de licences & frais_
+| | **Sport de compétition (licencié)** | **Sport populaire (non lic.)** | **Juniors (licencié)** |
+|---|---|---|---|
+| Coûts annuels | ⚠ Licence annuelle, CHF 50<br>⚠ Taxe d'incitation, CHF 30 | ✅ Aucun | ⚠ Licence annuelle, CHF 20<br>✅ **Pas** de taxe d'incitation |
+| **Participation Championnat suisse** | ✅ Oui | ⛔ Non | ✅ Oui |
+| Participation STL | ✅ Oui | ⚠ Frais de tournoi, CHF 15 | ✅ Oui |
+| Participation STS *sans statut ITSF* | ✅ Oui | ⚠ Frais de tournoi, CHF 15 | ✅ Oui |
+| Participation STS *avec statut ITSF* | ✅ Oui | ⚠ Frais de tournoi, CHF 15 | ✅ Oui |
+| Participation STRT Pro | ✅ Oui | ✅ Oui | ✅ Oui |
+| Participation STRT | ✅ Oui | ✅ Oui | ✅ Oui |
+| **Participation ITSF Étranger** | ✅ Oui | ⛔ Non | ✅ Oui |
+| Classement STF | ✅ Oui | ⛔ Non | ✅ Oui |
 
-##### 3.1.1. Sport de performance - licence annuelle
+*Tableau 1 : Aperçu des types de licences et frais*
 
-La licence annuelle licencie les joueurs tant au niveau national (STF) qu’international (ITSF). Elle permet ainsi de participer à tous les tournois ouverts ITSF et STF, y compris les Swiss Tablesoccer Finals (championnat suisse) et la Swiss Tablesoccer League (STL).  
-La licence annuelle de CHF 80 est proposée sous forme de package et comprend les frais et prestations listés dans le tableau 1. Les joueurs peuvent obtenir une licence annuelle par l’intermédiaire de leur club. Les frais sont facturés au club. Les clubs sont responsables d’exiger de leurs membres le paiement des coûts de licence correspondants. La licence n’est valable qu’après paiement.  
+#### 3.1.1. Sport de compétition - Licence annuelle
+
+La licence annuelle confère aux joueurs une licence tant nationale (STF) qu'internationale (ITSF). La licence annuelle permet ainsi la participation à tous les tournois ouverts ITSF et STF, y compris les Swiss Tablesoccer Finals (Championnat suisse) et la Swiss Tablesoccer League (STL).
+
+La licence annuelle pour CHF 80 est proposée sous forme de package et comprend les frais et prestations énumérés au tableau 1. Les joueurs peuvent obtenir une licence annuelle par l'intermédiaire de leur club. Les frais sont facturés au club. Les clubs sont responsables de réclamer à leurs membres les frais de licence qui en résultent. La licence ne devient valable qu'avec le paiement.
+
 La licence annuelle pour juniors est analogue, mais coûte CHF 20.
 
-##### 3.1.2. Sport populaire - frais de tournoi
+#### 3.1.2. Sport populaire - Frais de tournoi
 
-Lors des manifestations de la STF, les joueurs peuvent participer à la manifestation en cours moyennant des frais de tournoi. Ces frais autorisent la participation à la manifestation en cours, mais pas aux Swiss Tablesoccer Finals (championnat suisse). La qualification n’est donc possible qu’avec une licence annuelle valable. La licence générale de tournoi coûte CHF 15 et est payée directement à l’organisateur. Si la manifestation possède en outre un statut ITSF (ITSF 250, ITSF 500, ITSF 750), la licence ITSF nécessaire pour les joueurs de Suisse (nationalité ou domicile) est comprise dans les frais de tournoi.  
-Les athlètes nationaux qui ne prennent qu’une licence ITSF afin de jouer à l’étranger (p. ex. Leonhart WS) se voient facturer les coûts de la licence ITSF avec des frais administratifs de CHF 15.
+Lors des manifestations de la STF, les joueurs peuvent participer à la manifestation en cours moyennant des frais de tournoi. Les frais de tournoi donnent droit à la participation à la manifestation en cours mais pas aux Swiss Tablesoccer Finals (Championnat suisse). Cela signifie qu'une qualification n'est possible qu'avec une licence annuelle valable. La licence générale de tournoi coûte CHF 15 et est payée directement à l'organisateur. Si la manifestation détient en outre le statut ITSF (ITSF 250, ITSF 500, ITSF 750), la licence ITSF nécessaire pour les joueurs de Suisse (nationalité ou domicile) est incluse dans les frais de tournoi.
 
-##### 3.1.3. Swiss Tablesoccer Regio Tour (STRT & STRT Pro)
+Aux athlètes nationaux qui n'obtiennent une licence ITSF que pour jouer à l'étranger (par exemple Leonhart WS), les frais de licence pour la licence ITSF sont facturés avec des frais administratifs de CHF 15.
 
-Aucune licence n’est requise pour participer aux tournois de la Swiss Tablesoccer Regio Tour (STRT & STRT Pro). À la place, des frais de CHF 25 (STRT) respectivement CHF 50 (STRT Pro) sont dus par l’organisateur pour chaque tournoi organisé et comptabilisé. Ce forfait est facturé directement par la STF aux clubs organisateurs après la clôture de la saison. Les clubs organisateurs sont libres de prélever auprès des joueurs non licenciés des frais de tournoi d’un maximum de CHF 5.
+#### 3.1.3. Swiss Tablesoccer Regio Tour (STRT & STRT Pro)
 
-##### 3.1.4. Frais administratifs pour joueurs étrangers
+Pour participer aux tournois de la Swiss Tablesoccer Regio Tour (STRT & STRT Pro), <u>aucune</u> licence n'est requise. À la place, des frais de CHF 25 (STRT) respectivement CHF 50 (STRT Pro) sont dus à l'organisateur pour chaque tournoi tenu et classé. Ce forfait est facturé par la STF directement aux clubs organisateurs à la fin de la saison. Les clubs organisateurs sont libres de percevoir des frais de tournoi de CHF 5 maximum auprès des joueurs non licenciés.
 
-Les frais administratifs jusqu’ici prélevés pour les joueurs étrangers sont supprimés. Les joueurs étrangers paient à la place les frais de tournoi (voir Sport populaire - frais de tournoi). Pour les tournois avec statut ITSF, une licence ITSF est en outre nécessaire. Celle-ci peut être obtenue par l’intermédiaire de leur fédération nationale. Le statut dans Coral fait foi.
+#### 3.1.4. Frais administratifs pour les joueurs étrangers
 
-##### 3.1.5. Taxe d’orientation pour l’arbitrage
+Les frais administratifs jusqu'ici perçus pour les joueurs étrangers sont supprimés. Les joueurs étrangers paient à la place les frais de tournoi (voir Sport populaire - Frais de tournoi). Pour les tournois avec statut ITSF, une licence ITSF est en outre nécessaire. Celle-ci peut être obtenue auprès de leur fédération nationale. Le statut dans Coral fait foi.
 
-L’introduction d’une taxe d’orientation doit motiver le plus grand nombre à suivre la formation d’arbitre. L’hypothèse est que l’incitation financière amènera une grande partie des joueurs à suivre la formation de base et à disposer ainsi, lors des tournois, au moins des exigences théoriques pour pouvoir intervenir comme arbitre.  
-La taxe d’orientation est échelonnée comme suit :
+#### 3.1.5. Taxe d'incitation pour l'arbitrage
 
-<table>
-<tr><th>**Statut d’arbitre**</th><th>**Taxe d’orientation**</th></tr>
-<tr><td>Sans formation</td><td>CHF 30</td></tr>
-<tr><td>Assistant</td><td>CHF 10</td></tr>
-<tr><td>Régional ou supérieur</td><td>CHF 0</td></tr>
-</table>
+L'introduction d'une taxe d'incitation vise à motiver la grande masse à entreprendre la formation d'arbitre. L'hypothèse est qu'au moyen de l'incitation financière, une grande partie des joueurs suivront la formation de base et apporteront ainsi, lors des tournois, au moins les exigences théoriques pour pouvoir intervenir comme arbitre.
 
-La taxe d’orientation fait partie de la licence annuelle et est facturée avec celle-ci. Pour les juniors, la taxe d’orientation est supprimée indépendamment du statut d’arbitre.  
-Les informations relatives à la formation se trouvent sous  .
+La taxe d'incitation est échelonnée comme suit :
 
-#### 3.2. Demande, octroi & facturation
+| **Statut d'arbitre** | **Taxe d'incitation** |
+|---|---|
+| Sans formation | CHF 30 |
+| Assistant | CHF 10 |
+| Régional ou supérieur | CHF 0 |
 
-Les licences peuvent être demandées à tout moment directement dans Coral, via un club membre de la STF ou par les joueurs eux-mêmes, et sont valables jusqu’à la fin de l’année civile. Les licences sont validées par la personne compétente au sein du club.  
-La STF facture les coûts de licence encourus à ses clubs membres. Les clubs sont responsables de la refacturation des coûts. Ils sont libres de décider comment ils délivrent les licences et répercutent les coûts, par exemple en les intégrant à la cotisation de membre ou en les délivrant à des invités avec ou sans frais administratifs supplémentaires.  
-Une licence délivrée ne peut pas être remboursée ; les coûts encourus doivent être payés.
+La taxe d'incitation fait partie de la licence annuelle et est facturée avec celle-ci. Pour les juniors, la taxe d'incitation est supprimée, indépendamment du statut d'arbitre.
 
-### 4. Tournois
+Les informations sur la formation sont disponibles sur <https://referee.swisstablesoccer.ch>.
 
-#### 4.1. Swiss Tablesoccer Finals
+### 3.2. Demande, octroi et facturation
 
-Aux Swiss Tablesoccer Finals (aussi championnat suisse, CH-Meisterschaft ou SM), les athlètes qualifiés jouent pour les titres respectifs des disciplines officielles. Les disciplines officielles du championnat suisse sont définies dans le règlement Sport individuel.
+Les licences peuvent être demandées à tout moment directement dans Coral via un club membre de la STF et par les joueurs eux-mêmes, et sont valables jusqu'à la fin de l'année civile. Les licences sont délivrées par la personne compétente au sein du club.
 
-##### 4.1.1. Frais d’inscription
+La STF facture les coûts de licences qui en découlent à ses clubs membres. Les clubs sont responsables de la refacturation des coûts. Les clubs sont libres de décider comment ils délivrent les licences et répercutent les coûts, par exemple en intégrant les coûts dans la cotisation des membres ou en les facturant aux invités avec ou sans frais administratifs supplémentaires.
 
-Aucun frais d’inscription n’est prélevé pour les disciplines officielles des Swiss Tablesoccer Finals.
+Une licence délivrée ne peut pas être remboursée, les coûts encourus doivent être payés.
 
-##### 4.1.2. Prix
+## 4. Tournois
 
-Le vainqueur reçoit une coupe et une médaille. L’équipe classée 2e et 3e reçoit une médaille. Des prix en espèces provenant du pot SM sont également distribués.
+### 4.1. Swiss Tablesoccer Finals
 
-##### 4.1.3. Financement des prix en espèces
+Aux Swiss Tablesoccer Finals (également Championnat suisse, CS ou SM), les athlètes qualifiés jouent pour le titre respectif des disciplines officielles. Les disciplines officielles du Championnat suisse sont définies dans le règlement du sport individuel.
 
-Lors des tournois de la catégorie _Swiss Tablesoccer Series_, 20 % des frais d’inscription sont reversés à la STF pour le championnat suisse. Tous les versements des disciplines Open Doubles, Open Singles, Woman Doubles, Woman Singles et Mixed sont distribués à 100 % lors du championnat suisse comme suit.
+#### 4.1.1. Frais d'inscription
 
-<table>
-<tr><th>**Discipline**</th><th>**Part du pot SM**</th></tr>
-<tr><td>**Open Doubles**</td><td>35 %</td></tr>
-<tr><td>**Open Singles**</td><td>17.5 %</td></tr>
-<tr><td>**Woman Doubles**</td><td>17 %</td></tr>
-<tr><td>**Woman Singles**</td><td>8.5 %</td></tr>
-<tr><td>**Mixed**</td><td>22 %</td></tr>
-</table>
+Aucun frais d'inscription n'est perçu pour les disciplines officielles des Swiss Tablesoccer Finals.
 
-##### 4.1.4. Clé de répartition
+#### 4.1.2. Prix
 
-<table>
-<tr><th>**Rang / Discipline**</th><th>**Dames**</th><th>**Open**</th><th>**Mixed**</th><th>**Seniors**</th><th>**Juniors**</th></tr>
-<tr><td>**1**</td><td>39 %</td><td>25 %</td><td>25 %</td><td>39 %</td><td>Package ITSF World Cup CHF 250 (non cumulable)</td></tr>
-<tr><td>**2**</td><td>27 %</td><td>19 %</td><td>19 %</td><td>27 %</td><td>X</td></tr>
-<tr><td>**3**</td><td>19 %</td><td>16 %</td><td>16 %</td><td>19 %</td><td>X</td></tr>
-<tr><td>**4**</td><td>15 %</td><td>12 %</td><td>12 %</td><td>15 %</td><td>X</td></tr>
-<tr><td>**5**</td><td>X</td><td>7 %</td><td>7 %</td><td>X</td><td>X</td></tr>
-<tr><td>**5**</td><td>X</td><td>7 %</td><td>7 %</td><td>X</td><td>X</td></tr>
-<tr><td>**5**</td><td>X</td><td>7 %</td><td>7 %</td><td>X</td><td>X</td></tr>
-<tr><td>**5**</td><td>X</td><td>7 %</td><td>7 %</td><td>X</td><td>X</td></tr>
-<tr><td>**Total**</td><td>100 %</td><td>100 %</td><td>100 %</td><td>100 %</td><td></td></tr>
-</table>
+Le vainqueur reçoit une coupe et une médaille. L'équipe classée 2e et 3e reçoit une médaille. Des prix sont également versés à partir de la cagnotte du Championnat suisse.
 
-#### 4.2. Swiss Tablesoccer Series (STS)
+#### 4.1.3. Financement des prix
 
-##### 4.2.1. Frais d’inscription
+Aux tournois de la catégorie *Swiss Tablesoccer Series*, 20% des frais d'inscription sont prélevés au profit du Championnat suisse de la STF. Tous les versements provenant des disciplines Open Doubles, Open Singles, Woman Doubles, Woman Singles et Mixed sont reversés à 100% au Championnat suisse comme suit.
 
-Pour l’inscription, tous les joueurs doivent s’acquitter des frais d’inscription suivants :
+| **Discipline** | **Part de la cagnotte CS** |
+|---|---|
+| **Open Doubles** | 35 % |
+| **Open Singles** | 17,5 % |
+| **Woman Doubles** | 17 % |
+| **Woman Singles** | 8,5 % |
+| **Mixed** | 22 % |
 
-<table>
-<tr><th>**Discipline / classe de niveau**</th><th>**Rookie**</th><th>**Advanced**</th></tr>
-<tr><td>**Rookie Doppel**</td><td>CHF 10 / personne</td><td>Participation impossible</td></tr>
-<tr><td>**AD / AE**</td><td>CHF 10 / personne\*</td><td></td></tr>
-<tr><td>**DD / OD / DE / OE / SE**</td><td>CHF 20 / personne (package)</td><td></td></tr>
-<tr><td>**Mixed Doppel**</td><td>CHF 20 / personne</td><td></td></tr>
-<tr><td>**Senioren Doppel**</td><td>CHF 20 / personne</td><td></td></tr>
-<tr><td>**Junioren Doppel & Einzel**</td><td>Aucun frais d’inscription / frais de tournoi si non licencié</td><td></td></tr>
-</table>
+#### 4.1.4. Clé de répartition
 
-\* En cas de participation à l’OD ou à l’OS, la participation à l’AD ou à l’AE est gratuite.
+| **Rang / Discipline** | **Dames** | **Open** | **Mixed** | **Seniors** | **Juniors** |
+|---|---|---|---|---|---|
+| **1** | 39 % | 25 % | 25 % | 39 % | Package ITSF World Cup CHF 250 (Non cumulable) |
+| **2** | 27 % | 19 % | 19 % | 27 % | X |
+| **3** | 19 % | 16 % | 16 % | 19 % | X |
+| **4** | 15 % | 12 % | 12 % | 15 % | X |
+| **5** | X | 7 % | 7 % | X | X |
+| **5** | X | 7 % | 7 % | X | X |
+| **5** | X | 7 % | 7 % | X | X |
+| **5** | X | 7 % | 7 % | X | X |
+| **Total** | 100 % | 100 % | 100 % | 100 % | |
 
-##### 4.2.2. Répartition des frais d’inscription
+### 4.2. Swiss Tablesoccer Series (STS)
 
-Dans toutes les disciplines **sauf AD et AE** de la Swiss Tablesoccer Series (STS), des frais d’inscription sont affectés à l’organisateur et aux Swiss Tablesoccer Finals. La clé est la suivante dans toutes les disciplines :
+#### 4.2.1. Frais d'inscription
 
-<table>
-<tr><th>**Part prix en espèces**</th><th>**Part organisateur**</th><th>**Part Swiss Finals**</th></tr>
-<tr><td>60 %</td><td>20 %</td><td>20 %</td></tr>
-</table>
+Tous les joueurs doivent s'acquitter des frais d'inscription suivants :
 
-##### 4.2.3. Clé de répartition
+| **Discipline / Classe de force** | **Rookie** | **Advanced** |
+|---|---|---|
+| **Rookie Double** | CHF 10 / personne | Pas de participation possible |
+| **AD / AE** | CHF 10 / personne\* | |
+| **DD / OD / DE / OE / SE** | CHF 20 / personne (Package) | |
+| **Mixed Double** | CHF 20 / personne | |
+| **Seniors Double** | CHF 20 / personne | |
+| **Juniors Double & Simple** | Pas de frais d'inscription / frais de tournoi si non licencié | |
 
-Les 60 % des frais d’inscription versés sur place sont distribués selon la clé suivante :
+\* Si engagé en OD ou OS, la participation en AD ou AE est gratuite
 
-<table>
-<tr><th>**Rang / # équipes**</th><th>**1 -10**</th><th>**11 – 20**</th><th>**21 et plus**</th></tr>
-<tr><td>**1**</td><td>50 %</td><td>39 %</td><td>25 %</td></tr>
-<tr><td>**2**</td><td>33 %</td><td>27 %</td><td>19 %</td></tr>
-<tr><td>**3**</td><td>17 %</td><td>19 %</td><td>16 %</td></tr>
-<tr><td>**4**</td><td>X</td><td>15 %</td><td>12 %</td></tr>
-<tr><td>**5**</td><td>X</td><td>X</td><td>7 %</td></tr>
-<tr><td>**5**</td><td>X</td><td>X</td><td>7 %</td></tr>
-<tr><td>**5**</td><td>X</td><td>X</td><td>7 %</td></tr>
-<tr><td>**5**</td><td>X</td><td>X</td><td>7 %</td></tr>
-<tr><td>**Total**</td><td>100 %</td><td>100 %</td><td>100 %</td></tr>
-</table>
+#### 4.2.2. Répartition des frais d'inscription
 
-##### 4.2.4. Décompte de tournoi
+Pour toutes les disciplines **sauf AD et AE** de la Swiss Tablesoccer Series (STS), une partie des frais d'inscription est prélevée pour l'organisateur et pour les Swiss Tablesoccer Finals. La clé est la suivante pour toutes les disciplines :
 
-L’organisateur d’un tournoi STS est tenu de remettre à la STF le décompte issu de Coral au plus tard une semaine après l’événement, afin que la STF puisse établir une facture pour les coûts encourus tels que forfait de transport, frais de tournoi, contributions au pot SM, etc.  
-**Tournois avec statut ITSF**  
-Pour les tournois de la catégorie STS, le club organisateur peut demander le statut ITSF. Les coûts et niveaux correspondants sont fixés chaque année par l’ITSF et repris 1:1 par la STF. Ces coûts sont entièrement à la charge du club et sont facturés par la STF.
+| **Part des prix** | **Part de l'organisateur** | **Part Swiss Finals** |
+|---|---|---|
+| 60 % | 20 % | 20 % |
 
-#### 4.3. Swiss Tablesoccer Regio Tour (STRT & STRT Pro)
+#### 4.2.3. Clé de répartition
 
-##### 4.3.1. Frais d’inscription
+Les 60% des frais d'inscription qui sont versés sur place sont payés selon la clé suivante :
 
-Les organisateurs des tournois STRT peuvent décider du montant des frais d’inscription.
+| **Rang / # Équipes** | **1 -10** | **11 – 20** | **21 et plus** |
+|---|---|---|---|
+| **1** | 50 % | 39 % | 25 % |
+| **2** | 33 % | 27 % | 19 % |
+| **3** | 17 % | 19 % | 16 % |
+| **4** | X | 15 % | 12 % |
+| **5** | X | X | 7 % |
+| **5** | X | X | 7 % |
+| **5** | X | X | 7 % |
+| **5** | X | X | 7 % |
+| **Total** | 100 % | 100 % | 100 % |
 
-##### 4.3.2. Répartition des frais d’inscription
+#### 4.2.4. Décompte du tournoi
 
-Les organisateurs des tournois STRT peuvent disposer librement des frais d’inscription, c’est-à-dire les verser entièrement, partiellement ou pas du tout.
+L'organisateur d'un tournoi STS est tenu de soumettre le décompte issu de Coral à la STF dans la semaine suivant l'événement, afin que la STF puisse émettre une facture pour les frais à venir tels que le forfait de transport, les frais de tournoi, les contributions à la cagnotte CS, etc.
 
-#### 4.4. Swiss Tablesoccer League (STL)
+**Tournois avec statut ITSF**
 
-##### 4.4.1. Frais d’inscription
+Pour les tournois de la catégorie STS, le club organisateur peut demander le statut ITSF. Les coûts et les niveaux pour cela sont fixés chaque année par l'ITSF et repris à l'identique par la STF. Ces coûts sont à la charge entière du club et sont facturés par la STF.
 
-Les frais de participation s’élèvent à CHF 150 par équipe inscrite. Après la clôture des inscriptions à la Tablesoccer League, une facture est envoyée aux clubs participants et doit être payée dans les 20 jours.  
-En cas de non-présentation d’une équipe inscrite, les frais de participation ne sont pas remboursés.
+### 4.3. Swiss Tablesoccer Regio Tour (STRT & STRT Pro)
 
-##### 4.4.2. Répartition des frais d’inscription
+#### 4.3.1. Frais d'inscription
 
-Les frais d’inscription reviennent à 80 % à la STF et à 20 % au club organisateur, pour autant que la STF ne réalise pas de perte avec la STL.
+Les organisateurs des tournois STRT peuvent décider du montant des frais d'inscription.
 
-##### 4.4.3. Clé de répartition
+#### 4.3.2. Répartition des frais d'inscription
 
-Aucun prix en espèces ni frais d’inscription n’est distribué.
+Les organisateurs des tournois STRT peuvent disposer librement des frais d'inscription, c'est-à-dire les reverser totalement, partiellement ou pas du tout.
 
-#### 4.5. Packages ITSF World Cup
+### 4.4. Swiss Tablesoccer League (STL)
 
-Actuellement, aucun package (de voyage) pour l’ITSF World Cup n’est défini (exception : juniors). Les athlètes qui se qualifient pour l’ITSF World Cup via les Swiss Tablesoccer Finals n’ont aucun droit à un soutien financier. Si les finances de la STF sont stables, le comité peut accorder des prestations de soutien proportionnées, par exemple la prise en charge des frais d’inscription.
+#### 4.4.1. Frais d'inscription
 
-### 5. Contact & coordonnées bancaires
+Les frais de participation s'élèvent à CHF 150 par équipe inscrite. À l'issue du délai d'inscription pour la Tablesoccer League, une facture est envoyée aux clubs participants, qui doit être payée dans un délai de 20 jours.
 
-**Coordonnées bancaires**  
-CH68 8080 8002 3147 5838 0  
-Raiffeisenbank Lägern-Baregg, 5400 Baden,
+En cas de non-présentation d'une équipe inscrite, les frais de participation ne sont pas remboursés.
+
+#### 4.4.2. Répartition des frais d'inscription
+
+Les frais d'inscription sont versés à 80% à la STF et à 20% au club organisateur, à condition que la STF ne subisse aucune perte du fait de la STL.
+
+#### 4.4.3. Clé de répartition
+
+Aucun prix ni aucun frais d'inscription n'est versé.
+
+### 4.5. Packages ITSF World Cup
+
+Actuellement, aucun (travel) package n'est défini pour l'ITSF World Cup (exception : juniors). Les athlètes qui se qualifient pour l'ITSF World Cup via les Swiss Tablesoccer Finals n'ont pas droit à un soutien financier. Si les finances de la STF sont stables, le comité peut accorder des prestations de soutien proportionnées, par exemple la prise en charge des frais d'inscription.
+
+## 5. Contact et coordonnées bancaires
+
+<finance@swisstablesoccer.ch>
+
+**Coordonnées bancaires**
+
+CH68 8080 8002 3147 5838 0
+
+Raiffeisenbank Lägern-Baregg, 5400 Baden

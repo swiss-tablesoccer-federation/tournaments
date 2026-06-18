@@ -1,0 +1,1 @@
+https://static1.squarespace.com/static/6797790a8025010384cf53f2/t/67e2a408aeed8c3e1ef42665/1742906377580/2023-10-22-reglement-qualifikation-itsf-world-cup_v1-1-fr_final.pdf
