@@ -1,3 +1,5 @@
+<img src="../assets/img/header.png" width="240" alt="">
+
 # Règlement financier des tournois et des licences
 
 | | |
@@ -139,11 +141,11 @@ Les types de licences possibles sont décrits aux points suivants.
 
 | | **Sport de compétition (licencié)** | **Sport populaire (non lic.)** | **Juniors (licencié)** |
 |---|---|---|---|
-| Coûts annuels | ⚠ Licence annuelle, CHF 50<br>⚠ Taxe d'incitation, CHF 30 | ✅ Aucun | ⚠ Licence annuelle, CHF 20<br>✅ **Pas** de taxe d'incitation |
+| Coûts annuels | ⚠️ Licence annuelle, CHF 50<br>⚠️ Taxe d'incitation, CHF 30 | ✅ Aucun | ⚠️ Licence annuelle, CHF 20<br>✅ **Pas** de taxe d'incitation |
 | **Participation Championnat suisse** | ✅ Oui | ⛔ Non | ✅ Oui |
-| Participation STL | ✅ Oui | ⚠ Frais de tournoi, CHF 15 | ✅ Oui |
-| Participation STS *sans statut ITSF* | ✅ Oui | ⚠ Frais de tournoi, CHF 15 | ✅ Oui |
-| Participation STS *avec statut ITSF* | ✅ Oui | ⚠ Frais de tournoi, CHF 15 | ✅ Oui |
+| Participation STL | ✅ Oui | ⚠️ Frais de tournoi, CHF 15 | ✅ Oui |
+| Participation STS *sans statut ITSF* | ✅ Oui | ⚠️ Frais de tournoi, CHF 15 | ✅ Oui |
+| Participation STS *avec statut ITSF* | ✅ Oui | ⚠️ Frais de tournoi, CHF 15 | ✅ Oui |
 | Participation STRT Pro | ✅ Oui | ✅ Oui | ✅ Oui |
 | Participation STRT | ✅ Oui | ✅ Oui | ✅ Oui |
 | **Participation ITSF Étranger** | ✅ Oui | ⛔ Non | ✅ Oui |

@@ -1,3 +1,5 @@
+<img src="../assets/img/header.png" width="240" alt="">
+
 # Disciplinary Procedure Regulations
 
 | | |
@@ -48,7 +50,7 @@ The grid covers minor undesired behaviour up to serious offences that may be pro
 |---|---|
 | Everyday, but undesired and disruptive behaviour that has no immediate consequences. | **Warning** (verbal) |
 | Clear boundary violation which is sanctioned but does not entail consequences beyond the event. | **Multiple warning** → 🟨 (yellow card) |
-| Clear boundary violation that results in disqualification from the entire event. The incident is reported to the federation in writing, reviewed by an independent commission, and can therefore have far-reaching consequences for the person concerned. | 🟨🟨 → 🟥 |
+| Clear boundary violation that results in disqualification from the entire event. The incident is reported to the federation in writing, reviewed by an independent commission, and can therefore have far-reaching consequences for the person concerned. | 🟨 🟨 → 🟥 |
 | Behaviour that must typically be passed on to the authorities and is prosecuted under criminal law. | 🟥 (red card) |
 
 Concrete examples of behavioural requirements, a detailed description of the escalation levels and the possible associated consequences, sanctions and penal provisions are given in section 3.

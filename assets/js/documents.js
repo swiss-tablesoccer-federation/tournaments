@@ -277,6 +277,7 @@ function getPdfFileName(file) {
 
 function setDownloadButtonDisabled(disabled) {
   $('#documentDownloadPdfBtn').prop('disabled', !!disabled);
+  $('#documentScrollTopBtn').prop('disabled', !!disabled);
 }
 
 function updateViewerHeaderTexts() {
@@ -284,6 +285,10 @@ function updateViewerHeaderTexts() {
   $('#documentDownloadPdfBtn')
     .attr('title', tr('documentsDownloadPdf'))
     .attr('aria-label', tr('documentsDownloadPdf'));
+  $('#documentScrollTopBtn')
+    .attr('title', tr('documentsScrollTop'))
+    .attr('aria-label', tr('documentsScrollTop'))
+    .html('<i class="fa-solid fa-arrow-up" aria-hidden="true"></i>');
 }
 
 function preparePdfHeadingGroups($content) {
@@ -392,12 +397,19 @@ function renderViewerChrome() {
               $('<div>').addClass('document-viewer-label').attr('id', 'documentViewerLabel'),
               $('<h2>').addClass('document-viewer-title').attr('id', 'documentViewerTitle')
             ),
-            $('<button>')
-              .addClass('document-viewer-action')
-              .attr('id', 'documentDownloadPdfBtn')
-              .attr('type', 'button')
-              .prop('disabled', true)
-              .append($('<i>').addClass('fa-solid fa-download').attr('aria-hidden', 'true'))
+            $('<div>').addClass('document-viewer-actions').append(
+              $('<button>')
+                .addClass('document-viewer-action')
+                .attr('id', 'documentScrollTopBtn')
+                .attr('type', 'button')
+                .prop('disabled', true),
+              $('<button>')
+                .addClass('document-viewer-action')
+                .attr('id', 'documentDownloadPdfBtn')
+                .attr('type', 'button')
+                .prop('disabled', true)
+                .append($('<i>').addClass('fa-solid fa-download').attr('aria-hidden', 'true'))
+            )
           )
         )
         .append(
@@ -409,6 +421,10 @@ function renderViewerChrome() {
 
   updateViewerHeaderTexts();
   $('#documentDownloadPdfBtn').on('click', generatePdfFromCurrentDocument);
+  $('#documentScrollTopBtn').on('click', function () {
+    var viewerEl = document.getElementById('documentViewer');
+    if (viewerEl) viewerEl.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 }
 
 function setViewerStatus(type, message) {

@@ -1,3 +1,5 @@
+<img src="../assets/img/header.png" width="240" alt="">
+
 # Financial Regulations for Tournaments & Licensing
 
 | | |
@@ -139,11 +141,11 @@ The possible types of licensing are described in the following points.
 
 | | **Competitive Sport (licensed)** | **Recreational Sport (unlic.)** | **Juniors (licensed)** |
 |---|---|---|---|
-| Annual costs | ⚠ Annual license, CHF 50<br>⚠ Steering levy, CHF 30 | ✅ None | ⚠ Annual license, CHF 20<br>✅ **No** steering levy |
+| Annual costs | ⚠️ Annual license, CHF 50<br>⚠️ Steering levy, CHF 30 | ✅ None | ⚠️ Annual license, CHF 20<br>✅ **No** steering levy |
 | **Participation CH Championship** | ✅ Yes | ⛔ No | ✅ Yes |
-| Participation STL | ✅ Yes | ⚠ Tournament fee, CHF 15 | ✅ Yes |
-| Participation STS *without ITSF status* | ✅ Yes | ⚠ Tournament fee, CHF 15 | ✅ Yes |
-| Participation STS *with ITSF status* | ✅ Yes | ⚠ Tournament fee, CHF 15 | ✅ Yes |
+| Participation STL | ✅ Yes | ⚠️ Tournament fee, CHF 15 | ✅ Yes |
+| Participation STS *without ITSF status* | ✅ Yes | ⚠️ Tournament fee, CHF 15 | ✅ Yes |
+| Participation STS *with ITSF status* | ✅ Yes | ⚠️ Tournament fee, CHF 15 | ✅ Yes |
 | Participation STRT Pro | ✅ Yes | ✅ Yes | ✅ Yes |
 | Participation STRT | ✅ Yes | ✅ Yes | ✅ Yes |
 | **Participation ITSF Abroad** | ✅ Yes | ⛔ No | ✅ Yes |

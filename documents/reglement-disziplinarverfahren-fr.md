@@ -1,3 +1,5 @@
+<img src="../assets/img/header.png" width="240" alt="">
+
 # Règlement de la procédure disciplinaire
 
 | | |
@@ -48,7 +50,7 @@ La grille couvre les comportements légers non souhaités jusqu'aux infractions 
 |---|---|
 | Comportement quotidien, mais non souhaité et dérangeant, qui n'a pas de conséquences immédiates. | **Avertissement** (oral) |
 | Violation claire des limites, qui est sanctionnée, mais qui n'est pas liée à des conséquences dépassant le cadre de la manifestation. | **Avertissements multiples** → 🟨 (carton jaune) |
-| Violation claire des limites entraînant une disqualification de l'ensemble de la manifestation. L'incident est signalé par écrit à la fédération, examiné par une commission indépendante et peut donc avoir des conséquences importantes pour la personne concernée. | 🟨🟨 → 🟥 |
+| Violation claire des limites entraînant une disqualification de l'ensemble de la manifestation. L'incident est signalé par écrit à la fédération, examiné par une commission indépendante et peut donc avoir des conséquences importantes pour la personne concernée. | 🟨 🟨 → 🟥 |
 | Comportement qui doit typiquement être transmis aux autorités et qui est sanctionné par le droit pénal. | 🟥 (carton rouge) |
 
 Des exemples concrets concernant les exigences en matière de comportement, une description détaillée des niveaux d'escalade et des conséquences, sanctions et dispositions pénales qui peuvent y être associées figurent à la section 3.

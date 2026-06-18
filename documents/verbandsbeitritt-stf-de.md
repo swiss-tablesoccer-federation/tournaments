@@ -1,3 +1,5 @@
+<img src="../assets/img/header.png" width="240" alt="">
+
 # Neuaufnahme eines Vereins beim STF
 
 Für eine Neuaufnahme als Verein oder Club bei der Swiss Tablesoccer Federation (STF), sind die folgenden Punkte zu beachten und umzusetzen:

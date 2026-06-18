@@ -1,3 +1,5 @@
+<img src="../assets/img/header.png" width="240" alt="">
+
 # Regolamento della procedura disciplinare
 
 | | |
@@ -48,7 +50,7 @@ La griglia copre dai comportamenti lievi indesiderati fino alle infrazioni gravi
 |---|---|
 | Comportamento quotidiano, ma non desiderato e disturbante, che non ha conseguenze immediate. | **Ammonizione** (verbale) |
 | Chiara violazione dei limiti, che viene sanzionata ma non comporta conseguenze al di là dell'evento. | **Ammonizioni multiple** → 🟨 (cartellino giallo) |
-| Chiara violazione dei limiti che comporta la squalifica dall'intero evento. L'incidente viene segnalato per iscritto alla federazione, esaminato da una commissione indipendente e può quindi avere conseguenze rilevanti per la persona interessata. | 🟨🟨 → 🟥 |
+| Chiara violazione dei limiti che comporta la squalifica dall'intero evento. L'incidente viene segnalato per iscritto alla federazione, esaminato da una commissione indipendente e può quindi avere conseguenze rilevanti per la persona interessata. | 🟨 🟨 → 🟥 |
 | Comportamento che deve essere tipicamente trasmesso alle autorità ed è perseguibile penalmente. | 🟥 (cartellino rosso) |
 
 Esempi concreti relativi ai requisiti di comportamento, una descrizione dettagliata dei livelli di escalation e delle possibili conseguenze, sanzioni e disposizioni penali ad essi associate sono riportati nella sezione 3.

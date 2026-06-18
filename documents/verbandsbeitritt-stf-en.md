@@ -1,3 +1,5 @@
+<img src="../assets/img/header.png" width="240" alt="">
+
 # New admission of a club to the STF
 
 To be newly admitted as an association or club to the Swiss Tablesoccer Federation (STF), the following points must be observed and implemented:

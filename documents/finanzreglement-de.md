@@ -1,3 +1,5 @@
+<img src="../assets/img/header.png" width="240" alt="">
+
 # Finanzreglement Turnier- & Lizenzwesen
 
 | | |
@@ -139,11 +141,11 @@ Die möglichen Lizenzierungsarten sind in den nachfolgenden Punkten beschrieben.
 
 | | **Leistungssport (lizenziert)** | **Breitensport (nicht liz.)** | **Junioren (lizenziert)** |
 |---|---|---|---|
-| Kosten jährlich | ⚠ Jahreslizenz, CHF 50<br>⚠ Lenkungsabgabe, CHF 30 | ✅ Keine | ⚠ Jahreslizenz, CHF 20<br>✅ **Keine** Lenkungsabgabe |
+| Kosten jährlich | ⚠️ Jahreslizenz, CHF 50<br>⚠️ Lenkungsabgabe, CHF 30 | ✅ Keine | ⚠️ Jahreslizenz, CHF 20<br>✅ **Keine** Lenkungsabgabe |
 | **Teilnahme CH-Meisterschaft** | ✅ Ja | ⛔ Nein | ✅ Ja |
-| Teilnahme STL | ✅ Ja | ⚠ Turniergebühr, CHF 15 | ✅ Ja |
-| Teilnahme STS *ohne ITSF-Status* | ✅ Ja | ⚠ Turniergebühr, CHF 15 | ✅ Ja |
-| Teilnahme STS *mit ITSF-Status* | ✅ Ja | ⚠ Turniergebühr, CHF 15 | ✅ Ja |
+| Teilnahme STL | ✅ Ja | ⚠️ Turniergebühr, CHF 15 | ✅ Ja |
+| Teilnahme STS *ohne ITSF-Status* | ✅ Ja | ⚠️ Turniergebühr, CHF 15 | ✅ Ja |
+| Teilnahme STS *mit ITSF-Status* | ✅ Ja | ⚠️ Turniergebühr, CHF 15 | ✅ Ja |
 | Teilnahme STRT Pro | ✅ Ja | ✅ Ja | ✅ Ja |
 | Teilnahme STRT | ✅ Ja | ✅ Ja | ✅ Ja |
 | **Teilnahme ITSF Ausland** | ✅ Ja | ⛔ Nein | ✅ Ja |

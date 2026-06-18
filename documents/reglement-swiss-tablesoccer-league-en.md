@@ -1,6 +1,6 @@
-# Regulations
+<img src="../assets/img/header.png" width="240" alt="">
 
-## Swiss Tablesoccer League
+# Regulations - Swiss Tablesoccer League
 
 Version 2.3_2026
 

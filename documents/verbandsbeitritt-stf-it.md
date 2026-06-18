@@ -1,3 +1,5 @@
+<img src="../assets/img/header.png" width="240" alt="">
+
 # Nuova ammissione di un'associazione alla STF
 
 Per una nuova ammissione come associazione o club alla Swiss Tablesoccer Federation (STF), occorre osservare e mettere in atto i seguenti punti:

@@ -961,6 +961,12 @@ tr[data-cat="STS"] .t-date {
   font-size: 0.95rem;
 }
 
+.document-viewer-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
 .document-pdf-export {
   box-sizing: border-box;
   font-size: 11pt;

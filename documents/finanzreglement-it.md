@@ -1,3 +1,5 @@
+<img src="../assets/img/header.png" width="240" alt="">
+
 # Regolamento finanziario tornei e licenze
 
 | | |
@@ -139,11 +141,11 @@ I possibili tipi di licenza sono descritti nei punti seguenti.
 
 | | **Sport agonistico (licenziato)** | **Sport popolare (non lic.)** | **Juniores (licenziato)** |
 |---|---|---|---|
-| Costi annuali | ⚠ Licenza annuale, CHF 50<br>⚠ Tassa di incentivazione, CHF 30 | ✅ Nessuno | ⚠ Licenza annuale, CHF 20<br>✅ **Nessuna** tassa di incentivazione |
+| Costi annuali | ⚠️ Licenza annuale, CHF 50<br>⚠️ Tassa di incentivazione, CHF 30 | ✅ Nessuno | ⚠️ Licenza annuale, CHF 20<br>✅ **Nessuna** tassa di incentivazione |
 | **Partecipazione Campionato svizzero** | ✅ Sì | ⛔ No | ✅ Sì |
-| Partecipazione STL | ✅ Sì | ⚠ Quota di torneo, CHF 15 | ✅ Sì |
-| Partecipazione STS *senza status ITSF* | ✅ Sì | ⚠ Quota di torneo, CHF 15 | ✅ Sì |
-| Partecipazione STS *con status ITSF* | ✅ Sì | ⚠ Quota di torneo, CHF 15 | ✅ Sì |
+| Partecipazione STL | ✅ Sì | ⚠️ Quota di torneo, CHF 15 | ✅ Sì |
+| Partecipazione STS *senza status ITSF* | ✅ Sì | ⚠️ Quota di torneo, CHF 15 | ✅ Sì |
+| Partecipazione STS *con status ITSF* | ✅ Sì | ⚠️ Quota di torneo, CHF 15 | ✅ Sì |
 | Partecipazione STRT Pro | ✅ Sì | ✅ Sì | ✅ Sì |
 | Partecipazione STRT | ✅ Sì | ✅ Sì | ✅ Sì |
 | **Partecipazione ITSF Estero** | ✅ Sì | ⛔ No | ✅ Sì |

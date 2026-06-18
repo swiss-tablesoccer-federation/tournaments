@@ -1,3 +1,5 @@
+<img src="../assets/img/header.png" width="240" alt="">
+
 # Reglement Disziplinarverfahren
 
 | | |
@@ -48,7 +50,7 @@ Das Raster deckt leichtes unerwünschtes Verhalten bis zu schweren Vergehen, wel
 |---|---|
 | Alltägliches, aber nicht erwünschtes und störendes Verhalten, welches keine unmittelbaren Folgen hat. | **Verwarnung** (mündlich) |
 | Klare Grenzverletzung, welche sanktioniert wird, aber nicht mit über den Anlass hinausreichenden Konsequenzen verbunden ist. | **Mehrfache Verwarnung** → 🟨 (gelbe Karte) |
-| Klare Grenzverletzung, welche eine Disqualifikation vom gesamten Anlass zur Folge hat. Der Vorfall wird schriftlich dem Verband gemeldet, durch eine unabhängige Kommission geprüft und kann somit weitreichende Konsequenzen für den Betroffenen haben. | 🟨🟨 → 🟥 (gelb-rot) |
+| Klare Grenzverletzung, welche eine Disqualifikation vom gesamten Anlass zur Folge hat. Der Vorfall wird schriftlich dem Verband gemeldet, durch eine unabhängige Kommission geprüft und kann somit weitreichende Konsequenzen für den Betroffenen haben. | 🟨 🟨 → 🟥 (gelb-rot) |
 | Verhalten, welches typischerweise an die Behörden weitergegeben muss und strafrechtlich geahndet wird. | 🟥 (rote Karte) |
 
 Konkrete Beispiele zu den Anforderungen an das Verhalten, eine detaillierte Beschreibung der Eskalationsstufen und den möglichen damit verbundenen Konsequenzen, Sanktionen und Strafbestimmungen sind in Abschnitt 3 zu finden.
