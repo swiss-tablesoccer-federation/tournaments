@@ -360,9 +360,16 @@ Das Geschäftsjahr dauert vom 1. Januar bis zum 31. Dezember.
 
 Die vorliegenden Statuten wurden mit Beschluss an der ordentlichen Delegiertenversammlung vom 20. November 2016 angenommen.
 
-- Art. 3, Art. 4 und Art. 25 Abs. 2 Buchst. n neu eingefügt an der Delegiertenversammlung vom 14. April 2018
+- Art. 3, Art. 4 und Art. 25 Abs. 2 Buchstaben neu eingefügt an der Delegiertenversammlung vom 14. April 2018
 - Art. 17 Abs. 1, Art. 24 Abs. 1 angepasst und Art. 25 Abs. 3 neu eingefügt an der Delegiertenversammlung vom 25. Oktober 2020
 - Art. 1 Abs. 2 und Art. 4 Abs. 2 und 3 angepasst an der Delegiertenversammlung vom 3. Juni 2023
 - Art. 25 Abs. 3 gelöscht an der Delegiertenversammlung vom 3. Juni 2023
+- Art. 2 Abs. 2 neu eingefügt an der Delegiertenversammlung vom 25. April 2026
+- Art. 4 Abs. 4 neu eingefügt, Abs. 3 und Abs 5 angepasst an der Delegiertenversammlung vom 25. April 2026
+- Art. 12 Abs. 3 neu eingefügt an der Delegiertenversammlung vom 25. April 2026
+- Art. 17 Abs. 1b, Art. 19 Abs. 3 und Art. 22 Abs. 1 Wortänderung an der Delegiertenversammlung vom 25. April 2026
+- Art. 24 Abs. 3 und Abs 5 angepasst an der Delegiertenversammlung vom 25. April 2026
+- Kapitel C Rechnungsrevisoren mit Art. 33 und Art. 34 hinzugefügt und fortfolgende Artikelnummerln angeglichen an der Delegiertenversammlung vom 25. April 2026
+
 
 [^1]: Die aktuelle Fassung der Ethik-Charta ist unter www.swissolympic.ch zu finden.

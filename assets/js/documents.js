@@ -25,7 +25,15 @@ var DOCUMENT_CATEGORIES = [
   {
     key: 'documentsCategory_finance',
     docs: [
-      { key: 'documentsDoc_finanzreglementTurnierLizenzwesen', file: 'finanzreglement-turnier-und-lizenzwesen-de.md' },
+      { 
+        key: 'documentsDoc_finanzreglementTurnierLizenzwesen', 
+        files: {
+          de: 'finanzreglement-de.md',
+          en: 'finanzreglement-en.md',
+          fr: 'finanzreglement-fr.md',
+          it: 'finanzreglement-it.md'
+        }
+      },
       { 
         key: 'documentsDoc_lizenzierung', 
         files: {
@@ -40,8 +48,24 @@ var DOCUMENT_CATEGORIES = [
   {
     key: 'documentsCategory_organisation',
     docs: [
-      { key: 'documentsDoc_statuten', file: 'statuten-de.md' },
-      { key: 'documentsDoc_reglementSportkommission', file: 'reglement-sportkommission-de.md' },
+      { 
+        key: 'documentsDoc_statuten', 
+        files: {
+          de: 'statuten-de.md',
+          en: 'statuten-en.md',
+          fr: 'statuten-fr.md',
+          it: 'statuten-it.md'
+        }
+      },
+      { 
+        key: 'documentsDoc_reglementSportkommission', 
+        files: {
+          de: 'reglement-sportkommission-de.md',
+          en: 'reglement-sportkommission-en.md',
+          fr: 'reglement-sportkommission-fr.md',
+          it: 'reglement-sportkommission-it.md'
+        }
+      },
       { 
         key: 'documentsDoc_uebersichtVerbandsbeitrittStf', 
           files: {
@@ -148,6 +172,7 @@ var LINK_ONLY_TARGETS = {};
 var currentDocumentFile = null;
 var currentDocumentKey = null;
 var currentDocumentRequestId = 0;
+var isPdfExportRunning = false;
 
 function getActiveLang() {
   return (typeof currentLang === 'string' && currentLang) ? currentLang : 'de';
@@ -203,6 +228,115 @@ function renderMarkdown(text) {
     .replace(/>/g, '&gt;') + '</pre>';
 }
 
+function getPdfFileName(file) {
+  var baseName = String(file || 'document')
+    .split('/')
+    .pop()
+    .replace(/\.md$/i, '');
+  return (baseName || 'document') + '.pdf';
+}
+
+function setDownloadButtonDisabled(disabled) {
+  $('#documentDownloadPdfBtn').prop('disabled', !!disabled);
+}
+
+function updateViewerHeaderTexts() {
+  $('#documentViewerLabel').text(tr('documentsViewerLabel'));
+  $('#documentDownloadPdfBtn')
+    .attr('title', tr('documentsDownloadPdf'))
+    .attr('aria-label', tr('documentsDownloadPdf'));
+}
+
+function preparePdfHeadingGroups($content) {
+  var headingSelector = 'h1, h2';
+
+  $content.find('.document-pdf-heading-group, .document-pdf-heading-group-page').each(function () {
+    var $group = $(this);
+    $group.replaceWith($group.contents());
+  });
+
+  $content.find(headingSelector).each(function () {
+    var $heading = $(this);
+    var $next = $heading.next();
+    var $group = $('<div>').addClass('document-pdf-heading-group');
+
+    if ($heading.is('h1, h2')) {
+      $group.addClass('document-pdf-heading-group-page');
+    }
+
+    $heading.before($group);
+    $group.append($heading);
+
+    if ($next.length && $next.is('p, ul, ol, blockquote, table, pre')) {
+      $group.append($next);
+    }
+  });
+}
+
+function generatePdfFromCurrentDocument() {
+  var sourceFile = currentDocumentFile;
+  var $button = $('#documentDownloadPdfBtn');
+
+  if (!sourceFile || isPdfExportRunning || LINK_ONLY_TARGETS[sourceFile]) return;
+  if (typeof window.html2pdf !== 'function') {
+    alert(tr('documentsDownloadFailed'));
+    return;
+  }
+
+  isPdfExportRunning = true;
+  setDownloadButtonDisabled(true);
+
+  fetch(sourceFile)
+    .then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.text();
+    })
+    .then(function (markdownText) {
+      var $exportRoot = $('<div>').addClass('document-pdf-export-root');
+      var $exportContent = $('<div>')
+        .addClass('document-pdf-export document-markdown')
+        .css({ width: '172mm' })
+        .html(renderMarkdown(markdownText));
+      var options = {
+        margin: 19,
+        filename: getPdfFileName(sourceFile),
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { mode: ['css', 'legacy'] }
+      };
+
+      if (extractSingleLinkTarget(markdownText)) {
+        throw new Error('link-only-document');
+      }
+
+      enhanceDocumentLinks($exportContent);
+      preparePdfHeadingGroups($exportContent);
+      $exportRoot.append($exportContent);
+      $('body').append($exportRoot);
+
+      return window.html2pdf()
+        .set(options)
+        .from($exportContent[0])
+        .save()
+        .then(function () {
+          $exportRoot.remove();
+        })
+        .catch(function (error) {
+          $exportRoot.remove();
+          throw error;
+        });
+    })
+    .catch(function () {
+      alert(tr('documentsDownloadFailed'));
+    })
+    .then(function () {
+      isPdfExportRunning = false;
+      setDownloadButtonDisabled(!currentDocumentFile || !!LINK_ONLY_TARGETS[currentDocumentFile]);
+      $button.blur();
+    });
+}
+
 function renderViewerChrome() {
   if ($('#documentViewer').length) return;
 
@@ -216,9 +350,15 @@ function renderViewerChrome() {
         .append(
           $('<div>').addClass('document-viewer-header').append(
             $('<div>').addClass('document-viewer-heading').append(
-              $('<div>').addClass('document-viewer-label').text('Document'),
+              $('<div>').addClass('document-viewer-label').attr('id', 'documentViewerLabel'),
               $('<h2>').addClass('document-viewer-title').attr('id', 'documentViewerTitle')
-            )
+            ),
+            $('<button>')
+              .addClass('document-viewer-action')
+              .attr('id', 'documentDownloadPdfBtn')
+              .attr('type', 'button')
+              .prop('disabled', true)
+              .append($('<i>').addClass('fa-solid fa-download').attr('aria-hidden', 'true'))
           )
         )
         .append(
@@ -227,6 +367,9 @@ function renderViewerChrome() {
         )
     )
   );
+
+  updateViewerHeaderTexts();
+  $('#documentDownloadPdfBtn').on('click', generatePdfFromCurrentDocument);
 }
 
 function setViewerStatus(type, message) {
@@ -319,6 +462,7 @@ function loadDocument(file, title, shouldScroll, docKey) {
   currentDocumentFile = file;
   currentDocumentKey = docKey || null;
   setCurrentDocumentHash(file);
+  setDownloadButtonDisabled(true);
   $('#documentViewerTitle').text(title || '');
   updateActiveDocumentLink();
   setViewerStatus(
@@ -343,6 +487,7 @@ function loadDocument(file, title, shouldScroll, docKey) {
       if (linkTarget) {
         setViewerStatus('empty', '');
         $('#documentViewer').addClass('is-external');
+        setDownloadButtonDisabled(true);
         renderExternalLinkPlaceholder(linkTarget);
         window.open(linkTarget, '_blank', 'noopener');
         if (shouldScroll) scrollToDocumentViewer();
@@ -352,11 +497,13 @@ function loadDocument(file, title, shouldScroll, docKey) {
       $('#documentViewer').removeClass('is-external');
       $('#documentViewer').html(renderMarkdown(text));
       enhanceDocumentLinks($('#documentViewer'));
+      setDownloadButtonDisabled(false);
       setViewerStatus('', '');
       if (shouldScroll) scrollToDocumentViewer();
     })
     .catch(function () {
       if (requestId !== currentDocumentRequestId) return;
+      setDownloadButtonDisabled(true);
       setViewerStatus('error', tr('failedToLoadData', { status: '?' }));
     });
 }
@@ -424,6 +571,7 @@ $(function () {
 
 document.addEventListener('langChanged', function () {
   var previousDocumentKey = currentDocumentKey;
+  updateViewerHeaderTexts();
   renderDocuments(!!previousDocumentKey);
 
   if (previousDocumentKey) {
