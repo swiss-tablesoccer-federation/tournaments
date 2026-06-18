@@ -4,53 +4,53 @@
 
 ## Inhaltsverzeichnis
 
-- I Allgemeine Bestimmungen
-  - A Grundlagen
-    - Artikel 1: Name und Sitz
-    - Artikel 2: Zweck
-    - Artikel 3: Mitgliedschaften
-    - Artikel 4: Ethik inkl. Doping
-    - Artikel 5: Auflösung
-    - Artikel 6: Ausstand
-    - Artikel 7: Haftung
-    - Artikel 8: Offizielle Sprachen
-    - Artikel 9: Informationen, Offenlegung und Transparenz
-  - B Mitglieder
-    - Artikel 10: Clubs
-    - Artikel 11: Aufnahme
-    - Artikel 12: Rechte und Pflichten
-    - Artikel 13: Beendigung der Mitgliedschaft
-    - Artikel 14: Ehrenmitglied
-- II Organisation
-  - A Delegiertenversammlung
-    - Artikel 15: Allgemeine Bestimmungen
-    - Artikel 16: Zusammensetzung
-    - Artikel 17: Aufgaben und Befugnisse
-    - Artikel 18: Stimmrecht
-    - Artikel 19: Einberufung und Traktandierung
-    - Artikel 20: Beschlussfassung
-    - Artikel 21: Protokoll
-    - Artikel 22: Auskunft und Einsicht
-  - B Vorstand
-    - Artikel 23: Allgemeine Bestimmungen
-    - Artikel 24: Zusammensetzung
-    - Artikel 25: Aufgaben und Befugnisse
-    - Artikel 26: Stimmrechte
-    - Artikel 27: Einberufung und Traktandierung
-    - Artikel 28: Beschlussfassung
-    - Artikel 29: Protokoll
-    - Artikel 30: Auskunft und Einsicht
-    - Artikel 31: Entschädigung
-    - Artikel 32: Rückerstattung von Leistungen
-  - C Rechnungsrevisoren
-    - Artikel 33: Zusammensetzung
-    - Artikel 34: Aufgaben und Befugnisse
-- III Finanzielles
-  - Artikel 35: Grundsätze
-  - Artikel 36: Mitgliederbeiträge
-  - Artikel 37: Andere Einnahmen
-  - Artikel 38: Geschäftsjahr
-  - Artikel 39: Annahme und Inkrafttreten
+- [I Allgemeine Bestimmungen](#i-allgemeine-bestimmungen)
+  - [A Grundlagen](#a-grundlagen)
+    - [Artikel 1: Name und Sitz](#artikel-1-name-und-sitz)
+    - [Artikel 2: Zweck](#artikel-2-zweck)
+    - [Artikel 3: Mitgliedschaften](#artikel-3-mitgliedschaften)
+    - [Artikel 4: Ethik inkl. Doping](#artikel-4-ethik-inkl-doping)
+    - [Artikel 5: Auflösung](#artikel-5-auflosung)
+    - [Artikel 6: Ausstand](#artikel-6-ausstand)
+    - [Artikel 7: Haftung](#artikel-7-haftung)
+    - [Artikel 8: Offizielle Sprachen](#artikel-8-offizielle-sprachen)
+    - [Artikel 9: Informationen, Offenlegung und Transparenz](#artikel-9-informationen-offenlegung-und-transparenz)
+  - [B Mitglieder](#b-mitglieder)
+    - [Artikel 10: Clubs](#artikel-10-clubs)
+    - [Artikel 11: Aufnahme](#artikel-11-aufnahme)
+    - [Artikel 12: Rechte und Pflichten](#artikel-12-rechte-und-pflichten)
+    - [Artikel 13: Beendigung der Mitgliedschaft](#artikel-13-beendigung-der-mitgliedschaft)
+    - [Artikel 14: Ehrenmitglied](#artikel-14-ehrenmitglied)
+- [II Organisation](#ii-organisation)
+  - [A Delegiertenversammlung](#a-delegiertenversammlung)
+    - [Artikel 15: Allgemeine Bestimmungen](#artikel-15-allgemeine-bestimmungen)
+    - [Artikel 16: Zusammensetzung](#artikel-16-zusammensetzung)
+    - [Artikel 17: Aufgaben und Befugnisse](#artikel-17-aufgaben-und-befugnisse)
+    - [Artikel 18: Stimmrecht](#artikel-18-stimmrecht)
+    - [Artikel 19: Einberufung und Traktandierung](#artikel-19-einberufung-und-traktandierung)
+    - [Artikel 20: Beschlussfassung](#artikel-20-beschlussfassung)
+    - [Artikel 21: Protokoll](#artikel-21-protokoll)
+    - [Artikel 22: Auskunft und Einsicht](#artikel-22-auskunft-und-einsicht)
+  - [B Vorstand](#b-vorstand)
+    - [Artikel 23: Allgemeine Bestimmungen](#artikel-23-allgemeine-bestimmungen)
+    - [Artikel 24: Zusammensetzung](#artikel-24-zusammensetzung)
+    - [Artikel 25: Aufgaben und Befugnisse](#artikel-25-aufgaben-und-befugnisse)
+    - [Artikel 26: Stimmrechte](#artikel-26-stimmrechte)
+    - [Artikel 27: Einberufung und Traktandierung](#artikel-27-einberufung-und-traktandierung)
+    - [Artikel 28: Beschlussfassung](#artikel-28-beschlussfassung)
+    - [Artikel 29: Protokoll](#artikel-29-protokoll)
+    - [Artikel 30: Auskunft und Einsicht](#artikel-30-auskunft-und-einsicht)
+    - [Artikel 31: Entschädigung](#artikel-31-entschadigung)
+    - [Artikel 32: Rückerstattung von Leistungen](#artikel-32-ruckerstattung-von-leistungen)
+  - [C Rechnungsrevisoren](#c-rechnungsrevisoren)
+    - [Artikel 33: Zusammensetzung](#artikel-33-zusammensetzung)
+    - [Artikel 34: Aufgaben und Befugnisse](#artikel-34-aufgaben-und-befugnisse)
+- [III Finanzielles](#iii-finanzielles)
+  - [Artikel 35: Grundsätze](#artikel-35-grundsatze)
+  - [Artikel 36: Mitgliederbeiträge](#artikel-36-mitgliederbeitrage)
+  - [Artikel 37: Andere Einnahmen](#artikel-37-andere-einnahmen)
+  - [Artikel 38: Geschäftsjahr](#artikel-38-geschaftsjahr)
+  - [Artikel 39: Annahme und Inkrafttreten](#artikel-39-annahme-und-inkrafttreten)
 
 ## I Allgemeine Bestimmungen
 
