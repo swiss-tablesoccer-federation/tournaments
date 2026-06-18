@@ -225,9 +225,40 @@ function extractSingleLinkTarget(markdownText) {
   return '';
 }
 
+function slugifyHeading(raw) {
+  return raw
+    .toLowerCase()
+    .replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ü/g, 'u')
+    .replace(/Ä/g, 'a').replace(/Ö/g, 'o').replace(/Ü/g, 'u')
+    .replace(/ß/g, 'ss')
+    .replace(/[à-ÿ]/g, function (c) {
+      var map = {
+        'à':'a','á':'a','â':'a','ã':'a','å':'a','æ':'ae',
+        'ç':'c','è':'e','é':'e','ê':'e','ë':'e',
+        'ì':'i','í':'i','î':'i','ï':'i',
+        'ò':'o','ó':'o','ô':'o','õ':'o','ø':'o',
+        'ù':'u','ú':'u','û':'u','ý':'y','ÿ':'y',
+        'ñ':'n'
+      };
+      return map[c] || '';
+    })
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
 function renderMarkdown(text) {
   if (window.marked && typeof window.marked.parse === 'function') {
-    return window.marked.parse(text);
+    var renderer = new window.marked.Renderer();
+    renderer.heading = function (data) {
+      var level = data.depth || data.level || 1;
+      var rawText = typeof data === 'object' ? (data.text || '') : String(data);
+      rawText = rawText.replace(/<[^>]+>/g, '');
+      var id = slugifyHeading(rawText);
+      return '<h' + level + ' id="' + id + '">' + rawText + '</h' + level + '>';
+    };
+    return window.marked.parse(text, { renderer: renderer });
   }
 
   return '<pre>' + String(text)
@@ -397,29 +428,42 @@ function updateActiveDocumentLink() {
 }
 
 function setCurrentDocumentHash(file) {
-  var nextHash;
+  var nextSearch;
 
   if (typeof file !== 'string' || !file) return;
-  nextHash = '#' + encodeURIComponent(file);
-  if (window.location.hash === nextHash) return;
-  window.location.hash = nextHash;
+  nextSearch = '?doc=' + encodeURIComponent(file);
+  if (window.location.search === nextSearch) return;
+  history.replaceState(null, '', nextSearch + window.location.hash);
 }
 
 function getDocumentFileFromHash() {
-  var raw = window.location.hash ? window.location.hash.slice(1) : '';
-
-  if (!raw) return '';
-  try {
-    return decodeURIComponent(raw).trim();
-  } catch (e) {
-    return raw.trim();
-  }
+  var params = new URLSearchParams(window.location.search);
+  return (params.get('doc') || '').trim();
 }
 
 function enhanceDocumentLinks($container) {
   $container.find('a').each(function () {
     var $link = $(this);
-    var safeHref = getSafeUrl($link.attr('href'));
+    var href = $link.attr('href') || '';
+    var safeHref;
+
+    if (href.charAt(0) === '#') {
+      $link.on('click', function (e) {
+        e.preventDefault();
+        var targetId = href.slice(1);
+        var viewerEl = document.getElementById('documentViewer');
+        var targetEl = document.getElementById(targetId);
+        if (targetEl && viewerEl) {
+          var viewerTop = viewerEl.getBoundingClientRect().top;
+          var targetTop = targetEl.getBoundingClientRect().top;
+          viewerEl.scrollBy({ top: targetTop - viewerTop - 8, behavior: 'smooth' });
+        }
+        history.replaceState(null, '', window.location.search + href);
+      });
+      return;
+    }
+
+    safeHref = getSafeUrl(href);
     if (!safeHref) {
       $link.replaceWith($link.text());
       return;
@@ -592,14 +636,7 @@ document.addEventListener('langChanged', function () {
   }
 });
 
-window.addEventListener('hashchange', function () {
-  var hashDoc = findDocumentByFile(getDocumentFileFromHash(), true);
 
-  if (!hashDoc) return;
-  if (hashDoc.file === currentDocumentFile) return;
-
-  loadDocument(hashDoc.file, tr(hashDoc.doc.key), false, hashDoc.doc.key);
-});
 
 function findDocumentByKey(key) {
   var found = null;
