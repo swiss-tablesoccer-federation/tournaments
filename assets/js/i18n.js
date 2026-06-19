@@ -9,6 +9,16 @@ var TRANSLATIONS = {
     navRankings:           'Rankings',
     navCompetitions:       'Competitions',
     navFederation:         'Federation',
+    navDropdown_swissChampionship: 'Swiss Championship',
+    navDropdown_swissTablesoccerLeague: 'Swiss Tablesoccer League',
+    navDropdown_licensing:  'Licensing',
+    navDropdown_hallOfFame: 'Hall of Fame',
+    navDropdown_aboutUs:    'About us',
+    navDropdown_members:    'Members',
+    navDropdown_antiDoping: 'Anti-Doping',
+    navDropdown_sportsCommission: 'Sports Commission',
+    navDropdown_refereeing: 'Refereeing',
+    navDropdown_documents:  'Documents',
     documentsIntro:        'Public documents of the Swiss Tablesoccer Federation.',
     documentsCount:        '{count} documents',
     documentsCategory_antiDoping: 'Anti-Doping',
@@ -107,6 +117,16 @@ var TRANSLATIONS = {
     navRankings:           'Ranglisten',
     navCompetitions:       'Wettbewerbe',
     navFederation:         'Verband',
+    navDropdown_swissChampionship: 'Schweizermeisterschaft',
+    navDropdown_swissTablesoccerLeague: 'Swiss Tablesoccer League',
+    navDropdown_licensing:  'Lizenzierung',
+    navDropdown_hallOfFame: 'Hall of Fame',
+    navDropdown_aboutUs:    '\u00dcber uns',
+    navDropdown_members:    'Mitglieder',
+    navDropdown_antiDoping: 'Anti-Doping',
+    navDropdown_sportsCommission: 'Sportkommission',
+    navDropdown_refereeing: 'Schiedsrichterwesen',
+    navDropdown_documents:  'Dokumente',
     documentsIntro:        'Öffentliche Dokumente des Swiss Tablesoccer Federation.',
     documentsCount:        '{count} Dokumente',
     documentsCategory_antiDoping: 'Anti-Doping',
@@ -205,6 +225,16 @@ var TRANSLATIONS = {
     navRankings:           'Classements',
     navCompetitions:       'Compétitions',
     navFederation:         'Fédération',
+    navDropdown_swissChampionship: 'Championnat suisse',
+    navDropdown_swissTablesoccerLeague: 'Swiss Tablesoccer League',
+    navDropdown_licensing:  'Licences',
+    navDropdown_hallOfFame: 'Hall of Fame',
+    navDropdown_aboutUs:    '\u00c0 propos',
+    navDropdown_members:    'Membres',
+    navDropdown_antiDoping: 'Anti-dopage',
+    navDropdown_sportsCommission: 'Commission sportive',
+    navDropdown_refereeing: 'Arbitrage',
+    navDropdown_documents:  'Documents',
     documentsIntro:        'Documents publics de la Swiss Tablesoccer Federation.',
     documentsCount:        '{count} documents',
     documentsCategory_antiDoping: 'Anti-dopage',
@@ -303,6 +333,16 @@ var TRANSLATIONS = {
     navRankings:           'Classifiche',
     navCompetitions:       'Competizioni',
     navFederation:         'Federazione',
+    navDropdown_swissChampionship: 'Campionato svizzero',
+    navDropdown_swissTablesoccerLeague: 'Swiss Tablesoccer League',
+    navDropdown_licensing:  'Licenze',
+    navDropdown_hallOfFame: 'Hall of Fame',
+    navDropdown_aboutUs:    'Chi siamo',
+    navDropdown_members:    'Membri',
+    navDropdown_antiDoping: 'Anti-doping',
+    navDropdown_sportsCommission: 'Commissione sportiva',
+    navDropdown_refereeing: 'Arbitraggio',
+    navDropdown_documents:  'Documenti',
     documentsIntro:        'Documenti pubblici della Swiss Tablesoccer Federation.',
     documentsCount:        '{count} documenti',
     documentsCategory_antiDoping: 'Anti-doping',
@@ -438,8 +478,58 @@ function applyTranslations() {
   });
 }
 
+function closeNavDropdowns() {
+  $('.site-nav-dropdown').removeClass('is-open');
+  $('.nav-dropdown-toggle').attr('aria-expanded', 'false');
+}
+
+function initNavDropdowns() {
+  var dropdownConfig = window.STF_NAV_DROPDOWNS;
+  if (!dropdownConfig) return;
+
+  Object.keys(dropdownConfig).forEach(function (key) {
+    var $link = $('.site-nav-links .nav-link-item[data-i18n="' + key + '"]');
+    if (!$link.length) return;
+
+    var submenuItems = dropdownConfig[key];
+    if (!Array.isArray(submenuItems) || !submenuItems.length) return;
+
+    var $dropdown = $link.closest('.site-nav-dropdown');
+    if (!$dropdown.length) {
+      $dropdown = $('<div class="site-nav-dropdown"></div>');
+      $link.wrap($dropdown);
+      $dropdown = $link.closest('.site-nav-dropdown');
+    }
+    $link
+      .addClass('nav-dropdown-toggle')
+      .attr({
+        href: '#',
+        role: 'button',
+        'aria-haspopup': 'true',
+        'aria-expanded': 'false'
+      });
+
+    var $submenu = $dropdown.find('.nav-submenu');
+    if (!$submenu.length) {
+      $submenu = $('<div class="nav-submenu"></div>');
+      $link.after($submenu);
+    }
+    $submenu.empty();
+    submenuItems.forEach(function (item) {
+      if (!item || !item.href) return;
+      $('<a class="nav-submenu-link" target="_self"></a>')
+        .attr('href', item.href)
+        .text(item.labelKey ? tr(item.labelKey) : (item.label || ''))
+        .appendTo($submenu);
+    });
+
+  });
+}
+
 /* ── Language selector initialisation ───────────────────── */
 $(function () {
+  initNavDropdowns();
+
   /* Mark the currently active language button */
   $('#langSelector .lang-btn').each(function () {
     $(this).toggleClass('active', $(this).data('lang') === currentLang);
@@ -455,6 +545,7 @@ $(function () {
     $('#langSelector .lang-btn').removeClass('active');
     $(this).addClass('active');
     applyTranslations();
+    initNavDropdowns();
     document.dispatchEvent(new CustomEvent('langChanged', { detail: { lang: lang } }));
   });
 
@@ -467,19 +558,34 @@ $(function () {
     var $nav = $('.site-nav');
     var opening = !$nav.hasClass('nav-open');
     $nav.toggleClass('nav-open', opening);
+    if (!opening) closeNavDropdowns();
     $(this).attr('aria-expanded', opening ? 'true' : 'false');
+  });
+
+  $(document).on('click', '.site-nav-links .nav-dropdown-toggle', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var $dropdown = $(this).closest('.site-nav-dropdown');
+    var opening = !$dropdown.hasClass('is-open');
+    closeNavDropdowns();
+    if (opening) {
+      $dropdown.addClass('is-open');
+      $(this).attr('aria-expanded', 'true');
+    }
   });
 
   /* Close menu when clicking outside the navbar */
   $(document).on('click', function (e) {
     if (!$(e.target).closest('.site-nav').length) {
+      closeNavDropdowns();
       $('.site-nav').removeClass('nav-open');
       $('#navHamburger').attr('aria-expanded', 'false');
     }
   });
 
   /* Close menu when a nav link is clicked */
-  $(document).on('click', '.site-nav-links .nav-link-item', function () {
+  $(document).on('click', '.site-nav-links .nav-link-item:not(.nav-dropdown-toggle), .site-nav-links .nav-submenu-link', function () {
+    closeNavDropdowns();
     $('.site-nav').removeClass('nav-open');
     $('#navHamburger').attr('aria-expanded', 'false');
   });
