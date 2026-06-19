@@ -1029,11 +1029,6 @@ tr[data-cat="STS"] .t-date {
   page-break-inside: avoid;
 }
 
-.document-pdf-heading-group-page {
-  break-before: page;
-  page-break-before: always;
-}
-
 .document-pdf-export h1,
 .document-pdf-export h2,
 .document-pdf-export h3,
@@ -1041,6 +1036,11 @@ tr[data-cat="STS"] .t-date {
   break-inside: avoid;
   break-after: avoid-page;
   page-break-after: avoid;
+}
+
+.document-pdf-export .document-pdf-toc {
+  break-before: page;
+  page-break-before: always;
 }
 
 .document-pdf-export table,

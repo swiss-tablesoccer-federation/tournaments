@@ -57,6 +57,12 @@ var DOCUMENT_CATEGORIES = [
           it: 'statuten-it.md'
         }
       },
+      /*
+      { 
+        key: 'documentsDoc_grassroots',
+        file: 'grassroots-en.md'
+      },
+      */
       { 
         key: 'documentsDoc_reglementSportkommission', 
         files: {
@@ -248,6 +254,15 @@ function slugifyHeading(raw) {
     .replace(/^-|-$/g, '');
 }
 
+function isTableOfContentsHeading(rawText) {
+  var normalized = String(rawText || '').trim().toLowerCase();
+  return normalized === 'table of contents' ||
+    normalized === 'inhaltsverzeichnis' ||
+    normalized === 'sommaire' ||
+    normalized === 'sommario' ||
+    normalized === 'toc';
+}
+
 function renderMarkdown(text) {
   if (window.marked && typeof window.marked.parse === 'function') {
     var renderer = new window.marked.Renderer();
@@ -256,7 +271,13 @@ function renderMarkdown(text) {
       var rawText = typeof data === 'object' ? (data.text || '') : String(data);
       rawText = rawText.replace(/<[^>]+>/g, '');
       var id = slugifyHeading(rawText);
-      return '<h' + level + ' id="' + id + '">' + rawText + '</h' + level + '>';
+      var classes = ['markdown-heading'];
+
+      if (isTableOfContentsHeading(rawText)) {
+        classes.push('document-pdf-toc');
+      }
+
+      return '<h' + level + ' id="' + id + '" class="' + classes.join(' ') + '">' + rawText + '</h' + level + '>';
     };
     return window.marked.parse(text, { renderer: renderer });
   }
@@ -303,10 +324,6 @@ function preparePdfHeadingGroups($content) {
     var $heading = $(this);
     var $next = $heading.next();
     var $group = $('<div>').addClass('document-pdf-heading-group');
-
-    if ($heading.is('h1, h2')) {
-      $group.addClass('document-pdf-heading-group-page');
-    }
 
     $heading.before($group);
     $group.append($heading);
