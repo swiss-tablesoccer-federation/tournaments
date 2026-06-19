@@ -486,11 +486,19 @@ function enhanceDocumentLinks($container) {
         var targetId = href.slice(1);
         var viewerEl = document.getElementById('documentViewer');
         var targetEl = document.getElementById(targetId);
+
         if (targetEl && viewerEl) {
-          var viewerTop = viewerEl.getBoundingClientRect().top;
-          var targetTop = targetEl.getBoundingClientRect().top;
-          viewerEl.scrollBy({ top: targetTop - viewerTop - 8, behavior: 'smooth' });
+          var viewerCanScroll = viewerEl.scrollHeight > (viewerEl.clientHeight + 2);
+
+          if (viewerCanScroll && !isMobileDocumentsLayout()) {
+            var viewerTop = viewerEl.getBoundingClientRect().top;
+            var targetTop = targetEl.getBoundingClientRect().top;
+            viewerEl.scrollBy({ top: targetTop - viewerTop - 8, behavior: 'smooth' });
+          } else {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         }
+
         history.replaceState(null, '', window.location.search + href);
       });
       return;
