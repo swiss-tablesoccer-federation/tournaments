@@ -211,6 +211,9 @@ function initMap() {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
     maxZoom: 18
   }).addTo(membersMap);
+
+  /* Re-compute tile grid after the scroll container has settled */
+  setTimeout(function () { membersMap.invalidateSize(); }, 0);
 }
 
 function geocodeAndPlotMembers(members) {

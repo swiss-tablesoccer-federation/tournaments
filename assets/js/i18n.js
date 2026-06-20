@@ -473,7 +473,7 @@ var TRANSLATIONS = {
 /* ── Language state ──────────────────────────────────────── */
 var currentLang = (function () {
   var stored = typeof localStorage !== 'undefined' ? localStorage.getItem('stf_lang') : null;
-  return (stored && TRANSLATIONS[stored]) ? stored : 'en';
+  return (stored && TRANSLATIONS[stored]) ? stored : 'de';
 }());
 
 /**
