@@ -3,7 +3,7 @@ window.STF_NAV_DROPDOWNS = {
     { labelKey: 'navDropdown_swissChampionship', href: 'https://www.swisstablesoccer.ch/schweizermeisterschaft' },
     { labelKey: 'navDropdown_swissTablesoccerLeague', href: 'https://www.swisstablesoccer.ch/swiss-tablesoccer-league' },
     { labelKey: 'navDropdown_licensing', href: 'https://register.swisstablesoccer.ch/de/licenses/' },
-    { labelKey: 'navDropdown_hallOfFame', href: 'https://www.swisstablesoccer.ch/hall-of-fame' }
+    { labelKey: 'navDropdown_hallOfFame', href: '/hall-of-fame/' }
   ],
   navFederation: [
     { labelKey: 'navDropdown_aboutUs', href: '/about/' },

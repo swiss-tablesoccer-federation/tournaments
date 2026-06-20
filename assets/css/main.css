@@ -184,12 +184,16 @@ body {
   .site-nav.nav-open .site-nav-links {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     width: 100%;
     margin-left: 0;
     border-top: 1px solid #e0e0e0;
     padding: 0.4rem 0;
   }
   .site-nav.nav-open .site-nav-links .nav-link-item {
+    display: block;
+    width: 100%;
+    text-align: left;
     padding: 0.6rem 0.5rem;
     font-size: 1rem;
   }
@@ -1364,14 +1368,16 @@ tr[data-cat="STS"] .t-date {
 /* Keep html/body at full viewport height (same as other pages) so the
    nav stays fixed in the flex column and .page-content scrolls instead. */
 html.page-about .page-content,
-html.page-members .page-content {
+html.page-members .page-content,
+html.page-hall-of-fame .page-content {
   overflow-y: auto;
   flex: 1;
   min-height: 0;
 }
 
 html.page-about .page-footer,
-html.page-members .page-footer {
+html.page-members .page-footer,
+html.page-hall-of-fame .page-footer {
   margin-left: 0;
   margin-right: 0;
 }
@@ -1396,6 +1402,182 @@ html.page-members .page-footer {
 
 .page-members .about-section-heading {
   margin-bottom: 1.75rem;
+}
+
+.page-hall-of-fame .about-section-heading {
+  margin-bottom: 0;
+}
+
+.hof-subheading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1f1f1f;
+  margin-bottom: 1rem;
+}
+
+.hof-title-section {
+  margin-bottom: 1.25rem;
+  padding-bottom: 2.35rem;
+}
+
+.hof-category-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.hof-category-section {
+  background: #fff;
+  border-radius: 0;
+  box-shadow: 0 1px 6px rgba(0,0,0,.08);
+  padding: 1.75rem 2rem;
+}
+
+.hof-category-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hof-current-year {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a6d1c;
+}
+
+.hof-category-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #E30613;
+  margin: 0;
+}
+
+.hof-current-podium {
+  margin-bottom: 1.5rem;
+}
+
+.hof-podium-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.hof-podium-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.2rem 1.3rem;
+  border: 1px solid #d9dde2;
+  border-radius: 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+  min-height: 112px;
+}
+
+.hof-place-badge {
+  min-width: 2.15rem;
+  height: 2.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  background: #f0f0f0;
+  color: #333;
+  flex-shrink: 0;
+}
+
+.hof-podium-card.place-1 .hof-place-badge {
+  background: #f5c451;
+  color: #6b4d00;
+}
+
+.hof-podium-card.place-2 .hof-place-badge {
+  background: #d9dee4;
+  color: #495057;
+}
+
+.hof-podium-card.place-3 .hof-place-badge {
+  background: #ddb7a0;
+  color: #6d3f2a;
+}
+
+.hof-place-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 0.2rem;
+}
+
+.hof-place-players {
+  color: #222;
+  font-size: 1.04rem;
+  font-weight: 600;
+}
+
+.hof-history-block {
+  border: 1px solid #ececec;
+  border-radius: 0;
+  padding: 1rem 1.1rem;
+  background: #fcfcfc;
+}
+
+.hof-history-table-wrap {
+  overflow-x: auto;
+}
+
+.hof-history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hof-history-table th,
+.hof-history-table td {
+  padding: 0.8rem 0.75rem;
+  border-top: 1px solid #ececec;
+  vertical-align: top;
+  text-align: left;
+  color: #333;
+}
+
+.hof-history-table thead th {
+  border-top: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.hof-history-table tbody th {
+  font-weight: 700;
+  color: #222;
+}
+
+@media (max-width: 768px) {
+  .hof-category-section {
+    padding: 1.25rem;
+  }
+
+  .hof-category-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hof-podium-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hof-podium-card,
+  .hof-history-block {
+    padding: 1rem;
+  }
 }
 
 /* Markdown content */
