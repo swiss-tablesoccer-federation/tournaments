@@ -1320,13 +1320,16 @@ tr[data-cat="STS"] .t-date {
 
 /* ── About page ─────────────────────────────────────────── */
 html.page-about,
-html.page-about body {
+html.page-members,
+html.page-about body,
+html.page-members body {
   height: auto;
   min-height: 100%;
   overflow-y: auto;
 }
 
-html.page-about .page-content {
+html.page-about .page-content,
+html.page-members .page-content {
   overflow: visible;
   flex: none;
 }
@@ -1346,6 +1349,10 @@ html.page-about .page-content {
   color: #E30613;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
+}
+
+.page-members .about-section-heading {
+  margin-bottom: 1.75rem;
 }
 
 /* Markdown content */
@@ -1566,6 +1573,96 @@ html.page-about .page-content {
   .member-card { min-width: 100%; max-width: 100%; }
   .committee-subs { padding-left: 1rem; }
 }
+
+/* Members page */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.directory-member-card {
+  background: #f8f8f8;
+  border: 1px solid #ececec;
+  border-radius: 4px;
+  padding: 0.85rem;
+}
+
+.directory-member-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.directory-member-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #e1e1e1;
+  background: #eee;
+  flex-shrink: 0;
+}
+
+.directory-member-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.directory-member-meta {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.directory-member-row {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: start;
+}
+
+.directory-member-label {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.18rem;
+}
+
+.directory-member-icon {
+  font-size: 0.82rem;
+  color: #aaa;
+  width: 14px;
+  text-align: center;
+}
+
+.directory-member-value {
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: #333;
+  word-break: break-word;
+}
+
+.directory-member-value a {
+  color: #E30613;
+  text-decoration: none;
+}
+
+.directory-member-value a:hover {
+  color: #a8000f;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Members map */
+.members-map-section { padding: 0.75rem; overflow: hidden; }
+#members-map { height: 520px; width: 100%; border-radius: 2px; }
 
 .document-markdown ol {
   list-style-type: decimal;

@@ -101,12 +101,21 @@ var TRANSLATIONS = {
     cat_SS:                'Senior O50 Singles',
     cat_SD:                'Senior O50 Doubles',
     pageTitle_about:       'About',
+    pageTitle_members:     'Members',
     aboutContact:          'Contact',
     aboutAddress:          'Address',
     aboutInvoice:          'Invoice',
     aboutBank:             'Bank Details',
     aboutCommittees:       'Organisation',
-    aboutFailedCommittees: 'Failed to load organisation.'
+    aboutFailedCommittees: 'Failed to load organisation.',
+    membersHeading:        'Members of the Swiss Tablesoccer Federation',
+    membersStatus:         'Status',
+    membersEmail:          'Email',
+    membersWebsite:        'Website',
+    membersAddress:        'Address',
+    membersNotAvailable:   'Not available',
+    membersNoEntries:      'No members available.',
+    membersFailedLoad:     'Failed to load members.'
   },
   de: {
     pageTitle_tournaments: 'Turnierkalender',
@@ -209,12 +218,21 @@ var TRANSLATIONS = {
     cat_SS:                'Senioren \u00dc50 Einzel',
     cat_SD:                'Senioren \u00dc50 Doppel',
     pageTitle_about:       '\u00dcber uns',
+    pageTitle_members:     'Mitglieder',
     aboutContact:          'Kontakt',
     aboutAddress:          'Adresse',
     aboutInvoice:          'Rechnungsversand',
     aboutBank:             'Bankverbindung',
     aboutCommittees:       'Organisation',
-    aboutFailedCommittees: 'Fehler beim Laden der Organisation.'
+    aboutFailedCommittees: 'Fehler beim Laden der Organisation.',
+    membersHeading:        'Mitglieder der Swiss Tablesoccer Federation',
+    membersStatus:         'Status',
+    membersEmail:          'E-Mail',
+    membersWebsite:        'Website',
+    membersAddress:        'Adresse',
+    membersNotAvailable:   'Nicht verf\u00fcgbar',
+    membersNoEntries:      'Keine Mitglieder verf\u00fcgbar.',
+    membersFailedLoad:     'Mitglieder konnten nicht geladen werden.'
   },
   fr: {
     pageTitle_tournaments: 'Calendrier des tournois',
@@ -317,12 +335,21 @@ var TRANSLATIONS = {
     cat_SS:                'Simples s\u00e9niors O50',
     cat_SD:                'Doubles s\u00e9niors O50',
     pageTitle_about:       '\u00c0 propos',
+    pageTitle_members:     'Membres',
     aboutContact:          'Contact',
     aboutAddress:          'Adresse',
     aboutInvoice:          'Envoi de factures',
     aboutBank:             'Coordonn\u00e9es bancaires',
     aboutCommittees:       'Organisation',
-    aboutFailedCommittees: '\u00c9chec du chargement de l\u2019organisation.'
+    aboutFailedCommittees: '\u00c9chec du chargement de l\u2019organisation.',
+    membersHeading:        'Membres de la Swiss Tablesoccer Federation',
+    membersStatus:         'Statut',
+    membersEmail:          'E-mail',
+    membersWebsite:        'Site web',
+    membersAddress:        'Adresse',
+    membersNotAvailable:   'Non disponible',
+    membersNoEntries:      'Aucun membre disponible.',
+    membersFailedLoad:     '\u00c9chec du chargement des membres.'
   },
   it: {
     pageTitle_tournaments: 'Calendario tornei',
@@ -425,12 +452,21 @@ var TRANSLATIONS = {
     cat_SS:                'Singolo senior O50',
     cat_SD:                'Doppio senior O50',
     pageTitle_about:       'Chi siamo',
+    pageTitle_members:     'Membri',
     aboutContact:          'Contatto',
     aboutAddress:          'Indirizzo',
     aboutInvoice:          'Invio fatture',
     aboutBank:             'Coordinate bancarie',
     aboutCommittees:       'Organizzazione',
-    aboutFailedCommittees: 'Caricamento organizzazione fallito.'
+    aboutFailedCommittees: 'Caricamento organizzazione fallito.',
+    membersHeading:        'Membri della Swiss Tablesoccer Federation',
+    membersStatus:         'Stato',
+    membersEmail:          'E-mail',
+    membersWebsite:        'Sito web',
+    membersAddress:        'Indirizzo',
+    membersNotAvailable:   'Non disponibile',
+    membersNoEntries:      'Nessun membro disponibile.',
+    membersFailedLoad:     'Caricamento membri fallito.'
   }
 };
 

@@ -1,0 +1,160 @@
+[
+    {
+        "members": [
+            {
+                "name": "Associazione Table-Soccer Ticino",
+                "short_name": "ATST",
+                "image": "https:\/\/s3.tablesoccer.org\/organization\/ATST\/profile_md.png?ts=1768209921",
+                "country": "CH",
+                "type": "Club",
+                "geo_type": "place",
+                "geo_level": 8,
+                "president": null,
+                "created_on": "2025-01-08",
+                "affiliated_on": "2025-01-08 19:52:21",
+                "status": "active",
+                "hierarchy": [
+                    {
+                        "id": 66717385,
+                        "name": "International Table Soccer Federation",
+                        "short_name": "ITSF",
+                        "geo_type": "world",
+                        "image": "https:\/\/s3.tablesoccer.org\/organization\/ITSF\/profile_md.png?ts=1763037514",
+                        "geo_level": "international"
+                    },
+                    {
+                        "id": 31853004,
+                        "name": "Europe Confederation",
+                        "short_name": "EUROPE",
+                        "geo_type": "world_division",
+                        "image": "https:\/\/app.tablesoccer.org\/icon\/organization.svg",
+                        "geo_level": "international"
+                    },
+                    {
+                        "id": 2030254199,
+                        "name": "Swiss Tablesoccer Federation",
+                        "short_name": "STF",
+                        "geo_type": "country",
+                        "image": "https:\/\/s3.tablesoccer.org\/organization\/STF\/profile_md.png?ts=1767289938",
+                        "geo_level": "national"
+                    }
+                ],
+                "contact": [
+                    {
+                        "type": "email",
+                        "value": "info@at-st.ch"
+                    },
+                    {
+                        "type": "website",
+                        "value": "www.tablesoccer-ticino.ch"
+                    },
+                    {
+                        "type": "address",
+                        "value": "Via Ciossa 5, Sigirino, 6806, Switzerland"
+                    },
+                    {
+                        "type": "address",
+                        "value": "Via Ronchetto 15, Curio, 6986, Switzerland"
+                    }
+                ],
+                "tour": {
+                    "id": 79,
+                    "name": "Campionato Master ATST"
+                }
+            },
+            {
+                "name": "TFC Z\u00fcrich",
+                "short_name": "TFCZ",
+                "image": "https:\/\/s3.tablesoccer.org\/organization\/TFCZ\/profile_md.png?ts=1777905512",
+                "country": "CH",
+                "type": "Club",
+                "geo_type": "place",
+                "geo_level": 8,
+                "president": null,
+                "created_on": "2025-01-08",
+                "affiliated_on": "2025-01-08 19:52:22",
+                "status": "active",
+                "hierarchy": [
+                    {
+                        "id": 66717385,
+                        "name": "International Table Soccer Federation",
+                        "short_name": "ITSF",
+                        "geo_type": "world",
+                        "image": "https:\/\/s3.tablesoccer.org\/organization\/ITSF\/profile_md.png?ts=1763037514",
+                        "geo_level": "international"
+                    },
+                    {
+                        "id": 31853004,
+                        "name": "Europe Confederation",
+                        "short_name": "EUROPE",
+                        "geo_type": "world_division",
+                        "image": "https:\/\/app.tablesoccer.org\/icon\/organization.svg",
+                        "geo_level": "international"
+                    },
+                    {
+                        "id": 2030254199,
+                        "name": "Swiss Tablesoccer Federation",
+                        "short_name": "STF",
+                        "geo_type": "country",
+                        "image": "https:\/\/s3.tablesoccer.org\/organization\/STF\/profile_md.png?ts=1767289938",
+                        "geo_level": "national"
+                    }
+                ],
+                "contact": [],
+                "tour": {
+                    "id": 289,
+                    "name": "Z\u00fcrich Open"
+                }
+            },
+            {
+                "name": "Table Soccer Ticino",
+                "short_name": "TST",
+                "image": "https:\/\/app.tablesoccer.org\/icon\/organization.svg",
+                "country": "CH",
+                "type": "Club",
+                "geo_type": "place",
+                "geo_level": 8,
+                "president": null,
+                "created_on": "2026-01-22",
+                "affiliated_on": "2026-01-22 16:05:37",
+                "status": "active",
+                "hierarchy": [
+                    {
+                        "id": 66717385,
+                        "name": "International Table Soccer Federation",
+                        "short_name": "ITSF",
+                        "geo_type": "world",
+                        "image": "https:\/\/s3.tablesoccer.org\/organization\/ITSF\/profile_md.png?ts=1763037514",
+                        "geo_level": "international"
+                    },
+                    {
+                        "id": 31853004,
+                        "name": "Europe Confederation",
+                        "short_name": "EUROPE",
+                        "geo_type": "world_division",
+                        "image": "https:\/\/app.tablesoccer.org\/icon\/organization.svg",
+                        "geo_level": "international"
+                    },
+                    {
+                        "id": 2030254199,
+                        "name": "Swiss Tablesoccer Federation",
+                        "short_name": "STF",
+                        "geo_type": "country",
+                        "image": "https:\/\/s3.tablesoccer.org\/organization\/STF\/profile_md.png?ts=1767289938",
+                        "geo_level": "national"
+                    }
+                ],
+                "contact": [
+                    {
+                        "type": "address",
+                        "value": "Casella Postale, 6900, Lugano, Ticino, Switzerland"
+                    }
+                ],
+                "tour": {
+                    "id": 0,
+                    "name": false
+                }
+            }
+        ]
+    }
+]
