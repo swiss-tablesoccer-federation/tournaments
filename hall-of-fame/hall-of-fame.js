@@ -43,6 +43,83 @@ function compareYearsDesc(leftYear, rightYear) {
   return Number(rightYear) - Number(leftYear);
 }
 
+function slugifyCategoryName(name) {
+  return String(name || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'discipline';
+}
+
+function assignCategoryAnchorIds(categories) {
+  var used = Object.create(null);
+
+  categories.forEach(function (category) {
+    var base = 'hof-' + slugifyCategoryName(category.category);
+    var count = used[base] || 0;
+    used[base] = count + 1;
+    category.anchorId = count ? (base + '-' + (count + 1)) : base;
+  });
+}
+
+function renderDisciplineNav(categories) {
+  var $nav = $('#hof-discipline-nav');
+  $nav.empty();
+
+  if (!categories.length) return;
+
+  categories.forEach(function (category) {
+    if (!category.anchorId) return;
+
+    var words = String(category.category || '').trim().split(/\s+/).filter(Boolean);
+    var shortLabel = '';
+    if (words.length === 1) {
+      shortLabel = words[0].charAt(0).toUpperCase();
+    } else if (words.length > 1) {
+      shortLabel = (words[0].charAt(0) + words[words.length - 1].charAt(0)).toUpperCase();
+    }
+
+    $nav.append(
+      $('<a>')
+        .addClass('hof-discipline-link')
+        .attr('href', '#' + category.anchorId)
+        .attr('data-target-id', category.anchorId)
+        .attr('aria-label', category.category)
+        .append(
+          $('<span>').addClass('hof-link-label-full').text(category.category),
+          $('<span>').addClass('hof-link-label-short').text(shortLabel || category.category)
+        )
+    );
+  });
+}
+
+function setActiveDisciplineLink(targetId) {
+  $('.hof-discipline-link').removeClass('is-active');
+  if (!targetId) return;
+  $('.hof-discipline-link[data-target-id="' + targetId + '"]').addClass('is-active');
+}
+
+function updateActiveDisciplineFromScroll() {
+  var container = document.querySelector('.page-hall-of-fame .page-content');
+  if (!container) return;
+
+  var sections = Array.prototype.slice.call(document.querySelectorAll('.hof-category-section[id]'));
+  if (!sections.length) return;
+
+  var containerTop = container.getBoundingClientRect().top;
+  var triggerLine = containerTop + 160;
+  var activeId = sections[0].id;
+
+  sections.forEach(function (section) {
+    if (section.getBoundingClientRect().top <= triggerLine) {
+      activeId = section.id;
+    }
+  });
+
+  setActiveDisciplineLink(activeId);
+}
+
 function normalizeHallOfFameResponse(data) {
   if (!data || typeof data !== 'object' || Array.isArray(data)) return [];
 
@@ -102,7 +179,7 @@ function formatPlayers(players) {
     })
     .filter(Boolean);
 
-  return names.length ? names.join(' / ') : ((typeof tr === 'function') ? tr('membersNotAvailable') : 'Not available');
+  return names.length ? names.join('\n') : ((typeof tr === 'function') ? tr('membersNotAvailable') : 'Not available');
 }
 
 function renderPlacementCard(placement) {
@@ -110,10 +187,8 @@ function renderPlacementCard(placement) {
 
   return $('<article>').addClass('hof-podium-card place-' + placement.rank).append(
     $('<span>').addClass('hof-place-badge').text(String(placement.rank)),
-    $('<div>').append(
-      $('<span>').addClass('hof-place-label').text((typeof tr === 'function') ? tr(placeKey) : (placement.rank + '. place')),
-      $('<div>').addClass('hof-place-players').text(formatPlayers(placement.players))
-    )
+    $('<span>').addClass('hof-place-label').text((typeof tr === 'function') ? tr(placeKey) : (placement.rank + '. place')),
+    $('<div>').addClass('hof-place-players').text(formatPlayers(placement.players))
   );
 }
 
@@ -126,10 +201,12 @@ function renderHistoryRow(yearEntry) {
   }
 
   return $('<tr>').append(
-    $('<th>').attr('scope', 'row').text(yearEntry.year),
-    $('<td>').text(getPlacement(1)),
-    $('<td>').text(getPlacement(2)),
-    $('<td>').text(getPlacement(3))
+    $('<th>').addClass('hof-year-col').attr('scope', 'row').append(
+      $('<span>').addClass('hof-year-rotated').text(yearEntry.year)
+    ),
+    $('<td>').addClass('hof-player-cell').text(getPlacement(1)),
+    $('<td>').addClass('hof-player-cell').text(getPlacement(2)),
+    $('<td>').addClass('hof-player-cell').text(getPlacement(3))
   );
 }
 
@@ -137,6 +214,7 @@ function renderCategorySection(category) {
   var currentYearEntry = category.years[0];
   var previousYears = category.years.slice(1);
   var $section = $('<section>').addClass('hof-category-section');
+  if (category.anchorId) $section.attr('id', category.anchorId);
 
   $section.append(
     $('<div>').addClass('hof-category-header').append(
@@ -167,7 +245,9 @@ function renderCategorySection(category) {
     $table.append(
       $('<thead>').append(
         $('<tr>').append(
-          $('<th>').attr('scope', 'col').text((typeof tr === 'function') ? tr('hallOfFameYear') : 'Year'),
+          $('<th>').addClass('hof-year-col').attr('scope', 'col').append(
+            $('<span>').addClass('hof-year-rotated').text((typeof tr === 'function') ? tr('hallOfFameYear') : 'Year')
+          ),
           $('<th>').attr('scope', 'col').text((typeof tr === 'function') ? tr('hallOfFamePlace1') : '1st place'),
           $('<th>').attr('scope', 'col').text((typeof tr === 'function') ? tr('hallOfFamePlace2') : '2nd place'),
           $('<th>').attr('scope', 'col').text((typeof tr === 'function') ? tr('hallOfFamePlace3') : '3rd place')
@@ -197,13 +277,20 @@ function renderHallOfFame(categories) {
   $content.empty();
 
   if (!categories.length) {
+    $('#hof-discipline-nav').empty();
     $content.html('<p class="text-secondary text-center py-3">' + ((typeof tr === 'function') ? tr('hallOfFameNoEntries') : 'No hall of fame entries available.') + '</p>');
     return;
   }
 
+  assignCategoryAnchorIds(categories);
+  renderDisciplineNav(categories);
+  setActiveDisciplineLink(categories[0].anchorId);
+
   categories.forEach(function (category) {
     $content.append(renderCategorySection(category));
   });
+
+  updateActiveDisciplineFromScroll();
 }
 
 function loadHallOfFame() {
@@ -231,6 +318,21 @@ function loadHallOfFame() {
 $(function () {
   syncHallOfFameTitle();
   loadHallOfFame();
+
+  $(document).on('click', '.hof-discipline-link', function (e) {
+    e.preventDefault();
+    var targetId = $(this).attr('data-target-id');
+    if (!targetId) return;
+
+    var el = document.getElementById(targetId);
+    if (!el) return;
+    setActiveDisciplineLink(targetId);
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  $('.page-content').on('scroll', function () {
+    updateActiveDisciplineFromScroll();
+  });
 
   document.addEventListener('langChanged', function () {
     syncHallOfFameTitle();
