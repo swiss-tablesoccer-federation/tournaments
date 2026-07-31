@@ -1413,7 +1413,8 @@ tr[data-cat="STS"] .t-date {
    nav stays fixed in the flex column and .page-content scrolls instead. */
 html.page-about .page-content,
 html.page-members .page-content,
-html.page-hall-of-fame .page-content {
+html.page-hall-of-fame .page-content,
+html.page-finals .page-content {
   overflow-y: auto;
   flex: 1;
   min-height: 0;
@@ -1939,6 +1940,110 @@ html.page-hall-of-fame .page-footer {
 .about-markdown a { color: #E30613; }
 .document-markdown a:hover,
 .about-markdown a:hover { color: #a8000f; }
+
+html.page-finals .document-markdown {
+  line-height: 1.75;
+}
+
+html.page-finals .finals-main-title {
+  font-size: 2rem;
+  color: #E30613;
+  margin: 0 0 1rem;
+}
+
+html.page-finals .finals-intro {
+  margin-bottom: 1.5rem;
+}
+
+html.page-finals .finals-split-section {
+  display: grid;
+  grid-template-columns: 9fr 11fr;
+  gap: 2.6rem 3.1rem;
+  align-items: start;
+  padding: 2.25rem;
+  margin-bottom: 0.8rem;
+  border-radius: 0;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,.08);
+}
+
+html.page-finals .finals-split-section:first-of-type {
+  margin-top: 0.2rem;
+}
+
+html.page-finals .finals-split-section.is-reversed {
+  grid-template-columns: 11fr 9fr;
+}
+
+html.page-finals .finals-split-section.is-reversed .finals-section-media {
+  order: 2;
+}
+
+html.page-finals .finals-split-section.is-reversed .finals-section-text {
+  order: 1;
+}
+
+html.page-finals .finals-section-media img {
+  width: 100%;
+  max-height: 290px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+  display: block;
+}
+
+html.page-finals .about-section {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+html.page-finals .finals-section-text h2 {
+  margin-top: 0;
+}
+
+html.page-finals .finals-section-text {
+  padding-right: 0.2rem;
+}
+
+@media (max-width: 900px) {
+  html.page-finals .finals-split-section,
+  html.page-finals .finals-split-section.is-reversed {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    padding: 1.6rem;
+  }
+
+  html.page-finals .finals-split-section.is-reversed .finals-section-media,
+  html.page-finals .finals-split-section.is-reversed .finals-section-text {
+    order: initial;
+  }
+
+  html.page-finals .finals-section-media img {
+    max-height: 277px;
+  }
+}
+
+html.page-anti-doping.page-finals .anti-doping-tail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+html.page-anti-doping.page-finals .anti-doping-tail-card {
+  display: block;
+  margin-bottom: 0;
+}
+
+html.page-anti-doping.page-finals .anti-doping-tail-card .finals-section-text {
+  padding-right: 0;
+}
+
+@media (max-width: 900px) {
+  html.page-anti-doping.page-finals .anti-doping-tail-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* Contact section */
 .about-contact {
