@@ -4,6 +4,18 @@ var HOME_FILTERED_POSTS = [];
 var HOME_STATE = { page: 1, year: 'all' };
 var HOME_YEAR_BASE = null;
 
+function getNewsLanguage() {
+  var raw = '';
+  try {
+    raw = String(localStorage.getItem('stf_lang') || '').toLowerCase();
+  } catch (e) {}
+  return /^(de|fr|it|en)$/.test(raw) ? raw : 'de';
+}
+
+function getNewsBasePath() {
+  return '/news/' + getNewsLanguage();
+}
+
 function syncHomeTitle() {
   var suffix = (typeof tr === 'function') ? tr('pageTitle_news') : 'News';
   document.title = 'Swiss Tablesoccer Federation - ' + suffix;
@@ -384,7 +396,7 @@ function filterPostsByState(posts) {
 function enrichPreviewPost(post) {
   if (post._excerpt) return Promise.resolve(post);
 
-  return fetch('/news/' + post.file)
+  return fetch(getNewsBasePath() + '/' + post.file)
     .then(function (res) { return res.ok ? res.text() : ''; })
     .then(function (text) {
       post._excerpt = getExcerptFromMarkdown(text);
@@ -452,7 +464,7 @@ function loadHomeNews() {
   HOME_STATE = parseStateFromUrl();
   $('#homeNewsList').html('<div class="state-row">' + escapeHtml(tr('loading')) + '</div>');
 
-  fetch('/news/_manifest.json')
+  fetch(getNewsBasePath() + '/_manifest.json')
     .then(function (res) {
       if (!res.ok) throw new Error('manifest missing');
       return res.json();

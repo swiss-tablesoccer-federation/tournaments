@@ -2,6 +2,18 @@ var NEWS_POSTS = [];
 var NEWS_FILTERED = [];
 var NEWS_SELECTED_FILE = null;
 
+function getNewsLanguage() {
+  var raw = '';
+  try {
+    raw = String(localStorage.getItem('stf_lang') || '').toLowerCase();
+  } catch (e) {}
+  return /^(de|fr|it|en)$/.test(raw) ? raw : 'de';
+}
+
+function getNewsBasePath() {
+  return './' + getNewsLanguage();
+}
+
 function getRequestedPostFromUrl() {
   try {
     var search = new URLSearchParams(window.location.search);
@@ -236,7 +248,7 @@ function openNewsPost(post) {
   $('#newsMeta').text(getPostMetaText(post));
   setStatus('is-loading', tr('loading'));
 
-  fetch('./' + post.file)
+  fetch(getNewsBasePath() + '/' + post.file)
     .then(function (res) {
       if (!res.ok) throw new Error('missing post');
       return res.text();
@@ -259,7 +271,7 @@ function openNewsPost(post) {
 function loadManifest() {
   setStatus('is-loading', tr('loading'));
 
-  fetch('./_manifest.json')
+  fetch(getNewsBasePath() + '/_manifest.json')
     .then(function (res) {
       if (!res.ok) throw new Error('manifest missing');
       return res.json();
@@ -294,14 +306,11 @@ $(function () {
 
   document.addEventListener('langChanged', function () {
     syncNewsTitle();
+    NEWS_SELECTED_FILE = null;
+    NEWS_POSTS = [];
+    NEWS_FILTERED = [];
     updateNewsCount();
     renderNewsList();
-    if (NEWS_SELECTED_FILE) {
-      var selected = NEWS_POSTS.find(function (p) { return p.file === NEWS_SELECTED_FILE; });
-      if (selected) {
-        $('#newsTitle').text(selected.title || selected.file);
-        $('#newsMeta').text(getPostMetaText(selected));
-      }
-    }
+    loadManifest();
   });
 });
