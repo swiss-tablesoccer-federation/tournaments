@@ -90,7 +90,7 @@ function getItsfBadge(name) {
   else if (n.indexOf('ITSF 500') !== -1) tier = '500';
   else if (n.indexOf('ITSF 250') !== -1) tier = '250';
   if (!tier) return '';
-  return '<img src="assets/img/itsf_' + tier + '.svg" class="itsf-badge" alt="ITSF ' + tier + '">';
+  return '<img src="/assets/img/itsf_' + tier + '.svg" class="itsf-badge" alt="ITSF ' + tier + '">';
 }
 
 /**
