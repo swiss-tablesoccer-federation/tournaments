@@ -290,22 +290,33 @@ function renderNewsPreview(posts) {
 
 function getVisiblePages(current, total) {
   var pages = [];
+  var start;
+  var end;
   var i;
 
-  if (total <= 7) {
+  if (total <= 3) {
     for (i = 1; i <= total; i++) pages.push(i);
     return pages;
   }
 
-  pages.push(1);
-  if (current > 4) pages.push('...');
+  start = current - 1;
+  end = current + 1;
 
-  var start = Math.max(2, current - 1);
-  var end = Math.min(total - 1, current + 1);
+  if (start < 1) {
+    start = 1;
+    end = 3;
+  }
+
+  if (end > total) {
+    end = total;
+    start = total - 2;
+  }
+
+  if (start > 1) pages.push('...');
+
   for (i = start; i <= end; i++) pages.push(i);
 
-  if (current < total - 3) pages.push('...');
-  pages.push(total);
+  if (end < total) pages.push('...');
   return pages;
 }
 
@@ -328,7 +339,7 @@ function renderPagination(totalPages, currentPage) {
   );
 
   parts.push(
-    '<button type="button" class="home-feed-page-btn is-nav" data-page="' + String(currentPage - 1) + '"' +
+    '<button type="button" class="home-feed-page-btn is-nav is-prev" data-page="' + String(currentPage - 1) + '"' +
     (prevDisabled ? ' disabled' : '') +
     ' aria-label="' + escapeHtml(tr('newsPrev')) + '"><i class="fa-solid fa-chevron-left"></i></button>'
   );
@@ -347,7 +358,7 @@ function renderPagination(totalPages, currentPage) {
   });
 
   parts.push(
-    '<button type="button" class="home-feed-page-btn is-nav" data-page="' + String(currentPage + 1) + '"' +
+    '<button type="button" class="home-feed-page-btn is-nav is-next" data-page="' + String(currentPage + 1) + '"' +
     (nextDisabled ? ' disabled' : '') +
     ' aria-label="' + escapeHtml(tr('newsNext')) + '"><i class="fa-solid fa-chevron-right"></i></button>'
   );

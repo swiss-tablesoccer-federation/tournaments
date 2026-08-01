@@ -1,6 +1,36 @@
 var NEWS_POSTS = [];
 var NEWS_FILTERED = [];
 var NEWS_SELECTED_FILE = null;
+var NEWS_MOBILE_LIST_OPEN = false;
+
+function isNewsMobileViewport() {
+  return window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+}
+
+function updateNewsMobileListToggle() {
+  var $toggle = $('#newsMobileListToggle');
+  if (!$toggle.length) return;
+
+  var mobile = isNewsMobileViewport();
+  if (!mobile) {
+    NEWS_MOBILE_LIST_OPEN = false;
+    $('html').removeClass('news-list-open');
+    $toggle.attr('aria-expanded', 'false');
+    return;
+  }
+
+  $('html').toggleClass('news-list-open', NEWS_MOBILE_LIST_OPEN);
+  $toggle.attr('aria-expanded', NEWS_MOBILE_LIST_OPEN ? 'true' : 'false');
+  $toggle.attr('aria-label', tr('navNews'));
+  $toggle.attr('title', tr('navNews'));
+  $toggle.html('<i class="fa-solid ' + (NEWS_MOBILE_LIST_OPEN ? 'fa-chevron-down' : 'fa-chevron-up') + '" aria-hidden="true"></i>');
+}
+
+function closeNewsMobileList() {
+  if (!isNewsMobileViewport()) return;
+  NEWS_MOBILE_LIST_OPEN = false;
+  updateNewsMobileListToggle();
+}
 
 function getNewsLanguage() {
   var raw = '';
@@ -243,6 +273,7 @@ function openNewsPost(post) {
   } catch (e) {}
 
   renderNewsList();
+  closeNewsMobileList();
 
   $('#newsTitle').text(post.title || post.file);
   $('#newsMeta').text(getPostMetaText(post));
@@ -298,7 +329,17 @@ function loadManifest() {
 
 $(function () {
   syncNewsTitle();
+  updateNewsMobileListToggle();
   loadManifest();
+
+  $('#newsMobileListToggle').on('click', function () {
+    NEWS_MOBILE_LIST_OPEN = !NEWS_MOBILE_LIST_OPEN;
+    updateNewsMobileListToggle();
+  });
+
+  $(window).on('resize', function () {
+    updateNewsMobileListToggle();
+  });
 
   $('#newsSearch').on('input', function () {
     applyFilter();
@@ -309,6 +350,8 @@ $(function () {
     NEWS_SELECTED_FILE = null;
     NEWS_POSTS = [];
     NEWS_FILTERED = [];
+    NEWS_MOBILE_LIST_OPEN = false;
+    updateNewsMobileListToggle();
     updateNewsCount();
     renderNewsList();
     loadManifest();
