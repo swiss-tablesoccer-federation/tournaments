@@ -488,7 +488,9 @@ $(function () {
 
   document.addEventListener('langChanged', function () {
     syncHomeTitle();
-    renderYearFilterButtons(HOME_ALL_POSTS);
-    renderFilteredNews();
+    HOME_ALL_POSTS = [];
+    HOME_FILTERED_POSTS = [];
+    HOME_YEAR_BASE = null;
+    loadHomeNews();
   });
 });
