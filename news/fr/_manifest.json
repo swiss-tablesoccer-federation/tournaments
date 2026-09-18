@@ -1,7 +1,16 @@
 {
   "crawledPages": 17,
-  "postCount": 98,
+  "postCount": 99,
   "posts": [
+    {
+      "title": "Swiss Tablesoccer League 2027",
+      "date": "14 sept.",
+      "author": "Rédigé par Lukas Bärtsch",
+      "sourceUrl": "https://www.swisstablesoccer.ch/home/swiss-tablesoccer-league-2027",
+      "file": "2026-09-14-8d4e2a61.md",
+      "images": 0,
+      "order": 0
+    },
     {
       "title": "Swiss Tablesoccer League 2026",
       "date": "29 juin",
@@ -9,7 +18,7 @@
       "sourceUrl": "https://www.swisstablesoccer.ch/home/swiss-tablesoccer-league-2026-2",
       "file": "2026-06-29-4ce07662.md",
       "images": 0,
-      "order": 0
+      "order": 1
     },
     {
       "title": "Inscriptions STL 2026 / Finale de la Coupe",
