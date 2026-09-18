@@ -1430,10 +1430,24 @@ tr[data-cat="STS"] .t-date {
 
 /* ── About / Members page ───────────────────────────────── */
 
+html.page-about,
+html.page-members,
+html.page-about body,
+html.page-members body {
+  height: auto;
+  min-height: 100%;
+  overflow-y: auto;
+}
+
 /* Keep html/body at full viewport height (same as other pages) so the
    nav stays fixed in the flex column and .page-content scrolls instead. */
 html.page-about .page-content,
-html.page-members .page-content,
+html.page-members .page-content {
+  overflow-y: visible;
+  flex: 1;
+  min-height: auto;
+}
+
 html.page-hall-of-fame .page-content,
 html.page-finals .page-content {
   overflow-y: auto;
@@ -2295,6 +2309,14 @@ html.page-news .document-viewer-content .news-intro {
 
 html.page-news .document-markdown a {
   word-break: break-word;
+}
+
+@media (min-width: 901px) {
+  .content-prose p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.15rem;
+  }
 }
 
 @media (max-width: 900px) {

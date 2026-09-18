@@ -431,7 +431,7 @@ function renderViewerChrome() {
         )
         .append(
           $('<div>').addClass('document-viewer-status').attr('id', 'documentViewerStatus'),
-          $('<article>').addClass('document-viewer-content document-markdown').attr('id', 'documentViewer')
+          $('<article>').addClass('document-viewer-content document-markdown content-prose').attr('id', 'documentViewer')
         )
     )
   );

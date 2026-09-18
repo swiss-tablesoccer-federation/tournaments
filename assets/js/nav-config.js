@@ -10,7 +10,6 @@ window.STF_NAV_DROPDOWNS = {
     { labelKey: 'navDropdown_members', href: '/members/' },
     { labelKey: 'navDropdown_antiDoping', href: '/anti-doping/' },
     { labelKey: 'navDropdown_sportsCommission', href: 'https://www.swisstablesoccer.ch/sportkommission' },
-    { labelKey: 'navDropdown_refereeing', href: 'https://referee.swisstablesoccer.ch/' },
-    { labelKey: 'navDropdown_documents', href: '/documents' }
+    { labelKey: 'navDropdown_refereeing', href: 'https://referee.swisstablesoccer.ch/' }
   ]
 };
