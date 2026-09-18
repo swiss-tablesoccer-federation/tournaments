@@ -302,7 +302,7 @@ function openNewsPost(post) {
 function loadManifest() {
   setStatus('is-loading', tr('loading'));
 
-  fetch(getNewsBasePath() + '/_manifest.json')
+  fetch(getNewsBasePath() + '/manifest.json')
     .then(function (res) {
       if (!res.ok) throw new Error('manifest missing');
       return res.json();

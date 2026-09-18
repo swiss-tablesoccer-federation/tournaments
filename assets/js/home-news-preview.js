@@ -475,7 +475,7 @@ function loadHomeNews() {
   HOME_STATE = parseStateFromUrl();
   $('#homeNewsList').html('<div class="state-row">' + escapeHtml(tr('loading')) + '</div>');
 
-  fetch(getNewsBasePath() + '/_manifest.json')
+  fetch(getNewsBasePath() + '/manifest.json')
     .then(function (res) {
       if (!res.ok) throw new Error('manifest missing');
       return res.json();
