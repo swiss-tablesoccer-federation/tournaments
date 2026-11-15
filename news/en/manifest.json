@@ -1,7 +1,25 @@
 {
   "crawledPages": 17,
-  "postCount": 99,
+  "postCount": 101,
   "posts": [
+    {
+      "title": "Developing Swiss table soccer together",
+      "date": "22 Oct.",
+      "author": "Written by Beatrice Berner",
+      "sourceUrl": "https://www.swisstablesoccer.ch/home/gemeinsam-den-schweizer-tischfussball-weiterentwickeln",
+      "file": "2026-10-22-4ed05414.md",
+      "images": 0,
+      "order": 0
+    },
+    {
+      "title": "Double silver for Switzerland: national teams impress in Saarbrücken",
+      "date": "12 Oct.",
+      "author": "Written by Hannes Wallimann",
+      "sourceUrl": "https://www.swisstablesoccer.ch/home/silber-im-doppelpack-schweizer-nationalteams-berzeugen-in-saarbrcken",
+      "file": "2026-10-12-5db0e881.md",
+      "images": 0,
+      "order": 0
+    },
     {
       "title": "Swiss Tablesoccer League 2027",
       "date": "14 Sept.",
