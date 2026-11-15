@@ -29,8 +29,13 @@ The final stage includes the top 16 teams in men's categories and the top 8 team
 
 ## More Information
 
-[Detailed announcement](/?cat=184)
+More information about the Swiss Championship is available on Coral and under Documents.
 
-In the Hall of Fame, you will find all top-3 placements of the Swiss Championships (individual sport & league) since 2009.
+<div class="competition-actions">
+<a class="competition-action" href="https://app.tablesoccer.org/p/ZVLGP6">Coral</a>
+<a class="competition-action" href="/documents/?doc=reglement-individualsport-en.md">Individual Sport Regulations</a>
+</div>
 
-[Hall of Fame](/hall-of-fame)
+In the Hall of Fame, you will find all top-3 placements of the Swiss Championships since 2009.
+
+<a class="competition-action" href="/hall-of-fame/">Hall of Fame</a>

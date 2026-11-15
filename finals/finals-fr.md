@@ -29,8 +29,13 @@ La phase finale réunit les 16 meilleures équipes chez les hommes et 8 équipes
 
 ## Plus d'informations
 
-[Annonce détaillée](/?cat=184)
+Tu trouveras plus d'informations sur le Championnat suisse sur Coral et dans les documents.
 
-Dans le Hall of Fame, tu trouveras tous les podiums (top 3) des Championnats suisses (sport individuel & ligue) depuis 2009.
+<div class="competition-actions">
+<a class="competition-action" href="https://app.tablesoccer.org/p/ZVLGP6">Coral</a>
+<a class="competition-action" href="/documents/?doc=reglement-individualsport-fr.md">Règlement du sport individuel</a>
+</div>
 
-[Hall of Fame](/hall-of-fame)
+Dans le Hall of Fame, tu trouveras tous les podiums (top 3) des Championnats suisses depuis 2009.
+
+<a class="competition-action" href="/hall-of-fame/">Hall of Fame</a>

@@ -29,8 +29,13 @@ Für die Finalrunde qualifizieren sich die 16 bestplatzierten Teams bei den Herr
 
 ## Weitere Informationen
 
-[Detaillierte Ausschreibung](/?cat=184)
+Weitere Informationen zur Schweizermeisterschaft findest du auf Coral und unter Dokumente.
 
-In der Hall of Fame findest du alle Top-3 Platzierungen der Schweizermeisterschaften (Individualsport & Liga) seit 2009.
+<div class="competition-actions">
+<a class="competition-action" href="https://app.tablesoccer.org/p/ZVLGP6">Coral</a>
+<a class="competition-action" href="/documents/?doc=reglement-individualsport-de.md">Reglement Individualsport</a>
+</div>
 
-[Hall of Fame](/hall-of-fame)
+In der Hall of Fame findest du alle Top-3 Platzierungen der Schweizermeisterschaften seit 2009.
+
+<a class="competition-action" href="/hall-of-fame/">Hall of Fame</a>

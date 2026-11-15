@@ -29,8 +29,13 @@ Alla fase finale accedono le migliori 16 squadre nelle categorie maschili e 8 sq
 
 ## Ulteriori informazioni
 
-[Comunicazione dettagliata](/?cat=184)
+Trovi maggiori informazioni sul Campionato svizzero su Coral e nei documenti.
 
-Nella Hall of Fame trovi tutte le classifiche top-3 dei Campionati svizzeri (sport individuale e lega) dal 2009.
+<div class="competition-actions">
+<a class="competition-action" href="https://app.tablesoccer.org/p/ZVLGP6">Coral</a>
+<a class="competition-action" href="/documents/?doc=reglement-individualsport-it.md">Regolamento sport individuale</a>
+</div>
 
-[Hall of Fame](/hall-of-fame)
+Nella Hall of Fame trovi tutte le classifiche top-3 dei Campionati svizzeri dal 2009.
+
+<a class="competition-action" href="/hall-of-fame/">Hall of Fame</a>
