@@ -2,6 +2,23 @@
 
 # Registre des intérêts liés
 
+| | |
+|---|---|
+| Valable à partir du | 18.11.2026 |
+| Modifications | Voir le registre des modifications |
+| Créé le | 18.11.2026 |
+| Créé par | Ph. Gamper |
+
+---
+
+## Registre des modifications
+
+| Version | Date | Auteurs | Remarques |
+|---|---|---|---|
+| 2026.1 | 18.11.2026 | Ph. Gamper | Erstveröffentlichung |
+
+---
+
 | Personne | Fonction | Activité professionnelle | Mandats | Intérêts liés |
 |---|---|---|---|---|
 | Philipp Gamper | Président | Sécurité informatique, réponse aux incidents | Aucun | Entraîneur du TFC Zürich |

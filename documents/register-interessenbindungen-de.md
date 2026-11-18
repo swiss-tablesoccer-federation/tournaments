@@ -2,6 +2,23 @@
 
 # Register Interessenbindungen
 
+| | |
+|---|---|
+| Gültig ab | 18.11.2026 |
+| Anpassungen | Gemäss Änderungsverzeichnis |
+| Erstellt am | 18.11.2026 |
+| Erstellt durch | Ph. Gamper |
+
+---
+
+## Änderungsverzeichnis
+
+| Version | Datum | Autoren | Bemerkungen |
+|---|---|---|---|
+| 2026.1 | 18.11.2026 | Ph. Gamper | Erstveröffentlichung |
+
+---
+
 | Person | Funktion | Berufliche Tätigkeit | Mandate | Interessensbindung |
 |---|---|---|---|---|
 | Philipp Gamper | Präsident | IT Security, Incident Response | keine | Trainer des TFC Zürich |

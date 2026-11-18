@@ -2,6 +2,23 @@
 
 # Register of Interests
 
+| | |
+|---|---|
+| Valid from | 18.11.2026 |
+| Amendments | See change log |
+| Created on | 18.11.2026 |
+| Created by | Ph. Gamper |
+
+---
+
+## Change Log
+
+| Version | Date | Authors | Remarks |
+|---|---|---|---|
+| 2026.1 | 18.11.2026 | Ph. Gamper | Erstveröffentlichung |
+
+---
+
 | Person | Function | Professional activity | Mandates | Interests |
 |---|---|---|---|---|
 | Philipp Gamper | President | IT security, incident response | None | Coach of TFC Zürich |

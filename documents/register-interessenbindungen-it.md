@@ -2,6 +2,23 @@
 
 # Registro degli interessi
 
+| | |
+|---|---|
+| Valido dal | 18.11.2026 |
+| Modifiche | Vedere il registro delle modifiche |
+| Creato il | 18.11.2026 |
+| Creato da | Ph. Gamper |
+
+---
+
+## Registro delle modifiche
+
+| Versione | Data | Autori | Osservazioni |
+|---|---|---|---|
+| 2026.1 | 18.11.2026 | Ph. Gamper | Erstveröffentlichung |
+
+---
+
 | Persona | Funzione | Attività professionale | Mandati | Interessi |
 |---|---|---|---|---|
 | Philipp Gamper | Presidente | Sicurezza informatica, risposta agli incidenti | Nessuno | Allenatore del TFC Zürich |
