@@ -2,6 +2,7 @@ window.STF_NAV_DROPDOWNS = {
   navCompetitions: [
     { labelKey: 'navDropdown_swissChampionship', href: '/finals/' },
     { labelKey: 'navDropdown_swissTablesoccerLeague', href: '/stl/' },
+    { labelKey: 'navDropdown_swissTablesoccerCup', href: '/stc/' },
     { labelKey: 'navDropdown_licensing', href: 'https://register.swisstablesoccer.ch/de/licenses/' },
     { labelKey: 'navDropdown_hallOfFame', href: '/hall-of-fame/' }
   ],

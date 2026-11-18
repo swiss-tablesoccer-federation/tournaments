@@ -2,9 +2,52 @@
 
 # Regulations - Swiss Tablesoccer League
 
-Version 2.3_2026
+| | |
+|---|---|
+| Valid from | 11.03.2017 |
+| Amendments | See change log |
+| Created on | 11.03.2017 |
+| Created by | Peter Felder |
 
 *This document was originally drafted in German. The German version is authoritative in both written and spoken form. Versions in other languages have been partly produced using electronic translation.*
+
+---
+
+## Change Log
+
+| Version | Date | Authors | Remarks |
+|---|---|---|---|
+|  |  |  | Earlier changes: change history no longer available |
+| 2026.1 | 12.01.2026 | H. Wallimann | Existing version (formerly version 2.3_2026) |
+| 2026.2 | 17.11.2026 | H. Wallimann | Point 2.4 removed because financial obligations are already covered in point 3.1; point 2.6 removed |
+
+---
+
+## Table of Contents
+
+- [General Rules](#general-rules)
+  - [1. Competence](#1-competence)
+  - [2. Licence](#2-licence)
+  - [3. Financial obligations](#3-financial-obligations)
+  - [4. Team name](#4-team-name)
+  - [5. Marketing](#5-marketing)
+  - [6. Clothing](#6-clothing)
+  - [7. Titles and prizes](#7-titles-and-prizes)
+  - [8. Claims for damages against the STF](#8-claims-for-damages-against-the-stf)
+  - [9. Severability clause](#9-severability-clause)
+- [Playing Rules](#playing-rules)
+  - [1. Tables and balls](#1-tables-and-balls)
+  - [2. Team registration](#2-team-registration)
+  - [3. Team no-show](#3-team-no-show)
+  - [4. Permission to play and player pass](#4-permission-to-play-and-player-pass)
+  - [5. League classification and names](#5-league-classification-and-names)
+  - [6. Format](#6-format)
+    - [6.1 Open League format](#61-open-league-format)
+    - [6.2 Women's League format](#62-womens-league-format)
+  - [7. Scoring](#7-scoring)
+  - [8. Serve, choice of table side](#8-serve-choice-of-table-side)
+  - [9. Deciding doubles](#9-deciding-doubles)
+  - [10. Referees](#10-referees)
 
 ---
 
@@ -22,11 +65,7 @@ Version 2.3_2026
 
 2.3 Women must decide whether they wish to compete in the open Tablesoccer League or in the Women's Tablesoccer League.
 
-2.4 Players without an annual licence must obtain a day licence for the Tablesoccer League. This single day licence is valid for the entire competition, even if it spans several days.
-
-2.5 Players may only play for one club during the year. This means that players may not compete for different clubs in the Swiss Tablesoccer Cup and the Swiss Tablesoccer League.
-
-2.6 In accordance with ITSF guidelines, a player is not allowed to play the Champions League with one club and, in the same season, participate in a national league with another club.
+2.4 Players may only play for one club during the year. This means that players may not compete for different clubs in the Swiss Tablesoccer Cup and the Swiss Tablesoccer League.
 
 ## 3. Financial obligations
 

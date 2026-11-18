@@ -4,25 +4,34 @@
 
 | | |
 |---|---|
-| **Valido dal** | 01.11.2021 |
-| **Creato il** | 30.10.2021 |
-| **Creato da** | Benedikt Rentsch |
+| Valido dal | 01.11.2021 |
+| Modifiche | Vedere il registro delle modifiche |
+| Creato il | 30.10.2021 |
+| Creato da | Benedikt Rentsch |
+
+---
+
+## Registro delle modifiche
+
+| Versione | Data | Autori | Osservazioni |
+|---|---|---|---|
+| 2021.1 | 01.11.2021 | B. Rentsch | Pubblicazione iniziale ed entrata in vigore |
 
 ---
 
 ## Indice
 
-1. [Introduzione](#1-introduzione)
-2. [Struttura e campo di applicazione](#2-struttura-e-campo-di-applicazione)
-   - 2.1 [Struttura](#21-struttura)
-   - 2.2 [Campo di applicazione](#22-campo-di-applicazione)
-3. [Griglia delle sanzioni e disposizioni penali](#3-griglia-delle-sanzioni-e-disposizioni-penali)
-   - 3.1 [Livello 1](#31-livello-1)
-   - 3.2 [Livello 2](#32-livello-2)
-   - 3.3 [Livello 3](#33-livello-3)
-   - 3.4 [Livello 4](#34-livello-4)
-4. [Procedura di segnalazione](#4-procedura-di-segnalazione)
-5. [Modulo di segnalazione](#5-modulo-di-segnalazione)
+- [1. Introduzione](#1-introduzione)
+- [2. Struttura e campo di applicazione](#2-struttura-e-campo-di-applicazione)
+  - [2.1 Struttura](#21-struttura)
+  - [2.2 Campo di applicazione](#22-campo-di-applicazione)
+- [3. Griglia delle sanzioni e disposizioni penali](#3-griglia-delle-sanzioni-e-disposizioni-penali)
+  - [3.1 Livello 1](#31-livello-1)
+  - [3.2 Livello 2](#32-livello-2)
+  - [3.3 Livello 3](#33-livello-3)
+  - [3.4 Livello 4](#34-livello-4)
+- [4. Procedura di segnalazione](#4-procedura-di-segnalazione)
+- [5. Modulo di segnalazione](#5-modulo-di-segnalazione)
 
 ---
 

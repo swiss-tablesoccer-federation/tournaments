@@ -91,15 +91,3 @@ Bitsch / Därstetten / Uetendorf
 
 - [Squadre](/assets/docs/stl/league-2014-2015-teams.pdf)
 - [Classifica](/assets/docs/stl/league-2015-2016-standings-legacy.pdf)
-
-## Swiss Tablesoccer Cup
-
-#### 2027
-
-- [Coral STC 2027](https://app.tablesoccer.org/p/6JN33Z)
-
-#### 2026
-
-- [Bando di concorso](/assets/docs/stl/cup-2026-announcement.pdf)
-- [Regolamento](/assets/docs/stl/cup-2026-regulations.pdf)
-- [Coral STC 2026](https://app.tablesoccer.org/p/ZMGOLZ/)

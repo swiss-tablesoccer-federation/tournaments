@@ -4,25 +4,34 @@
 
 | | |
 |---|---|
-| **Valid from** | 01.11.2021 |
-| **Created on** | 30.10.2021 |
-| **Created by** | Benedikt Rentsch |
+| Valid from | 01.11.2021 |
+| Amendments | See change log |
+| Created on | 30.10.2021 |
+| Created by | Benedikt Rentsch |
 
 ---
 
-## Contents
+## Change Log
 
-1. [Introduction](#1-introduction)
-2. [Structure and scope](#2-structure-and-scope)
-   - 2.1 [Structure](#21-structure)
-   - 2.2 [Scope](#22-scope)
-3. [Sanction grid and penal provisions](#3-sanction-grid-and-penal-provisions)
-   - 3.1 [Level 1](#31-level-1)
-   - 3.2 [Level 2](#32-level-2)
-   - 3.3 [Level 3](#33-level-3)
-   - 3.4 [Level 4](#34-level-4)
-4. [Reporting procedure](#4-reporting-procedure)
-5. [Reporting form](#5-reporting-form)
+| Version | Date | Authors | Remarks |
+|---|---|---|---|
+| 2021.1 | 01.11.2021 | B. Rentsch | Initial publication and entry into force |
+
+---
+
+## Table of Contents
+
+- [1. Introduction](#1-introduction)
+- [2. Structure and scope](#2-structure-and-scope)
+  - [2.1 Structure](#21-structure)
+  - [2.2 Scope](#22-scope)
+- [3. Sanction grid and penal provisions](#3-sanction-grid-and-penal-provisions)
+  - [3.1 Level 1](#31-level-1)
+  - [3.2 Level 2](#32-level-2)
+  - [3.3 Level 3](#33-level-3)
+  - [3.4 Level 4](#34-level-4)
+- [4. Reporting procedure](#4-reporting-procedure)
+- [5. Reporting form](#5-reporting-form)
 
 ---
 

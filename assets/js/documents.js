@@ -95,6 +95,15 @@ var DOCUMENT_CATEGORIES = [
   {
     key: 'documentsCategory_sport',
     docs: [
+      {
+        key: 'documentsDoc_reglementNationalmannschaften',
+        files: {
+          de: 'reglement-nationalmannschaften-DE.md',
+          en: 'reglement-nationalmannschaften-EN.md',
+          fr: 'reglement-nationalmannschaften-FR.md',
+          it: 'reglement-nationalmannschaften-IT.md'
+        }
+      },
       { 
         key: 'documentsDoc_reglementQualifikationItsfWorldCup', 
         files: {
@@ -122,6 +131,15 @@ var DOCUMENT_CATEGORIES = [
           it: 'reglement-swiss-tablesoccer-league-it.md'
         }
       },
+      {
+        key: 'documentsDoc_reglementSwissTablesoccerCup',
+        files: {
+          de: 'reglement-stc-de.md',
+          en: 'reglement-stc-en.md',
+          fr: 'reglement-stc-fr.md',
+          it: 'reglement-stc-it.md'
+        }
+      },
       { 
         key: 'documentsDoc_reglementIndividualsport', 
         files: {
@@ -142,6 +160,15 @@ var DOCUMENT_CATEGORIES = [
   {
     key: 'documentsCategory_rulingEthics',
     docs: [
+      {
+        key: 'documentsDoc_registerInteressenbindungen',
+        files: {
+          de: 'register-interessenbindungen-de.md',
+          en: 'register-interessenbindungen-en.md',
+          fr: 'register-interessenbindungen-fr.md',
+          it: 'register-interessenbindungen-it.md'
+        }
+      },
       { 
         key: 'documentsDoc_reglementDisziplinarverfahren', 
         files: {
@@ -615,7 +642,9 @@ function renderDocuments(skipInitialLoad) {
     $('<h2>').addClass('document-category-title').text(tr(category.key)).appendTo($section);
 
     var $links = $('<div>').addClass('document-links');
-    category.docs.forEach(function (doc) {
+    category.docs.slice().sort(function (a, b) {
+      return tr(a.key).localeCompare(tr(b.key), getActiveLang(), { sensitivity: 'base' });
+    }).forEach(function (doc) {
       var file = getDocFile(doc);
       var title;
       var $link;

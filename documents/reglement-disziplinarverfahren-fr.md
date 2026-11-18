@@ -4,25 +4,34 @@
 
 | | |
 |---|---|
-| **Valable à partir du** | 01 novembre 2021 |
-| **Créé le** | 30 octobre 2021 |
-| **Créé par** | Benedikt Rentsch |
+| Valable à partir du | 01.11.2021 |
+| Modifications | Voir le registre des modifications |
+| Créé le | 30.10.2021 |
+| Créé par | Benedikt Rentsch |
 
 ---
 
-## Contenu
+## Registre des modifications
 
-1. [Introduction](#1-introduction)
-2. [Structure et champ d'application](#2-structure-et-champ-dapplication)
-   - 2.1 [Structure](#21-structure)
-   - 2.2 [Champ d'application](#22-champ-dapplication)
-3. [Grille des sanctions et dispositions pénales](#3-grille-des-sanctions-et-dispositions-pénales)
-   - 3.1 [Niveau 1](#31-niveau-1)
-   - 3.2 [Niveau 2](#32-niveau-2)
-   - 3.3 [Niveau 3](#33-niveau-3)
-   - 3.4 [Niveau 4](#34-niveau-4)
-4. [Procédure de notification](#4-procédure-de-notification)
-5. [Formulaire de déclaration](#5-formulaire-de-déclaration)
+| Version | Date | Auteurs | Remarques |
+|---|---|---|---|
+| 2021.1 | 01.11.2021 | B. Rentsch | Publication initiale et entrée en vigueur |
+
+---
+
+## Table des matières
+
+- [1. Introduction](#1-introduction)
+- [2. Structure et champ d'application](#2-structure-et-champ-dapplication)
+  - [2.1 Structure](#21-structure)
+  - [2.2 Champ d'application](#22-champ-dapplication)
+- [3. Grille des sanctions et dispositions pénales](#3-grille-des-sanctions-et-dispositions-penales)
+  - [3.1 Niveau 1](#31-niveau-1)
+  - [3.2 Niveau 2](#32-niveau-2)
+  - [3.3 Niveau 3](#33-niveau-3)
+  - [3.4 Niveau 4](#34-niveau-4)
+- [4. Procédure de notification](#4-procedure-de-notification)
+- [5. Formulaire de déclaration](#5-formulaire-de-declaration)
 
 ---
 

@@ -4,25 +4,34 @@
 
 | | |
 |---|---|
-| **Gültig ab** | 01.11.2021 |
-| **Erstellt am** | 30.10.2021 |
-| **Erstellt durch** | Benedikt Rentsch |
+| Gültig ab | 01.11.2021 |
+| Anpassungen | Gemäss Änderungsverzeichnis |
+| Erstellt am | 30.10.2021 |
+| Erstellt durch | Benedikt Rentsch |
 
 ---
 
-## Inhalt
+## Änderungsverzeichnis
 
-1. [Einleitung](#1-einleitung)
-2. [Aufbau und Geltungsbereich](#2-aufbau-und-geltungsbereich)
-   - 2.1 [Aufbau](#21-aufbau)
-   - 2.2 [Geltungsbereich](#22-geltungsbereich)
-3. [Sanktionsraster und Strafbestimmungen](#3-sanktionsraster-und-strafbestimmungen)
-   - 3.1 [Stufe 1](#31-stufe-1)
-   - 3.2 [Stufe 2](#32-stufe-2)
-   - 3.3 [Stufe 3](#33-stufe-3)
-   - 3.4 [Stufe 4](#34-stufe-4)
-4. [Meldeverfahren](#4-meldeverfahren)
-5. [Meldeformular](#5-meldeformular)
+| Version | Datum | Autoren | Bemerkungen |
+|---|---|---|---|
+| 2021.1 | 01.11.2021 | B. Rentsch | Initiale Veröffentlichung und Inkraftsetzung |
+
+---
+
+## Inhaltsverzeichnis
+
+- [1. Einleitung](#1-einleitung)
+- [2. Aufbau und Geltungsbereich](#2-aufbau-und-geltungsbereich)
+  - [2.1 Aufbau](#21-aufbau)
+  - [2.2 Geltungsbereich](#22-geltungsbereich)
+- [3. Sanktionsraster und Strafbestimmungen](#3-sanktionsraster-und-strafbestimmungen)
+  - [3.1 Stufe 1](#31-stufe-1)
+  - [3.2 Stufe 2](#32-stufe-2)
+  - [3.3 Stufe 3](#33-stufe-3)
+  - [3.4 Stufe 4](#34-stufe-4)
+- [4. Meldeverfahren](#4-meldeverfahren)
+- [5. Meldeformular](#5-meldeformular)
 
 ---
 

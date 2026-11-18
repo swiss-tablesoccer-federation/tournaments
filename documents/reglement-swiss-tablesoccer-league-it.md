@@ -2,9 +2,52 @@
 
 # Regolamento - Swiss Tablesoccer League
 
-Versione 2.3_2026
+| | |
+|---|---|
+| Valido dal | 11.03.2017 |
+| Modifiche | Vedere il registro delle modifiche |
+| Creato il | 11.03.2017 |
+| Creato da | Peter Felder |
 
 *Il presente documento è stato originariamente redatto in tedesco. La versione tedesca fa fede in forma scritta e orale. Le versioni in altre lingue sono state in parte realizzate mediante traduzione elettronica.*
+
+---
+
+## Registro delle modifiche
+
+| Versione | Data | Autori | Osservazioni |
+|---|---|---|---|
+|  |  |  | Modifiche precedenti: storico delle modifiche non più disponibile |
+| 2026.1 | 12.01.2026 | H. Wallimann | Versione esistente (in precedenza versione 2.3_2026) |
+| 2026.2 | 17.11.2026 | H. Wallimann | Punto 2.4 rimosso perché gli obblighi finanziari sono già disciplinati al punto 3.1; punto 2.6 rimosso |
+
+---
+
+## Indice
+
+- [Disposizioni generali](#disposizioni-generali)
+  - [1. Competenza](#1-competenza)
+  - [2. Licenza](#2-licenza)
+  - [3. Obblighi finanziari](#3-obblighi-finanziari)
+  - [4. Nome della squadra](#4-nome-della-squadra)
+  - [5. Marketing](#5-marketing)
+  - [6. Abbigliamento](#6-abbigliamento)
+  - [7. Titoli e premi](#7-titoli-e-premi)
+  - [8. Richieste di risarcimento nei confronti della STF](#8-richieste-di-risarcimento-nei-confronti-della-stf)
+  - [9. Clausola di salvaguardia](#9-clausola-di-salvaguardia)
+- [Regolamento di gioco](#regolamento-di-gioco)
+  - [1. Tavoli e palline](#1-tavoli-e-palline)
+  - [2. Iscrizione delle squadre](#2-iscrizione-delle-squadre)
+  - [3. Mancata presentazione di una squadra](#3-mancata-presentazione-di-una-squadra)
+  - [4. Permesso di gioco e tesserino del giocatore](#4-permesso-di-gioco-e-tesserino-del-giocatore)
+  - [5. Suddivisione e nomi delle leghe](#5-suddivisione-e-nomi-delle-leghe)
+  - [6. Modalità](#6-modalita)
+    - [6.1 Modalità lega aperta](#61-modalita-lega-aperta)
+    - [6.2 Modalità lega femminile](#62-modalita-lega-femminile)
+  - [7. Valutazione delle partite](#7-valutazione-delle-partite)
+  - [8. Servizio e scelta del lato del tavolo](#8-servizio-e-scelta-del-lato-del-tavolo)
+  - [9. Doppio decisivo](#9-doppio-decisivo)
+  - [10. Arbitri](#10-arbitri)
 
 ---
 
@@ -22,11 +65,7 @@ Versione 2.3_2026
 
 2.3 Le donne devono decidere se partecipare alla Tablesoccer League aperta o alla Tablesoccer League femminile.
 
-2.4 I giocatori e le giocatrici senza licenza annuale devono ottenere una licenza giornaliera per la Tablesoccer League. Questa unica licenza giornaliera è valida per l'intera competizione, anche se questa si svolge su più giorni.
-
-2.5 I giocatori possono giocare per un solo club nell'arco di un anno. Ciò significa che i giocatori non possono partecipare alla Swiss Tablesoccer Cup e alla Swiss Tablesoccer League per club diversi.
-
-2.6 In conformità con le direttive dell'ITSF, è vietato a un giocatore disputare la Champions League con un club e partecipare nello stesso anno sportivo a una lega nazionale con un altro club.
+2.4 I giocatori possono giocare per un solo club nell'arco di un anno. Ciò significa che i giocatori non possono partecipare alla Swiss Tablesoccer Cup e alla Swiss Tablesoccer League per club diversi.
 
 ## 3. Obblighi finanziari
 

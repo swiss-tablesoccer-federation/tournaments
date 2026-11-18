@@ -2,9 +2,52 @@
 
 # Reglement - Swiss Tablesoccer League
 
-Version 2.3_2026
+| | |
+|---|---|
+| Gültig ab | 11.03.2017 |
+| Anpassungen | Gemäss Änderungsverzeichnis |
+| Erstellt am | 11.03.2017 |
+| Erstellt durch | Peter Felder |
 
 *Das vorliegende Dokument ist in deutscher Sprache verfasst. Die deutsche Fassung gilt als Original in Wort und Schrift. Versionen in anderen Sprachen wurden teilweise mittels elektronischer Übersetzung erstellt.*
+
+---
+
+## Änderungsverzeichnis
+
+| Version | Datum | Autoren | Bemerkungen |
+|---|---|---|---|
+|  |  |  | Frühere Änderungen: Änderungsverlauf nicht mehr verfügbar |
+| 2026.1 | 12.01.2026 | H. Wallimann | Bestehende Version (bisher Version 2.3_2026) |
+| 2026.2 | 17.11.2026 | H. Wallimann | Punkt 2.4 entfernt, da die finanziellen Verpflichtungen bereits in Punkt 3.1 geregelt sind; Punkt 2.6 entfernt |
+
+---
+
+## Inhaltsverzeichnis
+
+- [Allgemeine Ordnung](#allgemeine-ordnung)
+  - [1. Zuständigkeit](#1-zustandigkeit)
+  - [2. Lizenz](#2-lizenz)
+  - [3. Finanzielle Verpflichtungen](#3-finanzielle-verpflichtungen)
+  - [4. Mannschaftsname](#4-mannschaftsname)
+  - [5. Vermarktung](#5-vermarktung)
+  - [6. Bekleidung](#6-bekleidung)
+  - [7. Titel und Preise](#7-titel-und-preise)
+  - [8. Schadenersatzansprüche gegen die STF](#8-schadenersatzanspruche-gegen-die-stf)
+  - [9. Salvatorische Klausel](#9-salvatorische-klausel)
+- [Spielordnung](#spielordnung)
+  - [1. Spieltische und Bälle](#1-spieltische-und-balle)
+  - [2. Mannschaftsmeldung](#2-mannschaftsmeldung)
+  - [3. Nichtantreten einer Mannschaft](#3-nichtantreten-einer-mannschaft)
+  - [4. Spielerlaubnis und Spielerpass](#4-spielerlaubnis-und-spielerpass)
+  - [5. Liga-Einteilung und Namen](#5-liga-einteilung-und-namen)
+  - [6. Modus](#6-modus)
+    - [6.1 Modus offene Liga](#61-modus-offene-liga)
+    - [6.2 Modus Damen Liga](#62-modus-damen-liga)
+  - [7. Spielwertung](#7-spielwertung)
+  - [8. Auflage, Tischseitenwahl](#8-auflage-tischseitenwahl)
+  - [9. Entscheidungsdoppel](#9-entscheidungsdoppel)
+  - [10. Schiedsrichter](#10-schiedsrichter)
 
 ---
 
@@ -22,11 +65,7 @@ Version 2.3_2026
 
 2.3 Die Damen müssen sich entscheiden, ob sie in der offenen Tablesoccer League oder in der Damen Tablesoccer League antreten möchten.
 
-2.4 Spieler und Spielerinnen ohne Jahreslizenz müssen für die Tablesoccer League eine Tageslizenz lösen. Diese eine Tageslizenz ist für den gesamten Wettbewerb gültig, auch wenn dieser über mehrere Tage dauert.
-
-2.5 Spielende dürfen während einem Jahr nur für einen Verein spielen. D.h. Spielende dürfen nicht für unterschiedliche Vereine am Swiss Tablesoccer Cup und an der Swiss Tablesoccer League antreten.
-
-2.6 Gemäss Richtlinien der ITSF ist es einem Spieler untersagt mit einem Verein die Championsleague zu bestreiten und im selben Spieljahr für einen anderen Verein in einer Landesliga teilzunehmen.
+2.4 Spielende dürfen während einem Jahr nur für einen Verein spielen. D.h. Spielende dürfen nicht für unterschiedliche Vereine am Swiss Tablesoccer Cup und an der Swiss Tablesoccer League antreten.
 
 ## 3. Finanzielle Verpflichtungen
 

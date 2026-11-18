@@ -1,5 +1,12 @@
-function syncStlTitle() {
-  var suffix = (typeof tr === 'function') ? tr('pageTitle_stl') : 'Swiss Tablesoccer League';
+function getCompetitionSlug() {
+  return document.documentElement.dataset.competition || 'stl';
+}
+
+function syncCompetitionTitle() {
+  var slug = getCompetitionSlug();
+  var suffix = (typeof tr === 'function')
+    ? tr('pageTitle_' + slug)
+    : (slug === 'stc' ? 'Swiss Tablesoccer Cup' : 'Swiss Tablesoccer League');
   document.title = 'Swiss Tablesoccer Federation - ' + suffix;
 }
 
@@ -12,7 +19,7 @@ function escapeHtml(value) {
     .replace(/'/g, '&#39;');
 }
 
-function parseStlMarkdown(markdown) {
+function parseCompetitionMarkdown(markdown) {
   var lines = String(markdown || '').replace(/\r\n/g, '\n').split('\n');
   var heroLines = [];
   var groups = [];
@@ -39,7 +46,7 @@ function parseStlMarkdown(markdown) {
   return { heroMarkdown: heroLines.join('\n').trim(), groups: groups };
 }
 
-function splitStlEditions(markdown) {
+function splitCompetitionEditions(markdown) {
   var introLines = [];
   var editions = [];
   var current = null;
@@ -58,7 +65,7 @@ function splitStlEditions(markdown) {
   return { intro: introLines.join('\n').trim(), editions: editions };
 }
 
-function renderStlEditions(editionList, headingLevel) {
+function renderCompetitionEditions(editionList, headingLevel) {
   return (editionList.intro ? marked.parse(editionList.intro) : '') +
     '<div class="stl-editions-grid">' +
       editionList.editions.map(function (edition) {
@@ -71,8 +78,8 @@ function renderStlEditions(editionList, headingLevel) {
     '</div>';
 }
 
-function renderStlContent(markdown, targetId) {
-  var parsed = parseStlMarkdown(markdown);
+function renderCompetitionContent(markdown, targetId) {
+  var parsed = parseCompetitionMarkdown(markdown);
   var parts = [];
 
   if (parsed.heroMarkdown) {
@@ -86,9 +93,9 @@ function renderStlContent(markdown, targetId) {
     parts.push('<h1 class="finals-main-title">' + escapeHtml(group.title) + '</h1>');
 
     if (!group.cards.length) {
-      var groupEditions = splitStlEditions(introMarkdown);
+      var groupEditions = splitCompetitionEditions(introMarkdown);
       if (groupEditions.editions.length) {
-        parts.push('<section class="stl-editions">' + renderStlEditions(groupEditions, 2) + '</section>');
+        parts.push('<section class="stl-editions">' + renderCompetitionEditions(groupEditions, 2) + '</section>');
       } else if (introHtml) {
         parts.push('<section class="stl-card">' + introHtml + '</section>');
       }
@@ -97,7 +104,7 @@ function renderStlContent(markdown, targetId) {
 
     group.cards.forEach(function (card, index) {
       var bodyMarkdown = card.bodyLines.join('\n').trim();
-      var editionList = splitStlEditions(bodyMarkdown);
+      var editionList = splitCompetitionEditions(bodyMarkdown);
       var mediaMarkdown = '';
       var mediaMatch = bodyMarkdown.match(/^\[?!\[[^\]]*\]\([^)]*\)(\]\([^)]*\))?\s*(\n|$)/);
 
@@ -105,7 +112,7 @@ function renderStlContent(markdown, targetId) {
         parts.push(
           '<section class="stl-editions">' +
             '<h2>' + escapeHtml(card.title) + '</h2>' +
-            renderStlEditions(editionList, 3) +
+            renderCompetitionEditions(editionList, 3) +
           '</section>'
         );
         return;
@@ -145,19 +152,20 @@ function renderStlContent(markdown, targetId) {
   $('#' + targetId).html(parts.join(''));
 }
 
-function loadStlMarkdown() {
+function loadCompetitionMarkdown() {
+  var slug = getCompetitionSlug();
   var lang = (typeof currentLang !== 'undefined' ? currentLang : 'de');
-  var $target = $('#stl-content');
-  var primary = './stl-' + lang + '.md';
+  var $target = $('#competition-content');
+  var primary = './' + slug + '-' + lang + '.md';
 
   fetch(primary)
     .then(function (res) {
-      if (!res.ok) return fetch('./stl-de.md');
+      if (!res.ok) return fetch('./' + slug + '-de.md');
       return res;
     })
     .then(function (res) { return res.text(); })
     .then(function (text) {
-      renderStlContent(text, 'stl-content');
+      renderCompetitionContent(text, 'competition-content');
     })
     .catch(function () {
       $target.html('<p class="text-danger">Inhalt konnte nicht geladen werden.</p>');
@@ -165,11 +173,11 @@ function loadStlMarkdown() {
 }
 
 $(function () {
-  syncStlTitle();
-  loadStlMarkdown();
+  syncCompetitionTitle();
+  loadCompetitionMarkdown();
 
   document.addEventListener('langChanged', function () {
-    syncStlTitle();
-    loadStlMarkdown();
+    syncCompetitionTitle();
+    loadCompetitionMarkdown();
   });
 });
