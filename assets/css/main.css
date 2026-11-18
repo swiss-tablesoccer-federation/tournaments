@@ -2561,7 +2561,7 @@ html.page-stl .stl-edition p:last-child {
 }
 
 html.page-stl .stl-edition ul,
-html.page-stl .stl-row.is-reversed > .stl-card:not(.stl-card-media) ul {
+html.page-stl[data-competition] .stl-row.is-reversed > .stl-card:not(.stl-card-media) ul {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.5rem;
@@ -2570,19 +2570,19 @@ html.page-stl .stl-row.is-reversed > .stl-card:not(.stl-card-media) ul {
   padding: 1.25rem 0 0;
 }
 
-html.page-stl .stl-row.is-reversed > .stl-card:not(.stl-card-media) ul {
+html.page-stl[data-competition] .stl-row.is-reversed > .stl-card:not(.stl-card-media) ul {
   grid-template-columns: repeat(2, minmax(0, 10rem));
   margin: 0;
   padding-top: 0;
 }
 
 html.page-stl .stl-edition li + li,
-html.page-stl .stl-row.is-reversed > .stl-card:not(.stl-card-media) li + li {
+html.page-stl[data-competition] .stl-row.is-reversed > .stl-card:not(.stl-card-media) li + li {
   margin-top: 0;
 }
 
 html.page-stl .stl-edition li a,
-html.page-stl .stl-row.is-reversed > .stl-card:not(.stl-card-media) li a,
+html.page-stl[data-competition] .stl-row.is-reversed > .stl-card:not(.stl-card-media) li a,
 html.page-finals .competition-action {
   display: flex;
   align-items: center;
@@ -2601,8 +2601,8 @@ html.page-finals .competition-action {
 
 html.page-stl .stl-edition li a:hover,
 html.page-stl .stl-edition li a:focus-visible,
-html.page-stl .stl-row.is-reversed > .stl-card:not(.stl-card-media) li a:hover,
-html.page-stl .stl-row.is-reversed > .stl-card:not(.stl-card-media) li a:focus-visible,
+html.page-stl[data-competition] .stl-row.is-reversed > .stl-card:not(.stl-card-media) li a:hover,
+html.page-stl[data-competition] .stl-row.is-reversed > .stl-card:not(.stl-card-media) li a:focus-visible,
 html.page-finals .competition-action:hover,
 html.page-finals .competition-action:focus-visible {
   background: #E30613;
@@ -2655,23 +2655,31 @@ html.page-stl .stl-card-media p {
   margin: 0;
 }
 
-html.page-stc .stc-logo-content {
+html.page-stc .stc-logo-content,
+html[data-competition="stl"] .stc-logo-content,
+html.page-finals.page-stl .stc-logo-content {
   width: 100%;
   text-align: center;
 }
 
-html.page-stc .stl-row > .stl-card-media {
+html.page-stc .stl-row > .stl-card-media,
+html[data-competition="stl"] .stl-row:not(.is-reversed) > .stl-card-media,
+html.page-finals.page-stl .stl-row > .finals-logo-card {
   align-items: stretch;
   border-top: 3px solid #E30613;
 }
 
-html.page-stc .stl-card-media .stc-logo-content {
+html.page-stc .stl-card-media .stc-logo-content,
+html[data-competition="stl"] .stl-card-media .stc-logo-content,
+html.page-finals.page-stl .stl-card-media .stc-logo-content {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-html.page-stc .stl-card-media .stc-logo-content img {
+html.page-stc .stl-card-media .stc-logo-content img,
+html[data-competition="stl"] .stl-card-media .stc-logo-content img,
+html.page-finals.page-stl .stl-card-media .stc-logo-content img {
   display: block;
   width: auto;
   max-width: 100%;
@@ -2679,19 +2687,29 @@ html.page-stc .stl-card-media .stc-logo-content img {
   margin: 0 auto 2rem;
 }
 
-html.page-stc .stl-card-media .stc-logo-content h4 {
-  margin: auto 0 1.9rem;
+html.page-stc .stl-card-media .stc-logo-content h4,
+html[data-competition="stl"] .stl-card-media .stc-logo-content h4 {
+  margin: auto 0 0.65rem;
   color: #E30613;
   font-size: 1.35rem;
   text-align: left;
 }
 
-html.page-stc .stc-actions {
+html.page-stc .stc-actions,
+html[data-competition="stl"] .stc-actions,
+html.page-finals.page-stl .stc-actions {
   display: flex;
   gap: 0.5rem;
 }
 
-html.page-stc .stc-actions a {
+html.page-finals.page-stl .finals-logo-card .stc-actions {
+  margin-top: auto;
+}
+
+html.page-stc .stc-actions a,
+html[data-competition="stl"] .stc-actions a,
+html[data-competition="stl"] .stc-actions button,
+html.page-finals.page-stl .stc-actions a {
   display: flex;
   flex: 1 1 0;
   align-items: center;
@@ -2708,8 +2726,19 @@ html.page-stc .stc-actions a {
   text-decoration: none;
 }
 
+html[data-competition="stl"] .stc-actions button:disabled {
+  background: #f8f8f8;
+  border-color: #ccc;
+  color: #777;
+  cursor: not-allowed;
+}
+
 html.page-stc .stc-actions a:hover,
-html.page-stc .stc-actions a:focus-visible {
+html.page-stc .stc-actions a:focus-visible,
+html[data-competition="stl"] .stc-actions a:hover,
+html[data-competition="stl"] .stc-actions a:focus-visible,
+html.page-finals.page-stl .stc-actions a:hover,
+html.page-finals.page-stl .stc-actions a:focus-visible {
   background: #E30613;
   color: #fff;
 }

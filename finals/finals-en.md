@@ -1,6 +1,17 @@
 # Swiss Championship
 
-The best players in Switzerland qualify for the Swiss Championship and compete in doubles and singles for Swiss table soccer titles.
+Switzerland's best players compete for the Swiss singles and doubles titles at the **Swiss Tablesoccer Finals**. Qualification follows the criteria in the [**Individual Sport Regulations**](/documents/?doc=reglement-individualsport-en.md): as defending champions or through the [**Swiss Tablesoccer Series**](/rankings/), [**ITSF World Ranking**](https://tablesoccer.org/rankings/) and [**Players4Players Ranking**](https://www.players4players.de/en/p4prankings/top10).
+
+The competition is played in various categories in a multi-table format on Garlando, Leonhart and Ullrich tables.
+
+<div class="stc-logo-content">
+  <img src="../assets/img/logo-finals.png" alt="Swiss Championship" />
+  <div class="stc-actions">
+    <a href="https://app.tablesoccer.org/p/ZVLGP6">Coral</a>
+    <a href="https://s3.tablesoccer.org/tournament/STF/ZVLGP6/info_package.pdf">Announcement</a>
+    <a href="/documents/?doc=reglement-individualsport-en.md">Regulations</a>
+  </div>
+</div>
 
 ## Disciplines
 
@@ -27,15 +38,14 @@ The Swiss Championship is played in multi-table mode. This means each team and s
 
 The final stage includes the top 16 teams in men's categories and the top 8 teams in women's categories. It is played in single-elimination format. Finalists are determined through the round of 16, quarterfinals, and semifinals. Winners are decided in best-of-5 format. In the deciding set, from 4:4 onward, a 2-goal difference is required to win. Play continues up to a maximum of 8 goals.
 
-## More Information
+## Past Events
 
-More information about the Swiss Championship is available on Coral and under Documents.
+#### Swiss champions since 2009
 
-<div class="competition-actions">
-<a class="competition-action" href="https://app.tablesoccer.org/p/ZVLGP6">Coral</a>
-<a class="competition-action" href="/documents/?doc=reglement-individualsport-en.md">Individual Sport Regulations</a>
-</div>
+- [Hall of Fame](/hall-of-fame/)
 
-In the Hall of Fame, you will find all top-3 placements of the Swiss Championships since 2009.
+#### 2025
 
-<a class="competition-action" href="/hall-of-fame/">Hall of Fame</a>
+- [Coral](https://app.tablesoccer.org/p/7GREGZ)
+- [Announcement](https://s3.tablesoccer.org/tournament/STF/7GREGZ/info_package.pdf)
+- [Regulations](/documents/?doc=reglement-individualsport-en.md)

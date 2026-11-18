@@ -1,6 +1,17 @@
 # Championnat suisse
 
-Les meilleures joueuses et les meilleurs joueurs de Suisse se qualifient pour le Championnat suisse et disputent les titres nationaux de baby-foot en double et en simple.
+Les meilleures joueuses et les meilleurs joueurs de Suisse se disputent les titres de championne et de champion suisse en double et en simple lors des **Swiss Tablesoccer Finals**. La qualification suit les critères du [**règlement du sport individuel**](/documents/?doc=reglement-individualsport-fr.md) : en tant que tenant du titre ou par les classements des [**Swiss Tablesoccer Series**](/rankings/), du [**classement mondial ITSF**](https://tablesoccer.org/rankings/) et du [**classement Players4Players**](https://www.players4players.de/en/p4prankings/top10).
+
+La compétition se joue dans différentes catégories au format multi-table, sur Garlando, Leonhart et Ullrich.
+
+<div class="stc-logo-content">
+  <img src="../assets/img/logo-finals.png" alt="Championnat suisse" />
+  <div class="stc-actions">
+    <a href="https://app.tablesoccer.org/p/ZVLGP6">Coral</a>
+    <a href="https://s3.tablesoccer.org/tournament/STF/ZVLGP6/info_package.pdf">Annonce</a>
+    <a href="/documents/?doc=reglement-individualsport-fr.md">Règlement</a>
+  </div>
+</div>
 
 ## Disciplines
 
@@ -27,15 +38,14 @@ Le Championnat suisse se joue en mode multi-table. Cela signifie qu'à l'inscrip
 
 La phase finale réunit les 16 meilleures équipes chez les hommes et 8 équipes chez les dames. Elle se joue en élimination directe. Les finalistes sont déterminés via les huitièmes, quarts et demi-finales. Les vainqueurs sont déterminés au format best-of-5. Dans le set décisif, à partir de 4:4, un écart de 2 buts est nécessaire pour gagner. Le jeu va jusqu'à un maximum de 8 buts.
 
-## Plus d'informations
+## Éditions précédentes
 
-Tu trouveras plus d'informations sur le Championnat suisse sur Coral et dans les documents.
+#### Champions suisses depuis 2009
 
-<div class="competition-actions">
-<a class="competition-action" href="https://app.tablesoccer.org/p/ZVLGP6">Coral</a>
-<a class="competition-action" href="/documents/?doc=reglement-individualsport-fr.md">Règlement du sport individuel</a>
-</div>
+- [Hall of Fame](/hall-of-fame/)
 
-Dans le Hall of Fame, tu trouveras tous les podiums (top 3) des Championnats suisses depuis 2009.
+#### 2025
 
-<a class="competition-action" href="/hall-of-fame/">Hall of Fame</a>
+- [Coral](https://app.tablesoccer.org/p/7GREGZ)
+- [Annonce](https://s3.tablesoccer.org/tournament/STF/7GREGZ/info_package.pdf)
+- [Règlement](/documents/?doc=reglement-individualsport-fr.md)

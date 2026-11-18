@@ -1,6 +1,17 @@
 # Schweizermeisterschaft
 
-Die besten Spielerinnen und Spieler der Schweiz qualifizieren sich für die Schweizermeisterschaft und spielen im Doppel und Einzel um Schweizermeistertitel im Tischfussball-Sport.
+Die besten Spielerinnen und Spieler der Schweiz kämpfen an den **Swiss Tablesoccer Finals** um die Schweizermeistertitel im Doppel und Einzel. Die Qualifikation erfolgt nach den Kriterien des [**Reglements Individualsport**](/documents/?doc=reglement-individualsport-de.md): als Titelverteidiger oder über die Ranglisten der [**Swiss Tablesoccer Series**](/rankings/), des [**ITSF World Rankings**](https://tablesoccer.org/rankings/) und des [**Players4Players Rankings**](https://www.players4players.de/en/p4prankings/top10).
+
+Gespielt wird in verschiedenen Kategorien und im Multi-Table-Format auf Garlando, Leonhart und Ullrich.
+
+<div class="stc-logo-content">
+  <img src="../assets/img/logo-finals.png" alt="Schweizermeisterschaft" />
+  <div class="stc-actions">
+    <a href="https://app.tablesoccer.org/p/ZVLGP6">Coral</a>
+    <a href="https://s3.tablesoccer.org/tournament/STF/ZVLGP6/info_package.pdf">Ausschreibung</a>
+    <a href="/documents/?doc=reglement-individualsport-de.md">Reglement</a>
+  </div>
+</div>
 
 ## Disziplinen
 
@@ -27,15 +38,14 @@ Es werden 6 Vorrunden im Best-of-3 Modus gespielt. Trifft ein Garlando-Team auf 
 
 Für die Finalrunde qualifizieren sich die 16 bestplatzierten Teams bei den Herren und 8 Teams bei den Damen. Die Finalrunde wird im Single-KO-Modus gespielt. Über Achtelfinale, Viertelfinale und Halbfinale werden die Finalisten gefunden. Die Sieger werden jeweils im Best-of-5-Modus ermittelt. Im Entscheidungssatz ist ab dem Stand von 4:4 eine Differenz von 2 Toren für den Sieg notwendig. Gespielt wird bis maximal 8 Tore.
 
-## Weitere Informationen
+## Vergangene Austragungen
 
-Weitere Informationen zur Schweizermeisterschaft findest du auf Coral und unter Dokumente.
+#### Schweizermeister seit 2009
 
-<div class="competition-actions">
-<a class="competition-action" href="https://app.tablesoccer.org/p/ZVLGP6">Coral</a>
-<a class="competition-action" href="/documents/?doc=reglement-individualsport-de.md">Reglement Individualsport</a>
-</div>
+- [Hall of Fame](/hall-of-fame/)
 
-In der Hall of Fame findest du alle Top-3 Platzierungen der Schweizermeisterschaften seit 2009.
+#### 2025
 
-<a class="competition-action" href="/hall-of-fame/">Hall of Fame</a>
+- [Coral](https://app.tablesoccer.org/p/7GREGZ)
+- [Ausschreibung](https://s3.tablesoccer.org/tournament/STF/7GREGZ/info_package.pdf)
+- [Reglement](/documents/?doc=reglement-individualsport-de.md)

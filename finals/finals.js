@@ -6,8 +6,7 @@ function syncFinalsTitle() {
 var FINALS_IMAGES = [
   '../assets/img/finals-01.png',
   '../assets/img/finals-02.png',
-  '../assets/img/finals-03.png',
-  '../assets/img/finals-04.png'
+  '../assets/img/finals-03.png'
 ];
 
 function escapeHtml(value) {
@@ -60,35 +59,55 @@ function splitMarkdownSections(markdown) {
 function renderFinalsContent(markdown, targetId) {
   var parsed = splitMarkdownSections(markdown);
   var parts = [];
+  var $intro = $('<div>').html(marked.parse(parsed.introMarkdown));
+  var $logo = $intro.find('.stc-logo-content').first().detach();
+
+  if (!$logo.length) throw new Error('Finals logo card is missing');
 
   if (parsed.h1) {
     parts.push('<h1 class="finals-main-title">' + escapeHtml(parsed.h1) + '</h1>');
   }
 
-  if (parsed.introMarkdown) {
-    parts.push('<div class="finals-intro">' + marked.parse(parsed.introMarkdown) + '</div>');
-  }
+  parts.push(
+    '<div class="stl-row">' +
+      '<section class="stl-card stl-card-media finals-logo-card">' + $logo[0].outerHTML + '</section>' +
+      '<section class="stl-card">' + $intro.html() + '</section>' +
+    '</div>'
+  );
 
   parsed.sections.forEach(function (section, index) {
     var bodyMarkdown = section.bodyLines.join('\n').trim();
+    var editions = splitCompetitionEditions(bodyMarkdown);
+
+    if (editions.editions.length) {
+      parts.push(
+        '<section class="stl-editions">' +
+          '<h2>' + escapeHtml(section.title) + '</h2>' +
+          renderCompetitionEditions(editions, 3) +
+        '</section>'
+      );
+      return;
+    }
+
     var bodyHtml = bodyMarkdown ? marked.parse(bodyMarkdown) : '';
-    var image = FINALS_IMAGES[index % FINALS_IMAGES.length];
-    var reversed = (index % 2 === 1) ? ' is-reversed' : '';
+    var reversed = index % 2 === 0;
+    var media = '<section class="stl-card stl-card-media stl-card-photo">' +
+      '<img src="' + escapeHtml(FINALS_IMAGES[index % FINALS_IMAGES.length]) + '" alt="" loading="lazy" decoding="async" />' +
+      '</section>';
+    var content = '<section class="stl-card">' +
+      '<h2>' + escapeHtml(section.title) + '</h2>' +
+      bodyHtml +
+      '</section>';
 
     parts.push(
-      '<section class="finals-split-section' + reversed + '">' +
-        '<div class="finals-section-media">' +
-          '<img src="' + escapeHtml(image) + '" alt="Schweizermeisterschaft" loading="lazy" decoding="async" />' +
-        '</div>' +
-        '<div class="finals-section-text">' +
-          '<h2>' + escapeHtml(section.title) + '</h2>' +
-          bodyHtml +
-        '</div>' +
-      '</section>'
+      '<div class="stl-row' + (reversed ? ' is-reversed' : '') + '">' +
+        (reversed ? content + media : media + content) +
+      '</div>'
     );
   });
 
   $('#' + targetId).html(parts.join(''));
+  openExternalCompetitionButtonsInNewTab(document.getElementById(targetId));
 }
 
 function loadFinalsMarkdown() {

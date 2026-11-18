@@ -1,6 +1,17 @@
 # Campionato svizzero
 
-Le migliori giocatrici e i migliori giocatori della Svizzera si qualificano per il Campionato svizzero e competono in doppio e singolo per i titoli svizzeri di calcio balilla.
+Le migliori giocatrici e i migliori giocatori della Svizzera si contendono i titoli di campione svizzero in doppio e singolo alle **Swiss Tablesoccer Finals**. La qualificazione avviene secondo i criteri del [**regolamento dello sport individuale**](/documents/?doc=reglement-individualsport-it.md): come campioni in carica o tramite le classifiche delle [**Swiss Tablesoccer Series**](/rankings/), della [**classifica mondiale ITSF**](https://tablesoccer.org/rankings/) e della [**classifica Players4Players**](https://www.players4players.de/en/p4prankings/top10).
+
+La competizione si svolge in diverse categorie e in formato multi-table su Garlando, Leonhart e Ullrich.
+
+<div class="stc-logo-content">
+  <img src="../assets/img/logo-finals.png" alt="Campionato svizzero" />
+  <div class="stc-actions">
+    <a href="https://app.tablesoccer.org/p/ZVLGP6">Coral</a>
+    <a href="https://s3.tablesoccer.org/tournament/STF/ZVLGP6/info_package.pdf">Bando di concorso</a>
+    <a href="/documents/?doc=reglement-individualsport-it.md">Regolamento</a>
+  </div>
+</div>
 
 ## Discipline
 
@@ -27,15 +38,14 @@ Si disputano 6 partite di fase a gironi nel formato best-of-3. Se una squadra Ga
 
 Alla fase finale accedono le migliori 16 squadre nelle categorie maschili e 8 squadre nelle categorie femminili. La fase finale si gioca a eliminazione diretta. Le finaliste vengono determinate tramite ottavi, quarti e semifinali. Le vincitrici e i vincitori sono determinati al best-of-5. Nel set decisivo, dal 4:4 in poi, è necessaria una differenza di 2 gol per vincere. Si gioca fino a un massimo di 8 gol.
 
-## Ulteriori informazioni
+## Edizioni passate
 
-Trovi maggiori informazioni sul Campionato svizzero su Coral e nei documenti.
+#### Campioni svizzeri dal 2009
 
-<div class="competition-actions">
-<a class="competition-action" href="https://app.tablesoccer.org/p/ZVLGP6">Coral</a>
-<a class="competition-action" href="/documents/?doc=reglement-individualsport-it.md">Regolamento sport individuale</a>
-</div>
+- [Hall of Fame](/hall-of-fame/)
 
-Nella Hall of Fame trovi tutte le classifiche top-3 dei Campionati svizzeri dal 2009.
+#### 2025
 
-<a class="competition-action" href="/hall-of-fame/">Hall of Fame</a>
+- [Coral](https://app.tablesoccer.org/p/7GREGZ)
+- [Bando di concorso](https://s3.tablesoccer.org/tournament/STF/7GREGZ/info_package.pdf)
+- [Regolamento](/documents/?doc=reglement-individualsport-it.md)

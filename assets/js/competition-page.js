@@ -46,38 +46,6 @@ function parseCompetitionMarkdown(markdown) {
   return { heroMarkdown: heroLines.join('\n').trim(), groups: groups };
 }
 
-function splitCompetitionEditions(markdown) {
-  var introLines = [];
-  var editions = [];
-  var current = null;
-
-  markdown.split('\n').forEach(function (line) {
-    if (line.indexOf('#### ') === 0) {
-      current = { title: line.slice(5).trim(), bodyLines: [] };
-      editions.push(current);
-    } else if (current) {
-      current.bodyLines.push(line);
-    } else {
-      introLines.push(line);
-    }
-  });
-
-  return { intro: introLines.join('\n').trim(), editions: editions };
-}
-
-function renderCompetitionEditions(editionList, headingLevel) {
-  return (editionList.intro ? marked.parse(editionList.intro) : '') +
-    '<div class="stl-editions-grid">' +
-      editionList.editions.map(function (edition) {
-        var body = edition.bodyLines.join('\n').trim();
-        return '<article class="stl-card stl-edition">' +
-          '<h' + headingLevel + '>' + escapeHtml(edition.title) + '</h' + headingLevel + '>' +
-          (body ? marked.parse(body) : '') +
-          '</article>';
-      }).join('') +
-    '</div>';
-}
-
 function renderCompetitionContent(markdown, targetId) {
   var parsed = parseCompetitionMarkdown(markdown);
   var parts = [];
@@ -150,6 +118,7 @@ function renderCompetitionContent(markdown, targetId) {
   });
 
   $('#' + targetId).html(parts.join(''));
+  openExternalCompetitionButtonsInNewTab(document.getElementById(targetId));
 }
 
 function loadCompetitionMarkdown() {

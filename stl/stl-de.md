@@ -2,7 +2,15 @@
 
 ## Swiss Tablesoccer League
 
-![](./img/logo.webp)
+<div class="stc-logo-content">
+  <img src="./img/logo.webp" alt="Swiss Tablesoccer League" />
+  <h4>2027</h4>
+  <div class="stc-actions">
+    <a href="https://app.tablesoccer.org/p/ZY4XA6">Coral</a>
+    <button type="button" disabled>Ausschreibung</button>
+    <a href="/documents/?doc=reglement-swiss-tablesoccer-league-de.md">Reglement</a>
+  </div>
+</div>
 
 ### Was ist die Swiss Tablesoccer League?
 
@@ -21,8 +29,7 @@ Der **Schweizer Meister** (und je nach Teamanzahl weitere) qualifiziert sich fü
 
 Die Swiss Tablesoccer League findet am **5./6. Juni 2027** in der **Sporthalle Wohlen**, Schulgasse 18, 3033 **Wohlen bei Bern** statt.
 
-- [Anmeldung](https://app.tablesoccer.org/p/ZY4XA6)
-- [Reglement](/documents/?doc=reglement-swiss-tablesoccer-league-de.md)
+- [TFC Bern](https://www.instagram.com/tfc_bern/)
 
 ### Vergangene Austragungen
 
