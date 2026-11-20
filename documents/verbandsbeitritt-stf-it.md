@@ -2,6 +2,34 @@
 
 # Nuova ammissione di un'associazione alla STF
 
+| | |
+|---|---|
+| Data del documento | 13.07.2020 |
+| Modifiche | Vedere il registro delle modifiche |
+| Creato da | STF |
+
+---
+
+## Registro delle modifiche
+
+| Versione | Data | Autori | Osservazioni |
+|---|---|---|---|
+| — | 13.07.2020 | STF | Versione esistente |
+| 2026.1 | 20.11.2026 | Ph. Gamper | Rimossi i dettagli finanziari e aggiunti un riferimento al regolamento finanziario e un contatto Coral |
+
+---
+
+## Indice
+
+- [Adeguamento degli statuti](#adeguamento-degli-statuti)
+- [Disposizioni finanziarie](#disposizioni-finanziarie)
+- [Diritti](#diritti)
+- [Doveri](#doveri)
+- [Procedura per una nuova ammissione](#procedura-per-una-nuova-ammissione)
+- [Documenti richiesti (da inviare a info@swisstablesoccer.ch)](#documenti-richiesti-da-inviare-a-infoswisstablesoccerch)
+
+---
+
 Per una nuova ammissione come associazione o club alla Swiss Tablesoccer Federation (STF), occorre osservare e mettere in atto i seguenti punti:
 
 ## Adeguamento degli statuti
@@ -11,15 +39,14 @@ Le seguenti frasi devono essere inserite, con formulazione analoga, negli statut
 - "L'associazione xyz coltiva e promuove lo sport del calcio balilla."
 - "L'associazione xyz è membro della Swiss Tablesoccer Federation STF. I regolamenti e le decisioni della STF sono vincolanti per i membri e i funzionari dell'associazione xyz."
 
-## Contributo annuale del club alla STF
+## Disposizioni finanziarie
 
-Il club paga una licenza di CHF 150.00 per stagione.
+Le disposizioni finanziarie relative alle licenze dei club e alle licenze annuali sono definite nel [regolamento finanziario per tornei e licenze](/documents/?doc=finanzreglement-it.md).
 
 ## Diritti
 
 - Diritto di partecipazione e di voto all'Assemblea dei delegati della STF. Il membro dispone di un diritto di voto generale (ad esempio nelle votazioni sulle palline, ecc.)
 - Partecipazione delle squadre alla Swiss Tablesoccer League
-- Sconto sulle licenze annuali per i membri del club (CHF 50.00 anziché CHF 80.00)
 - Pubblicazione di tornei sulla homepage della STF
 - Organizzazione di tornei STS (procedura di candidatura)
 
@@ -27,7 +54,6 @@ Il club paga una licenza di CHF 150.00 per stagione.
 
 - Partecipazione all'Assemblea dei delegati della STF
 - Partecipazione alle votazioni generali
-- Pagamento della licenza del club
 
 ## Procedura per una nuova ammissione
 
@@ -43,13 +69,9 @@ L'articolo 10 degli statuti della STF disciplina l'ammissione come segue:
 - [ ] copia degli statuti
 - [ ] nome e indirizzi e-mail del/della presidente e del/della cassiere/a
 - [ ] indirizzo e-mail per l'invio di informazioni (può essere quello del presidente)
-- [ ] coordinate bancarie per eventuali rimborsi
+- [ ] nome e indirizzo e-mail della persona responsabile di Coral
 - [ ] per la homepage della STF:
   - elenco dei membri dell'associazione (con cognome e nome, sesso, data di nascita, e-mail)
   - logo in jpg o png
   - indirizzo della sede del club
   - indirizzo della homepage dell'associazione
-
----
-
-*Swiss Tablesoccer Federation, 13.07.2020*

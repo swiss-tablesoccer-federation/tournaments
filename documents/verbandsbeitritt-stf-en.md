@@ -2,6 +2,34 @@
 
 # New admission of a club to the STF
 
+| | |
+|---|---|
+| Document date | 13.07.2020 |
+| Amendments | See change log |
+| Created by | STF |
+
+---
+
+## Change Log
+
+| Version | Date | Authors | Remarks |
+|---|---|---|---|
+| — | 13.07.2020 | STF | Existing version |
+| 2026.1 | 20.11.2026 | Ph. Gamper | Removed financial details and added a reference to the financial regulations and a Coral contact |
+
+---
+
+## Table of Contents
+
+- [Amendment of the statutes](#amendment-of-the-statutes)
+- [Financial regulations](#financial-regulations)
+- [Rights](#rights)
+- [Duties](#duties)
+- [Procedure for a new admission](#procedure-for-a-new-admission)
+- [Required documents (to be sent to info@swisstablesoccer.ch)](#required-documents-to-be-sent-to-infoswisstablesoccerch)
+
+---
+
 To be newly admitted as an association or club to the Swiss Tablesoccer Federation (STF), the following points must be observed and implemented:
 
 ## Amendment of the statutes
@@ -11,15 +39,14 @@ The following sentences must be inserted, in suitable wording, into the statutes
 - "The association xyz cultivates and promotes the sport of tablesoccer."
 - "The association xyz is a member of the Swiss Tablesoccer Federation STF. The regulations and decisions of the STF are binding on the members and officers of the association xyz."
 
-## Annual contribution of the club to the STF
+## Financial regulations
 
-The club pays a licence fee of CHF 150.00 per season.
+The financial provisions for club and annual licences are set out in the [Financial Regulations for Tournaments & Licensing](/documents/?doc=finanzreglement-en.md).
 
 ## Rights
 
 - Right to attend and vote at the STF Delegates' Assembly. The member has a general voting right (for example for ball votes, etc.)
 - Participation of teams in the Swiss Tablesoccer League
-- Discount on annual licences for the members of the club (CHF 50.00 instead of CHF 80.00)
 - Announcement of tournaments on the STF homepage
 - Hosting of STS tournaments (application process)
 
@@ -27,7 +54,6 @@ The club pays a licence fee of CHF 150.00 per season.
 
 - Attendance at the STF Delegates' Assembly
 - Participation in general votes
-- Payment of the club licence
 
 ## Procedure for a new admission
 
@@ -43,13 +69,9 @@ Article 10 of the STF statutes governs admission as follows:
 - [ ] copy of the statutes
 - [ ] name and email addresses of the president and the treasurer
 - [ ] email address for the distribution of information (can be that of the president)
-- [ ] bank details for any refunds
+- [ ] name and email address of the person responsible for Coral
 - [ ] for the STF homepage:
   - membership list of the association (with surname/first name, gender, date of birth, email)
   - logo as jpg or png
   - address of the club premises
   - homepage address of the association
-
----
-
-*Swiss Tablesoccer Federation, 13.07.2020*
