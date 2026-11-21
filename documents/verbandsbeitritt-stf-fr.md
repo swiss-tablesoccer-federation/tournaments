@@ -1,6 +1,6 @@
 <img src="../assets/img/header.png" width="240" alt="">
 
-# Nouvelle admission d'un club à la Swiss Tablesoccer Federation
+# Adhésion à la fédération & demande d'admission
 
 | | |
 |---|---|
@@ -65,12 +65,12 @@ L'article 10 des statuts de la STF régit l'admission comme suit :
 
 ## Documents requis (à envoyer à info@swisstablesoccer.ch)
 
-- [ ] demande d'admission écrite
-- [ ] copie des statuts
-- [ ] nom et adresse électronique du président et du trésorier
-- [ ] adresse électronique pour l'envoi d'informations (peut être celle du président)
-- [ ] nom et adresse électronique de la personne responsable de Coral
-- [ ] pour la page d'accueil de la STF :
+- demande d'admission écrite
+- copie des statuts
+- nom et adresse électronique du président et du trésorier
+- adresse électronique pour l'envoi d'informations (peut être celle du président)
+- nom et adresse électronique de la personne responsable de Coral
+- pour la page d'accueil de la STF :
   - liste des membres de l'association (avec nom prénom, sexe, date de naissance, e-mail)
   - logo en jpg. ou png.
   - adresse du clubhouse

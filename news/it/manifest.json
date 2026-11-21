@@ -1,7 +1,16 @@
 {
   "crawledPages": 17,
-  "postCount": 101,
+  "postCount": 103,
   "posts": [
+    {
+      "title": "Swiss Tablesoccer Cup 2027",
+      "date": "18 nov.",
+      "author": "Scritto da Hannes Wallimann",
+      "sourceUrl": "https://www.swisstablesoccer.ch/home/swiss-tablesoccer-cup-2027-anmeldung",
+      "file": "2026-11-18-1906750d.md",
+      "images": 0,
+      "order": 0
+    },
     {
       "title": "Sviluppiamo insieme il calcio balilla svizzero",
       "date": "22 ott.",
@@ -13,10 +22,19 @@
     },
     {
       "title": "Doppio argento per la Svizzera: le squadre nazionali brillano a Saarbrücken",
-      "date": "12 ott.",
+      "date": "20 ott.",
       "author": "Scritto da Hannes Wallimann",
       "sourceUrl": "https://www.swisstablesoccer.ch/home/silber-im-doppelpack-schweizer-nationalteams-berzeugen-in-saarbrcken",
-      "file": "2026-10-12-5db0e881.md",
+      "file": "2026-10-20-5db0e881.md",
+      "images": 0,
+      "order": 0
+    },
+    {
+      "title": "Il primo Swiss Tablesoccer Cup è storia",
+      "date": "12 ott.",
+      "author": "Scritto da Hannes Wallimann",
+      "sourceUrl": "https://www.swisstablesoccer.ch/home/swiss-tablesoccer-cup-2026-akftu",
+      "file": "2026-10-12-cb2e08fd.md",
       "images": 0,
       "order": 0
     },

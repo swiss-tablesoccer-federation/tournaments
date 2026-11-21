@@ -1,6 +1,6 @@
 <img src="../assets/img/header.png" width="240" alt="">
 
-# New admission of a club to the STF
+# Federation Membership & Application
 
 | | |
 |---|---|
@@ -65,12 +65,12 @@ Article 10 of the STF statutes governs admission as follows:
 
 ## Required documents (to be sent to info@swisstablesoccer.ch)
 
-- [ ] written application for admission
-- [ ] copy of the statutes
-- [ ] name and email addresses of the president and the treasurer
-- [ ] email address for the distribution of information (can be that of the president)
-- [ ] name and email address of the person responsible for Coral
-- [ ] for the STF homepage:
+- written application for admission
+- copy of the statutes
+- name and email addresses of the president and the treasurer
+- email address for the distribution of information (can be that of the president)
+- name and email address of the person responsible for Coral
+- for the STF homepage:
   - membership list of the association (with surname/first name, gender, date of birth, email)
   - logo as jpg or png
   - address of the club premises

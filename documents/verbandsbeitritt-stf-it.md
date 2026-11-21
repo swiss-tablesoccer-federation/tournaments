@@ -1,6 +1,6 @@
 <img src="../assets/img/header.png" width="240" alt="">
 
-# Nuova ammissione di un'associazione alla STF
+# Adesione alla federazione & domanda di ammissione
 
 | | |
 |---|---|
@@ -65,12 +65,12 @@ L'articolo 10 degli statuti della STF disciplina l'ammissione come segue:
 
 ## Documenti richiesti (da inviare a info@swisstablesoccer.ch)
 
-- [ ] domanda di ammissione scritta
-- [ ] copia degli statuti
-- [ ] nome e indirizzi e-mail del/della presidente e del/della cassiere/a
-- [ ] indirizzo e-mail per l'invio di informazioni (può essere quello del presidente)
-- [ ] nome e indirizzo e-mail della persona responsabile di Coral
-- [ ] per la homepage della STF:
+- domanda di ammissione scritta
+- copia degli statuti
+- nome e indirizzi e-mail del/della presidente e del/della cassiere/a
+- indirizzo e-mail per l'invio di informazioni (può essere quello del presidente)
+- nome e indirizzo e-mail della persona responsabile di Coral
+- per la homepage della STF:
   - elenco dei membri dell'associazione (con cognome e nome, sesso, data di nascita, e-mail)
   - logo in jpg o png
   - indirizzo della sede del club

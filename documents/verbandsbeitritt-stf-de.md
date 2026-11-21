@@ -1,6 +1,6 @@
 <img src="../assets/img/header.png" width="240" alt="">
 
-# Neuaufnahme eines Vereins beim STF
+# Verbandsbeitritt & Aufnahmegesuch
 
 | | |
 |---|---|
@@ -65,12 +65,12 @@ Im Artikel 10 der Statuten des STF ist die Aufnahme wie folgt geregelt:
 
 ## Benötigte Unterlagen (senden an info@swisstablesoccer.ch)
 
-- [ ] schriftliches Aufnahmegesuch
-- [ ] Kopie der Statuten
-- [ ] Name und E-Mail-Adressen von Präsident-/in und Kassier/-erin
-- [ ] E-Mail-Adresse für den Informationsversand (kann jene des Präsidenten sein)
-- [ ] Name und E-Mail-Adresse des Coral-Verantwortlichen
-- [ ] für STF Homepage:
+- schriftliches Aufnahmegesuch
+- Kopie der Statuten
+- Name und E-Mail-Adressen von Präsident-/in und Kassier/-erin
+- E-Mail-Adresse für den Informationsversand (kann jene des Präsidenten sein)
+- Name und E-Mail-Adresse des Coral-Verantwortlichen
+- für STF Homepage:
   - Mitgliederliste des Vereins (mit Name Vorname, Geschlecht, Geburtsdatum, E-Mail)
   - Logo als jpg. oder png.
   - Adresse des Clublokals

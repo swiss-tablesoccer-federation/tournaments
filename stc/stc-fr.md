@@ -1,5 +1,3 @@
-![](../stl/img/hero.jpg)
-
 ## Swiss Tablesoccer Cup
 
 <div class="stc-logo-content">

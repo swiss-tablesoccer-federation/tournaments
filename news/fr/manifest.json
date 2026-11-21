@@ -1,7 +1,16 @@
 {
   "crawledPages": 17,
-  "postCount": 101,
+  "postCount": 103,
   "posts": [
+    {
+      "title": "Swiss Tablesoccer Cup 2027",
+      "date": "18 nov.",
+      "author": "Rédigé par Hannes Wallimann",
+      "sourceUrl": "https://www.swisstablesoccer.ch/home/swiss-tablesoccer-cup-2027-anmeldung",
+      "file": "2026-11-18-1906750d.md",
+      "images": 0,
+      "order": 0
+    },
     {
       "title": "Développons ensemble le football de table suisse",
       "date": "22 oct.",
@@ -13,10 +22,19 @@
     },
     {
       "title": "Deux médailles d'argent pour la Suisse : les équipes nationales brillent à Sarrebruck",
-      "date": "12 oct.",
+      "date": "20 oct.",
       "author": "Rédigé par Hannes Wallimann",
       "sourceUrl": "https://www.swisstablesoccer.ch/home/silber-im-doppelpack-schweizer-nationalteams-berzeugen-in-saarbrcken",
-      "file": "2026-10-12-5db0e881.md",
+      "file": "2026-10-20-5db0e881.md",
+      "images": 0,
+      "order": 0
+    },
+    {
+      "title": "Le premier Swiss Tablesoccer Cup est terminé",
+      "date": "12 oct.",
+      "author": "Rédigé par Hannes Wallimann",
+      "sourceUrl": "https://www.swisstablesoccer.ch/home/swiss-tablesoccer-cup-2026-akftu",
+      "file": "2026-10-12-cb2e08fd.md",
       "images": 0,
       "order": 0
     },

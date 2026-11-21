@@ -75,6 +75,7 @@ function getCategoryAbbr(catName) {
   if (n.indexOf('STS') !== -1 || n.indexOf('SERIES') !== -1) return 'STS';
   if (n.indexOf('STL') !== -1 || n.indexOf('LEAGUE') !== -1) return 'STL';
   if (n.indexOf('CUP') !== -1) return 'Cup';
+  if (n.indexOf('FINALS') !== -1) return 'Finals';
   return catName;
 }
 
@@ -95,7 +96,7 @@ function getItsfBadge(name) {
 
 /**
  * Return the background colour and font-size for a category badge.
- * Prominence order: STS > STRT+ > STRT > STL > Cup > (other)
+ * Prominence order: STS > STRT+ > STRT > STL / Cup / Finals > (other)
  */
 function getCategoryStyle(catName) {
   if (!catName) return { bg: '#666666' };
@@ -118,8 +119,8 @@ function getCategoryStyle(catName) {
     /* Swiss Tablesoccer League – red */
     return { bg: '#E30613' };
   }
-  if (n.indexOf('CUP') !== -1) {
-    /* Swiss Tablesoccer Cup – red */
+  if (n.indexOf('CUP') !== -1 || n.indexOf('FINALS') !== -1) {
+    /* Swiss Tablesoccer Cup and Finals – red */
     return { bg: '#E30613' };
   }
   return { bg: '#666666' };

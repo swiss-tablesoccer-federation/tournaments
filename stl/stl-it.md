@@ -1,5 +1,3 @@
-![](./img/hero.jpg)
-
 ## Swiss Tablesoccer League
 
 <div class="stc-logo-content">
