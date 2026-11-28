@@ -399,6 +399,4 @@ Gegen Selektionsentscheide kann Einsprache erhoben werden. Die Prüfung beschrä
 
 ## 13. Schlussbestimmungen
 
-Dieses Reglement tritt am [Datum] in Kraft.
-
 Änderungen erfolgen durch die zuständigen Organe des STF.

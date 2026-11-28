@@ -399,6 +399,5 @@ Une opposition peut être formée contre les décisions de sélection. L'examen 
 
 ## 13. Dispositions finales
 
-Le présent règlement entre en vigueur le [date].
 
 Les modifications sont apportées par les organes compétents de la STF.

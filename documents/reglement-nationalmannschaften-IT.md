@@ -399,6 +399,5 @@ Contro le decisioni di selezione può essere presentata opposizione. L'esame si 
 
 ## 13. Disposizioni finali
 
-Il presente regolamento entra in vigore il [data].
 
 Le modifiche sono apportate dagli organi competenti della STF.

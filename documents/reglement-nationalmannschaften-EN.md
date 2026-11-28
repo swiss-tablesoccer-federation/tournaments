@@ -399,6 +399,5 @@ An objection may be raised against selection decisions. The review is limited to
 
 ## 13. Final Provisions
 
-This regulation enters into force on [date].
 
 Amendments are made by the competent bodies of the STF.
