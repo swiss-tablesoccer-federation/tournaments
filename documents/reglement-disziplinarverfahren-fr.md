@@ -16,6 +16,7 @@
 | Version | Date | Auteurs | Remarques |
 |---|---|---|---|
 | 2021.1 | 01.11.2021 | B. Rentsch | Publication initiale et entrée en vigueur |
+| 2026.1 | 28.11.2026 | Ph. Gamper | Précision des compétences et de la procédure de signalement conformément au Statut concernant l'éthique dans le sport suisse |
 
 ---
 
@@ -37,7 +38,7 @@
 
 ## 1. Introduction
 
-Ce règlement sert de base au traitement des cas disciplinaires. Un cas disciplinaire survient lorsqu'un comportement perturbateur et incorrect est constaté dans une mesure telle qu'il nécessite une action.
+Ce règlement sert de base au traitement des cas disciplinaires relevant de la compétence de la Swiss Tablesoccer Federation (STF). Les violations présumées du Statut concernant l'éthique dans le sport suisse relèvent des compétences et des procédures prévues par ce statut ainsi que par les règlements de procédure correspondants de Swiss Sport Integrity (SSI) et du Tribunal du sport suisse.
 
 ## 2. Structure et champ d'application
 
@@ -60,17 +61,17 @@ La grille couvre les comportements légers non souhaités jusqu'aux infractions 
 | Comportement quotidien, mais non souhaité et dérangeant, qui n'a pas de conséquences immédiates. | **Avertissement** (oral) |
 | Violation claire des limites, qui est sanctionnée, mais qui n'est pas liée à des conséquences dépassant le cadre de la manifestation. | **Avertissements multiples** → 🟨 (carton jaune) |
 | Violation claire des limites entraînant une disqualification de l'ensemble de la manifestation. L'incident est signalé par écrit à la fédération, examiné par une commission indépendante et peut donc avoir des conséquences importantes pour la personne concernée. | 🟨 🟨 → 🟥 |
-| Comportement qui doit typiquement être transmis aux autorités et qui est sanctionné par le droit pénal. | 🟥 (carton rouge) |
+| Comportement qui doit typiquement être signalé à Swiss Sport Integrity (SSI) et qui peut faire l'objet de poursuites pénales. | 🟥 (carton rouge) |
 
 Des exemples concrets concernant les exigences en matière de comportement, une description détaillée des niveaux d'escalade et des conséquences, sanctions et dispositions pénales qui peuvent y être associées figurent à la section 3.
 
 ### 2.2 Champ d'application
 
-Tous les clubs STF licenciés, les joueurs, les officiels (arbitres et direction de tournoi) ainsi que la fédération elle-même entrent dans le champ d'application de ce règlement. Les parties mentionnées s'engagent à connaître les règles officielles de la STF, les prescriptions de la Charte d'éthique, ainsi que les prescriptions du présent règlement et à les respecter.
+Tous les clubs STF licenciés, les joueurs, les officiels (arbitres et direction de tournoi) ainsi que la fédération elle-même entrent dans le champ d'application de ce règlement. Les parties mentionnées s'engagent à connaître les règles officielles de la STF, les dispositions du Statut concernant l'éthique dans le sport suisse et celles du présent règlement, et à les respecter. Les violations présumées du Statut concernant l'éthique relèvent des compétences et des procédures qui y sont prévues.
 
 ## 3. Grille des sanctions et dispositions pénales
 
-Quiconque tombe sous le coup du présent règlement et ne respecte pas les prescriptions des règles officielles de la STF, les prescriptions de la charte d'éthique, les prescriptions du présent règlement concernant un comportement incorrect sera sanctionné si les faits sont avérés.
+Quiconque tombe sous le coup du présent règlement et ne respecte pas les règles officielles de la STF ou les dispositions du présent règlement concernant un comportement incorrect peut être sanctionné conformément au présent règlement.
 
 Pour évaluer les comportements incorrects, ceux-ci sont classés dans une grille de sanctions comportant quatre niveaux d'escalade. L'évaluation finale et définitive de la nécessité d'une mesure ou d'une sanction est réservée aux officiels de la STF et à une instance de décision indépendante. L'instance de décision indépendante n'est consultée que si des infractions de niveau 3 ou 4 sont commises.
 
@@ -143,7 +144,7 @@ Un comportement incorrect de niveau 3 entraîne une disqualification immédiate 
 
 #### Exigence en matière de comportement
 
-Comportement incorrect très grave envers des officiels, des adversaires, des coéquipiers, des spectateurs ou la fédération, qui doit être transmis aux autorités :
+Comportement incorrect très grave envers des officiels, des adversaires, des coéquipiers, des spectateurs ou la fédération, qui doit être signalé à Swiss Sport Integrity (SSI) :
 
 - Violence physique massive
 - Violence sexuelle
@@ -151,7 +152,7 @@ Comportement incorrect très grave envers des officiels, des adversaires, des co
 
 #### Mesure
 
-L'officiel, les adversaires, les coéquipiers ou les spectateurs sont tenus d'informer les autorités.
+Les incidents de niveau 4 doivent être signalés au [centre de signalement de Swiss Sport Integrity (SSI)](https://www.sportintegrity.ch/organisation/vorfall-melden). SSI évalue sa compétence et informe la STF de la suite de la procédure. La STF apporte son soutien à SSI si nécessaire, dans la mesure de ses possibilités. En cas d'incident relevant du droit pénal, les autorités de poursuite pénale compétentes doivent également être informées.
 
 ## 4. Procédure de notification
 
@@ -182,9 +183,13 @@ Il existe deux voies de notification différentes A et B, selon que l'instance c
 
 La **voie de signalement A** décrit le processus pour les parties indépendantes (p. ex. joueurs ou spectateurs). Lors d'une manifestation officielle de la STF, ces personnes peuvent signaler le cas ou le soupçon à un officiel de la STF (arbitre ou direction du tournoi) et le lui remettre. Celui-ci est alors responsable du suivi, de l'évaluation et/ou de la déclaration de l'événement pendant la manifestation.
 
-Si aucun officiel de la STF (arbitre et direction du tournoi) n'est présent, ou si celui-ci est par exemple lui-même soupçonné, l'instance indépendante (par exemple le joueur ou le spectateur) peut également annoncer l'événement directement à la fédération au moyen du formulaire d'annonce. En principe, cette voie ne doit être choisie que pour les infractions de niveau 3 et 4. En cas d'infraction de niveau 4, les autorités compétentes doivent être impliquées.
+Si aucun officiel de la STF (arbitre et direction du tournoi) n'est présent, ou si celui-ci est par exemple lui-même soupçonné, l'instance indépendante (par exemple le joueur ou le spectateur) peut également annoncer l'événement directement à la fédération au moyen du formulaire d'annonce. En principe, cette voie ne doit être choisie que pour les infractions de niveau 3 et 4.
 
 La **voie de signalement B** décrit l'alternative où le cas/suspense est constaté et traité directement par un officiel de la STF.
+
+Les signalements reçus par la STF concernant des violations présumées du Statut concernant l'éthique dans le sport suisse doivent être transmis au [centre de signalement de Swiss Sport Integrity (SSI)](https://www.sportintegrity.ch/organisation/vorfall-melden), indépendamment de la voie de signalement ou de la classification de l'incident. Cela s'applique également aux signalements anonymes. Un signalement à la STF ne remplace pas un signalement à SSI. Toute personne peut signaler directement un incident à SSI.
+
+En cas d'incident relevant du droit pénal, les autorités de poursuite pénale compétentes doivent également être informées.
 
 ## 5. Formulaire de déclaration
 

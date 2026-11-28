@@ -16,6 +16,7 @@
 | Versione | Data | Autori | Osservazioni |
 |---|---|---|---|
 | 2021.1 | 01.11.2021 | B. Rentsch | Pubblicazione iniziale ed entrata in vigore |
+| 2026.1 | 28.11.2026 | Ph. Gamper | Precisazione delle competenze e della procedura di segnalazione in linea con lo Statuto etico dello sport svizzero |
 
 ---
 
@@ -37,7 +38,7 @@
 
 ## 1. Introduzione
 
-Il presente regolamento serve come base per il trattamento dei casi disciplinari. Un caso disciplinare sorge quando viene constatato un comportamento perturbatore e scorretto in una misura tale da richiedere un intervento.
+Il presente regolamento costituisce la base per il trattamento dei casi disciplinari di competenza della Swiss Tablesoccer Federation (STF). Le presunte violazioni dello Statuto etico dello sport svizzero sono soggette alle competenze e alle procedure previste dallo Statuto etico e dai relativi regolamenti procedurali di Swiss Sport Integrity (SSI) e del Tribunale dello sport svizzero.
 
 ## 2. Struttura e campo di applicazione
 
@@ -60,17 +61,17 @@ La griglia copre dai comportamenti lievi indesiderati fino alle infrazioni gravi
 | Comportamento quotidiano, ma non desiderato e disturbante, che non ha conseguenze immediate. | **Ammonizione** (verbale) |
 | Chiara violazione dei limiti, che viene sanzionata ma non comporta conseguenze al di là dell'evento. | **Ammonizioni multiple** → 🟨 (cartellino giallo) |
 | Chiara violazione dei limiti che comporta la squalifica dall'intero evento. L'incidente viene segnalato per iscritto alla federazione, esaminato da una commissione indipendente e può quindi avere conseguenze rilevanti per la persona interessata. | 🟨 🟨 → 🟥 |
-| Comportamento che deve essere tipicamente trasmesso alle autorità ed è perseguibile penalmente. | 🟥 (cartellino rosso) |
+| Comportamento che deve essere tipicamente segnalato a Swiss Sport Integrity (SSI) e può essere perseguito penalmente. | 🟥 (cartellino rosso) |
 
 Esempi concreti relativi ai requisiti di comportamento, una descrizione dettagliata dei livelli di escalation e delle possibili conseguenze, sanzioni e disposizioni penali ad essi associate sono riportati nella sezione 3.
 
 ### 2.2 Campo di applicazione
 
-Rientrano nel campo di applicazione del presente regolamento tutti i club STF licenziati, i giocatori, gli ufficiali (arbitri e direzione del torneo) nonché la federazione stessa. Le parti menzionate si impegnano a conoscere le regole ufficiali della STF, le disposizioni della Carta etica e le disposizioni del presente regolamento e a rispettarle.
+Rientrano nel campo di applicazione del presente regolamento tutti i club STF licenziati, i giocatori, gli ufficiali (arbitri e direzione del torneo) nonché la federazione stessa. Le parti menzionate si impegnano a conoscere e rispettare le regole ufficiali della STF, le disposizioni dello Statuto etico dello sport svizzero e quelle del presente regolamento. Le presunte violazioni dello Statuto etico sono soggette alle competenze e alle procedure ivi previste.
 
 ## 3. Griglia delle sanzioni e disposizioni penali
 
-Chiunque rientri nel campo di applicazione del presente regolamento e non rispetti le disposizioni delle regole ufficiali della STF, le disposizioni della Carta etica o le disposizioni del presente regolamento relative a comportamenti scorretti viene punito, a condizione che la fattispecie sia accertata.
+Chiunque rientri nel campo di applicazione del presente regolamento e non rispetti le disposizioni delle regole ufficiali della STF o quelle del presente regolamento relative a comportamenti scorretti può essere sanzionato conformemente al presente regolamento.
 
 Per la valutazione dei comportamenti scorretti, questi vengono classificati in una griglia delle sanzioni con quattro livelli di escalation. La valutazione conclusiva e definitiva sulla necessità di una misura o di una disposizione penale è riservata agli ufficiali della STF e a un'istanza decisionale indipendente. L'istanza decisionale indipendente viene coinvolta solo in caso di infrazioni di livello 3 o 4.
 
@@ -143,7 +144,7 @@ Il comportamento scorretto di livello 3 comporta la squalifica immediata dall'in
 
 #### Requisito di comportamento
 
-Comportamento scorretto molto grave nei confronti di ufficiali, avversari, compagni di squadra, spettatori o della federazione, che deve essere trasmesso alle autorità:
+Comportamento scorretto molto grave nei confronti di ufficiali, avversari, compagni di squadra, spettatori o della federazione, che deve essere segnalato a Swiss Sport Integrity (SSI):
 
 - Violenza fisica grave
 - Violenza sessuale
@@ -151,7 +152,7 @@ Comportamento scorretto molto grave nei confronti di ufficiali, avversari, compa
 
 #### Misura
 
-L'ufficiale, gli avversari, i compagni di squadra o gli spettatori sono tenuti a informare le autorità.
+Gli incidenti di livello 4 devono essere segnalati al [centro di segnalazione di Swiss Sport Integrity (SSI)](https://www.sportintegrity.ch/organisation/vorfall-melden). SSI valuta la propria competenza e informa la STF sulle fasi successive. Se necessario, la STF offre a SSI il proprio supporto nell'ambito delle proprie possibilità. In caso di incidenti rilevanti ai sensi del diritto penale, è necessario informare anche le autorità penali competenti.
 
 ## 4. Procedura di segnalazione
 
@@ -183,9 +184,13 @@ A seconda che l'istanza che accerta il caso sia un ufficiale della STF (organizz
 
 La **via di segnalazione A** descrive il processo per le parti indipendenti (ad es. giocatori o spettatori). In occasione di un evento ufficiale della STF queste possono segnalare il caso o il sospetto a un ufficiale della STF (arbitro o direzione del torneo) e affidarglielo. Quest'ultimo è quindi responsabile, durante l'evento, dell'ulteriore monitoraggio, della valutazione e/o della segnalazione dell'accaduto.
 
-Qualora non sia presente alcun ufficiale della STF (arbitro e direzione del torneo), oppure se questi è ad esempio egli stesso sospettato, l'istanza indipendente (ad es. giocatore o spettatore) può segnalare l'accaduto anche direttamente alla federazione tramite il modulo di segnalazione. In linea di principio, questa via è da scegliere solo in caso di infrazioni di livello 3 e 4. In caso di infrazione di livello 4 devono essere coinvolte le autorità competenti.
+Qualora non sia presente alcun ufficiale della STF (arbitro e direzione del torneo), oppure se questi è ad esempio egli stesso sospettato, l'istanza indipendente (ad es. giocatore o spettatore) può segnalare l'accaduto anche direttamente alla federazione tramite il modulo di segnalazione. In linea di principio, questa via è da scegliere solo in caso di infrazioni di livello 3 e 4.
 
 La **via di segnalazione B** descrive l'alternativa in cui il caso/sospetto viene accertato e trattato direttamente da un ufficiale della STF.
+
+Le segnalazioni ricevute dalla STF riguardanti presunte violazioni dello Statuto etico dello sport svizzero devono essere trasmesse al [centro di segnalazione di Swiss Sport Integrity (SSI)](https://www.sportintegrity.ch/organisation/vorfall-melden), indipendentemente dalla via di segnalazione e dalla classificazione dell'incidente. Ciò vale anche per le segnalazioni anonime. Una segnalazione alla STF non sostituisce la segnalazione a SSI. Chiunque può segnalare direttamente un incidente a SSI.
+
+In caso di incidenti rilevanti ai sensi del diritto penale, è necessario informare anche le autorità penali competenti.
 
 ## 5. Modulo di segnalazione
 

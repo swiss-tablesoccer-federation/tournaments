@@ -16,6 +16,7 @@
 | Version | Datum | Autoren | Bemerkungen |
 |---|---|---|---|
 | 2021.1 | 01.11.2021 | B. Rentsch | Initiale Veröffentlichung und Inkraftsetzung |
+| 2026.1 | 28.11.2026 | Ph. Gamper | Präzisierung von Zuständigkeiten und Meldeverfahren in Anlehnung an das Ethik-Statut des Schweizer Sports |
 
 ---
 
@@ -37,7 +38,7 @@
 
 ## 1. Einleitung
 
-Dieses Reglement dient als Grundlage zur Abhandlung von Disziplinarfällen. Ein Disziplinarfall entsteht dann, wenn störendes und unkorrektes Verhalten in einem Ausmass festgestellt wird, bei dem es Handlungsbedarf erfordert.
+Dieses Reglement dient als Grundlage zur Behandlung von Disziplinarfällen innerhalb der Zuständigkeit der Swiss Tablesoccer Federation (STF). Für mutmassliche Verstösse gegen das Ethik-Statut des Schweizer Sports gelten die Zuständigkeiten und Verfahren gemäss Ethik-Statut sowie den dazugehörigen Verfahrensreglementen von Swiss Sport Integrity (SSI) und des Schweizer Sportgerichts.
 
 ## 2. Aufbau und Geltungsbereich
 
@@ -66,11 +67,11 @@ Konkrete Beispiele zu den Anforderungen an das Verhalten, eine detaillierte Besc
 
 ### 2.2 Geltungsbereich
 
-In den Geltungsbereich dieses Reglements fallen alle lizenzierten STF-Vereine, Spieler, Offizielle (Schiedsrichter und Turnierleitung) sowie der Verband selber. Die genannten Parteien verpflichten sich, die offiziellen STF-Regeln, die Vorschriften der Ethik-Charta, sowie die Vorschriften dieses Reglements zu kennen und diesen Folge zu leisten.
+In den Geltungsbereich dieses Reglements fallen alle lizenzierten STF-Vereine, Spieler, Offizielle (Schiedsrichter und Turnierleitung) sowie der Verband selber.  Die genannten Parteien verpflichten sich, die offiziellen STF-Regeln, die Vorschriften des Ethik-Statuts des Schweizer Sports sowie die Vorschriften dieses Reglements zu kennen und diesen Folge zu leisten. Für mutmassliche Verstösse gegen das Ethik-Statut gelten die dort vorgesehenen Zuständigkeiten und Verfahren.
 
 ## 3. Sanktionsraster und Strafbestimmungen
 
-Wer unter den Geltungsbereich dieses Reglements fällt und Vorschriften der offiziellen STF-Regeln, Vorschriften der Ethik-Charta, Vorschriften dieses Reglements bezüglich unkorrektem Verhalten missachtet, wird bestraft, sofern der Tatbestand erfüllt ist.
+Wer unter den Geltungsbereich dieses Reglements fällt und Vorschriften der offiziellen STF-Regeln oder dieses Reglements bezüglich unkorrektem Verhalten missachtet, kann gemäss diesem Reglement sanktioniert werden.
 
 Zur Beurteilung von unkorrektem Verhalten wird dieses in ein Sanktionsraster mit vier Eskalationsstufen eingeteilt. Die abschliessende und definitive Beurteilung, ob eine Massnahme oder eine Strafbestimmung erforderlich ist, ist den STF-Offiziellen und einer unabhängigen Entscheidungsinstanz vorbehalten. Die unabhängige Entscheidungsinstanz wird nur zugezogen, wenn Zuwiderhandlungen der Stufe 3 oder 4 eintreten.
 
@@ -143,7 +144,7 @@ Unkorrektes Verhalten der Stufe 3 hat eine sofortige Disqualifikation vom gesamt
 
 #### Anforderung an das Verhalten
 
-Sehr schweres unkorrektes Verhalten gegenüber Offiziellen, Gegnern, Mitspielern, Zuschauern oder dem Verband, welches an die Behörden weitergegeben werden muss:
+Sehr schweres unkorrektes Verhalten gegenüber Offiziellen, Gegnern, Mitspielern, Zuschauern oder dem Verband, das Swiss Sport Integrity (SSI) gemeldet werden muss:
 
 - Massive körperliche Gewalt
 - Sexuelle Gewalt
@@ -151,7 +152,7 @@ Sehr schweres unkorrektes Verhalten gegenüber Offiziellen, Gegnern, Mitspielern
 
 #### Massnahme
 
-Der Offizielle, die Gegner, die Mitspieler oder die Zuschauer sind verpflichtet, die Behörden zu informieren.
+Vorfälle der Stufe 4 sind der [Meldestelle von Swiss Sport Integrity (SSI)](https://www.sportintegrity.ch/organisation/vorfall-melden) von Swiss Sport Integrity (SSI) zu melden. SSI beurteilt die Zuständigkeit und informiert die STF über das weitere Vorgehen. Die STF unterstützt SSI bei Bedarf im Rahmen ihrer Möglichkeiten. Bei strafrechtlich relevanten Vorfällen sind zusätzlich die zuständigen Strafverfolgungsbehörden zu informieren.
 
 ## 4. Meldeverfahren
 
@@ -182,9 +183,13 @@ Abhängig davon, ob es sich bei der feststellenden Instanz um eine STF-offiziell
 
 Der **Meldeweg A** beschreibt den Prozess für unabhängige Parteien (z.B. Spieler oder Zuschauer). Diese können an einem offiziellen STF-Anlass den Fall oder den Verdacht einem STF-Offiziellen melden (Schiedsrichter oder Turnierleitung) und übergeben. Dieser ist während dem Anlass dann für die weitere Verfolgung, Beurteilung und/oder Meldung des Ereignisses verantwortlich.
 
-Falls kein STF-Offizieller (Schiedsrichter und Turnierleitung) anwesend ist, oder dieser z.B. selber unter Verdacht steht, kann die unabhängige Instanz (z.B. Spieler oder Zuschauer) das Ereignis mittels des Meldeformulars auch direkt dem Verband melden. Grundsätzlich ist dieser Weg nur bei Vergehen der Stufe 3 und 4 zu wählen. Im Falle eines Vergehens der Stufe 4 müssen die zuständigen Behörden involviert werden.
+Falls kein STF-Offizieller (Schiedsrichter und Turnierleitung) anwesend ist, oder dieser z.B. selber unter Verdacht steht, kann die unabhängige Instanz (z.B. Spieler oder Zuschauer) das Ereignis mittels des Meldeformulars auch direkt dem Verband melden. Grundsätzlich ist dieser Weg nur bei Vergehen der Stufe 3 und 4 zu wählen.
 
 Der **Meldeweg B** beschreibt die Alternative, wo der Fall/Verdacht direkt durch einen STF-Offiziellen festgestellt und bearbeitet wird.
+
+Meldungen über mutmassliche Verstösse gegen das Ethik-Statut des Schweizer Sports, welche bei der STF eingehen, sind unabhängig von Meldeweg und Einstufung des Vorfalls an die [Meldestelle von Swiss Sport Integrity (SSI)](https://www.sportintegrity.ch/organisation/vorfall-melden) weiterzuleiten. Dies gilt auch für anonyme Meldungen. Eine Meldung an die STF ersetzt die Meldung an SSI nicht. Die direkte Meldung an SSI steht allen Personen offen.
+
+Bei strafrechtlich relevanten Vorfällen sind zusätzlich die zuständigen Strafverfolgungsbehörden zu informieren.
 
 ## 5. Meldeformular
 

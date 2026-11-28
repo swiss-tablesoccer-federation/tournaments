@@ -16,6 +16,7 @@
 | Version | Date | Authors | Remarks |
 |---|---|---|---|
 | 2021.1 | 01.11.2021 | B. Rentsch | Initial publication and entry into force |
+| 2026.1 | 28.11.2026 | Ph. Gamper | Clarification of responsibilities and reporting procedures in line with the Ethics Statute of Swiss sport |
 
 ---
 
@@ -37,7 +38,7 @@
 
 ## 1. Introduction
 
-These regulations serve as the basis for handling disciplinary cases. A disciplinary case arises when disruptive and incorrect behaviour is observed to an extent that requires action.
+These regulations serve as the basis for handling disciplinary cases within the remit of the Swiss Tablesoccer Federation (STF). Alleged violations of the Ethics Statute of Swiss sport are subject to the responsibilities and procedures set out in the Ethics Statute and the related procedural regulations of Swiss Sport Integrity (SSI) and the Swiss Sports Tribunal.
 
 ## 2. Structure and scope
 
@@ -60,17 +61,17 @@ The grid covers minor undesired behaviour up to serious offences that may be pro
 | Everyday, but undesired and disruptive behaviour that has no immediate consequences. | **Warning** (verbal) |
 | Clear boundary violation which is sanctioned but does not entail consequences beyond the event. | **Multiple warning** → 🟨 (yellow card) |
 | Clear boundary violation that results in disqualification from the entire event. The incident is reported to the federation in writing, reviewed by an independent commission, and can therefore have far-reaching consequences for the person concerned. | 🟨 🟨 → 🟥 |
-| Behaviour that must typically be passed on to the authorities and is prosecuted under criminal law. | 🟥 (red card) |
+| Behaviour that must typically be reported to Swiss Sport Integrity (SSI) and may be prosecuted under criminal law. | 🟥 (red card) |
 
 Concrete examples of behavioural requirements, a detailed description of the escalation levels and the possible associated consequences, sanctions and penal provisions are given in section 3.
 
 ### 2.2 Scope
 
-The scope of these regulations covers all licensed STF clubs, players, officials (referees and tournament management) as well as the federation itself. The parties named hereby commit to knowing and complying with the official STF rules, the rules of the Ethics Charter, and the rules of these regulations.
+The scope of these regulations covers all licensed STF clubs, players, officials (referees and tournament management) as well as the federation itself. The parties named hereby commit to knowing and complying with the official STF rules, the provisions of the Ethics Statute of Swiss sport and these regulations. Alleged violations of the Ethics Statute are subject to the responsibilities and procedures set out therein.
 
 ## 3. Sanction grid and penal provisions
 
-Anyone who falls within the scope of these regulations and disregards the provisions of the official STF rules, the provisions of the Ethics Charter, or the provisions of these regulations concerning incorrect behaviour will be punished, provided that the relevant facts are established.
+Anyone who falls within the scope of these regulations and disregards the provisions of the official STF rules or these regulations concerning incorrect behaviour may be sanctioned in accordance with these regulations.
 
 To assess incorrect behaviour, it is classified in a sanction grid with four escalation levels. The final and definitive assessment as to whether a measure or a penal provision is required is reserved for the STF officials and an independent decision-making body. The independent decision-making body is only involved if violations of level 3 or 4 occur.
 
@@ -143,7 +144,7 @@ Incorrect behaviour of Level 3 results in immediate disqualification from the en
 
 #### Behavioural requirement
 
-Very serious incorrect behaviour towards officials, opponents, teammates, spectators or the federation, which must be passed on to the authorities:
+Very serious incorrect behaviour towards officials, opponents, teammates, spectators or the federation, which must be reported to Swiss Sport Integrity (SSI):
 
 - Massive physical violence
 - Sexual violence
@@ -151,7 +152,7 @@ Very serious incorrect behaviour towards officials, opponents, teammates, specta
 
 #### Measure
 
-The official, the opponents, the teammates or the spectators are obliged to inform the authorities.
+Level 4 incidents must be reported to the [reporting office of Swiss Sport Integrity (SSI)](https://www.sportintegrity.ch/organisation/vorfall-melden). SSI assesses whether it has jurisdiction and informs the STF about the next steps. The STF supports SSI as needed within its capabilities. For incidents relevant under criminal law, the competent law-enforcement authorities must also be informed.
 
 ## 4. Reporting procedure
 
@@ -183,9 +184,13 @@ Depending on whether the party identifying the case is an STF official (organise
 
 **Reporting path A** describes the process for independent parties (e.g. players or spectators). At an official STF event, they can report the case or suspicion to an STF official (referee or tournament management) and hand it over. The latter is then responsible during the event for the further follow-up, assessment and/or reporting of the incident.
 
-If no STF official (referee and tournament management) is present, or if such an official is, for example, themselves under suspicion, the independent party (e.g. player or spectator) can also report the incident directly to the federation by means of the reporting form. In principle, this path is only to be chosen for offences of Level 3 and 4. In the case of a Level 4 offence, the competent authorities must be involved.
+If no STF official (referee and tournament management) is present, or if such an official is, for example, themselves under suspicion, the independent party (e.g. player or spectator) can also report the incident directly to the federation by means of the reporting form. In principle, this path is only to be chosen for offences of Level 3 and 4.
 
 **Reporting path B** describes the alternative in which the case/suspicion is identified and processed directly by an STF official.
+
+Reports received by the STF concerning alleged violations of the Ethics Statute of Swiss sport must be forwarded to the [reporting office of Swiss Sport Integrity (SSI)](https://www.sportintegrity.ch/organisation/vorfall-melden), regardless of the reporting path or the classification of the incident. This also applies to anonymous reports. Reporting an incident to the STF does not replace reporting it to SSI. Anyone may report an incident directly to SSI.
+
+For incidents relevant under criminal law, the competent law-enforcement authorities must also be informed.
 
 ## 5. Reporting form
 
